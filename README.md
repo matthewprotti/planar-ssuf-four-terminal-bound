@@ -2,9 +2,6 @@
 
 > **Status: private, unpublished release candidate (`v0.1.0-rc1`,
 > 23 July 2026).**
->
-> This is an unrefereed working package and a private provenance record. It
-> does not yet establish a public priority date.
 
 ## What this is
 
@@ -59,15 +56,15 @@ expensive-route costs may be unequal.
 
 This project grew out of a multi-week conversation between Matthew Protti and
 OpenAI GPT-5.6 Pro about recurring similarities among mathematical
-breakthroughs and, more broadly, the kinds of hard problems AI systems might
+breakthroughs in frontier LLM models and, more broadly, the kinds of hard problems AI systems might
 help with. Dmitry Rybin's result became the catalyst for applying that
 ongoing conversation to this unsplittable-flow question.
 
 GPT-5.6 Pro did most of the active mathematical heavy lifting: construction
 search, symbolic derivation, proof development, verifier development,
 adversarial critique, and manuscript drafting. Matthew framed and steered
-the investigation, evaluated the proposed constructions, caught a
-cost-normalization error, required repeated adversarial review and exact
+the investigation, evaluated the proposed constructions, performed an adversarial critique where he caught a
+cost-normalization error, built an adversarial review and adjudication loop and exact
 checks, chose the scope of the claims, and accepts responsibility for the
 released work.
 
@@ -122,12 +119,10 @@ There is also a separate clean-room implementation in
 [`verification/independent_crosscheck.py`](verification/independent_crosscheck.py).
 It rediscovers the graph properties and paths with NetworkX, independently
 re-encodes the exact and symbolic checks, and runs deterministic stress
-tests. This is useful corroboration, but it is not an independent human
-review, and randomized stress testing is not part of the proof.
+tests. Randomized stress testing is not part of the proof.
 
 The manuscript is designed to be checked by a person without relying on the
-software. The code is corroborating evidence, not a substitute for the
-argument.
+software. The code is corroborating evidence.
 
 ## Repository map
 
