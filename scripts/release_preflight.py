@@ -70,13 +70,22 @@ def main() -> None:
 
     cff = (ROOT / "CITATION.cff").read_text(encoding="utf-8")
     readme = (ROOT / "README.md").read_text(encoding="utf-8")
+    priority = (ROOT / "PRIORITY_DISCLOSURE.md").read_text(encoding="utf-8")
+    release_notes = (ROOT / "RELEASE_NOTES_v0.1.0.md").read_text(encoding="utf-8")
     if args.public:
         if "Unpublished private release candidate" in readme:
             failures.append("README still marks the package private and unpublished")
+        if 'version: "0.1.0"' not in cff or "date-released:" not in cff:
+            failures.append("CITATION.cff is not finalized as dated version 0.1.0")
+        if "private and unpublished" in priority:
+            failures.append("priority disclosure still marks the package private")
+        if "draft release notes" in release_notes.lower():
+            failures.append("release notes are still marked as a draft")
         if re.search(r"(?m)^license:", cff):
             failures.append("CITATION.cff asserts a license despite the deliberate no-license status")
         licensing = (ROOT / "LICENSING.md").read_text(encoding="utf-8")
-        if "grants no open-source or open-content license" not in licensing:
+        normalized_licensing = " ".join(licensing.split())
+        if "grants no open-source or open-content license" not in normalized_licensing:
             failures.append("LICENSING.md does not state the deliberate no-license status")
 
     if failures:
