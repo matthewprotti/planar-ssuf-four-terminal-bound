@@ -14,16 +14,16 @@ presented as public priority.
 There is a planar acyclic four-terminal single-source instance with maximum
 demand
 
-\[
+$$
 D=294
-\]
+$$
 
 such that every cost-nonincreasing unsplittable routing has upper overload at
 least
 
-\[
+$$
 335=\frac{335}{294}D.
-\]
+$$
 
 The certificate uses demands `(294, 216, 252, 294)`, cheap path amounts
 `(78, 97, 36, 42)`, and expensive path amounts `(216, 119, 216, 252)`.
@@ -39,20 +39,20 @@ independent human review.
 
 ## Claim B — limiting planar lower bound
 
-For every \(\eta>0\), there is a rational planar acyclic four-terminal
+For every $\eta>0$, there is a rational planar acyclic four-terminal
 instance for which every cost-nonincreasing unsplittable routing overloads
 some arc by more than
 
-\[
+$$
 \left(\frac{299-41\sqrt{41}}{32}-\eta\right)D.
-\]
+$$
 
 Consequently,
 
-\[
+$$
 \alpha_{\mathrm{pl}}\ge \frac{299-41\sqrt{41}}{32}
 =1.139747070789\ldots.
-\]
+$$
 
 **Status:** proved in the unrefereed manuscript and checked symbolically.
 
@@ -61,9 +61,9 @@ Consequently,
 For the fixed four-terminal topology defined in the manuscript, over the
 explicit real equal-full-cost, two-cheap-choice model, the exact supremum is
 
-\[
+$$
 \frac{299-41\sqrt{41}}{32}.
-\]
+$$
 
 The same supremum is obtained after restricting the data to rationals.
 

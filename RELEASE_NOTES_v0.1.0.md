@@ -23,6 +23,16 @@ These are draft release notes. No tag or GitHub release exists yet.
 The separate implementation is AI-assisted computational corroboration, not
 independent human review. The manuscript is unrefereed.
 
+## Research provenance
+
+The work grew out of a multi-week conversation between Matthew Protti and
+OpenAI GPT-5.6 Pro about similarities among mathematical breakthroughs and
+the kinds of difficult problems AI systems might help with. GPT-5.6 Pro did
+most of the active mathematical heavy lifting; Matthew framed and directed
+the inquiry, challenged the work, required exact verification, chose the
+scope of the claims, and accepts responsibility for the release. The private
+conversation transcript is not included.
+
 ## Proposed immutable assets
 
 - `ssuf-four-terminal-v0.1.0-source.tar.gz`;
