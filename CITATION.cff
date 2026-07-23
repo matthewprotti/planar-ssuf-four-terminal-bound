@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "After publication, please cite the immutable v0.1.0 GitHub release and its exact commit."
+title: "A four-terminal planar lower bound for cost-preserving unsplittable-flow rounding"
+type: software
+authors:
+  - family-names: "Protti"
+    given-names: "Matthew"
+version: "0.1.0-rc1"
+repository-code: "https://github.com/matthewprotti/planar-ssuf-four-terminal-bound"
+abstract: >-
+  Unrefereed manuscript and exact verification artifacts for a
+  four-terminal planar lower bound in cost-preserving single-source
+  unsplittable-flow rounding.
+keywords:
+  - unsplittable flow
+  - combinatorial optimization
+  - network flows
+  - planar graphs
+  - reproducible research
+preferred-citation:
+  type: article
+  authors:
+    - family-names: "Protti"
+      given-names: "Matthew"
+  title: "A Four-Terminal Planar Lower Bound and a Sharp Equal-Cost Gadget for Cost-Preserving Unsplittable-Flow Rounding"
+  year: 2026

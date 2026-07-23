@@ -1,0 +1,14 @@
+Reference audit environment for v0.1.0-rc1
+--------------------------------------------
+macOS 26.4.1 (arm64)
+Python 3.14.6
+SymPy 1.14.0
+NetworkX 3.5
+Tectonic 0.16.9
+pdftotext 25.09.1
+gitleaks 8.30.1
+SOURCE_DATE_EPOCH=1784846040
+TZ=UTC
+
+Only SymPy and NetworkX are non-standard Python dependencies. The primary
+finite verifier itself uses the Python standard library.
