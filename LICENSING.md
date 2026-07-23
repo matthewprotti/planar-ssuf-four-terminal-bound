@@ -1,7 +1,7 @@
 # Licensing status
 
 No copyright, patent, or other intellectual-property ownership claim is made
-in this repository, and this release candidate grants no open-source or
+in this repository, and this release grants no open-source or
 open-content license. `CITATION.cff` therefore omits its optional `license`
 field.
 

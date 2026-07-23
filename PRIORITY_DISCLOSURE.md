@@ -1,13 +1,12 @@
-# Proposed priority disclosure
+# Priority disclosure
 
-- **Candidate:** v0.1.0-rc1
-- **Prepared:** 23 July 2026
-- **Current status:** private and unpublished
+- **Release:** v0.1.0
+- **Released:** 23 July 2026
+- **Status:** public, immutable GitHub release
 
-If a public release is expressly approved, the canonical public timestamp
-will be the `published_at` time recorded by GitHub for the immutable
-`v0.1.0` release. Repository creation and private commit times are not
-presented as public priority.
+The canonical public timestamp is the `published_at` time recorded by GitHub
+for the immutable `v0.1.0` release. Repository creation and private commit
+times are not presented as public priority.
 
 ## Claim A — exact finite certificate
 

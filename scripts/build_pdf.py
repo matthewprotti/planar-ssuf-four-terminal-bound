@@ -13,7 +13,7 @@ import tempfile
 ROOT = Path(__file__).resolve().parent.parent
 TEX = ROOT / "paper" / "ssuf_four_terminal_note_v5.tex"
 PDF = ROOT / "paper" / "ssuf_four_terminal_note_v5.pdf"
-SOURCE_DATE_EPOCH = "1784846040"  # Private repository creation: 2026-07-23T22:34:00Z.
+SOURCE_DATE_EPOCH = "1784846040"  # Fixed v0.1.0 build epoch.
 
 
 def run(command: list[str], *, cwd: Path, env: dict[str, str]) -> None:

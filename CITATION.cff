@@ -1,11 +1,12 @@
 cff-version: 1.2.0
-message: "After publication, please cite the immutable v0.1.0 GitHub release and its exact commit."
+message: "Please cite the immutable v0.1.0 GitHub release and its exact commit."
 title: "A four-terminal planar lower bound for cost-preserving unsplittable-flow rounding"
 type: software
 authors:
   - family-names: "Protti"
     given-names: "Matthew"
-version: "0.1.0-rc1"
+version: "0.1.0"
+date-released: 2026-07-23
 repository-code: "https://github.com/matthewprotti/planar-ssuf-four-terminal-bound"
 abstract: >-
   Unrefereed manuscript and exact verification artifacts for a

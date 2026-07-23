@@ -30,15 +30,15 @@ the support pattern, finite ratio, radical in this setting, or restricted
 theorem. The searches cannot rule out private, unindexed, differently worded,
 or simultaneous work. No claim of exhaustive novelty clearance is made.
 
-## Publication controls
+## Release controls
 
-Before the repository may be made public:
+The public `v0.1.0` release preserves the following controls:
 
-1. the deliberate no-license status must remain explicit and no ownership or
-   affiliation claim may be introduced;
-2. the final public-release diff, PDF, hashes, and repository visibility must
-   be rechecked;
-3. the public release must be created only after explicit authorization.
+1. the deliberate no-license status remains explicit, with no ownership or
+   affiliation claim introduced;
+2. the final public-release diff, PDF, hashes, and repository visibility were
+   checked before publication;
+3. publication followed explicit authorization.
 
 No mathematical defect is currently known in the stated claims. This means
 only that the completed review passes found none.

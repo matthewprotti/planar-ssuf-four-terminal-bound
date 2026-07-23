@@ -1,7 +1,9 @@
 # A four-terminal planar lower bound for cost-preserving unsplittable-flow rounding
 
-> **Status: private, unpublished release candidate (`v0.1.0-rc1`,
-> 23 July 2026).**
+> **Status: public research disclosure (`v0.1.0`, 23 July 2026).**
+>
+> This is an unrefereed research package. Its claims, proof, exact data, and
+> executable verifiers are provided for scrutiny and reproducibility.
 
 ## What this is
 
@@ -55,18 +57,19 @@ expensive-route costs may be unequal.
 ## How this came together
 
 This project grew out of a multi-week conversation between Matthew Protti and
-OpenAI GPT-5.6 Pro about recurring similarities among mathematical
-breakthroughs in frontier LLM models and, more broadly, the kinds of hard problems AI systems might
-help with. Dmitry Rybin's result became the catalyst for applying that
-ongoing conversation to this unsplittable-flow question.
+OpenAI GPT-5.6 Pro about recurring structural similarities across
+mathematical breakthroughs and advances in frontier language models—and,
+more broadly, the kinds of hard problems AI systems might help with. Dmitry
+Rybin's result became the catalyst for applying that ongoing conversation to
+this unsplittable-flow question.
 
 GPT-5.6 Pro did most of the active mathematical heavy lifting: construction
 search, symbolic derivation, proof development, verifier development,
-adversarial critique, and manuscript drafting. Matthew framed and steered
-the investigation, evaluated the proposed constructions, performed an adversarial critique where he caught a
-cost-normalization error, built an adversarial review and adjudication loop and exact
-checks, chose the scope of the claims, and accepts responsibility for the
-released work.
+adversarial critique, and manuscript preparation. Matthew framed and steered
+the investigation, evaluated the proposed constructions, conducted
+adversarial critique that caught a cost-normalization error, established an
+adversarial-review and adjudication loop, required exact checks, chose the
+scope of the claims, and accepts responsibility for the released work.
 
 The private conversation transcript is deliberately not included. The proof,
 explicit data, and executable verifiers are intended to let readers audit the
@@ -78,7 +81,7 @@ result without it. The fuller account is in the
 - Read the
   [current manuscript](paper/ssuf_four_terminal_note_v5.pdf) for the complete
   statement and proof.
-- See [the proposed priority disclosure](PRIORITY_DISCLOSURE.md) for the
+- See [the priority disclosure](PRIORITY_DISCLOSURE.md) for the
   claims and non-claims in compact form.
 - Run the [verification suite](verification/) to reproduce the exact and
   symbolic checks.
@@ -134,14 +137,14 @@ software. The code is corroborating evidence.
   separate cross-check, mutation tests, and machine-readable output.
 - [`scripts/`](scripts/): one-command verification, PDF build, manifest, and
   deterministic release-archive tooling.
-- [`PRIORITY_DISCLOSURE.md`](PRIORITY_DISCLOSURE.md): proposed public claims
-  and non-claims.
+- [`PRIORITY_DISCLOSURE.md`](PRIORITY_DISCLOSURE.md): released claims and
+  non-claims.
 - [`LIMITATIONS.md`](LIMITATIONS.md): mathematical, review, novelty, and
   reproducibility limits.
 - [`AI_USE_AND_PROVENANCE.md`](AI_USE_AND_PROVENANCE.md): detailed AI-use
   disclosure and chronology.
 - [`LICENSING.md`](LICENSING.md): the deliberate no-license status of this
-  release candidate.
+  release.
 
 ## Rebuild the manuscript
 
@@ -178,13 +181,10 @@ in
 
 ## Publication and citation
 
-Right now, the repository and its commits provide private provenance, not a
-public priority date. No tag or release has been created.
-
-If publication is approved, the canonical public timestamp will be the
-server-recorded `published_at` time of a new immutable GitHub release. Until
-then, please do not cite this moving private candidate. After publication,
-the stable reference will be the `v0.1.0` release and its exact commit.
+The canonical public version is the immutable
+[`v0.1.0` GitHub release](https://github.com/matthewprotti/planar-ssuf-four-terminal-bound/releases/tag/v0.1.0)
+and its exact commit. GitHub's server-recorded `published_at` time for that
+release is the canonical public timestamp.
 
 ## Author and rights
 
@@ -192,6 +192,6 @@ Matthew Protti
 
 Author credit identifies the human author; it is not a claim of legal
 ownership. No institutional affiliation, sponsorship, or intellectual-
-property ownership is asserted. This candidate deliberately grants no
+property ownership is asserted. This release deliberately grants no
 open-source or open-content license. See [the licensing note](LICENSING.md)
 for the precise status.

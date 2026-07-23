@@ -1,6 +1,7 @@
-# v0.1.0 — proposed immutable research disclosure
+# v0.1.0 — immutable research disclosure
 
-These are draft release notes. No tag or GitHub release exists yet.
+This release publishes the manuscript, exact finite certificate, symbolic
+checks, and reproducibility materials for the four-terminal construction.
 
 ## Included claims
 
@@ -33,7 +34,7 @@ the inquiry, challenged the work, required exact verification, chose the
 scope of the claims, and accepts responsibility for the release. The private
 conversation transcript is not included.
 
-## Proposed immutable assets
+## Immutable assets
 
 - `ssuf-four-terminal-v0.1.0-source.tar.gz`;
 - `ssuf_four_terminal_note_v5.pdf`;

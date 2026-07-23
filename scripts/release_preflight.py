@@ -22,9 +22,25 @@ FORBIDDEN_TEXT = (
     "[GITHUB-" "OWNER]",
     "[SUR" "NAME]",
     "[GIVEN " "NAMES]",
-    "/" "Users/" "matthew/.codex/attachments/",
+    "/" "Users/",
+    ".codex/" "attachments/",
     "pasted-" "text.txt",
     "authorship and priority " "to be determined",
+)
+STALE_RELEASE_MARKERS = (
+    "v0.1.0-" "rc1",
+    "private, " "unpublished",
+    "private and " "unpublished",
+    "release " "candidate",
+    "dra" "ft release notes",
+    "proposed " "priority disclosure",
+    "proposed " "immutable",
+    "potential " "public release",
+    "if publication " "is approved",
+    "if a public release " "is expressly approved",
+    "does not yet establish " "a public priority date",
+    "no tag or " "release has been created",
+    "moving private " "candidate",
 )
 SECRET_PATTERNS = (
     re.compile(r"gh[pousr]_[A-Za-z0-9]{30,}"),
@@ -69,18 +85,20 @@ def main() -> None:
                 failures.append(f"possible secret in {relative}: {pattern.pattern}")
 
     cff = (ROOT / "CITATION.cff").read_text(encoding="utf-8")
-    readme = (ROOT / "README.md").read_text(encoding="utf-8")
-    priority = (ROOT / "PRIORITY_DISCLOSURE.md").read_text(encoding="utf-8")
-    release_notes = (ROOT / "RELEASE_NOTES_v0.1.0.md").read_text(encoding="utf-8")
     if args.public:
-        if "Unpublished private release candidate" in readme:
-            failures.append("README still marks the package private and unpublished")
+        for path in files():
+            if path.resolve() == Path(__file__).resolve():
+                continue
+            if path.suffix.lower() not in TEXT_SUFFIXES:
+                continue
+            text = path.read_text(encoding="utf-8", errors="replace").lower()
+            for marker in STALE_RELEASE_MARKERS:
+                if marker in text:
+                    failures.append(
+                        f"stale pre-publication language in {path.relative_to(ROOT)}: {marker}"
+                    )
         if 'version: "0.1.0"' not in cff or "date-released:" not in cff:
             failures.append("CITATION.cff is not finalized as dated version 0.1.0")
-        if "private and unpublished" in priority:
-            failures.append("priority disclosure still marks the package private")
-        if "draft release notes" in release_notes.lower():
-            failures.append("release notes are still marked as a draft")
         if re.search(r"(?m)^license:", cff):
             failures.append("CITATION.cff asserts a license despite the deliberate no-license status")
         licensing = (ROOT / "LICENSING.md").read_text(encoding="utf-8")
@@ -96,7 +114,7 @@ def main() -> None:
     print(f"PACKAGE HYGIENE PASS: {len(files())} files scanned")
     print("PASS: no institutional affiliation or operative license is asserted.")
     if not args.public:
-        print("PRIVATE-CANDIDATE PREFLIGHT PASS")
+        print("BASELINE PREFLIGHT PASS")
 
 
 if __name__ == "__main__":

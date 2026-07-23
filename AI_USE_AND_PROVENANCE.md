@@ -14,7 +14,7 @@ developed during the intensive 22–23 July investigation described below.
 
 GPT-5.6 Pro did most of the active mathematical heavy lifting. Its substantive
 work included construction search, symbolic derivation, proof development,
-exact-verifier development, adversarial critique, and manuscript drafting.
+exact-verifier development, adversarial critique, and manuscript preparation.
 
 Separate model sessions were used to challenge and reconstruct key steps. A
 Codex execution session then performed a further clean-room computational
@@ -28,7 +28,7 @@ Matthew Protti selected and framed the research problem, directed the
 investigation, evaluated candidate constructions, identified a
 cost-normalization error, required repeated adversarial review, exact
 verification, mutation testing, and a separate reimplementation, and
-determined the scope and wording of the proposed claims.
+determined the scope and wording of the released claims.
 
 The named human author reviewed the released claims and accepts
 responsibility for the manuscript and repository. AI systems are not listed
@@ -57,12 +57,10 @@ record.
   enumeration in a separate implementation. A further clean-room program
   separately encoded the released data and reproduced the central
   computational checks.
-- **Private repository record:** the repository was created privately at
-  GitHub's server-recorded time. This is private provenance, not a public
-  priority claim.
-- **Potential public release:** if expressly approved, its canonical public
-  timestamp will be the immutable GitHub release's server-recorded
-  `published_at` value.
+- **Public release:** the repository was released publicly on 23 July 2026 as
+  the immutable `v0.1.0` GitHub release. Its server-recorded `published_at`
+  value is the canonical public timestamp; earlier private repository events
+  are not presented as public priority.
 
 ## Limits of the record
 

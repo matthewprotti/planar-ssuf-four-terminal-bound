@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Separate clean-room checks for the four-terminal SSUF release candidate.
+"""Separate clean-room checks for the four-terminal SSUF v0.1.0 release.
 
 This audit intentionally does not import any module from the supplied bundle.
 It uses NetworkX to discover graph properties and paths, exact Fraction
