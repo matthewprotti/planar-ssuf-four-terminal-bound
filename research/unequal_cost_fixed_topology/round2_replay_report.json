@@ -1,0 +1,204 @@
+{
+  "artifact_manifest_sha256": "0981594f69a8d8048b44b7c92dc1a456ceb0df95950405ffe0b3ec87b40e8215",
+  "commands": [
+    {
+      "command": [
+        "/usr/bin/python",
+        "build_artifact_manifest.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_tail": [],
+      "stdout_sha256": "f77e6897301ce84078aa6116224dce957b416f573d77f00dd7699ac0f620f878",
+      "stdout_tail": [
+        "PASS: artifact manifest is current"
+      ]
+    },
+    {
+      "command": [
+        "/usr/bin/python",
+        "threshold_family_census.py"
+      ],
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_tail": [],
+      "stdout_sha256": "208185b1734b56c6be66301e6c01698ecae5072f490dd2c5ba31a27a9a78795b",
+      "stdout_tail": [
+        "PASS: enumerated all 168 labeled monotone families on four terminals",
+        "PASS: constructed positive integer threshold witnesses for exactly 149 families",
+        "PASS: every witness uses weights in {1,2,3,4}",
+        "PASS: certified all 18 nonempty nonthreshold families by exact two-trades",
+        "PASS: the remaining family is empty and impossible because the full set is feasible",
+        "PASS: 26 total permutation orbits; 94 labeled cells in 15 orbits remain after the every-pair theorem",
+        "WROTE: /tmp/ssuf-r2-5uw_3pi4/unequal_cost_fixed_topology/threshold_family_census.json"
+      ]
+    },
+    {
+      "command": [
+        "/usr/bin/python",
+        "independent_census_check.py"
+      ],
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_tail": [],
+      "stdout_sha256": "dd48818330beca193482f73f803e41ef5ff8081f59b65f35998a3a286517d44e",
+      "stdout_tail": [
+        "  \"nonempty_nonthreshold_families\": 18,",
+        "  \"positive_threshold_families\": 149,",
+        "  \"realizable_orbits\": 26,",
+        "  \"remaining_arbitrary_label_orbits\": 15,",
+        "  \"remaining_labeled_cells\": 94,",
+        "  \"status\": \"PASS\"",
+        "}",
+        "WROTE: /tmp/ssuf-r2-5uw_3pi4/unequal_cost_fixed_topology/independent_census_results.json"
+      ]
+    },
+    {
+      "command": [
+        "/usr/bin/python",
+        "census_reconciliation_check.py"
+      ],
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_tail": [],
+      "stdout_sha256": "59e98d0b3b4c3638d7bb887fdfb3d0e4271a1a377b1907fb2334d4c98d8c4556",
+      "stdout_tail": [
+        "    \"every_pair_no_singleton\": 1,",
+        "    \"feasible_singleton\": 54,",
+        "    \"remaining_labeled_cells\": 94,",
+        "    \"total_positive_threshold\": 149",
+        "  },",
+        "  \"status\": \"PASS\"",
+        "}",
+        "WROTE: /tmp/ssuf-r2-5uw_3pi4/unequal_cost_fixed_topology/census_reconciliation_results.json"
+      ]
+    },
+    {
+      "command": [
+        "/usr/bin/python",
+        "symbolic_every_pair_check.py"
+      ],
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_tail": [],
+      "stdout_sha256": "2c2c702b071b468b69dcbc7ba0e06d49b99c432c59aa8a52fbacf3086c9b8cbd",
+      "stdout_tail": [
+        "  \"stationary_point\": {",
+        "    \"s\": \"(-3 + sqrt(41))**2/16\",",
+        "    \"t\": \"(-3 + sqrt(41))/4\",",
+        "    \"value\": \"-(-299 + 41*sqrt(41))/32\"",
+        "  },",
+        "  \"status\": \"PASS\"",
+        "}",
+        "WROTE: /tmp/ssuf-r2-5uw_3pi4/unequal_cost_fixed_topology/symbolic_every_pair_results.json"
+      ]
+    },
+    {
+      "command": [
+        "/usr/bin/python",
+        "exact_algebra_audit.py"
+      ],
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_tail": [],
+      "stdout_sha256": "49d7ccae7532789b39ea6e503177e4084d258931e52bebd387248ccbd599e6ef",
+      "stdout_tail": [
+        "  \"stationary_point\": {",
+        "    \"s\": \"25/8+(-3/8)*sqrt(41)\",",
+        "    \"t\": \"-3/4+(1/4)*sqrt(41)\",",
+        "    \"value\": \"299/32+(-41/32)*sqrt(41)\"",
+        "  },",
+        "  \"status\": \"PASS\"",
+        "}",
+        "WROTE: /tmp/ssuf-r2-5uw_3pi4/unequal_cost_fixed_topology/exact_algebra_results.json"
+      ]
+    },
+    {
+      "command": [
+        "/usr/bin/python",
+        "release_family_equivalence_check.py"
+      ],
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_tail": [],
+      "stdout_sha256": "704a1b0c522aaa31f31a2035834b5b1ab38bf5517c0e7737153eb11f10dec2e9",
+      "stdout_tail": [
+        "  \"comparison\": \"local machine-readable definition equals pinned release extraction\",",
+        "  \"release_commit\": \"087204eda4cc490cb59dd1988d7383c406288d2e\",",
+        "  \"release_tex_sha256\": \"3b9c5963ad2da2cbaa99621202e5b50ad3c2525f2bb5f6fdf7f649568c3e1154\",",
+        "  \"residual_limitation\": \"the extraction from the pinned TeX is human-auditable rather than reparsed at runtime\",",
+        "  \"runtime_release_file_access\": false,",
+        "  \"status\": \"PASS\"",
+        "}",
+        "WROTE: /tmp/ssuf-r2-5uw_3pi4/unequal_cost_fixed_topology/release_family_equivalence_results.json"
+      ]
+    },
+    {
+      "command": [
+        "/usr/bin/python",
+        "generate_witness_examples.py"
+      ],
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_tail": [],
+      "stdout_sha256": "8bb6a47d74f6065605332e9d64a8655d75f4989766d2d5fa0cf8740a1dfe0a2c",
+      "stdout_tail": [
+        "    \"every_pair_no_singleton\": 1,",
+        "    \"feasible_singleton\": 54,",
+        "    \"remaining_labeled_cells\": 94,",
+        "    \"total_positive_threshold\": 149",
+        "  },",
+        "  \"status\": \"PASS\"",
+        "}",
+        "WROTE: /tmp/ssuf-r2-5uw_3pi4/unequal_cost_fixed_topology/witness_examples.json"
+      ]
+    },
+    {
+      "command": [
+        "/usr/bin/python",
+        "validate_artifacts.py"
+      ],
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_tail": [],
+      "stdout_sha256": "1092c4f81763256e3d933a7859f53ae56e234c58a6b958aa69ee05debd0b0558",
+      "stdout_tail": [
+        "PASS: theorem IDs, census partitions, orbit tables, result artifacts, and provenance pin agree"
+      ]
+    }
+  ],
+  "counts": {
+    "empty_impossible_families": 1,
+    "every_pair_no_singleton_families": 1,
+    "feasible_singleton_families": 54,
+    "monotone_families": 168,
+    "nonempty_nonthreshold_families": 18,
+    "positive_threshold_families": 149,
+    "realizable_arbitrary_label_orbits": 26,
+    "remaining_arbitrary_label_orbits": 15,
+    "remaining_labeled_cells": 94
+  },
+  "evidence_class": "deterministic internal exact finite and algebraic replay",
+  "expected_exit_code": 0,
+  "generated_output_sha256": {
+    "census_reconciliation_results.json": "0db74d10fa656e47ace23173d40a1df0f0b68b97d4e7ea291d8199bbc4367264",
+    "exact_algebra_results.json": "877dd3621b1dee96bb74953643daccd8242dbed9f7d50b0d54b2930aed4ffc30",
+    "independent_census_results.json": "6a6e83e2d076933264f8417430493f5ccbdbf5a5aca1238e0f2398c96431ce3b",
+    "release_family_equivalence_results.json": "d534f47a0c23c3ed35f2ab9531ac257ace23fda001d0946e3226b59d3286c91e",
+    "symbolic_every_pair_results.json": "7c5b7e3c09e72fe266ff778833025c3bf96a7697b8bf667baad39785e5727145",
+    "threshold_family_census.json": "8c2ebf27e5aeacf1a29bfa9ea306fda542e73627c4acd812cbf54407c3dfbb9e",
+    "witness_examples.json": "122595ef2e2a64bfbbed8adb985aa8ba45744d9dfd8d4cc1682ac0357fcbd643"
+  },
+  "limitations": [
+    "UC-008 is proved in the human-readable local theorem; software is corroboration.",
+    "Zero and negative route-cost differences are outside the theorem domain.",
+    "The 94 remaining labeled cells and their boundaries remain open.",
+    "The release-family extraction is pinned and compared but was transcribed from TeX by a human.",
+    "No external clean-environment reproduction is claimed."
+  ],
+  "network_required": false,
+  "python": "3.12.3 (main, Jun 19 2026, 12:46:00) [GCC 13.3.0]",
+  "status": "PASS",
+  "sympy_version": "1.14.0"
+}

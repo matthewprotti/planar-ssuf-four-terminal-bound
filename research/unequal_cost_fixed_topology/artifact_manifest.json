@@ -3,19 +3,34 @@
   "files": {
     "ADVERSARIAL_REVIEW_BRIEF.md": "5aad20ff9e6b4b73aa1fc23f0044f16a7aadf12d234208f320de023dfd6af014",
     "CELL_OPTIMIZATION_PROTOCOL.md": "07f23aa90ab41ce3cbfb8cc9dd6c104fb00c0f97c48a1bcffd9a6d87c4fc2bae",
+    "CENSUS_RECONCILIATION.md": "e293ef8b7c85979c9845d2244542fccbfb186f77ffe7c3135ee532c041ce8f26",
     "CLAIM_LEDGER.md": "564e34b16ca8ab57781e11d59b70d9df8d2e18258bd6c8cbcb8dd8157ae08036",
     "DEPENDENCY_MANIFEST.json": "b60a193806fc2c5609be63817b470a92f99bb0533c0e8d80559dcb9748f38682",
     "EVERY_PAIR_CELL_THEOREM.md": "b36d55eb0241c0a791e6a30b6939288881a8ed5faaf45f1be42d54588e5ffd92",
     "FIXED_SUPPORT_ROUTING_LEMMA.md": "ddb6556917bf3ecf6997cc82ac13d6900b907fc52e60e42e8c4be54fce48f8ef",
     "FIXED_TOPOLOGY_APPENDIX.md": "f7d1221b74966f58da88ede2aeecd6113d445361148dafe1b7b4397965214691",
+    "HUMAN_READABLE_WITNESSES.md": "b27ea83588ecfec265dd2ffec741c9c59667329b29760c0ee7a884fa23661a2e",
+    "LOWER_FAMILY_EQUIVALENCE.md": "86a58ff0007c0044641f5ebac69642799617a844b44286990cd59637affac02b",
+    "POSITIVE_DIFFERENCE_SCOPE.md": "10ef6d9f60f40e7c520baa1f5382180c74805942d4c1764a7fc6e205850fac40",
     "PRIOR_ART_AND_NOVELTY_MATRIX.md": "9b2ec6416ecbad10712cad92e02f6028f46a49ce9c82900419ec9a1ff48a6dc5",
     "README.md": "86f8611b3c3611c911146f48209ddbc879327c14d976bf7e5a974c324ed72c21",
+    "REFEREE_RESPONSE_MATRIX_R2.md": "969a5c6fd2d0a0236e094ed8d63a6dd13cb1f4cb4d93f88c82cd1be218d6c3c4",
+    "RELEASE_FAMILY_PIN.json": "c1e428fbd1d9c43aa3b3ca264628f6c7b0f9e05f9dccdc9591a4ca2ecb554687",
     "REVIEW_RESPONSE_2026-07-24.md": "98c2239257f7c2261a0563e730945d68d4dce054f971c3c94fca47b5e38769a1",
-    "build_artifact_manifest.py": "eefeecec3d3e3533b855ed0626dd788c534d699c1ecb229709a31031ebe6bb33",
+    "SYMBOLIC_TRUST_AND_ASSUMPTIONS.md": "03d1be3ef214e125537ae7cf7b034edbf71849cf31e5cbdc0471897d9f754006",
+    "THEOREM_LEDGER.md": "d82612fe53a7c7b231918c88713edf5da747f10311ab44c9827aee4998b6cbf1",
+    "build_artifact_manifest.py": "d68e2c522d7c352f356755a8d07a87d8d2a8c36b1f689a4b1bbdf192d4f4dbd5",
+    "census_reconciliation_check.py": "04a27674a8958e52a815f6c21c9cf0fe6936481a50969da4d668f1709ed3f355",
+    "exact_algebra_audit.py": "67725f1a4b26c5aa00dc86d2c1122cbc3b7261ece5f5b1c5641469d4aa26715e",
+    "generate_witness_examples.py": "e7188099ff7890a11d34c333ec7cd191dd008f0296ec3d5b30d8afdf61c9f4dc",
     "independent_census_check.py": "d141c14f9f6fa4429c8603faab45f0ffec4f13b3f27c1f3ddd243f91d36b60d8",
+    "lower_family.py": "cf12c667296c6f876359cd73fa7ad5eb594f94b87976d80428f13b3233309a97",
+    "release_family_equivalence_check.py": "dfe6c748b9cb629a2ce354d72e5fc7fb708b9f2b213a526fb6b6195f944d9c31",
+    "requirements-replay.txt": "47fd19021144e071cc43b6e265aafada0056abe89724ad95bd6e3a8e37995b94",
+    "round2_replay.py": "ce0869a75979385af071e3f66073d4b314851bdadda2b8b748952aa0b4a5e625",
     "symbolic_every_pair_check.py": "6545c8eb7c68efc949822db6204dd3820878abe1c5efab028a020e768bb75aba",
     "threshold_family_census.py": "c376e42aa8afdffeecd85c0a4543f8a3416c4e48026ddfa9bdd25e94394578da",
-    "validate_artifacts.py": "295fa8936ff5ab12207a1b354f6cb459c3d01d844c3db99786241284ada01353"
+    "validate_artifacts.py": "4c281b2244016f287a2c3846f73a31e0a4480e67ad8acb5a96e379a9050f48aa"
   },
   "released_provenance": {
     "commit": "087204eda4cc490cb59dd1988d7383c406288d2e",
@@ -26,6 +41,11 @@
     "tag": "v0.1.0",
     "theorem_label": "thm:sharp-model"
   },
-  "schema_version": "ssuf-unequal-cost-artifact-manifest-v0.2",
+  "runtime_dependencies": [
+    "Python >=3.11",
+    "sympy==1.14.0",
+    "mpmath==1.3.0"
+  ],
+  "schema_version": "ssuf-positive-difference-artifact-manifest-v0.3",
   "scope": "committed unequal_cost_fixed_topology research sources"
 }
