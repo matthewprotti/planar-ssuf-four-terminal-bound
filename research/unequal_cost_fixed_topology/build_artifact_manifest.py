@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build or check the committed manifest for unequal-cost research sources."""
+"""Build or check the committed manifest for positive-difference SSUF research."""
 
 from __future__ import annotations
 
@@ -15,6 +15,11 @@ EXCLUDED = {
     "threshold_family_census.json",
     "independent_census_results.json",
     "symbolic_every_pair_results.json",
+    "exact_algebra_results.json",
+    "release_family_equivalence_results.json",
+    "census_reconciliation_results.json",
+    "witness_examples.json",
+    "round2_replay_report.json",
 }
 
 
@@ -29,15 +34,16 @@ def payload() -> dict:
         if path.is_file()
         and path.name not in EXCLUDED
         and not path.name.startswith(".")
-        and path.suffix in {".py", ".md", ".json"}
+        and path.suffix in {".py", ".md", ".json", ".txt"}
     }
     dependency = json.loads((HERE / "DEPENDENCY_MANIFEST.json").read_text(encoding="utf-8"))
     return {
-        "schema_version": "ssuf-unequal-cost-artifact-manifest-v0.2",
+        "schema_version": "ssuf-positive-difference-artifact-manifest-v0.3",
         "scope": "committed unequal_cost_fixed_topology research sources",
         "files": files,
         "released_provenance": dependency["released_provenance"],
         "dependency_status": dependency["dependency_status"],
+        "runtime_dependencies": ["Python >=3.11", "sympy==1.14.0", "mpmath==1.3.0"],
     }
 
 
