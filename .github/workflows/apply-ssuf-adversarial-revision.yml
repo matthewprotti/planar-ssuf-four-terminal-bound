@@ -44,6 +44,7 @@ jobs:
         working-directory: research/unequal_cost_fixed_topology
         run: |
           set -euo pipefail
+          python -m pip install --disable-pip-version-check --quiet sympy==1.14.0
           python -m py_compile ./*.py
           python threshold_family_census.py
           python independent_census_check.py
