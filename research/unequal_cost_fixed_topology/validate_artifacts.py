@@ -26,10 +26,11 @@ def main() -> None:
     for label, ids in (("claim", claim_ids), ("theorem", theorem_ids)):
         if len(ids) != len(set(ids)):
             raise ValueError(f"duplicate {label} ID")
-    required_core = {f"UC-{value:03d}" for value in range(1, 12)}
+    required_core = {f"UC-{value:03d}" for value in range(1, 17)}
     if not required_core.issubset(set(theorem_ids)):
         raise ValueError(f"theorem ledger missing core IDs: {sorted(required_core - set(theorem_ids))}")
-    if not set(claim_ids).issubset(set(theorem_ids) | {"UC-021", "UC-030"}):
+    if not set(claim_ids).issubset(set(theorem_ids)):
+
         raise ValueError("claim ledger contains unexplained IDs")
 
     census = json.loads((HERE / "threshold_family_census.json").read_text(encoding="utf-8"))
@@ -63,6 +64,18 @@ def main() -> None:
         if result.get("status") != "PASS":
             raise ValueError(f"non-PASS result: {filename}")
 
+    exact_witnesses = json.loads((HERE / "exact_open_cell_witnesses.json").read_text(encoding="utf-8"))
+    if len(exact_witnesses) != 5:
+        raise ValueError("expected five exact open-cell witnesses")
+    from fractions import Fraction
+    if not all(Fraction(row["exact_minimum_maximum_deviation"]) > 1 for row in exact_witnesses):
+        raise ValueError("an exact open-cell witness is not greater than one")
+    signed = json.loads((HERE / "signed_difference_census.json").read_text(encoding="utf-8"))
+    if signed["unique_signed_unate_threshold_families"] != 1881:
+        raise ValueError("signed-family census changed")
+    if signed["upward_closed_original_coordinate_families"] != 149:
+        raise ValueError("positive-family subset of signed census changed")
+
     reconciliation = json.loads(
         (HERE / "census_reconciliation_results.json").read_text(encoding="utf-8")
     )
@@ -94,6 +107,10 @@ def main() -> None:
     scope = (HERE / "POSITIVE_DIFFERENCE_SCOPE.md").read_text(encoding="utf-8")
     if "genuine restriction" not in scope or "without-loss-of-generality" not in scope:
         raise ValueError("positive-difference restriction is not explicit")
+    if "89" not in (HERE / "NO_PAIR_SCALAR_LEMMAS.md").read_text(encoding="utf-8"):
+        raise ValueError("forward no-pair reduction is not recorded")
+    if "1,881" not in (HERE / "SIGNED_DIFFERENCE_REDUCTION.md").read_text(encoding="utf-8"):
+        raise ValueError("signed census statement is not recorded")
 
     print("PASS: theorem IDs, census partitions, orbit tables, result artifacts, and provenance pin agree")
 

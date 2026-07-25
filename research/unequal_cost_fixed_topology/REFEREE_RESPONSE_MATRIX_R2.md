@@ -27,3 +27,11 @@ numbered concerns in the second report.
 
 The companion PCR matrix maps P0.1–P0.3 and the PCR-specific second-round
 concerns. P0.4 appears here because it is the SSUF cross-workstream gate.
+
+## Forward research beyond the response matrix
+
+Subsequent work adds UC-012–UC-016: a no-pair scalar reduction, analytic
+elimination of five cells, five exact interior lower witnesses above one, a
+1,881-family nonzero signed feasibility census, and closure of the zero boundary
+for the solved every-pair cell. These are new research steps, not author-declared
+closure of referee objections.

@@ -58,3 +58,23 @@ symmetry.
 
 Every one of the 94 labeled cells remains a formal optimization unit unless a
 separate objective-preserving transformation is proved.
+
+## Forward reduction after the original census partition
+
+The original machine census remains
+
+`149 = 54 singleton + 1 every-pair + 94 initial remainder`.
+
+UC-013 is a later analytic reduction inside the 94-cell remainder. It eliminates
+exactly five labeled no-pair cells:
+
+- the full-set-only family; and
+- the four families with exactly one feasible triple.
+
+Therefore the current positive-difference optimization frontier is
+
+`94 - 5 = 89` labeled cells.
+
+This does not retroactively change the original census JSON field
+`cells_remaining_after_every_pair_theorem`; it records an additional theorem
+applied after that stage.

@@ -21,6 +21,8 @@ GENERATED = {
     "release_family_equivalence_results.json",
     "census_reconciliation_results.json",
     "witness_examples.json",
+    "exact_open_cell_witnesses.json",
+    "signed_difference_census.json",
     "round2_replay_report.json",
 }
 COMMANDS = [
@@ -32,6 +34,8 @@ COMMANDS = [
     [sys.executable, "exact_algebra_audit.py"],
     [sys.executable, "release_family_equivalence_check.py"],
     [sys.executable, "generate_witness_examples.py"],
+    [sys.executable, "exact_open_cell_witnesses.py"],
+    [sys.executable, "signed_difference_census.py"],
     [sys.executable, "validate_artifacts.py"],
 ]
 
@@ -96,6 +100,12 @@ def main() -> None:
         assert reconciliation["search_partition"]["feasible_singleton"] == 54
         assert len(reconciliation["all_realizable_orbits"]) == 26
         assert len(reconciliation["remaining_orbits"]) == 15
+        exact_witnesses = json.loads((work / "exact_open_cell_witnesses.json").read_text())
+        assert len(exact_witnesses) == 5
+        assert all(__import__("fractions").Fraction(row["exact_minimum_maximum_deviation"]) > 1 for row in exact_witnesses)
+        signed = json.loads((work / "signed_difference_census.json").read_text())
+        assert signed["unique_signed_unate_threshold_families"] == 1881
+        assert signed["upward_closed_original_coordinate_families"] == 149
 
         output_hashes = {
             name: digest(work / name)
@@ -117,7 +127,11 @@ def main() -> None:
                 "empty_impossible_families": 1,
                 "feasible_singleton_families": 54,
                 "every_pair_no_singleton_families": 1,
-                "remaining_labeled_cells": 94,
+                "initial_remaining_labeled_cells": 94,
+                "no_pair_cells_eliminated_by_UC_013": 5,
+                "remaining_positive_labeled_cells": 89,
+                "exact_above_one_witness_cells": 5,
+                "nonzero_signed_unate_feasibility_families": 1881,
                 "realizable_arbitrary_label_orbits": 26,
                 "remaining_arbitrary_label_orbits": 15,
             },
@@ -125,8 +139,9 @@ def main() -> None:
             "generated_output_sha256": output_hashes,
             "limitations": [
                 "UC-008 is proved in the human-readable local theorem; software is corroboration.",
-                "Zero and negative route-cost differences are outside the theorem domain.",
-                "The 94 remaining labeled cells and their boundaries remain open.",
+                "Negative route-cost differences remain outside the solved objective theorem; only their feasibility systems are classified.",
+                "Zero-difference boundaries outside the solved every-pair cell remain open.",
+                "The 89 remaining positive-difference labeled cells and their boundaries remain open.",
                 "The release-family extraction is pinned and compared but was transcribed from TeX by a human.",
                 "No external clean-environment reproduction is claimed.",
             ],

@@ -92,3 +92,16 @@ is modified by that implementation commit.
 - The pinned lower-family extraction is compared exactly but was transcribed
   from the released TeX by a human.
 - No external clean-environment reproduction has yet been recorded.
+
+## Forward-pass commands
+
+The one-command replay now additionally runs:
+
+```bash
+python exact_open_cell_witnesses.py
+python signed_difference_census.py
+```
+
+Both use exact integer/rational set arithmetic and require no network. The signed
+census classifies feasibility systems only; it does not replay a signed-objective
+optimization theorem.

@@ -20,8 +20,7 @@ route-cost, all-pairs-feasible regime. This directory studies arbitrary
 
 The first adversarial referee independently reproduced the complete finite
 census and reconstructed the every-pair theorem, but required the theorem to be
-self-contained. This revision closes that dependency gap and adds clean-room
-and symbolic replays.
+self-contained. The second-round revision made that dependency local and auditable. This forward pass adds new exact reductions and witnesses without declaring referee acceptance.
 
 ## Cost-difference reduction
 
@@ -42,8 +41,7 @@ k(S)\ge k\cdot p.
 \]
 
 Thus feasible C sets form a positive weighted-threshold family. Zero
-differences require separate weak-degeneracy handling; negative differences
-are not upward monotone and are outside this branch.
+differences require separate weak-degeneracy handling; negative differences are not upward monotone in the original cheap coordinates. A new signed-coordinate reduction classifies their nonzero feasibility systems, but does not solve the reoriented overload objective.
 
 Conversely, any positive threshold family with
 \(0\le\tau\le\sum_i k_i\) can be realized at the discrete feasibility level by
@@ -108,11 +106,12 @@ Among the 149 positive threshold families:
 
 - 54 contain a feasible singleton and have value at most one;
 - one no-singleton/every-pair family has exact supremum \(L\); and
-- 94 labeled cells remain possible locations of an improvement.
+- 94 labeled cells remained after the original singleton/every-pair reduction.
 
 The 94 cells form 15 orbits under arbitrary relabeling, but the directed fixed
-graph has only the identity role-preserving automorphism. All 94 labeled cells
-remain formal optimization units.
+graph has only the identity role-preserving automorphism. They are formal
+optimization units. The forward no-pair lemmas now eliminate five more cells,
+leaving 89 labeled positive-difference cells.
 
 Strict losing inequalities make these open cells. Future optimization must
 separate the strict cell, its closure, and boundary families, and must separate
@@ -160,18 +159,49 @@ Every-pair feasibility plus singleton infeasibility implies
 The self-contained fixed-support lemma and lower family prove exact supremum
 \(L\) for arbitrary positive route-cost differences in this cell.
 
-### UC-009 — 94 labeled cells remain
+### UC-009 — initial 94-cell census remainder
 
-After UC-006 and UC-008, 94 labeled cells in 15 arbitrary-label orbits remain.
+After UC-006 and UC-008, 94 labeled cells initially remained in 15 arbitrary-label orbits.
 The orbit count is not an objective-symmetry reduction.
 
-### UC-020 — all remaining cells are bounded by \(L\)
+### UC-010 — release-family equivalence
 
-Open main conjecture.
+The local lower family matches the pinned release extraction componentwise.
+
+### UC-011 — exact algebra corroboration
+
+Two exact arithmetic paths corroborate the local identities used in UC-008.
+
+### UC-012 — no-pair scalar lemma
+
+No feasible pair forces `sum p_i>2`.
+
+### UC-013 — five no-pair cells are at most one
+
+The full-only and four exactly-one-triple cells have value at most one, reducing
+the positive remainder from 94 to 89.
+
+### UC-014 — exact interior witnesses above one
+
+Five named cells have exact rational lower witnesses above one.
+
+### UC-015 — signed nonzero feasibility census
+
+There are 1,881 unique labeled unate threshold families across nonzero sign
+patterns.
+
+### UC-016 — zero boundary of the solved cell
+
+The solved every-pair/no-singleton cell has no zero-difference point in its
+nonnegative closure.
+
+### UC-020 — all 89 remaining positive cells are bounded by \(L\)
+
+Open main conjecture for the 89 remaining positive cells.
 
 ### UC-021 — arbitrary positive differences do not improve the topology
 
-Open flagship target, equivalent to resolving the remaining cells.
+Open flagship target, equivalent to resolving the 89 remaining positive cells.
 
 ### UC-030 — a remaining cell yields a larger exact obstruction
 
@@ -197,3 +227,52 @@ This branch does not prove global arbitrary-cost fixed-topology sharpness,
 four-terminal optimality, the exact unrestricted planar constant, novelty,
 independent human verification, or peer review. It does not alter the immutable
 release.
+
+
+## Forward-pass mathematical advances
+
+### No-pair reduction
+
+`NO_PAIR_SCALAR_LEMMAS.md` proves that no feasible pair forces
+`sum p_i > 2`. It also proves that the full-set-only cell and the four cells
+with exactly one feasible triple have value at most 1. The unresolved positive-
+difference remainder is therefore reduced from 94 to **89 labeled cells**.
+
+### Exact lower witnesses inside the remainder
+
+`exact_open_cell_witnesses.py` gives strict rational interior instances in five
+cells with exact minimum feasible maximum deviations
+
+- F126: `5151/5000`;
+- F125: `51/50`;
+- F042: `423/400`;
+- F129: `638/625`;
+- F143: `251517/250000`.
+
+These prove that a blanket `<=1` argument cannot eliminate the entire remainder.
+They do not establish cell optima and remain below `L`.
+
+### Nonzero signed differences
+
+`SIGNED_DIFFERENCE_REDUCTION.md` proves that complementing every negative-cost
+coordinate converts cost feasibility to a positive threshold family. The exact
+four-label census contains **1,881 unique labeled unate threshold families**
+across all nonzero sign patterns. This is a feasibility classification only:
+the physical path-difference objective must also be sign-oriented.
+
+### Zero boundary of the solved cell
+
+`ZERO_BOUNDARY_EVERY_PAIR.md` proves that the every-pair/no-singleton cell cannot
+contain a zero cost-difference coordinate in its nonnegative closure. Thus the
+exact value `L` already covers that cell's complete nonnegative closure.
+
+## Current frontier
+
+The main positive-difference question is now 89 labeled cells, not 94. The
+signed nonzero extension has a finite 1,881-family feasibility census but no
+objective theorem. Other zero-difference boundaries remain open.
+
+### UC-022 — signed objective program
+
+Open: optimize or structurally reduce the 1,881 sign-oriented nonzero feasible
+systems together with their flipped path-difference supports.

@@ -20,6 +20,9 @@ EXCLUDED = {
     "release_family_equivalence_results.json",
     "census_reconciliation_results.json",
     "witness_examples.json",
+    "exact_open_cell_witnesses.json",
+    "signed_difference_census.json",
+    "numerical_cell_scout.json",
     "round2_replay_report.json",
 }
 
@@ -39,8 +42,8 @@ def payload() -> dict:
     }
     dependency = json.loads((HERE / "DEPENDENCY_MANIFEST.json").read_text(encoding="utf-8"))
     return {
-        "schema_version": "ssuf-positive-difference-artifact-manifest-v0.3",
-        "scope": "committed unequal_cost_fixed_topology research sources; replay metadata excluded",
+        "schema_version": "ssuf-fixed-topology-artifact-manifest-v0.4",
+        "scope": "committed fixed-topology SSUF research sources; replay metadata excluded",
         "files": files,
         "released_provenance": dependency["released_provenance"],
         "dependency_status": dependency["dependency_status"],

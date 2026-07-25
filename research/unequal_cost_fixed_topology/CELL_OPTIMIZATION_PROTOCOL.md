@@ -53,3 +53,15 @@ prove an objective-preserving transformation for the specific labels involved.
 Floating-point optimization may identify active regimes. Every reported result
 must be replaced by exact rational/algebraic data, exact feasibility margins,
 and a symbolic upper or lower certificate.
+
+## Forward-pass priority order
+
+After UC-013, skip the five analytically bounded no-pair cells and retain 89
+labeled positive-difference cells. Exact witnesses in F126, F125, F042, F129,
+and F143 show that some surviving cells exceed one; these are priority cells for
+upper-bound analysis, not evidence of an improvement over `L`.
+
+For nonzero signed differences, the analogous feasibility universe has 1,881
+labeled unate threshold families. Signed optimization must attach the coordinate
+sign mask to the objective and may not quotient it away using the positive
+family alone.

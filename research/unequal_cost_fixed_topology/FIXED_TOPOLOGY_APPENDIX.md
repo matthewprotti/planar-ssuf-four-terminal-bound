@@ -116,3 +116,19 @@ the five trunk deviations. Direct substitution into the four supports gives
 
 `symbolic_every_pair_check.py` reconstructs all five arc expressions for every
 pair and checks that these maxima are both dominating and attained.
+
+## Three-cheap trunk maxima
+
+For later no-pair analysis, the exactly-three-cheap trunk maxima are:
+
+| Cheap set | Missing terminal | Maximum trunk deviation |
+| --- | ---: | --- |
+| 234 | 1 | `e2+e3+e4` |
+| 134 | 2 | `e1+e3+e4-l2` |
+| 124 | 3 | `max(e1+e2, e1+e2+e4-l3)` |
+| 123 | 4 | `e1+e2+e3` |
+
+The all-cheap routing has trunk maximum at most `e1+e2+e3+e4`.
+These identities are direct substitutions from the four fixed supports. They are
+used only as upper bounds in UC-013 and are checked by exact rational witness
+enumeration in UC-014.
