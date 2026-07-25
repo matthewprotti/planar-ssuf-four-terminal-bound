@@ -26,6 +26,11 @@ jobs:
           ref: agent/unequal-cost-fixed-topology-research
           fetch-depth: 0
 
+      - name: Set up pinned Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.13.5'
+
       - name: Verify and apply patch
         shell: bash
         run: |
@@ -38,6 +43,19 @@ jobs:
           gzip -dc /tmp/ssuf-forward.patch.gz > /tmp/ssuf-forward.patch
           git apply --check -p2 /tmp/ssuf-forward.patch
           git apply -p2 /tmp/ssuf-forward.patch
+
+      - name: Install pinned replay dependencies
+        shell: bash
+        working-directory: research/unequal_cost_fixed_topology
+        run: |
+          set -euo pipefail
+          python -m pip install --disable-pip-version-check -r requirements-replay.txt
+          python - <<'PY'
+          import mpmath, sympy
+          assert mpmath.__version__ == '1.3.0'
+          assert sympy.__version__ == '1.14.0'
+          print('PASS: pinned replay dependencies')
+          PY
 
       - name: Run complete offline replay
         shell: bash
