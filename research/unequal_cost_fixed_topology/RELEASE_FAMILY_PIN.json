@@ -1,0 +1,45 @@
+{
+  "canonical_family": {
+    "cheap_fractions": [
+      "1-q^2",
+      "q^2+2*q-2+epsilon",
+      "1-q",
+      "1-q"
+    ],
+    "demands": [
+      "1",
+      "q^2",
+      "q",
+      "1"
+    ],
+    "limiting_function": "q^2*(4-q^2-2*q)",
+    "limiting_value": "(299-41*sqrt(41))/32",
+    "maximizer": "(sqrt(41)-3)/4",
+    "parameters": {
+      "epsilon_domain": "0 < epsilon < 3-2*q-q^2",
+      "q_domain": "sqrt(3)-1 < q < 1"
+    },
+    "positive_route_cost_differences": [
+      "1",
+      "1",
+      "1",
+      "1"
+    ],
+    "sum_cheap_fractions": "1+epsilon",
+    "witness_lower_bound": "q^2*(4-q^2-2*q-epsilon)"
+  },
+  "release_provenance": {
+    "commit": "087204eda4cc490cb59dd1988d7383c406288d2e",
+    "file": "paper/ssuf_four_terminal_note_v5.tex",
+    "git_blob_sha": "b28b334395f89aa9424cb875a3739b2ba7c9b840",
+    "release_manifest_sha256": "3b9c5963ad2da2cbaa99621202e5b50ad3c2525f2bb5f6fdf7f649568c3e1154",
+    "repository": "matthewprotti/planar-ssuf-four-terminal-bound",
+    "source_line_ranges": [
+      "229-268",
+      "352-390"
+    ],
+    "tag": "v0.1.0",
+    "theorem_label": "thm:sharp-model"
+  },
+  "schema_version": "ssuf-release-family-pin-v0.3"
+}
