@@ -1,86 +1,29 @@
-# First Adversarial Review Brief — Unequal-Cost Fixed Topology
+# Second Adversarial Review Brief — Unequal-Cost Fixed Topology
 
-## Review posture
-
-Treat UC-001 through UC-009 as false until reconstructed from the fixed graph,
-released definitions, and files in this directory.  Do not rely on the
-narrative of how the claims were found.
+Treat UC-001 through UC-009 as false until reconstructed from this directory.
+The local theorem must now be auditable without opening the released paper.
 
 ## Required attacks
 
-### A. Cost reduction
+1. Re-derive the threshold inequality from full-demand C/E route costs and test
+   zero or negative differences.
+2. Independently enumerate all 168 monotone truth tables, 149 threshold
+   families, and 18 exact two-trades without importing the generator.
+3. Replay every stored witness and verify that the weight-four statement is
+   existence-only.
+4. Reconstruct the fixed paths, four supports, private-arc deviations, and every
+   pair maximum from `FIXED_TOPOLOGY_APPENDIX.md`.
+5. Audit every inequality and convex combination in
+   `FIXED_SUPPORT_ROUTING_LEMMA.md`, including the boundary reduction and
+   \((0,0)\) continuity.
+6. Verify paired-coordinate sorting in UC-007 and reject any use as a graph
+   symmetry.
+7. Reconstruct the lower family locally, including strict membership in the
+   every-pair/no-singleton cell and rational approximation to \(L\).
+8. Recompute role-preserving directed graph automorphisms.
+9. Attack cell/closure transfers, strict losing margins, zero-demand closure,
+   and boundary attainment before any of the 94 cells is claimed solved.
+10. Compare threshold-game and SSUF literature before any novelty wording.
 
-1. Re-derive the fractional and unsplittable costs from arc costs, not abstract
-   path labels.
-2. Check both directions of
-   \(C(S)\le C(x)\iff k(S)\ge k\cdot p\).
-3. Attack zero, negative, unequal, scaled, and demand-dependent cost cases; state
-   exactly where positivity is used.
-4. Verify the converse threshold realization and identify what it does not say
-   about optimizing \(p\).
-
-### B. Census completeness
-
-1. Independently enumerate all 168 antichains/upward families on four labels.
-2. Reconstruct all 149 threshold witnesses without importing the constructor's
-   family list.
-3. Check that searching thresholds only at subset sums is complete.
-4. Validate every recorded family bitmask, minimum antichain, weight vector, and
-   threshold.
-5. Determine whether a witness with weight above 4 could represent one of the
-   19 excluded families despite the finite search.
-
-### C. Nonthreshold certificates
-
-1. For each two-trade, verify membership signs and equality of incidence sums.
-2. Re-derive the threshold contradiction, including strictness for infeasible
-   sets.
-3. Check duplicate-set trades and degenerate incidence vectors.
-4. Confirm the empty family is the only excluded family not covered by a
-   two-trade and that the full set must be feasible.
-
-### D. Feasible-singleton lemma
-
-1. Compute every trunk and terminal-private deviation for a singleton-cheap
-   routing.
-2. Look for a positive contribution from an expensive terminal exceeding one.
-3. Verify the normalization \(d_{\max}=1\) is applied correctly.
-
-### E. Every-pair theorem
-
-1. Reconstruct the deductions \(\sum p_i>1\) and \(\sum p_i\le2\).
-2. Attack the cheapest-coordinates argument for \(2<r\le3\) and
-   \(3<r\le4\).
-3. Check that sorting costs is only a scalar argument and does not silently
-   relabel the fixed topology.
-4. Identify every line of the released restricted-model reverse proof that
-   might still depend on equal full-route costs.
-5. Verify that all private-arc deviations are covered when the released proof is
-   reused.
-6. Reconstruct the lower-bound inclusion of the equal-cost family in this cell.
-
-### F. Reduced search space
-
-1. Independently classify the 54 singleton families, the one every-pair cell,
-   and the 94 remaining cells.
-2. Verify the count of 15 permutation orbits.
-3. Do not treat an arbitrary terminal permutation as a symmetry of the overload
-   objective unless an accompanying graph/arc automorphism is proved.
-
-### G. Novelty and concurrent work
-
-Search unequal-cost SSUF rounding, weighted threshold Boolean functions,
-trade robustness, four-variable threshold-function classifications, and fixed-
-topology discrepancy optimization.  Similar terminology or a classical count
-must be separated from any genuinely new SSUF consequence.
-
-## Admissible outcomes
-
-- exact counterexample;
-- corrected proof with named dependency;
-- independent census and certificate replay;
-- independently reconstructed PASS with precise scope;
-- unresolved obligation tied to a claim-ledger ID.
-
-“Looks right,” numerical agreement, and generic confidence scores are not
-review outcomes.
+Admissible outcomes are exact counterexamples, proved corrections, independent
+replays with scope, or named unresolved obligations.

@@ -1,0 +1,31 @@
+{
+  "dependency_status": "provenance_only",
+  "files": {
+    "ADVERSARIAL_REVIEW_BRIEF.md": "5aad20ff9e6b4b73aa1fc23f0044f16a7aadf12d234208f320de023dfd6af014",
+    "CELL_OPTIMIZATION_PROTOCOL.md": "07f23aa90ab41ce3cbfb8cc9dd6c104fb00c0f97c48a1bcffd9a6d87c4fc2bae",
+    "CLAIM_LEDGER.md": "564e34b16ca8ab57781e11d59b70d9df8d2e18258bd6c8cbcb8dd8157ae08036",
+    "DEPENDENCY_MANIFEST.json": "b60a193806fc2c5609be63817b470a92f99bb0533c0e8d80559dcb9748f38682",
+    "EVERY_PAIR_CELL_THEOREM.md": "b36d55eb0241c0a791e6a30b6939288881a8ed5faaf45f1be42d54588e5ffd92",
+    "FIXED_SUPPORT_ROUTING_LEMMA.md": "ddb6556917bf3ecf6997cc82ac13d6900b907fc52e60e42e8c4be54fce48f8ef",
+    "FIXED_TOPOLOGY_APPENDIX.md": "f7d1221b74966f58da88ede2aeecd6113d445361148dafe1b7b4397965214691",
+    "PRIOR_ART_AND_NOVELTY_MATRIX.md": "9b2ec6416ecbad10712cad92e02f6028f46a49ce9c82900419ec9a1ff48a6dc5",
+    "README.md": "86f8611b3c3611c911146f48209ddbc879327c14d976bf7e5a974c324ed72c21",
+    "REVIEW_RESPONSE_2026-07-24.md": "98c2239257f7c2261a0563e730945d68d4dce054f971c3c94fca47b5e38769a1",
+    "build_artifact_manifest.py": "eefeecec3d3e3533b855ed0626dd788c534d699c1ecb229709a31031ebe6bb33",
+    "independent_census_check.py": "d141c14f9f6fa4429c8603faab45f0ffec4f13b3f27c1f3ddd243f91d36b60d8",
+    "symbolic_every_pair_check.py": "6545c8eb7c68efc949822db6204dd3820878abe1c5efab028a020e768bb75aba",
+    "threshold_family_census.py": "c376e42aa8afdffeecd85c0a4543f8a3416c4e48026ddfa9bdd25e94394578da",
+    "validate_artifacts.py": "295fa8936ff5ab12207a1b354f6cb459c3d01d844c3db99786241284ada01353"
+  },
+  "released_provenance": {
+    "commit": "087204eda4cc490cb59dd1988d7383c406288d2e",
+    "file": "paper/ssuf_four_terminal_note_v5.tex",
+    "git_blob_sha": "b28b334395f89aa9424cb875a3739b2ba7c9b840",
+    "release_manifest_sha256": "3b9c5963ad2da2cbaa99621202e5b50ad3c2525f2bb5f6fdf7f649568c3e1154",
+    "repository": "matthewprotti/planar-ssuf-four-terminal-bound",
+    "tag": "v0.1.0",
+    "theorem_label": "thm:sharp-model"
+  },
+  "schema_version": "ssuf-unequal-cost-artifact-manifest-v0.2",
+  "scope": "committed unequal_cost_fixed_topology research sources"
+}

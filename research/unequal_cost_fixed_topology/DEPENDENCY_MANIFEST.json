@@ -1,0 +1,18 @@
+{
+  "schema_version": "ssuf-unequal-cost-dependency-manifest-v0.2",
+  "released_provenance": {
+    "repository": "matthewprotti/planar-ssuf-four-terminal-bound",
+    "tag": "v0.1.0",
+    "commit": "087204eda4cc490cb59dd1988d7383c406288d2e",
+    "file": "paper/ssuf_four_terminal_note_v5.tex",
+    "theorem_label": "thm:sharp-model",
+    "git_blob_sha": "b28b334395f89aa9424cb875a3739b2ba7c9b840",
+    "release_manifest_sha256": "3b9c5963ad2da2cbaa99621202e5b50ad3c2525f2bb5f6fdf7f649568c3e1154"
+  },
+  "dependency_status": "provenance_only",
+  "local_self_containment": [
+    "FIXED_TOPOLOGY_APPENDIX.md",
+    "FIXED_SUPPORT_ROUTING_LEMMA.md",
+    "EVERY_PAIR_CELL_THEOREM.md"
+  ]
+}

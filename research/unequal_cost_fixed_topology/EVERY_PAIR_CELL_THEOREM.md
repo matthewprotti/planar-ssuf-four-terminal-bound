@@ -1,20 +1,41 @@
 # The Every-Pair Unequal-Cost Cell Has Exact Value \(L\)
 
-## Setting
+## Cost-difference reduction
 
-Keep the fixed four-terminal topology and path-difference supports from the
-released manuscript.  Normalize \(d_{\max}=1\), so
-\(d_i\in(0,1]\).  Let \(p_i\in[0,1]\) be the fractional cheap fractions.
-Give terminal \(i\)'s full expensive route an arbitrary cost \(k_i>0\), with
-cheap-route cost zero, and define
+For terminal \(i\), let \(b_i\) and \(e_i^{\mathrm{cost}}\) be the full-demand
+costs of its C and E routes under the underlying arc-cost vector. Assume
 
 \[
-\tau:=\sum_{i=1}^4 k_ip_i.
+k_i:=e_i^{\mathrm{cost}}-b_i>0.
 \]
 
-A cheap set \(S\) is cost feasible exactly when \(k(S)\ge\tau\).
+If \(p_i\) is the fractional C fraction and \(S\) is the unsplittable C set,
+then
 
-Let
+\[
+\begin{aligned}
+C(x)&=\sum_i\bigl(p_ib_i+(1-p_i)e_i^{\mathrm{cost}}\bigr)
+=\sum_i e_i^{\mathrm{cost}}-\sum_i k_ip_i,\\
+C(S)&=\sum_{i\in S}b_i+\sum_{i\notin S}e_i^{\mathrm{cost}}
+=\sum_i e_i^{\mathrm{cost}}-\sum_{i\in S}k_i.
+\end{aligned}
+\]
+
+Consequently
+
+\[
+C(S)\le C(x)
+\quad\Longleftrightarrow\quad
+k(S)\ge\tau,
+\qquad
+\tau:=k\cdot p.
+\]
+
+The common route-cost baseline cancels. Positivity of every \(k_i\) is what
+makes the feasible family upward closed. This theorem makes no claim for zero
+or negative route-cost differences.
+
+Normalize \(d_{\max}=1\), so \(d_i\in(0,1]\), and define
 
 \[
 L:=\frac{299-41\sqrt{41}}{32}.
@@ -22,8 +43,9 @@ L:=\frac{299-41\sqrt{41}}{32}.
 
 ## Theorem
 
-Suppose every two-element cheap set is cost feasible and no one-element cheap
-set is cost feasible.  Then the supremum, over all such real data, of
+On the fixed topology in `FIXED_TOPOLOGY_APPENDIX.md`, suppose every two-element
+C set is cost feasible and no one-element C set is cost feasible. Then the
+supremum, over all real data satisfying these conditions, of
 
 \[
 \min_{S:\,k(S)\ge\tau}
@@ -32,48 +54,41 @@ set is cost feasible.  Then the supremum, over all such real data, of
 
 is exactly \(L\).
 
-## Proof
+## Upper bound
 
 Write
 
 \[
-r:=\sum_{i=1}^4 p_i.
+r:=\sum_i p_i.
 \]
 
-Relabel the costs for this numerical argument only so that
+For the following scalar inequality only, reorder the paired coordinates
+\((k_i,p_i)\) so that
 
 \[
 k_1\le k_2\le k_3\le k_4.
 \]
 
-The relabeling is not a claimed symmetry of the fixed graph; it is used only to
-bound the scalar weighted average \(k\cdot p\).
+This does not assert a symmetry of the fixed graph.
 
-Because no singleton is feasible,
-
-\[
-k_i<\tau\qquad(i=1,2,3,4),
-\]
-
-and in particular \(\tau>k_4\).  Since \(p_i\ge0\),
+No singleton is feasible, so \(k_i<\tau\) for every \(i\), and in particular
+\(\tau>k_4\). Since \(p_i\ge0\),
 
 \[
-\tau=\sum_i k_ip_i\le k_4\sum_i p_i=k_4r.
+\tau=k\cdot p\le k_4r,
 \]
 
-Thus \(r>1\).
+hence \(r>1\).
 
-Every pair is feasible, including the pair formed by the two smallest costs.
-Therefore
+Every pair is feasible, including the pair with the two smallest costs, so
 
 \[
 \tau\le k_1+k_2.
 \]
 
-We claim that \(r\le2\).  Suppose instead that \(r>2\).  Among all vectors
-\(p\in[0,1]^4\) with coordinate sum \(r\), the dot product with sorted positive
-costs is minimized by filling the cheapest coordinates first.  For
-\(2<r\le3\), this gives
+If \(r>2\), the dot product \(k\cdot p\) over \(p\in[0,1]^4\) with fixed sum
+\(r\) is minimized by filling the cheapest paired coordinates first. For
+\(2<r\le3\),
 
 \[
 k\cdot p\ge k_1+k_2+(r-2)k_3.
@@ -85,63 +100,112 @@ For \(3<r\le4\), the exact greedy lower bound is
 k_1+k_2+k_3+(r-3)k_4,
 \]
 
-which is at least \(k_1+k_2+(r-2)k_3\) because
-\((r-3)(k_4-k_3)\ge0\).  Hence in all cases with \(r>2\),
+which is at least the preceding expression. Therefore \(r>2\) would imply
 
 \[
-\tau=k\cdot p
- \ge k_1+k_2+(r-2)k_3
- >k_1+k_2,
+\tau>k_1+k_2,
 \]
 
-contradicting feasibility of the cheapest pair.  Therefore
+contradicting feasibility of the cheapest pair. Thus
 
 \[
-1<r\le2.
+1<\sum_i p_i\le2.
 \]
 
-Now inspect the reverse-bound argument in the released theorem on the
-equal-full-cost, two-cheap model.  After cost feasibility establishes that all
-six exactly-two-cheap routings are available, the proof depends only on:
+All six exactly-two-cheap routings are feasible. The standalone
+`FIXED_SUPPORT_ROUTING_LEMMA.md` now applies and supplies one such routing with
+maximum upper deviation at most \(L\). This proves the upper bound without any
+assumption that the four positive route-cost differences are equal.
 
-- \(d_i\in(0,1]\) and \(\max_i d_i=1\);
-- \(p_i\in[0,1]\);
-- \(1<\sum_i p_i\le2\);
-- availability of every exactly-two-cheap routing;
-- the four fixed path-difference supports.
+## Lower bound
 
-All of those conditions hold here.  The same boundary reduction, pair-deviation
-formulas, convex combinations, and optimization of
+The lower family is restated here so the theorem is self-contained. Choose
 
 \[
-g(s,t)=s\left(4-s-t-\frac{s}{t}\right)
+q\in(\sqrt3-1,1),
+\qquad
+0<\varepsilon<3-2q-q^2,
 \]
 
-therefore produce a cost-feasible two-cheap routing whose maximum upper
-deviation is at most \(L\).  This proves the upper bound.
+and set
 
-For the lower bound, the rational family in the released manuscript has equal
-full expensive-route costs, no feasible singleton, every pair feasible, and
-values approaching \(L\).  Equal costs are a special case of arbitrary
-positive costs.  Hence the supremum in the present cell is at least \(L\).
+\[
+(d_1,d_2,d_3,d_4)=(1,q^2,q,1),
+\]
 
-The two bounds agree.  ∎
+\[
+(p_1,p_2,p_3,p_4)
+=(1-q^2,\ q^2+2q-2+\varepsilon,\ 1-q,\ 1-q).
+\]
+
+Then
+
+\[
+\sum_i p_i=1+\varepsilon\in(1,2).
+\]
+
+Take equal positive differences \(k_i=1\). A set is feasible exactly when
+\(|S|\ge1+\varepsilon\), hence precisely when \(|S|\ge2\). Thus the family lies
+strictly in the every-pair/no-singleton cell.
+
+Using the fixed supports, the six exactly-two-cheap routings have witness
+values
+
+\[
+\begin{array}{c@{\qquad}c}
+S&\text{witness lower bound}\\
+\hline
+\{1,2\},\{1,3\},\{1,4\},\{2,3\},\{2,4\}
+&q^2(4-q^2-2q-\varepsilon),\\
+\{3,4\}
+&q^2(4-q^2-2q-\varepsilon)+q-q^2.
+\end{array}
+\]
+
+Every routing with more than two cheap choices coordinatewise dominates a
+two-cheap routing on the trunk. Hence every feasible routing overloads some arc
+by at least
+
+\[
+R(q,\varepsilon)=q^2(4-q^2-2q-\varepsilon).
+\]
+
+At \(\varepsilon=0\), the function
+
+\[
+f(q)=q^2(4-q^2-2q)
+\]
+
+has its unique maximizer in the admissible interval at
+
+\[
+q_* =\frac{\sqrt{41}-3}{4},
+\]
+
+and
+
+\[
+f(q_*)=L.
+\]
+
+Rational \(q\) can approach \(q_*\), and positive rational \(\varepsilon\) can
+approach zero, so values in this cell approach \(L\). This proves the matching
+lower bound.
+
+Therefore the exact supremum is \(L\). ∎
 
 ## Corollary
 
 Any unequal-cost improvement over \(L\) on the fixed topology must make at
-least one two-terminal cheap set cost infeasible.  Combined with the
-feasible-singleton bound, the search is confined to the 94 threshold families
-identified in `threshold_family_census.json`.
+least one two-terminal cheap set infeasible. Combined with the feasible-
+singleton lemma, the search is confined to the 94 labeled threshold families
+identified by the exact census.
 
-## Scope
+## Release provenance
 
-This theorem does not resolve:
-
-- any one of the remaining 94 labeled threshold cells;
-- the global arbitrary-cost fixed-topology supremum;
-- a different number of terminals or a different topology;
-- the unrestricted planar constant.
-
-It is an unrefereed follow-on argument and should be attacked independently
-before any public theorem claim.
+The family and analytic structure were first disclosed in immutable release
+`v0.1.0`, commit
+`087204eda4cc490cb59dd1988d7383c406288d2e`. This file restates every
+mathematical ingredient used by the follow-on theorem; the release is provenance,
+not an unexpanded proof dependency. Exact hashes are recorded in
+`DEPENDENCY_MANIFEST.json`.

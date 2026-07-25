@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Exact census of four-terminal unequal-cost feasibility families.
 
-For positive full expensive-route costs k_i and fractional cheap fractions p_i,
+For positive full-demand route-cost differences k_i=(E_i-C_i)>0 and fractional cheap fractions p_i,
 a cheap set S is cost feasible exactly when
 
     sum_{i in S} k_i >= tau := sum_i k_i p_i.
@@ -240,8 +240,8 @@ def main() -> None:
     assert max_weight_distribution == Counter({1: 5, 2: 48, 3: 68, 4: 28})
 
     payload: dict[str, object] = {
-        "schema_version": "ssuf-unequal-cost-threshold-census-v0.1",
-        "status": "exact finite census; unrefereed research artifact",
+        "schema_version": "ssuf-unequal-cost-threshold-census-v0.2",
+        "status": "exact finite census; unrefereed research artifact; stored integer witnesses are existence certificates, not canonical representations",
         "ground_set": [1, 2, 3, 4],
         "subset_encoding": "bit i-1 denotes terminal i; family bit m denotes subset mask m",
         "counts": {
@@ -251,11 +251,12 @@ def main() -> None:
             "empty_family_excluded_by_full_set_feasibility": 1,
             "realizable_orbits_under_all_terminal_permutations": orbit_count,
             "families_with_no_feasible_singleton": len(no_singleton),
-            "cells_remaining_after_every-pair theorem": len(unequal_candidate_cells),
+            "cells_remaining_after_every_pair_theorem": len(unequal_candidate_cells),
             "remaining_orbits_under_all_terminal_permutations": len(
                 unequal_candidate_orbits
             ),
         },
+        "witness_interpretation": "for each realizable family, at least one positive integer representation with maximum weight at most four; not unique, canonical, or minimum-sum",
         "count_by_integer_weight_bound": count_by_weight_bound,
         "small_witness_max_weight_distribution": {
             str(weight): count for weight, count in sorted(max_weight_distribution.items())

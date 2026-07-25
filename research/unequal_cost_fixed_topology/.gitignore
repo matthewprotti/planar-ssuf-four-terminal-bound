@@ -1,2 +1,4 @@
 __pycache__/
 threshold_family_census.json
+independent_census_results.json
+symbolic_every_pair_results.json

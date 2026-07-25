@@ -1,243 +1,199 @@
 # Unequal-Cost Fixed-Topology SSUF Research Work Package
 
-**Status:** exact first-pass reduction and census on a research branch; the
-immutable `v0.1.0` disclosure is unchanged.
+**Status:** adversarial revision on a follow-on research branch. The immutable
+`v0.1.0` disclosure is unchanged.
 
-**Started:** 24 July 2026
+**Started:** 24 July 2026  
+**Adversarial revision:** 24 July 2026
 
 ## Purpose
 
-The released paper proves that
+The released paper proves
 
 \[
-L=\frac{299-41\sqrt{41}}{32}=1.139747070789\ldots
+L=\frac{299-41\sqrt{41}}{32}
 \]
 
-is the exact supremum on the fixed four-terminal topology when every full
-expensive choice has the same cost and cost feasibility forces at least two
-cheap choices.  It deliberately leaves open the same topology with arbitrary
-positive full expensive-route costs.
+is the exact supremum on the fixed four-terminal topology in the equal full-
+route-cost, all-pairs-feasible regime. This directory studies arbitrary
+**positive full-demand route-cost differences** on the same topology.
 
-This directory begins that unequal-cost program with:
+The first adversarial referee independently reproduced the complete finite
+census and reconstructed the every-pair theorem, but required the theorem to be
+self-contained. This revision closes that dependency gap and adds clean-room
+and symbolic replays.
 
-1. an exact reduction of cost feasibility to positive weighted threshold
-   families on four labels;
-2. a complete certificate census of those families;
-3. an analytic theorem showing that unequal costs do not improve the value on
-   the entire “every pair feasible, no singleton feasible” cell;
-4. a reduced list of 94 labeled candidate cells, in 15 permutation orbits, on
-   which any improvement must occur.
+## Cost-difference reduction
 
-No claim is made yet about the unrestricted unequal-cost optimum.
-
-## 1. Threshold-family reduction
-
-Normalize demands so that \(0<d_i\le1\) and \(d_{\max}=1\).  Let
-\(p_i\in[0,1]\) be terminal \(i\)'s fractional cheap fraction.  Give terminal
-\(i\)'s full expensive route an arbitrary positive cost \(k_i\), while its
-cheap route has cost zero.
-
-The fractional cost is
+Let \(b_i\) and \(e_i^{\mathrm{cost}}\) be terminal \(i\)'s full-demand C- and
+E-route costs under the arc-cost vector, and assume
 
 \[
-C(x)=\sum_{i=1}^4 k_i(1-p_i).
+k_i=e_i^{\mathrm{cost}}-b_i>0.
 \]
 
-If \(S\subseteq[4]\) is the set of terminals routed cheaply, the unsplittable
-cost is
-
-\[
-C(S)=\sum_{i\notin S}k_i.
-\]
-
-Therefore
+For fractional C fraction \(p_i\) and unsplittable C set \(S\), common baselines
+cancel and
 
 \[
 C(S)\le C(x)
 \quad\Longleftrightarrow\quad
-\sum_{i\in S}k_i\ge \tau,
-\qquad
-\tau:=\sum_{i=1}^4 k_ip_i.
+k(S)\ge k\cdot p.
 \]
 
-Thus the cost-feasible cheap sets are exactly a positive weighted threshold
-family
+Thus feasible C sets form a positive weighted-threshold family. Zero
+differences require separate weak-degeneracy handling; negative differences
+are not upward monotone and are outside this branch.
 
-\[
-\mathcal F(k,\tau)
- =\left\{S\subseteq[4]:k(S)\ge\tau\right\}.
-\]
+Conversely, any positive threshold family with
+\(0\le\tau\le\sum_i k_i\) can be realized at the discrete feasibility level by
+setting every \(p_i=\tau/\sum_jk_j\). This does not identify an optimizer within
+that cell.
 
-Conversely, every positive weighted threshold family with
-\(0\le\tau\le\sum_i k_i\) occurs for valid cheap fractions: set
-
-\[
-p_1=p_2=p_3=p_4=\frac{\tau}{\sum_i k_i}.
-\]
-
-This converse concerns the realizability of the discrete feasibility family.
-For optimization, the actual \(p_i\)'s remain coupled to \(k\) through
-\(k\cdot p=\tau\).
-
-## 2. Exact four-label census
+## Exact four-label census
 
 `threshold_family_census.py` enumerates all 168 labeled monotone families on
-four terminals, using antichains of the Boolean lattice.  It then:
+four labels and gives:
 
-- constructs positive integer threshold witnesses for exactly 149 families;
-- proves that every realizable family has a witness with all weights at most 4;
-- gives an exact two-trade impossibility certificate for each of the 18
-  nonempty monotone families that is not threshold;
-- excludes the remaining empty family because the full cheap set is always
-  cost feasible;
-- identifies 26 terminal-permutation orbits among all realizable families.
+- 149 positive threshold families;
+- a positive integer witness with maximum weight at most 4 for each;
+- 18 nonempty nonthreshold families, each with an exact two-trade;
+- one impossible empty family; and
+- 26 arbitrary-label permutation orbits among the realizable families.
 
-For a two-trade certificate, feasible sets \(A,B\) and infeasible sets \(C,D\)
-have equal summed incidence vectors:
+The weight bound is an existence result, not a claim that the stored witness is
+unique, minimum-sum, or canonical. `independent_census_check.py` reconstructs
+the classification without importing the generator and searches every integer
+quota from zero through the total weight.
 
-\[
-\mathbf 1_A+\mathbf 1_B=\mathbf 1_C+\mathbf 1_D.
-\]
+## Fixed-topology lemmas
 
-Any threshold representation would imply
+`FIXED_TOPOLOGY_APPENDIX.md` restates the graph, paths, four trunk supports,
+private-arc bounds, and six exact pair maxima.
 
-\[
-k(A)+k(B)\ge2\tau
-\quad\text{and}\quad
-k(C)+k(D)<2\tau,
-\]
+A feasible singleton gives a routing with maximum upper deviation at most one:
+route only that terminal on C. It is the only possible positive contributor on
+its trunk support, while all positive private-arc deviations are at most
+\(d_i\le1\).
 
-but equal incidence makes the two left sides identical.  This is an exact
-nonrepresentability proof, not a failure to find larger weights.
-
-The machine-readable artifact `threshold_family_census.json` records all 149
-witnesses, all 18 two-trades, stable family identifiers, and search status.
-
-## 3. First analytic theorem: the every-pair cell remains sharp at \(L\)
-
-### Theorem
-
-On the released fixed topology, suppose full expensive-route costs are arbitrary
-positive numbers, every two-terminal cheap set is cost feasible, and no
-singleton cheap set is cost feasible.  Then the exact supremum of the minimum
-maximum upper overload is
+`FIXED_SUPPORT_ROUTING_LEMMA.md` proves, without any cost assumption, that if
 
 \[
-L=\frac{299-41\sqrt{41}}{32}.
+1<\sum_i p_i\le2
 \]
 
-### Proof summary
+and all six exactly-two-cheap routings are available, one of them has maximum
+upper deviation at most \(L\).
 
-Let \(r=\sum_i p_i\), order the full costs as
-\(k_1\le k_2\le k_3\le k_4\), and put \(\tau=k\cdot p\).
+## Every-pair theorem
 
-No singleton is feasible, so
-
-\[
-\tau>\max_i k_i.
-\]
-
-Since \(\tau\le k_4r\), this gives \(r>1\).
-
-Every pair is feasible, in particular the pair with the two smallest costs, so
-
-\[
-\tau\le k_1+k_2.
-\]
-
-If \(r>2\), the minimum possible value of \(k\cdot p\) over
-\(p\in[0,1]^4\) with coordinate sum \(r\) is obtained by filling the cheapest
-coordinates first.  Hence
-
-\[
-\tau=k\cdot p
- \ge k_1+k_2+(r-2)k_3
- >k_1+k_2,
-\]
-
-with the same lower bound remaining valid when \(r>3\).  This contradicts pair
-feasibility.  Therefore
+If every pair is feasible and no singleton is feasible, sorting the paired
+coordinates \((k_i,p_i)\) for the scalar calculation gives
 
 \[
 1<\sum_i p_i\le2.
 \]
 
-The reverse-bound proof in the released restricted-model theorem uses the cost
-assumption only to know that all six exactly-two-cheap routings are feasible;
-its analytic argument then depends on \(d\), \(p\), and
-\(1<\sum_i p_i\le2\).  Those hypotheses have just been recovered, so that
-proof gives an overload-at-most-\(L\) feasible pair here as well.
+The local fixed-support lemma supplies the upper bound. The equal positive-
+difference family is restated inside `EVERY_PAIR_CELL_THEOREM.md` and approaches
+\(L\), giving the lower bound. Hence the exact supremum on this full unequal-
+cost cell remains \(L\).
 
-The released equal-full-cost family realizes this same feasibility cell and
-approaches \(L\), proving the matching lower bound.
+The theorem no longer imports an unexpanded released proof. Release `v0.1.0`
+is pinned only as provenance in `DEPENDENCY_MANIFEST.json`.
 
-A full written proof is in `EVERY_PAIR_CELL_THEOREM.md`.
+## Reduced search space
 
-## 4. Two immediate eliminations
+Among the 149 positive threshold families:
 
-### A feasible singleton gives value at most one
+- 54 contain a feasible singleton and have value at most one;
+- one no-singleton/every-pair family has exact supremum \(L\); and
+- 94 labeled cells remain possible locations of an improvement.
 
-If \(\{i\}\) is cost feasible, route only terminal \(i\) cheaply.  On every
-trunk arc, only terminal \(i\) can contribute positively, by at most
-\(d_i(1-p_i)\le1\); all other trunk contributions are nonpositive.  Positive
-deviations on terminal-private arcs are also at most one.  Hence the routing's
-maximum upper deviation is at most one.
+The 94 cells form 15 orbits under arbitrary relabeling, but the directed fixed
+graph has only the identity role-preserving automorphism. All 94 labeled cells
+remain formal optimization units.
 
-Since \(L>1\), no family containing a feasible singleton can improve the
-released lower bound.
+Strict losing inequalities make these open cells. Future optimization must
+separate the strict cell, its closure, and boundary families, and must separate
+positive demand from a zero-demand closure. See `CELL_OPTIMIZATION_PROTOCOL.md`.
 
-### The every-pair family is already solved
+## Claim map
 
-Among the 149 threshold families:
+### UC-001 — positive route-cost-difference threshold reduction
 
-- 54 contain a feasible singleton and have optimum at most one;
-- one is the no-singleton/every-pair family and has exact supremum \(L\);
-- 94 labeled families remain open.
+Cost feasibility is exactly a positive weighted-threshold inequality when every
+full-demand E-minus-C difference is positive.
 
-The 94 candidates form 15 orbits under arbitrary terminal relabeling.  The
-fixed topology is not fully symmetric under all such relabelings, so the
-labeled cells remain the formal optimization units; the orbit list is a search
-organizer, not an objective-equivalence claim.
+### UC-002 — discrete converse realization
 
-## 5. Next theorem program
+Every positive threshold family in the admissible threshold interval has valid
+cheap fractions; this is not an optimizer claim.
 
-For each remaining family \(\mathcal F\):
+### UC-003 — exact 168/149 census
 
-1. retain exact threshold-cell constraints
-   \[
-   k(S)\ge k\cdot p\ (S\in\mathcal F),
-   \qquad
-   k(S)<k\cdot p\ (S\notin\mathcal F);
-   \]
-2. write the five trunk deviations for every feasible cheap set;
-3. identify active piecewise-linear maxima and minimizing routings;
-4. use numerical optimization only to conjecture active cells and algebraic
-   candidates;
-5. replace each candidate with a symbolic upper/lower certificate;
-6. attempt a common convex-combination or dual argument across cells;
-7. independently enumerate and replay every finite cell certificate.
+Exactly 149 of the 168 labeled monotone four-label families are positive
+threshold families.
 
-The first global target is one of:
+### UC-004 — small integer witness existence
 
-- prove all 94 cells have value at most \(L\), extending fixed-topology
-  sharpness to arbitrary positive costs; or
-- produce an exact unequal-cost instance with value greater than \(L\), then
-  derive and prove its limiting family.
+Each realizable family has at least one positive integer representation with
+maximum weight at most four.
 
-## Run the exact census
+### UC-005 — exact exclusions
+
+All 18 nonempty excluded families have exact two-trade contradictions, and the
+empty family is impossible because the full C set is always feasible.
+
+### UC-006 — feasible-singleton bound
+
+Any cell containing a singleton has an available routing with maximum upper
+deviation at most one.
+
+### UC-007 — every-pair scalar lemma
+
+Every-pair feasibility plus singleton infeasibility implies
+\(1<\sum_i p_i\le2\).
+
+### UC-008 — exact value of the every-pair cell
+
+The self-contained fixed-support lemma and lower family prove exact supremum
+\(L\) for arbitrary positive route-cost differences in this cell.
+
+### UC-009 — 94 labeled cells remain
+
+After UC-006 and UC-008, 94 labeled cells in 15 arbitrary-label orbits remain.
+The orbit count is not an objective-symmetry reduction.
+
+### UC-020 — all remaining cells are bounded by \(L\)
+
+Open main conjecture.
+
+### UC-021 — arbitrary positive differences do not improve the topology
+
+Open flagship target, equivalent to resolving the remaining cells.
+
+### UC-030 — a remaining cell yields a larger exact obstruction
+
+Open alternative target; numerical scouting alone cannot establish it.
+
+## Run the complete gate
 
 ```bash
 cd research/unequal_cost_fixed_topology
 python threshold_family_census.py
+python independent_census_check.py
+python symbolic_every_pair_check.py
+python validate_artifacts.py
+python build_artifact_manifest.py --check
 ```
 
-The script deterministically rewrites `threshold_family_census.json` and fails
-unless all counts, witnesses, trade certificates, family classifications, and
-orbit counts agree.
+Generated JSON result files are ignored by Git. `artifact_manifest.json` hashes
+the committed research sources and records the exact released provenance pin.
 
-## Repository and release boundary
+## Nonclaims
 
-This is follow-on research.  It does not modify the immutable `v0.1.0` release,
-its manuscript, its hashes, or its released claims.  Any theorem found here
-must pass a separate proof, verification, novelty, attribution, and release
-process before it is presented as a public result.
+This branch does not prove global arbitrary-cost fixed-topology sharpness,
+four-terminal optimality, the exact unrestricted planar constant, novelty,
+independent human verification, or peer review. It does not alter the immutable
+release.
