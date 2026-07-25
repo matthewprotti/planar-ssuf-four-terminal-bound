@@ -12,6 +12,7 @@ HERE = Path(__file__).resolve().parent
 OUTPUT = HERE / "artifact_manifest.json"
 EXCLUDED = {
     "artifact_manifest.json",
+    "REPRODUCIBILITY.md",
     "threshold_family_census.json",
     "independent_census_results.json",
     "symbolic_every_pair_results.json",
@@ -39,7 +40,7 @@ def payload() -> dict:
     dependency = json.loads((HERE / "DEPENDENCY_MANIFEST.json").read_text(encoding="utf-8"))
     return {
         "schema_version": "ssuf-positive-difference-artifact-manifest-v0.3",
-        "scope": "committed unequal_cost_fixed_topology research sources",
+        "scope": "committed unequal_cost_fixed_topology research sources; replay metadata excluded",
         "files": files,
         "released_provenance": dependency["released_provenance"],
         "dependency_status": dependency["dependency_status"],
