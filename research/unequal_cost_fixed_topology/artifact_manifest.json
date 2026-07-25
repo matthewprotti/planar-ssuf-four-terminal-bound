@@ -19,7 +19,7 @@
     "REVIEW_RESPONSE_2026-07-24.md": "98c2239257f7c2261a0563e730945d68d4dce054f971c3c94fca47b5e38769a1",
     "SYMBOLIC_TRUST_AND_ASSUMPTIONS.md": "03d1be3ef214e125537ae7cf7b034edbf71849cf31e5cbdc0471897d9f754006",
     "THEOREM_LEDGER.md": "d82612fe53a7c7b231918c88713edf5da747f10311ab44c9827aee4998b6cbf1",
-    "build_artifact_manifest.py": "d68e2c522d7c352f356755a8d07a87d8d2a8c36b1f689a4b1bbdf192d4f4dbd5",
+    "build_artifact_manifest.py": "6d7de86b7fd421b1fbd3835bb29aa840f27ab6022088bc2de64228bee89eb118",
     "census_reconciliation_check.py": "04a27674a8958e52a815f6c21c9cf0fe6936481a50969da4d668f1709ed3f355",
     "exact_algebra_audit.py": "67725f1a4b26c5aa00dc86d2c1122cbc3b7261ece5f5b1c5641469d4aa26715e",
     "generate_witness_examples.py": "e7188099ff7890a11d34c333ec7cd191dd008f0296ec3d5b30d8afdf61c9f4dc",
@@ -47,5 +47,5 @@
     "mpmath==1.3.0"
   ],
   "schema_version": "ssuf-positive-difference-artifact-manifest-v0.3",
-  "scope": "committed unequal_cost_fixed_topology research sources"
+  "scope": "committed unequal_cost_fixed_topology research sources; replay metadata excluded"
 }

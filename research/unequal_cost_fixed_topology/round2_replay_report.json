@@ -1,5 +1,5 @@
 {
-  "artifact_manifest_sha256": "0981594f69a8d8048b44b7c92dc1a456ceb0df95950405ffe0b3ec87b40e8215",
+  "artifact_manifest_sha256": "f81c54dac37ea6223821e73746dd05edc0533dccda28e39a6c22f0705cf7dfeb",
   "commands": [
     {
       "command": [
@@ -23,7 +23,7 @@
       "exit_code": 0,
       "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "stderr_tail": [],
-      "stdout_sha256": "208185b1734b56c6be66301e6c01698ecae5072f490dd2c5ba31a27a9a78795b",
+      "stdout_sha256": "7475137e76c9945e4197f4c04fcb3c7dfcadbf46f2f892cf012cc48a54cc0add",
       "stdout_tail": [
         "PASS: enumerated all 168 labeled monotone families on four terminals",
         "PASS: constructed positive integer threshold witnesses for exactly 149 families",
@@ -31,7 +31,7 @@
         "PASS: certified all 18 nonempty nonthreshold families by exact two-trades",
         "PASS: the remaining family is empty and impossible because the full set is feasible",
         "PASS: 26 total permutation orbits; 94 labeled cells in 15 orbits remain after the every-pair theorem",
-        "WROTE: /tmp/ssuf-r2-5uw_3pi4/unequal_cost_fixed_topology/threshold_family_census.json"
+        "WROTE: /tmp/ssuf-r2-0_acf_nm/unequal_cost_fixed_topology/threshold_family_census.json"
       ]
     },
     {
@@ -42,7 +42,7 @@
       "exit_code": 0,
       "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "stderr_tail": [],
-      "stdout_sha256": "dd48818330beca193482f73f803e41ef5ff8081f59b65f35998a3a286517d44e",
+      "stdout_sha256": "6b8fa3238703165f896386dedfaef5e4cfcf354b4afa8027d75659f10e111058",
       "stdout_tail": [
         "  \"nonempty_nonthreshold_families\": 18,",
         "  \"positive_threshold_families\": 149,",
@@ -51,7 +51,7 @@
         "  \"remaining_labeled_cells\": 94,",
         "  \"status\": \"PASS\"",
         "}",
-        "WROTE: /tmp/ssuf-r2-5uw_3pi4/unequal_cost_fixed_topology/independent_census_results.json"
+        "WROTE: /tmp/ssuf-r2-0_acf_nm/unequal_cost_fixed_topology/independent_census_results.json"
       ]
     },
     {
@@ -62,7 +62,7 @@
       "exit_code": 0,
       "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "stderr_tail": [],
-      "stdout_sha256": "59e98d0b3b4c3638d7bb887fdfb3d0e4271a1a377b1907fb2334d4c98d8c4556",
+      "stdout_sha256": "44e1761605899b13aaa328821c3fd2fb130f4cac005c6744d6a8cce9a570be99",
       "stdout_tail": [
         "    \"every_pair_no_singleton\": 1,",
         "    \"feasible_singleton\": 54,",
@@ -71,7 +71,7 @@
         "  },",
         "  \"status\": \"PASS\"",
         "}",
-        "WROTE: /tmp/ssuf-r2-5uw_3pi4/unequal_cost_fixed_topology/census_reconciliation_results.json"
+        "WROTE: /tmp/ssuf-r2-0_acf_nm/unequal_cost_fixed_topology/census_reconciliation_results.json"
       ]
     },
     {
@@ -82,7 +82,7 @@
       "exit_code": 0,
       "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "stderr_tail": [],
-      "stdout_sha256": "2c2c702b071b468b69dcbc7ba0e06d49b99c432c59aa8a52fbacf3086c9b8cbd",
+      "stdout_sha256": "ee456c8693b73d4cc52ea8364226c415dab0b58a100c2a07fdb3e837bcd979a6",
       "stdout_tail": [
         "  \"stationary_point\": {",
         "    \"s\": \"(-3 + sqrt(41))**2/16\",",
@@ -91,7 +91,7 @@
         "  },",
         "  \"status\": \"PASS\"",
         "}",
-        "WROTE: /tmp/ssuf-r2-5uw_3pi4/unequal_cost_fixed_topology/symbolic_every_pair_results.json"
+        "WROTE: /tmp/ssuf-r2-0_acf_nm/unequal_cost_fixed_topology/symbolic_every_pair_results.json"
       ]
     },
     {
@@ -102,7 +102,7 @@
       "exit_code": 0,
       "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "stderr_tail": [],
-      "stdout_sha256": "49d7ccae7532789b39ea6e503177e4084d258931e52bebd387248ccbd599e6ef",
+      "stdout_sha256": "8cfebf9b89da2c77c2cd9671b650a3d52374a87f759457da5369fa2d46aa3fb7",
       "stdout_tail": [
         "  \"stationary_point\": {",
         "    \"s\": \"25/8+(-3/8)*sqrt(41)\",",
@@ -111,7 +111,7 @@
         "  },",
         "  \"status\": \"PASS\"",
         "}",
-        "WROTE: /tmp/ssuf-r2-5uw_3pi4/unequal_cost_fixed_topology/exact_algebra_results.json"
+        "WROTE: /tmp/ssuf-r2-0_acf_nm/unequal_cost_fixed_topology/exact_algebra_results.json"
       ]
     },
     {
@@ -122,7 +122,7 @@
       "exit_code": 0,
       "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "stderr_tail": [],
-      "stdout_sha256": "704a1b0c522aaa31f31a2035834b5b1ab38bf5517c0e7737153eb11f10dec2e9",
+      "stdout_sha256": "8d5b7f8d97cb3616ea597c4cbede3c2f6fb56d98a6f5ca59398f47b2248b619d",
       "stdout_tail": [
         "  \"comparison\": \"local machine-readable definition equals pinned release extraction\",",
         "  \"release_commit\": \"087204eda4cc490cb59dd1988d7383c406288d2e\",",
@@ -131,7 +131,7 @@
         "  \"runtime_release_file_access\": false,",
         "  \"status\": \"PASS\"",
         "}",
-        "WROTE: /tmp/ssuf-r2-5uw_3pi4/unequal_cost_fixed_topology/release_family_equivalence_results.json"
+        "WROTE: /tmp/ssuf-r2-0_acf_nm/unequal_cost_fixed_topology/release_family_equivalence_results.json"
       ]
     },
     {
@@ -142,7 +142,7 @@
       "exit_code": 0,
       "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "stderr_tail": [],
-      "stdout_sha256": "8bb6a47d74f6065605332e9d64a8655d75f4989766d2d5fa0cf8740a1dfe0a2c",
+      "stdout_sha256": "8ef9fae9f1c539e01e0f502c592a1bdd03e4d3ea891580bc02092968ec0fe3e3",
       "stdout_tail": [
         "    \"every_pair_no_singleton\": 1,",
         "    \"feasible_singleton\": 54,",
@@ -151,7 +151,7 @@
         "  },",
         "  \"status\": \"PASS\"",
         "}",
-        "WROTE: /tmp/ssuf-r2-5uw_3pi4/unequal_cost_fixed_topology/witness_examples.json"
+        "WROTE: /tmp/ssuf-r2-0_acf_nm/unequal_cost_fixed_topology/witness_examples.json"
       ]
     },
     {
