@@ -1,9 +1,9 @@
 name: Export current SSUF research snapshot
 
 on:
-  push:
+  pull_request:
     branches:
-      - agent/unequal-cost-fixed-topology-research
+      - main
     paths:
       - .github/workflows/export-ssuf-current.yml
 
@@ -12,6 +12,7 @@ permissions:
 
 jobs:
   export:
+    if: github.head_ref == 'agent/unequal-cost-fixed-topology-research'
     runs-on: ubuntu-latest
     steps:
       - name: Check out current research head
