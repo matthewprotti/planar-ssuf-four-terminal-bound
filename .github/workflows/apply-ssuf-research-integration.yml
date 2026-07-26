@@ -37,36 +37,19 @@ jobs:
           set -euo pipefail
           python -m pip install -r research/unequal_cost_fixed_topology/requirements-replay.txt
 
-      - name: Record payload diagnostics
-        shell: bash
-        run: |
-          set -euo pipefail
-          {
-            wc -c .research-integrate-ssuf/part-*
-            sha256sum .research-integrate-ssuf/part-*
-            : > /tmp/ssuf-normalized.b64
-            for part in .research-integrate-ssuf/part-*; do
-              tr -d '\r\n' < "$part" >> /tmp/ssuf-normalized.b64
-            done
-            wc -c /tmp/ssuf-normalized.b64
-            sha256sum /tmp/ssuf-normalized.b64
-          } > /tmp/ssuf-payload-diagnostics.txt
-
-      - name: Upload payload diagnostics
-        uses: actions/upload-artifact@v4
-        with:
-          name: ssuf-payload-diagnostics
-          path: /tmp/ssuf-payload-diagnostics.txt
-          if-no-files-found: error
-          retention-days: 1
-
       - name: Verify and apply the research patch
         shell: bash
         run: |
           set -euo pipefail
-          test "$(find .research-integrate-ssuf -maxdepth 1 -name 'part-*' | wc -l)" -eq 10
+          parts=(
+            part-00 part-01 part-02 part-03 part-04 part-05
+            part-06a part-06b
+            part-07 part-08 part-09
+          )
           : > /tmp/ssuf.patch.b64
-          for part in .research-integrate-ssuf/part-*; do
+          for name in "${parts[@]}"; do
+            part=".research-integrate-ssuf/$name"
+            test -f "$part"
             tr -d '\r\n' < "$part" >> /tmp/ssuf.patch.b64
           done
           echo "90c9bac7a369a35e816e0de4050eeeb9fb01673ecec6c93a8784e2be9fd11a56  /tmp/ssuf.patch.b64" | sha256sum --check --strict
