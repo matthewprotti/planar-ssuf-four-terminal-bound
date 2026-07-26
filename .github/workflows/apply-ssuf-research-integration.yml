@@ -79,3 +79,5 @@ jobs:
           test -z "$unexpected" || { echo "unexpected staged paths:"; echo "$unexpected"; exit 1; }
           git commit -m "Advance SSUF positive-cell classification"
           git push origin HEAD:agent/unequal-cost-fixed-topology-research
+
+# Triggered after all ten verified payload parts were present.
