@@ -37,6 +37,29 @@ jobs:
           set -euo pipefail
           python -m pip install -r research/unequal_cost_fixed_topology/requirements-replay.txt
 
+      - name: Record payload diagnostics
+        shell: bash
+        run: |
+          set -euo pipefail
+          {
+            wc -c .research-integrate-ssuf/part-*
+            sha256sum .research-integrate-ssuf/part-*
+            : > /tmp/ssuf-normalized.b64
+            for part in .research-integrate-ssuf/part-*; do
+              tr -d '\r\n' < "$part" >> /tmp/ssuf-normalized.b64
+            done
+            wc -c /tmp/ssuf-normalized.b64
+            sha256sum /tmp/ssuf-normalized.b64
+          } > /tmp/ssuf-payload-diagnostics.txt
+
+      - name: Upload payload diagnostics
+        uses: actions/upload-artifact@v4
+        with:
+          name: ssuf-payload-diagnostics
+          path: /tmp/ssuf-payload-diagnostics.txt
+          if-no-files-found: error
+          retention-days: 1
+
       - name: Verify and apply the research patch
         shell: bash
         run: |
@@ -79,5 +102,3 @@ jobs:
           test -z "$unexpected" || { echo "unexpected staged paths:"; echo "$unexpected"; exit 1; }
           git commit -m "Advance SSUF positive-cell classification"
           git push origin HEAD:agent/unequal-cost-fixed-topology-research
-
-# Triggered after all ten verified payload parts were present.
