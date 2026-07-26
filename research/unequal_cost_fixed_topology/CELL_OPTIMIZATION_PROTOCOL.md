@@ -1,4 +1,4 @@
-# Protocol for the Remaining 94 Threshold Cells
+# Protocol for the Remaining 83 Strictly Positive Threshold Cells
 
 Each positive threshold cell is defined by
 
@@ -56,7 +56,7 @@ and a symbolic upper or lower certificate.
 
 ## Forward-pass priority order
 
-After UC-013, skip the five analytically bounded no-pair cells and retain 89
+After UC-013 and UC-017, skip the five bounded no-pair cells and all 11 single-generator cells; retain 83
 labeled positive-difference cells. Exact witnesses in F126, F125, F042, F129,
 and F143 show that some surviving cells exceed one; these are priority cells for
 upper-bound analysis, not evidence of an improvement over `L`.

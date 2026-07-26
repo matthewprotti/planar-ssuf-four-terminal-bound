@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Exact rational interior lower-bound witnesses for selected open SSUF cells.
 
-These witnesses do not solve a cell.  They prove that several remaining cells
-have value strictly greater than one, so a universal singleton-style <=1 bound
-cannot eliminate the entire 94-cell remainder.
+These witnesses do not solve a cell.  They prove that several strictly positive
+multiple-generator cells have value greater than one and provide exact targets
+for the remaining 83-cell upper-bound program.
 """
 
 from __future__ import annotations
@@ -22,21 +22,56 @@ SUPPORTS = (
 )
 
 # k, p, d.  All coordinates are exact rationals and max(d)=1.
+#
+# The first five certificates were produced in the initial forward pass.  The
+# additional six cells and the strengthened F042 certificate were obtained by
+# rationalizing numerical scout points and then rechecking the complete finite
+# routing objective with exact Fraction arithmetic.
 WITNESSES = {
-    "F126": {
-        "k": (Q(1, 5), Q(2, 5), Q(1, 5), Q(1, 5)),
-        "p": (Q(17, 100), Q(99, 100), Q(19, 25), Q(3, 25)),
-        "d": (Q(99, 100), Q(93, 100), Q(83, 100), Q(1)),
+    "F042": {
+        "k": (Q(27, 80), Q(27, 80), Q(81, 250), Q(1, 1000)),
+        "p": (Q(59, 250), Q(1091, 2000), Q(229, 1000), Q(1987, 2000)),
+        "d": (Q(1993, 2000), Q(77, 100), Q(1), Q(1781, 2000)),
+    },
+    "F045": {
+        "k": (Q(661, 2000), Q(27, 80), Q(129, 400), Q(19, 2000)),
+        "p": (Q(89, 500), Q(1277, 2000), Q(49, 250), Q(1, 2000)),
+        "d": (Q(247, 250), Q(811, 1000), Q(1), Q(99, 100)),
+    },
+    "F047": {
+        "k": (Q(41, 125), Q(21, 1250), Q(841, 2500), Q(319, 1000)),
+        "p": (Q(653, 2500), Q(1, 2500), Q(2949, 5000), Q(821, 5000)),
+        "d": (Q(1), Q(997, 1000), Q(4239, 5000), Q(1)),
+    },
+    "F049": {
+        "k": (Q(7733, 25000), Q(16749, 50000), Q(1661, 5000), Q(147, 6250)),
+        "p": (Q(8263, 25000), Q(3581, 10000), Q(16971, 50000), Q(77, 50000)),
+        "d": (Q(1), Q(34761, 50000), Q(49943, 50000), Q(24933, 25000)),
+    },
+    "F055": {
+        "k": (Q(8351, 25000), Q(1, 50000), Q(33393, 100000), Q(33201, 100000)),
+        "p": (Q(5171, 25000), Q(349, 50000), Q(483, 800), Q(9539, 50000)),
+        "d": (Q(1), Q(80009, 100000), Q(4089, 5000), Q(49927, 50000)),
+    },
+    "F060": {
+        "k": (Q(1667, 5000), Q(417, 1250), Q(1, 10000), Q(3329, 10000)),
+        "p": (Q(2577, 10000), Q(4867, 10000), Q(3, 10000), Q(2563, 10000)),
+        "d": (Q(1), Q(1859, 2500), Q(9957, 10000), Q(1999, 2000)),
+    },
+    "F061": {
+        "k": (Q(3269, 10000), Q(6667, 20000), Q(69, 10000), Q(6657, 20000)),
+        "p": (Q(4797, 20000), Q(107, 200), Q(11, 10000), Q(463, 2000)),
+        "d": (Q(3961, 4000), Q(3877, 5000), Q(1), Q(19909, 20000)),
     },
     "F125": {
         "k": (Q(1, 4), Q(1, 4), Q(1, 4), Q(1, 4)),
         "p": (Q(1, 4), Q(11, 20), Q(1, 4), Q(1)),
         "d": (Q(1), Q(3, 5), Q(1), Q(17, 20)),
     },
-    "F042": {
-        "k": (Q(3, 10), Q(3, 10), Q(3, 10), Q(3, 20)),
-        "p": (Q(3, 10), Q(9, 20), Q(3, 10), Q(19, 20)),
-        "d": (Q(1), Q(13, 20), Q(1), Q(13, 20)),
+    "F126": {
+        "k": (Q(1, 5), Q(2, 5), Q(1, 5), Q(1, 5)),
+        "p": (Q(17, 100), Q(99, 100), Q(19, 25), Q(3, 25)),
+        "d": (Q(99, 100), Q(93, 100), Q(83, 100), Q(1)),
     },
     "F129": {
         "k": (Q(1, 5), Q(1, 5), Q(2, 5), Q(1, 5)),
@@ -49,6 +84,7 @@ WITNESSES = {
         "d": (Q(123, 125), Q(87, 100), Q(1), Q(359, 500)),
     },
 }
+
 
 
 def family_from_bitmask(value: str) -> frozenset[int]:

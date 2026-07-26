@@ -15,8 +15,9 @@ L=\frac{299-41\sqrt{41}}{32}
 \]
 
 is the exact supremum on the fixed four-terminal topology in the equal full-
-route-cost, all-pairs-feasible regime. This directory studies arbitrary
-**positive full-demand route-cost differences** on the same topology.
+route-cost, all-pairs-feasible regime. This directory studies full-demand route-cost differences on the same topology.
+The unresolved optimization frontier is now entirely in the strictly positive
+lane; signed and zero strata are treated separately below.
 
 The first adversarial referee independently reproduced the complete finite
 census and reconstructed the every-pair theorem, but required the theorem to be
@@ -40,8 +41,10 @@ C(S)\le C(x)
 k(S)\ge k\cdot p.
 \]
 
-Thus feasible C sets form a positive weighted-threshold family. Zero
-differences require separate weak-degeneracy handling; negative differences are not upward monotone in the original cheap coordinates. A new signed-coordinate reduction classifies their nonzero feasibility systems, but does not solve the reoriented overload objective.
+Thus feasible C sets form a positive weighted-threshold family in the strictly
+positive lane. Negative coordinates become positive after an oriented coordinate
+complement, while zero coordinates are genuine boundaries. UC-018 now solves
+the fixed-topology objective on every non-all-positive nonzero sign/zero stratum.
 
 Conversely, any positive threshold family with
 \(0\le\tau\le\sum_i k_i\) can be realized at the discrete feasibility level by
@@ -110,8 +113,10 @@ Among the 149 positive threshold families:
 
 The 94 cells form 15 orbits under arbitrary relabeling, but the directed fixed
 graph has only the identity role-preserving automorphism. They are formal
-optimization units. The forward no-pair lemmas now eliminate five more cells,
-leaving 89 labeled positive-difference cells.
+optimization units. UC-013 eliminates five no-pair cells and UC-017 resolves
+all 11 single-generator positive cells; six of those were still in the 89-cell
+remainder. The current strictly positive frontier is therefore **83 labeled
+cells in 12 abstract-label search orbits**.
 
 Strict losing inequalities make these open cells. Future optimization must
 separate the strict cell, its closure, and boundary families, and must separate
@@ -183,7 +188,7 @@ the positive remainder from 94 to 89.
 
 ### UC-014 — exact interior witnesses above one
 
-Five named cells have exact rational lower witnesses above one.
+Eleven named strictly positive cells have exact rational interior lower witnesses above one. The strongest current certificate is F060 at `28085483/25000000 = 1.12341932`; every retained point has a positive strict losing margin and has been checked on every feasible route and every arc.
 
 ### UC-015 — signed nonzero feasibility census
 
@@ -195,17 +200,53 @@ patterns.
 The solved every-pair/no-singleton cell has no zero-difference point in its
 nonnegative closure.
 
-### UC-020 — all 89 remaining positive cells are bounded by \(L\)
 
-Open main conjecture for the 89 remaining positive cells.
+### UC-017 — signed single-generator value one
 
-### UC-021 — arbitrary positive differences do not improve the topology
+Every sign-oriented threshold cell with one minimal generator of size at least
+two has exact value one. This covers 176 nonzero sign/generator regimes and
+zeros outside the generator. In the strictly positive lane it resolves all 11
+single-generator cells and reduces the open frontier from 89 to 83 cells.
 
-Open flagship target, equivalent to resolving the 89 remaining positive cells.
+### UC-018 — all non-all-positive strata are below `L`
 
-### UC-030 — a remaining cell yields a larger exact obstruction
+Every nonzero sign/zero stratum outside the strictly all-positive lane has exact
+value one or `9/8`. The `9/8` cases are precisely the three-positive chain
+placements with terminal 2, 3, or 4 nonpositive. Since `9/8<L`, no signed or
+zero-boundary stratum can improve the released value.
 
-Open alternative target; numerical scouting alone cannot establish it.
+### UC-019 — exact cost-free value `4/5`
+
+When every cost difference is zero, all routes are feasible and the exact value
+is `4/5`. The upper routing chooses C exactly when `d_i p_i>4/5`; every chosen
+C terminal then contributes less than `1/5` on the trunk, while every E terminal
+has private deviation at most `4/5`. The symmetric `p_i=4/5`, unit-demand
+instance gives the matching lower bound.
+
+### UC-023 — exact positive three-pair clique cells
+
+If the three pair generators are exactly the pairs of one terminal triple, the
+cell has exact value `9/8` when the omitted terminal is 2, 3, or 4 and exact
+value one when it is terminal 1. This resolves four more positive cells and one
+full abstract-label orbit.
+
+### UC-020 — all 79 remaining positive cells are bounded by \(L\)
+
+Open main conjecture for the 79 remaining strictly positive cells.
+
+### UC-021 — a remaining positive cell exceeds `L`
+
+Open alternative: an exact witness above `L` in one of the 79 remaining strictly positive cells.
+
+### UC-022 — arbitrary signed/zero reduction
+
+Any fixed-topology obstruction above `L` must now lie in the 79 strictly
+positive cells. All other nonzero sign/zero strata are at most `9/8`, and the
+all-zero stratum has exact value `4/5`.
+
+### UC-030 — structural replacement for cellwise optimization
+
+Open target; numerical scouting alone cannot establish it.
 
 ## Run the complete gate
 
@@ -238,19 +279,21 @@ release.
 with exactly one feasible triple have value at most 1. The unresolved positive-
 difference remainder is therefore reduced from 94 to **89 labeled cells**.
 
-### Exact lower witnesses inside the remainder
+### Exact lower-witness atlas inside the positive frontier
 
-`exact_open_cell_witnesses.py` gives strict rational interior instances in five
-cells with exact minimum feasible maximum deviations
+`exact_open_cell_witnesses.py` now gives strict rational interior certificates
+in eleven labeled cells. The strongest are
 
-- F126: `5151/5000`;
-- F125: `51/50`;
-- F042: `423/400`;
-- F129: `638/625`;
-- F143: `251517/250000`.
+- F060: `28085483/25000000 = 1.12341932`;
+- F042: `1111291/1000000 = 1.111291`;
+- F055: `5509335803/5000000000 = 1.1018671606`;
+- F061: `88144229/80000000 = 1.1018028625`.
 
-These prove that a blanket `<=1` argument cannot eliminate the entire remainder.
-They do not establish cell optima and remain below `L`.
+Seven further exact certificates are recorded in
+`EXACT_OPEN_CELL_WITNESSES.md` and `exact_open_cell_witnesses.json`. These are
+cell lower bounds rather than optima; all remain below `L`. The F060 point has
+strict losing margin `13/5000000`, so it lies inside the named cell rather than
+only on its closure.
 
 ### Nonzero signed differences
 
@@ -266,13 +309,34 @@ the physical path-difference objective must also be sign-oriented.
 contain a zero cost-difference coordinate in its nonnegative closure. Thus the
 exact value `L` already covers that cell's complete nonnegative closure.
 
+
+### Positive three-pair clique theorem
+
+`POSITIVE_THREE_PAIR_CLIQUE_THEOREM.md` resolves the four cells generated by all
+three pairs of a fixed terminal triple. Three chain placements have exact value
+`9/8`; the nested placement has exact value one. The open strictly positive
+frontier is therefore **79 labeled cells in 11 abstract-label orbits**.
+
 ## Current frontier
 
-The main positive-difference question is now 89 labeled cells, not 94. The
-signed nonzero extension has a finite 1,881-family feasibility census but no
-objective theorem. Other zero-difference boundaries remain open.
+The main positive-difference question is now 79 labeled cells, not 94. The
+non-all-positive signed/zero objective is fully solved: the all-zero stratum has
+exact value `4/5`, and no such stratum can exceed `L`.
 
-### UC-022 — signed objective program
 
-Open: optimize or structurally reduce the 1,881 sign-oriented nonzero feasible
-systems together with their flipped path-difference supports.
+### Signed single-generator theorem
+
+`SIGNED_SINGLE_GENERATOR_THEOREM.md` proves exact value one for every unique
+-oriented-generator stratum and supplies exact checks for 176 sign-pattern/
+generator regimes.
+
+### Complete non-all-positive theorem
+
+`NONPOSITIVE_DIFFERENCE_THEOREM.md` classifies all 79 nonzero, non-all-positive
+sign/zero patterns: six chain placements have value `9/8`, and the other 73
+have value one. A structurally separate finite grid checks 31,995 exact rational
+cases.
+
+### Cost-free stratum
+
+`COST_FREE_STRATUM.md` proves the exact value `beta_0=4/5`.

@@ -23,6 +23,11 @@ GENERATED = {
     "witness_examples.json",
     "exact_open_cell_witnesses.json",
     "signed_difference_census.json",
+    "signed_single_generator_results.json",
+    "nonpositive_difference_results.json",
+    "nonpositive_difference_grid_results.json",
+    "cost_free_stratum_results.json",
+    "positive_three_pair_clique_results.json",
     "round2_replay_report.json",
 }
 COMMANDS = [
@@ -36,6 +41,11 @@ COMMANDS = [
     [sys.executable, "generate_witness_examples.py"],
     [sys.executable, "exact_open_cell_witnesses.py"],
     [sys.executable, "signed_difference_census.py"],
+    [sys.executable, "signed_single_generator_check.py"],
+    [sys.executable, "nonpositive_difference_check.py"],
+    [sys.executable, "nonpositive_difference_grid_check.py"],
+    [sys.executable, "cost_free_stratum_check.py"],
+    [sys.executable, "positive_three_pair_clique_check.py"],
     [sys.executable, "validate_artifacts.py"],
 ]
 
@@ -101,11 +111,24 @@ def main() -> None:
         assert len(reconciliation["all_realizable_orbits"]) == 26
         assert len(reconciliation["remaining_orbits"]) == 15
         exact_witnesses = json.loads((work / "exact_open_cell_witnesses.json").read_text())
-        assert len(exact_witnesses) == 5
+        assert len(exact_witnesses) == 11
         assert all(__import__("fractions").Fraction(row["exact_minimum_maximum_deviation"]) > 1 for row in exact_witnesses)
         signed = json.loads((work / "signed_difference_census.json").read_text())
         assert signed["unique_signed_unate_threshold_families"] == 1881
         assert signed["upward_closed_original_coordinate_families"] == 149
+        single_generator = json.loads((work / "signed_single_generator_results.json").read_text())
+        nonpositive = json.loads((work / "nonpositive_difference_results.json").read_text())
+        nonpositive_grid = json.loads((work / "nonpositive_difference_grid_results.json").read_text())
+        cost_free = json.loads((work / "cost_free_stratum_results.json").read_text())
+        clique = json.loads((work / "positive_three_pair_clique_results.json").read_text())
+        assert single_generator["nonzero_signed_representations"] == 176
+        assert nonpositive["value_one_sign_zero_strata"] == 73
+        assert nonpositive["chain_sign_zero_strata"] == 6
+        assert nonpositive_grid["sign_zero_patterns"] == 79
+        assert nonpositive_grid["exact_grid_cases"] == 31995
+        assert cost_free["exact_value"] == "4/5"
+        assert cost_free["exact_grid_cases"] > 0
+        assert clique["positive_frontier_after"] == 79 and clique["abstract_orbits_after"] == 11
 
         output_hashes = {
             name: digest(work / name)
@@ -129,19 +152,27 @@ def main() -> None:
                 "every_pair_no_singleton_families": 1,
                 "initial_remaining_labeled_cells": 94,
                 "no_pair_cells_eliminated_by_UC_013": 5,
-                "remaining_positive_labeled_cells": 89,
-                "exact_above_one_witness_cells": 5,
+                "single_generator_positive_cells_resolved_by_UC_017": 11,
+                "new_single_generator_cells_beyond_UC_013": 6,
+                "remaining_positive_labeled_cells": 79,
+                "positive_three_pair_clique_cells_resolved_by_UC_023": 4,
+                "exact_above_one_witness_cells": 11,
                 "nonzero_signed_unate_feasibility_families": 1881,
                 "realizable_arbitrary_label_orbits": 26,
-                "remaining_arbitrary_label_orbits": 15,
+                "initial_remaining_arbitrary_label_orbits": 15,
+                "remaining_positive_arbitrary_label_orbits": 11,
+                "nonallpositive_nonzero_sign_zero_strata": 79,
+                "nonallpositive_value_one_strata": 73,
+                "nonallpositive_value_9_over_8_strata": 6,
+                "identically_zero_value_4_over_5_strata": 1,
             },
             "commands": results,
             "generated_output_sha256": output_hashes,
             "limitations": [
                 "UC-008 is proved in the human-readable local theorem; software is corroboration.",
-                "Negative route-cost differences remain outside the solved objective theorem; only their feasibility systems are classified.",
-                "Zero-difference boundaries outside the solved every-pair cell remain open.",
-                "The 89 remaining positive-difference labeled cells and their boundaries remain open.",
+                "The non-all-positive objective theorem is human-readable; finite grids and exact identities are corroboration.",
+                "The identically-zero cost-difference theorem is fixed-topology only; finite-grid checks are corroboration.",
+                "The 79 remaining strictly positive labeled cells and their boundaries remain open.",
                 "The release-family extraction is pinned and compared but was transcribed from TeX by a human.",
                 "No external clean-environment reproduction is claimed.",
             ],

@@ -22,6 +22,11 @@ EXCLUDED = {
     "witness_examples.json",
     "exact_open_cell_witnesses.json",
     "signed_difference_census.json",
+    "signed_single_generator_results.json",
+    "nonpositive_difference_results.json",
+    "nonpositive_difference_grid_results.json",
+    "cost_free_stratum_results.json",
+    "positive_three_pair_clique_results.json",
     "numerical_cell_scout.json",
     "round2_replay_report.json",
 }
@@ -42,7 +47,7 @@ def payload() -> dict:
     }
     dependency = json.loads((HERE / "DEPENDENCY_MANIFEST.json").read_text(encoding="utf-8"))
     return {
-        "schema_version": "ssuf-fixed-topology-artifact-manifest-v0.4",
+        "schema_version": "ssuf-fixed-topology-artifact-manifest-v0.5",
         "scope": "committed fixed-topology SSUF research sources; replay metadata excluded",
         "files": files,
         "released_provenance": dependency["released_provenance"],
