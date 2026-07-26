@@ -20,7 +20,6 @@ jobs:
         with:
           ref: agent/unequal-cost-fixed-topology-research
           fetch-depth: 0
-
       - name: Record identity
         shell: bash
         run: |
@@ -29,7 +28,6 @@ jobs:
           git rev-parse HEAD > /tmp/ssuf-current/COMMIT_SHA.txt
           git status --porcelain=v1 > /tmp/ssuf-current/WORKTREE_STATUS.txt
           test ! -s /tmp/ssuf-current/WORKTREE_STATUS.txt
-
       - name: Upload snapshot
         uses: actions/upload-artifact@v4
         with:
@@ -39,4 +37,4 @@ jobs:
             /tmp/ssuf-current/COMMIT_SHA.txt
             /tmp/ssuf-current/WORKTREE_STATUS.txt
           if-no-files-found: error
-          retention-days: 1
+          retention-days: 2
