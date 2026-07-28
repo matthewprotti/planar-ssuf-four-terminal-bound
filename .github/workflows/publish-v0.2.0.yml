@@ -1,0 +1,78 @@
+name: Publish v0.2.0
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    if: startsWith(github.event.head_commit.message, 'Publish v0.2.0 RB-003 research disclosure')
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+
+    steps:
+      - name: Check out complete history
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: verification/requirements.txt
+
+      - name: Install dependencies and pinned Tectonic
+        env:
+          TECTONIC_SHA256: f3c825128095dc3399ea11c08c18035b33050a216930c295c79e8eb11bd21de4
+          TECTONIC_URL: https://github.com/tectonic-typesetting/tectonic/releases/download/tectonic%400.16.9/tectonic-0.16.9-x86_64-unknown-linux-gnu.tar.gz
+        run: |
+          python -m pip install -r verification/requirements.txt
+          sudo apt-get update
+          sudo apt-get install --yes libgraphite2-3 poppler-utils
+          curl --fail --location --retry 3 "$TECTONIC_URL" --output "$RUNNER_TEMP/tectonic.tar.gz"
+          echo "$TECTONIC_SHA256  $RUNNER_TEMP/tectonic.tar.gz" | sha256sum --check
+          tar --extract --gzip --file "$RUNNER_TEMP/tectonic.tar.gz" --directory "$RUNNER_TEMP"
+          sudo install --mode 0755 "$RUNNER_TEMP/tectonic" /usr/local/bin/tectonic
+
+      - name: Verify exact release commit
+        run: |
+          grep -F 'version: "0.2.0"' CITATION.cff
+          test -z "$(git tag --list v0.2.0)"
+          python scripts/verify_all.py
+          python scripts/build_pdf.py
+          git diff --exit-code
+          python scripts/manifest.py
+          python scripts/release_preflight.py
+
+      - name: Create immutable tag
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git tag -a v0.2.0 -m "RB-003 exact two-scenario fixed-gadget supremum"
+          git push origin v0.2.0
+
+      - name: Build public assets
+        run: |
+          python scripts/release_preflight.py --public
+          python scripts/build_release.py \
+            --mode public \
+            --output-dir "$RUNNER_TEMP/public-dist"
+
+      - name: Publish GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create v0.2.0 \
+            --title "v0.2.0 - Exact two-scenario fixed-gadget supremum" \
+            --notes-file RELEASE_NOTES_v0.2.0.md \
+            "$RUNNER_TEMP/public-dist/ssuf-four-terminal-v0.2.0-source.tar.gz" \
+            "$RUNNER_TEMP/public-dist/ssuf_four_terminal_note_v5.pdf" \
+            "$RUNNER_TEMP/public-dist/rb003_two_scenario_note_v1.pdf" \
+            "$RUNNER_TEMP/public-dist/SHA256SUMS.txt" \
+            research/two_scenario_global_constant/MANIFEST.sha256
