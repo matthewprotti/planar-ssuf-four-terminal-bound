@@ -1,5 +1,8 @@
 # Scalar Lemmas for the No-Pair Region
 
+All upper bounds here refer to the common fixed-topology objective
+\(\Phi(k,p,d)\) in `MASTER_OBJECTIVE_AND_COST_REALIZATION.md`.
+
 Let `K=sum k_i`, `tau=k·p`, and `q_i=1-p_i`. Then
 
 `R := K-tau = k·q`.
@@ -38,7 +41,9 @@ are at most one. Hence its maximum upper deviation is at most one.
 
 Consequently five of the 94 cells are now analytically bounded by one: the
 full-set-only cell and the four cells with exactly one feasible triple. The
-positive-difference search remainder falls from 94 to **89 labeled cells**.
+positive-difference search remainder falls from 94 to the historical
+**89-labeled-cell** intermediate stage. UC-017 and UC-023 later reduce the
+current frontier to 79 labeled cells.
 
 The argument does not cover cells with two, three, or four feasible triples, nor
 cells with feasible pairs.

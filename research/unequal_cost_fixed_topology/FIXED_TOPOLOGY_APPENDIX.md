@@ -43,6 +43,13 @@ Here E and C retain the historical names “expensive” and “cheap.” In the
 unequal-cost reduction, only the positive full-demand cost differences between
 these routes matter.
 
+`MASTER_OBJECTIVE_AND_COST_REALIZATION.md` defines the common objective
+\(\Phi(k,p,d)\) for positive, signed, and zero route-cost differences. It also
+records the path-private construction that realizes every such difference
+vector using nonnegative, commodity-independent arc costs. In particular,
+signed \(k_i\) are physical E-minus-C route-cost differences, not negative arc
+costs.
+
 ## Trunk difference supports
 
 The arcs added to terminal \(i\)'s route when switching from E to C are

@@ -23,13 +23,33 @@ The first adversarial referee independently reproduced the complete finite
 census and reconstructed the every-pair theorem, but required the theorem to be
 self-contained. The second-round revision made that dependency local and auditable. This forward pass adds new exact reductions and witnesses without declaring referee acceptance.
 
+## One master objective
+
+`MASTER_OBJECTIVE_AND_COST_REALIZATION.md` defines the common normalized
+fixed-topology objective
+
+\[
+\Phi(k,p,d)
+=
+\frac1{d_{\max}}
+\min_{\substack{z\in\{0,1\}^4\\k\cdot(z-p)\ge0}}
+\max_a\Delta_a(z;p,d).
+\]
+
+Every exact-value statement in this directory uses this same \(\Phi\).
+Moreover, every signed vector \(k\) used by the optimization is realized on
+the fixed graph by nonnegative, commodity-independent arc costs: charge only
+the path-private terminal arc on the E route when \(k_i\ge0\), and only the
+corresponding C-route arc when \(k_i<0\). This establishes physical legality;
+it is not an optimizer or global-sharpness claim.
+
 ## Cost-difference reduction
 
 Let \(b_i\) and \(e_i^{\mathrm{cost}}\) be terminal \(i\)'s full-demand C- and
-E-route costs under the arc-cost vector, and assume
+E-route costs under the arc-cost vector, and put
 
 \[
-k_i=e_i^{\mathrm{cost}}-b_i>0.
+k_i=e_i^{\mathrm{cost}}-b_i.
 \]
 
 For fractional C fraction \(p_i\) and unsplittable C set \(S\), common baselines
@@ -41,10 +61,11 @@ C(S)\le C(x)
 k(S)\ge k\cdot p.
 \]
 
-Thus feasible C sets form a positive weighted-threshold family in the strictly
-positive lane. Negative coordinates become positive after an oriented coordinate
-complement, while zero coordinates are genuine boundaries. UC-018 now solves
-the fixed-topology objective on every non-all-positive nonzero sign/zero stratum.
+Thus feasible C sets form a positive weighted-threshold family when \(k_i>0\)
+for every \(i\). Negative coordinates become positive after an oriented
+coordinate complement at the feasibility level, while zero coordinates are
+genuine boundaries. UC-018 solves \(\Phi\) on every non-all-positive nonzero
+sign/zero stratum, and UC-019 solves the all-zero stratum.
 
 Conversely, any positive threshold family with
 \(0\le\tau\le\sum_i k_i\) can be realized at the discrete feasibility level by
@@ -188,7 +209,12 @@ the positive remainder from 94 to 89.
 
 ### UC-014 — exact interior witnesses above one
 
-Eleven named strictly positive cells have exact rational interior lower witnesses above one. The strongest current certificate is F060 at `28085483/25000000 = 1.12341932`; every retained point has a positive strict losing margin and has been checked on every feasible route and every arc.
+Ten current strictly positive open cells have exact rational interior lower
+witnesses above one. The strongest current certificate is F060 at
+`28085483/25000000 = 1.12341932`; every retained point has a positive strict
+losing margin and has been checked on every feasible route and every arc.
+F042's earlier certificate remains historical evidence, but UC-023 now solves
+that cell, so it is absent from the current atlas and count.
 
 ### UC-015 — signed nonzero feasibility census
 
@@ -206,7 +232,8 @@ nonnegative closure.
 Every sign-oriented threshold cell with one minimal generator of size at least
 two has exact value one. This covers 176 nonzero sign/generator regimes and
 zeros outside the generator. In the strictly positive lane it resolves all 11
-single-generator cells and reduces the open frontier from 89 to 83 cells.
+single-generator cells and produced the historical 89-to-83 reduction; after
+UC-023, the current frontier is 79 cells.
 
 ### UC-018 — all non-all-positive strata are below `L`
 
@@ -284,18 +311,19 @@ difference remainder is therefore reduced from 94 to **89 labeled cells**.
 ### Exact lower-witness atlas inside the positive frontier
 
 `exact_open_cell_witnesses.py` now gives strict rational interior certificates
-in eleven labeled cells. The strongest are
+in ten current open labeled cells. The strongest are
 
 - F060: `28085483/25000000 = 1.12341932`;
-- F042: `1111291/1000000 = 1.111291`;
 - F055: `5509335803/5000000000 = 1.1018671606`;
 - F061: `88144229/80000000 = 1.1018028625`.
 
-Seven further exact certificates are recorded in
+Seven further current exact certificates are recorded in
 `EXACT_OPEN_CELL_WITNESSES.md` and `exact_open_cell_witnesses.json`. These are
 cell lower bounds rather than optima; all remain below `L`. The F060 point has
 strict losing margin `13/5000000`, so it lies inside the named cell rather than
-only on its closure.
+only on its closure. F042's earlier `1111291/1000000` certificate is retained
+there as historical evidence, outside the generated current atlas, because
+UC-023 proves the exact F042 cell value `9/8`.
 
 ### Nonzero signed differences
 
@@ -329,7 +357,7 @@ exact value `4/5`, and no such stratum can exceed `L`.
 ### Signed single-generator theorem
 
 `SIGNED_SINGLE_GENERATOR_THEOREM.md` proves exact value one for every unique
--oriented-generator stratum and supplies exact checks for 176 sign-pattern/
+oriented-generator stratum and supplies exact checks for 176 sign-pattern/
 generator regimes.
 
 ### Complete non-all-positive theorem

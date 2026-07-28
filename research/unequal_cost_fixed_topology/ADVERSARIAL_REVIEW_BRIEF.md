@@ -22,8 +22,18 @@ The local theorem must now be auditable without opening the released paper.
    every-pair/no-singleton cell and rational approximation to \(L\).
 8. Recompute role-preserving directed graph automorphisms.
 9. Attack cell/closure transfers, strict losing margins, zero-demand closure,
-   and boundary attainment before any of the 94 cells is claimed solved.
+   and boundary attainment before any cell is claimed solved. The 94-cell
+   count is the historical post-UC-008 stage; later claimed reductions must
+   independently justify the current 79-cell/11-orbit frontier.
 10. Compare threshold-game and SSUF literature before any novelty wording.
 
 Admissible outcomes are exact counterexamples, proved corrections, independent
 replays with scope, or named unresolved obligations.
+
+## Current follow-on attack surface
+
+Later work claims the staged reductions 94→89→83→79, a common objective
+\(\Phi\), and a nonnegative commodity-independent arc-cost realization for
+every signed \(k\). It also removes F042 from the current witness atlas after
+UC-023 proves its exact value. Reviewers should reconstruct those additions
+rather than treating this historically earlier brief as evidence for them.

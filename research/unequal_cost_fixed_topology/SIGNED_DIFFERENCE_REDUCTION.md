@@ -41,12 +41,21 @@ positive-difference families.
 This is a classification of **cost feasibility**, not an objective-preserving
 reduction to the positive case. Complementing a negative coordinate swaps which
 physical route is represented by the oriented `1`, reverses that terminal's
-path-difference contribution, and replaces `p_i` by `1-p_i`. Future signed-cell
+path-difference contribution, and replaces `p_i` by `1-p_i`. Any signed-cell
 optimization must therefore carry both:
 
 1. one of the 1,881 feasible set systems; and
 2. the corresponding sign-oriented fixed-support objective.
 
-Zero differences are not included. They are genuine boundary coordinates that
-do not affect cost feasibility but still affect routing load, and require a
-separate closure analysis.
+Zero differences are not included in the 1,881-family nonzero census. They are
+genuine boundary coordinates that do not affect cost feasibility but still
+affect routing load.
+
+The subsequent objective theorems use the common
+\(\Phi(k,p,d)\) in `MASTER_OBJECTIVE_AND_COST_REALIZATION.md`: UC-017 solves
+the single-generator regimes, UC-018 solves every non-all-positive nonzero
+sign/zero stratum, and UC-019 solves the all-zero stratum. The master's
+path-private construction also realizes every signed \(k\) by nonnegative,
+commodity-independent arc costs. None of these facts turns coordinate
+complementation into an objective symmetry or reduces the 79 current positive
+cells to the signed census.

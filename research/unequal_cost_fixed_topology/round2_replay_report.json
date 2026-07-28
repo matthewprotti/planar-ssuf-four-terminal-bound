@@ -1,5 +1,5 @@
 {
-  "artifact_manifest_sha256": "90866896147be14a054cfa9c0fe0da790fc9d01158e96bd5930374e2439e5ef2",
+  "artifact_manifest_sha256": "818f12d83aa4a57156b9aa7c8854a7a4188a6b06b53af7a060aa6e69411508e0",
   "attestation_policy": {
     "canonical": false,
     "external_path_required": true,
@@ -128,10 +128,15 @@
     }
   ],
   "counts": {
+    "after_UC_013_remaining_arbitrary_label_orbits": 13,
+    "after_UC_013_remaining_labeled_cells": 89,
+    "after_UC_017_remaining_arbitrary_label_orbits": 12,
+    "after_UC_017_remaining_labeled_cells": 83,
+    "current_exact_above_one_witness_cells": 10,
     "empty_impossible_families": 1,
     "every_pair_no_singleton_families": 1,
-    "exact_above_one_witness_cells": 11,
     "feasible_singleton_families": 54,
+    "historical_F042_witness_removed_after_UC_023": 1,
     "identically_zero_value_4_over_5_strata": 1,
     "initial_remaining_arbitrary_label_orbits": 15,
     "initial_remaining_labeled_cells": 94,
@@ -153,20 +158,20 @@
   "evidence_class": "deterministic internal exact finite and algebraic replay",
   "expected_exit_code": 0,
   "generated_output_sha256": {
-    "census_reconciliation_results.json": "0db74d10fa656e47ace23173d40a1df0f0b68b97d4e7ea291d8199bbc4367264",
+    "census_reconciliation_results.json": "5412874e1b3bd71910287504718211aaedd9ffe0c86da29bff01c7df3bf51de7",
     "cost_free_stratum_results.json": "1cb5ccd78d84b8e151a56d453786c73da371901f56385bae4b4141016ac1bdee",
     "exact_algebra_results.json": "877dd3621b1dee96bb74953643daccd8242dbed9f7d50b0d54b2930aed4ffc30",
-    "exact_open_cell_witnesses.json": "412d9cba90201adccd50a826bc3e29e20564a400065f20cc48b0a6aee6a22785",
+    "exact_open_cell_witnesses.json": "a3891dd4c56eeb7573163932ec2169e080dcc93149781c425afd3bf19ff9531f",
     "independent_census_results.json": "6a6e83e2d076933264f8417430493f5ccbdbf5a5aca1238e0f2398c96431ce3b",
     "nonpositive_difference_grid_results.json": "f43ef1143679bd0c9d9f15742c25d67f049f11cf14f9747c028387b9220eee05",
-    "nonpositive_difference_results.json": "5c77b594fbb4a1fe602fe928ed4c2931aab0f3a142f8dd165889e2c7a6ddc946",
+    "nonpositive_difference_results.json": "06a07ab7071e6ef4348851d1a8becf4d10a55f85a7fb074edf9a39d0c58858f2",
     "positive_three_pair_clique_results.json": "34fcce16e25f61f51faa480331c869097c1e342472a596f4fa068ea1031ca4ae",
     "release_family_equivalence_results.json": "d534f47a0c23c3ed35f2ab9531ac257ace23fda001d0946e3226b59d3286c91e",
     "signed_difference_census.json": "a525f56272be90df966b1e020571e77b051846511b411d59426b9e6fb48b4277",
     "signed_single_generator_results.json": "597cde91a072a4bfd7c538f3186511190a865656f3501066b96ed23814321f64",
     "symbolic_every_pair_results.json": "7c5b7e3c09e72fe266ff778833025c3bf96a7697b8bf667baad39785e5727145",
-    "threshold_family_census.json": "8c2ebf27e5aeacf1a29bfa9ea306fda542e73627c4acd812cbf54407c3dfbb9e",
-    "witness_examples.json": "122595ef2e2a64bfbbed8adb985aa8ba45744d9dfd8d4cc1682ac0357fcbd643"
+    "threshold_family_census.json": "77f1b6abdf10a1fb05905e24770a0aca440dd68b36f9fc62a8c04ee05dba9a65",
+    "witness_examples.json": "89b172b897f6f2d5a767a0828d7f394a13618f38b6aeb5462189a32afa48afad"
   },
   "limitations": [
     "UC-008 is proved in the human-readable local theorem; software is corroboration.",
@@ -179,13 +184,13 @@
   "network_required": false,
   "release_membership": {
     "manifest_and_archive_input_required": true,
-    "research_file_count": 51
+    "research_file_count": 52
   },
   "required_runtime": {
     "mpmath": "==1.3.0",
     "python": ">=3.11",
     "sympy": "==1.14.0"
   },
-  "schema_version": "ssuf-round2-canonical-replay-v0.2",
+  "schema_version": "ssuf-round2-canonical-replay-v0.3",
   "status": "PASS"
 }

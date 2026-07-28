@@ -6,6 +6,7 @@ from __future__ import annotations
 import hashlib
 import json
 import re
+from fractions import Fraction
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -71,10 +72,61 @@ def main() -> None:
         if result.get("status") != "PASS":
             raise ValueError(f"non-PASS result: {filename}")
 
+    reconciliation = json.loads(
+        (HERE / "census_reconciliation_results.json").read_text(encoding="utf-8")
+    )
+    expected_stages = [
+        {
+            "stage": "after_UC_006_and_UC_008",
+            "status": "historical_initial_remainder",
+            "labeled_cells": 94,
+            "abstract_label_orbits": 15,
+        },
+        {
+            "stage": "after_UC_013",
+            "status": "historical_intermediate_remainder",
+            "labeled_cells": 89,
+            "abstract_label_orbits": 13,
+        },
+        {
+            "stage": "after_UC_017",
+            "status": "historical_intermediate_remainder",
+            "labeled_cells": 83,
+            "abstract_label_orbits": 12,
+        },
+        {
+            "stage": "after_UC_023",
+            "status": "current_open_frontier",
+            "labeled_cells": 79,
+            "abstract_label_orbits": 11,
+        },
+    ]
+    if reconciliation["frontier_stages"] != expected_stages:
+        raise ValueError("positive-frontier stage history changed")
+    current_frontier = set(reconciliation["current_frontier_family_ids"])
+    if len(current_frontier) != 79 or len(reconciliation["current_frontier_orbits"]) != 11:
+        raise ValueError("current 79-cell/11-orbit frontier changed")
+    resolved_ids = reconciliation["resolved_family_ids"]
+    if len(resolved_ids["UC_013"]) != 5:
+        raise ValueError("UC-013 resolved-family list changed")
+    if (
+        len(resolved_ids["UC_017_all_single_generator"]) != 11
+        or len(resolved_ids["UC_017_new_beyond_UC_013"]) != 6
+    ):
+        raise ValueError("UC-017 resolved-family lists changed")
+    if resolved_ids["UC_023"] != ["F042", "F068", "F094", "F105"]:
+        raise ValueError("UC-023 resolved-family list changed")
+    if current_frontier & set(resolved_ids["UC_017_all_single_generator"] + resolved_ids["UC_023"]):
+        raise ValueError("a proved resolved family remains in the current frontier")
+
     exact_witnesses = json.loads((HERE / "exact_open_cell_witnesses.json").read_text(encoding="utf-8"))
-    if len(exact_witnesses) != 11:
-        raise ValueError("expected eleven exact open-cell witnesses")
-    from fractions import Fraction
+    witness_ids = [row["family_id"] for row in exact_witnesses]
+    if len(exact_witnesses) != 10 or len(witness_ids) != len(set(witness_ids)):
+        raise ValueError("expected ten distinct current open-cell witnesses")
+    if "F042" in witness_ids:
+        raise ValueError("solved historical cell F042 remains in the current witness atlas")
+    if not set(witness_ids).issubset(current_frontier):
+        raise ValueError("a current witness is outside the reconciled 79-cell frontier")
     if not all(Fraction(row["exact_minimum_maximum_deviation"]) > 1 for row in exact_witnesses):
         raise ValueError("an exact open-cell witness is not greater than one")
     signed = json.loads((HERE / "signed_difference_census.json").read_text(encoding="utf-8"))
@@ -98,9 +150,6 @@ def main() -> None:
     if (clique["positive_frontier_after"], clique["abstract_orbits_after"]) != (79, 11):
         raise ValueError("three-pair clique frontier reduction changed")
 
-    reconciliation = json.loads(
-        (HERE / "census_reconciliation_results.json").read_text(encoding="utf-8")
-    )
     if reconciliation["ambient_partition"] != {
         "positive_threshold": 149,
         "nonempty_nonthreshold": 18,
@@ -126,19 +175,31 @@ def main() -> None:
         if not (HERE / local_file).is_file():
             raise ValueError(f"missing local theorem component: {local_file}")
 
+    master = (HERE / "MASTER_OBJECTIVE_AND_COST_REALIZATION.md").read_text(encoding="utf-8")
+    for required_text in (
+        r"\Phi(k,p,d)",
+        "nonnegative, commodity-independent",
+        r"c_i^{\mathrm E}=\frac{\max\{k_i,0\}}{d_i}",
+    ):
+        if required_text not in master:
+            raise ValueError(f"master objective/realization text missing: {required_text}")
+
     scope = (HERE / "POSITIVE_DIFFERENCE_SCOPE.md").read_text(encoding="utf-8")
     if "genuine restriction" not in scope or "without-loss-of-generality" not in scope:
         raise ValueError("positive-difference restriction is not explicit")
     if "89" not in (HERE / "NO_PAIR_SCALAR_LEMMAS.md").read_text(encoding="utf-8"):
         raise ValueError("historical no-pair reduction is not recorded")
     if "83" not in (HERE / "SIGNED_SINGLE_GENERATOR_THEOREM.md").read_text(encoding="utf-8"):
-        raise ValueError("83-cell positive frontier is not recorded")
+        raise ValueError("historical 83-cell UC-017 stage is not recorded")
     if "9/8" not in (HERE / "NONPOSITIVE_DIFFERENCE_THEOREM.md").read_text(encoding="utf-8"):
         raise ValueError("non-all-positive theorem is not recorded")
     if "1,881" not in (HERE / "SIGNED_DIFFERENCE_REDUCTION.md").read_text(encoding="utf-8"):
         raise ValueError("signed census statement is not recorded")
 
-    print("PASS: theorem IDs, census partitions, orbit tables, result artifacts, and provenance pin agree")
+    print(
+        "PASS: theorem IDs, staged frontier, current witnesses, orbit tables, "
+        "result artifacts, master objective, and provenance pin agree"
+    )
 
 
 if __name__ == "__main__":

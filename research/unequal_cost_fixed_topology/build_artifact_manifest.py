@@ -47,7 +47,7 @@ def payload() -> dict:
     }
     dependency = json.loads((HERE / "DEPENDENCY_MANIFEST.json").read_text(encoding="utf-8"))
     return {
-        "schema_version": "ssuf-fixed-topology-artifact-manifest-v0.6",
+        "schema_version": "ssuf-fixed-topology-artifact-manifest-v0.7",
         "scope": (
             "committed fixed-topology SSUF research sources; generated canonical "
             "results and ephemeral attestations excluded"

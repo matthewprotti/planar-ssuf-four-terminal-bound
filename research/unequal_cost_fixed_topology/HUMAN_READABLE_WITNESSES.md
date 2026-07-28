@@ -9,12 +9,13 @@ The census stores the exact family whose minimal feasible sets are all six
 pairs. Equal positive weights with threshold two realize it. This is the cell
 treated by UC-008.
 
-## Remaining labeled cell example
+## Current-frontier labeled cell example
 
-The generated file selects the first stable labeled ID from the 94-cell list
-and records its exact integer weights, threshold, and minimal feasible sets. It
-is still a formal optimization unit on the fixed graph; membership in an
-arbitrary-label orbit is only a search aid.
+The generated file selects the first stable labeled ID from the current
+79-cell frontier and records its exact integer weights, threshold, and minimal
+feasible sets. It is still a formal optimization unit on the fixed graph;
+membership in an arbitrary-label orbit is only a search aid. The historical
+94-cell list remains in the original census artifact.
 
 ## Nonthreshold example
 

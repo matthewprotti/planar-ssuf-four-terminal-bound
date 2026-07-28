@@ -1,6 +1,12 @@
 # Claim Ledger — Fixed-Topology SSUF Follow-On
 
-Last updated: 26 July 2026, remaining-limits research pass
+Last updated: 27 July 2026, publication-convergence pass
+
+Every objective-value claim below uses the common
+`\(\Phi(k,p,d)\)` in `MASTER_OBJECTIVE_AND_COST_REALIZATION.md`. That file also
+gives an explicit realization of every signed \(k\) by nonnegative,
+commodity-independent arc costs. The realization establishes legality, not an
+optimizer or a new sharpness result.
 
 | ID | Claim | Status / evidence class | Evidence | Boundary / next gate |
 | --- | --- | --- | --- | --- |
@@ -17,11 +23,11 @@ Last updated: 26 July 2026, remaining-limits research pass
 | UC-011 | Exact algebra audits match local formulas. | Corroboration | two arithmetic paths | Not proof-assistant verification. |
 | UC-012 | No feasible pair forces `sum p>2`. | Human scalar lemma | no-pair file | No overload conclusion alone. |
 | UC-013 | Full-only and one-triple cells have value at most 1. | Human proof | no-pair file | Reduced 94→89. |
-| UC-014 | Eleven strictly positive cells have exact strict interior rational lower witnesses above 1; F060 reaches `28085483/25000000`. | Exact rational certificates | witness checker and JSON | None exceeds `L`; not cell optima. |
+| UC-014 | Ten current open strictly positive cells have exact strict interior rational lower witnesses above 1; F060 reaches `28085483/25000000`. F042's earlier witness is retained only as historical evidence because UC-023 now solves that cell. | Exact rational certificates | witness checker and JSON; historical note | None exceeds `L`; not cell optima. |
 | UC-015 | 1,881 unique nonzero signed/unate feasible families arise from oriented threshold families. | Human reduction + exact census | signed census | Feasibility classification only. |
 | UC-016 | Solved every-pair cell has no zero-difference boundary point. | Human proof | zero-boundary file | Other zero strata handled by UC-018/019. |
-| UC-017 | Every signed single-generator stratum with generator size at least two has exact value 1; in the positive lane this resolves 11 cells. | Human theorem + exact checks | signed single-generator files | Multiple-generator positive cells remain. |
-| UC-018 | Every non-all-positive nonzero sign/zero stratum has exact value 1 or 9/8 and is strictly below `L`. | Human theorem + exact algebra/finite grids | nonpositive files | Identically zero handled only by UC-019 bounds. |
+| UC-017 | Every signed single-generator stratum with generator size at least two has exact value 1; in the positive lane this resolves 11 cells. | Human theorem + exact checks | signed single-generator files | This produced the historical 89→83 stage; after UC-023, 79 multiple-generator positive cells remain. |
+| UC-018 | Every non-all-positive nonzero sign/zero stratum has exact value 1 or 9/8 and is strictly below `L`. | Human theorem + exact algebra/finite grids | nonpositive files | Identically zero is excluded here and solved exactly by UC-019. |
 | UC-019 | Identically zero cost differences have exact value `4/5`. | Human theorem + exact lower witness and rational-grid corroboration | cost-free files | Fixed topology only. |
 | UC-023 | The four pure three-pair clique cells have exact value `9/8` for omitted terminals 2/3/4 and 1 for omitted terminal 1. | Human theorem + exact checks | clique theorem/checker | Does not cover larger feasible-pair graphs. |
 | UC-020 | All 79 remaining strictly positive cells are at most `L`. | Open main target | cell protocol | No exact candidate above `L`. |
@@ -31,6 +37,8 @@ Last updated: 26 July 2026, remaining-limits research pass
 
 ## Standing nonclaims
 
-No claim of global fixed-topology sharpness, four-terminal optimality, exact
-unrestricted planar constant, novelty, external reproduction, independent human
-verification, or peer review.
+The nonnegative arc-cost realization does not prove that any displayed
+parameter is optimal. No claim of global fixed-topology sharpness,
+four-terminal optimality, exact unrestricted planar constant, novelty,
+external reproduction, independent human verification, or peer review. The
+11 abstract-label orbits are search bookkeeping, not graph symmetries.

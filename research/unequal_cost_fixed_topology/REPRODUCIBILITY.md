@@ -47,7 +47,9 @@ in the source checkout.
 2. runs the complete finite census, independent census, and reconciliation;
 3. runs the symbolic and CAS-independent exact algebra audits;
 4. compares the local lower family with the pinned release extraction;
-5. generates and verifies exact open-cell witnesses;
+5. derives the historical 94/89/83 stages and current 79-cell/11-orbit
+   frontier, then generates and verifies the ten-cell current open-witness
+   atlas;
 6. runs the signed, nonpositive, grid, cost-free, and positive-clique checks;
 7. validates theorem IDs, counts, partitions, group actions, schemas, and pins;
 8. compares the canonical replay bytes with `round2_replay_report.json`;
@@ -108,9 +110,13 @@ then run the clean-clone replay commands without skip flags.
 - 168 labeled monotone families;
 - 149 realizable strictly positive threshold families;
 - 94 labeled cells after the original singleton/every-pair reduction;
+- 89 labeled cells after UC-013 and 83 after UC-017, both historical
+  intermediate stages;
 - 79 remaining strictly positive labeled cells after the proved reductions;
 - 11 remaining arbitrary-label search orbits;
-- 11 exact strictly-above-one interior witnesses;
+- 10 current exact strictly-above-one interior witnesses;
+- one additional historical F042 certificate, excluded from the current atlas
+  because UC-023 proves the exact F042 cell value `9/8`;
 - 1,881 unique signed unate threshold families;
 - all non-all-positive sign/zero strata at most `9/8`; and
 - the identically zero cost-difference stratum exactly `4/5`.
@@ -118,8 +124,13 @@ then run the clean-clone replay commands without skip flags.
 ## Evidence boundary and nonclaims
 
 - Human-readable theorems carry the proofs; software is corroboration.
+- `MASTER_OBJECTIVE_AND_COST_REALIZATION.md` fixes the objective used by all
+  value statements and explicitly realizes signed \(k\) with nonnegative,
+  commodity-independent arc costs. That legality lemma is not an optimizer.
 - The 79 remaining strictly positive labeled cells and their boundaries remain
   open.
+- The 11 abstract-label orbits are search bookkeeping, not fixed-graph
+  symmetries.
 - The pinned lower-family extraction is compared exactly but was transcribed
   from the released TeX by a human.
 - The theorem is fixed-topology only.

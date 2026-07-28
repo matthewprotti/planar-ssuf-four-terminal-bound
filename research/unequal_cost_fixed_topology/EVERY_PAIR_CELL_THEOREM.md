@@ -1,5 +1,8 @@
 # The Every-Pair Unequal-Cost Cell Has Exact Value \(L\)
 
+The value in this theorem is the common fixed-topology objective
+\(\Phi(k,p,d)\) from `MASTER_OBJECTIVE_AND_COST_REALIZATION.md`.
+
 ## Cost-difference reduction
 
 For terminal \(i\), let \(b_i\) and \(e_i^{\mathrm{cost}}\) be the full-demand
@@ -33,7 +36,7 @@ k(S)\ge\tau,
 
 The common route-cost baseline cancels. Positivity of every \(k_i\) is what
 makes the feasible family upward closed. This theorem makes no claim for zero
-or negative route-cost differences.
+or negative route-cost differences; UC-018/019 treat those strata separately.
 
 Normalize \(d_{\max}=1\), so \(d_i\in(0,1]\), and define
 
@@ -198,8 +201,9 @@ Therefore the exact supremum is \(L\). ∎
 
 Any unequal-cost improvement over \(L\) on the fixed topology must make at
 least one two-terminal cheap set infeasible. Combined with the feasible-
-singleton lemma, the search is confined to the 94 labeled threshold families
-identified by the exact census.
+singleton lemma, this originally confined the search to the 94 labeled
+threshold families identified by the exact census. Later UC-013, UC-017, and
+UC-023 reductions leave the current 79-cell positive frontier.
 
 ## Release provenance
 

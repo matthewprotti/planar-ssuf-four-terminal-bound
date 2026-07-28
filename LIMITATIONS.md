@@ -11,6 +11,24 @@
 - The document is an unrefereed research disclosure, not a peer-reviewed
   paper.
 
+## Unreleased unequal-cost follow-on
+
+- The follow-on work under `research/unequal_cost_fixed_topology/` is not part
+  of the immutable v0.1.0 manuscript or release.
+- All of its value claims use the fixed-graph, two-route objective
+  \(\Phi(k,p,d)\) in `MASTER_OBJECTIVE_AND_COST_REALIZATION.md`.
+- The explicit private-arc construction shows that signed route-cost
+  differences are realizable with nonnegative, commodity-independent arc
+  costs. It does not identify an optimizer or establish global sharpness.
+- The current strictly positive open frontier is 79 labeled cells in 11
+  abstract-label search orbits. The 94- and 83-cell counts are historical
+  stages, and the orbit quotient is not a fixed-graph symmetry reduction.
+- Ten current open cells have exact interior lower certificates above one.
+  F042's older certificate remains historical evidence, but UC-023 solves that
+  cell and removes it from the current atlas.
+- The follow-on work does not establish the exact arbitrary-cost fixed-graph
+  value, four-terminal optimality, or the unrestricted planar constant.
+
 ## Verification scope
 
 - Exact enumeration proves the finite statement for the encoded graph and
@@ -22,6 +40,9 @@
   It reduces shared-code risk but is not independent human verification.
 - Randomized stress testing of the restricted model is corroborative only;
   the manuscript's analytic argument is the proof.
+- In the follow-on work, human-readable inequalities remain the proofs.
+  Census, exact-algebra, finite-grid, and witness scripts are corroboration,
+  and a successful deterministic replay is not independent human review.
 
 ## Novelty scope
 
@@ -40,5 +61,6 @@ The public `v0.1.0` release preserves the following controls:
    checked before publication;
 3. publication followed explicit authorization.
 
-No mathematical defect is currently known in the stated claims. This means
-only that the completed review passes found none.
+No mathematical defect is currently known in the stated v0.1.0 or follow-on
+claims. This means only that the completed internal review passes found none;
+the follow-on work has not been promoted to a new release.

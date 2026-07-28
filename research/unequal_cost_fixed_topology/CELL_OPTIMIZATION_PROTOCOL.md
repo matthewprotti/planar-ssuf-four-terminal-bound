@@ -1,4 +1,4 @@
-# Protocol for the Remaining 83 Strictly Positive Threshold Cells
+# Protocol for the Current 79 Strictly Positive Threshold Cells
 
 Each positive threshold cell is defined by
 
@@ -10,6 +10,11 @@ k(S)<k\cdot p\quad(S\notin\mathcal F),
 
 with \(k_i>0\), \(p_i\in[0,1]\), \(d_i\in(0,1]\), and
 \(\max_i d_i=1\).
+
+The quantity optimized in every cell is the common
+\(\Phi(k,p,d)\) from `MASTER_OBJECTIVE_AND_COST_REALIZATION.md`; the
+nonnegative private-arc cost construction there makes each admissible \(k\)
+physical but does not supply an optimizer.
 
 ## Normalization
 
@@ -56,10 +61,12 @@ and a symbolic upper or lower certificate.
 
 ## Forward-pass priority order
 
-After UC-013 and UC-017, skip the five bounded no-pair cells and all 11 single-generator cells; retain 83
-labeled positive-difference cells. Exact witnesses in F126, F125, F042, F129,
-and F143 show that some surviving cells exceed one; these are priority cells for
-upper-bound analysis, not evidence of an improvement over `L`.
+The historical sequence is 94 cells after UC-006/008, 89 after UC-013, and 83
+after UC-017. After UC-023, also skip the four solved pure three-pair clique
+cells—including F042—and retain the current 79 labeled positive-difference
+cells. Exact current witnesses in F060, F055, F061, F126, F125, F129, and F143
+show that some surviving cells exceed one; these are priority cells for upper-
+bound analysis, not evidence of an improvement over `L`.
 
 For nonzero signed differences, the analogous feasibility universe has 1,881
 labeled unate threshold families. Signed optimization must attach the coordinate

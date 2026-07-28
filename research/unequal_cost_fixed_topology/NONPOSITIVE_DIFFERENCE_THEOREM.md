@@ -14,6 +14,11 @@ The result uses the fixed path-difference supports in
 `FIXED_TOPOLOGY_APPENDIX.md` and the upper-deviation convention of the research
 package.
 
+Its value is the supremum of the physical master objective
+\(\Phi(k,p,d)\) defined in `MASTER_OBJECTIVE_AND_COST_REALIZATION.md`. The
+realization lemma there supplies nonnegative arc costs for every signed/zero
+difference vector used below.
+
 ## Theorem UC-018
 
 Fix a nonzero cost-difference vector with at least one coordinate `k_i<=0`.
@@ -40,10 +45,9 @@ Consequently every non-all-positive stratum is bounded by
 Thus an improvement over the released fixed-topology value `L` can occur only
 in the strictly all-positive cost-difference lane.
 
-The identically zero vector is excluded from the exact-value statement because
-it is one degenerate cost-free stratum rather than a sign-oriented threshold
-cell.  The standard cost-free upper bound still applies, but no separate exact
-fixed-topology value is asserted here.
+The identically zero vector is excluded from UC-018 because it is one
+degenerate cost-free stratum rather than a sign-oriented threshold cell.
+UC-019 separately proves its exact fixed-topology value \(4/5\).
 
 ## 1. Remove nonpositive coordinates from the upper-bound search
 
@@ -246,8 +250,9 @@ where the common value is
 
 This proves the upper bound.
 
-For the matching lower family, choose rational `epsilon in (0,1)`, take equal
-positive differences on `A,B,C`, and set
+For the matching negative-coordinate lower family, choose rational
+`epsilon in (0,1)`, take \(k_A=k_B=k_C=1\), and set the omitted coordinate to
+\(k_j=-3\), \(p_j=0\), and \(d_j=1/7\). Set
 
 \[
 p_A=p_C=\frac{1+\epsilon}{4},
@@ -261,16 +266,20 @@ d_A=d_C=1,
 d_B=\frac{3-\epsilon}{4}.
 \]
 
-Give a negative omitted terminal sufficiently large magnitude and set its C
-fraction to zero, so it is forced E; for a zero omitted terminal give it demand
-tending to zero.  Exactly the three positive pairs and the triple are feasible.
-All three pair maxima equal
+The omitted terminal is forced E. Exactly the three positive pairs and the
+triple are feasible, and all three pair maxima equal
 
 \[
 \frac{(3-\epsilon)^2}{8},
 \]
 
 which tends to `9/8`.  Rational data therefore attain the same supremum.
+
+For the matching zero-coordinate stratum, instead take
+\(k_j=0\), \(p_j=1/2\), and a positive rational demand \(d_j=\eta\to0\).
+The same three-terminal value is perturbed by at most \(\eta\), so rational
+instances again approach \(9/8\). These are the exact parameter families
+checked by `nonpositive_difference_check.py`.
 
 ## 5. Nested type: exact value one
 
@@ -341,8 +350,9 @@ we have
 \]
 
 Negative and zero cost differences therefore cannot improve the fixed-topology
-lower bound.  The global fixed-topology search may now be confined to the
-strictly all-positive lane and its 83 unresolved labeled cells.
+lower bound. UC-018 confined the search to the strictly all-positive lane and
+its then-current 83 labeled cells; UC-023 subsequently resolves four of those.
+The current frontier is 79 labeled cells in 11 abstract-label search orbits.
 
 ## Exact executable corroboration
 
@@ -358,6 +368,7 @@ The human inequalities above are the proof.
 
 ## Nonclaims
 
-This theorem does not solve any of the 83 remaining strictly all-positive cells,
-prove global four-terminal optimality, determine the unrestricted planar
-constant, or give the exact value of the identically zero cost vector.
+This theorem does not solve a strictly all-positive cell, prove global four-
+terminal optimality, or determine the unrestricted planar constant. UC-019,
+not UC-018, gives the exact value of the identically zero cost vector. The
+current all-positive frontier after UC-023 contains 79 labeled cells.

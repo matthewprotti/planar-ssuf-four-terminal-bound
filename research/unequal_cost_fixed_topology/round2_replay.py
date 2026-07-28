@@ -217,10 +217,36 @@ def _validate_exact_results(work: Path) -> None:
         raise AssertionError("unexpected realizable-orbit count")
     if len(reconciliation["remaining_orbits"]) != 15:
         raise AssertionError("unexpected initial remaining-orbit count")
+    expected_stages = [
+        (94, 15, "historical_initial_remainder"),
+        (89, 13, "historical_intermediate_remainder"),
+        (83, 12, "historical_intermediate_remainder"),
+        (79, 11, "current_open_frontier"),
+    ]
+    actual_stages = [
+        (
+            row["labeled_cells"],
+            row["abstract_label_orbits"],
+            row["status"],
+        )
+        for row in reconciliation["frontier_stages"]
+    ]
+    if actual_stages != expected_stages:
+        raise AssertionError("unexpected positive-frontier stage history")
+    current_frontier = set(reconciliation["current_frontier_family_ids"])
+    if len(current_frontier) != 79:
+        raise AssertionError("unexpected current positive-frontier membership")
+    if len(reconciliation["current_frontier_orbits"]) != 11:
+        raise AssertionError("unexpected current positive-frontier orbit count")
 
     exact_witnesses = _read_json(work, "exact_open_cell_witnesses.json")
-    if len(exact_witnesses) != 11:
+    witness_ids = [row["family_id"] for row in exact_witnesses]
+    if len(exact_witnesses) != 10 or len(witness_ids) != len(set(witness_ids)):
         raise AssertionError("unexpected exact-witness count")
+    if "F042" in witness_ids:
+        raise AssertionError("solved historical cell F042 remains a current witness")
+    if not set(witness_ids).issubset(current_frontier):
+        raise AssertionError("an exact witness is outside the current frontier")
     if not all(
         Fraction(row["exact_minimum_maximum_deviation"]) > 1
         for row in exact_witnesses
@@ -270,7 +296,7 @@ def _build_canonical_report(
         raise AssertionError("replay did not generate: " + ", ".join(missing))
 
     report: dict[str, Any] = {
-        "schema_version": "ssuf-round2-canonical-replay-v0.2",
+        "schema_version": "ssuf-round2-canonical-replay-v0.3",
         "status": "PASS",
         "evidence_class": "deterministic internal exact finite and algebraic replay",
         "network_required": False,
@@ -300,15 +326,20 @@ def _build_canonical_report(
             "feasible_singleton_families": 54,
             "every_pair_no_singleton_families": 1,
             "initial_remaining_labeled_cells": 94,
+            "initial_remaining_arbitrary_label_orbits": 15,
             "no_pair_cells_eliminated_by_UC_013": 5,
+            "after_UC_013_remaining_labeled_cells": 89,
+            "after_UC_013_remaining_arbitrary_label_orbits": 13,
             "single_generator_positive_cells_resolved_by_UC_017": 11,
             "new_single_generator_cells_beyond_UC_013": 6,
+            "after_UC_017_remaining_labeled_cells": 83,
+            "after_UC_017_remaining_arbitrary_label_orbits": 12,
             "positive_three_pair_clique_cells_resolved_by_UC_023": 4,
             "remaining_positive_labeled_cells": 79,
-            "exact_above_one_witness_cells": 11,
+            "current_exact_above_one_witness_cells": 10,
+            "historical_F042_witness_removed_after_UC_023": 1,
             "nonzero_signed_unate_feasibility_families": 1881,
             "realizable_arbitrary_label_orbits": 26,
-            "initial_remaining_arbitrary_label_orbits": 15,
             "remaining_positive_arbitrary_label_orbits": 11,
             "nonallpositive_nonzero_sign_zero_strata": 79,
             "nonallpositive_value_one_strata": 73,

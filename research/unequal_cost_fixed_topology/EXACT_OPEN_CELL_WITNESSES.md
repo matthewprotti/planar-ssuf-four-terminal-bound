@@ -1,15 +1,14 @@
-# Exact Interior Witnesses in Eleven Strictly Positive Cells
+# Exact Interior Witnesses in Ten Current Open Cells
 
-The current strictly positive frontier contains 83 labeled cells. The exact
-checker `exact_open_cell_witnesses.py` supplies strict rational interior
-instances in eleven of those cells for which **every** cost-feasible routing
-has maximum upper deviation greater than one. The certificates do not solve
-any cell; they provide rigorous lower bounds and exact targets for upper-bound
-work.
+The current strictly positive frontier contains 79 labeled cells in 11
+abstract-label search orbits. The exact checker
+`exact_open_cell_witnesses.py` supplies strict rational interior instances in
+ten current cells for which **every** cost-feasible routing has maximum upper
+deviation greater than one. The certificates do not solve any cell; they
+provide rigorous lower bounds and exact targets for upper-bound work.
 
 | Cell | Minimal feasible sets | Exact lower witness | Decimal |
 | --- | --- | ---: | ---: |
-| F042 | 12, 13, 23 | `1111291/1000000` | 1.1112910000 |
 | F045 | 12, 13, 23, 14, 24 | `2173363/2000000` | 1.0866815000 |
 | F047 | 12, 13, 23, 14, 34 | `26854219/25000000` | 1.0741687600 |
 | F049 | 12, 13, 23, 24, 34 | `1350435821/1250000000` | 1.0803486568 |
@@ -21,13 +20,15 @@ work.
 | F129 | 123, 134, 234 | `638/625` | 1.0208000000 |
 | F143 | 124, 134, 234 | `251517/250000` | 1.0060680000 |
 
-For each instance the checker verifies with exact rational arithmetic that:
+For each current instance the checker verifies with exact rational arithmetic
+that:
 
 1. `k_i > 0`, `0 <= p_i <= 1`, `0 < d_i <= 1`, and `max d_i = 1`;
 2. the threshold inequalities realize exactly the named labeled family, with a
    positive strict losing margin;
-3. every feasible cheap set is enumerated; and
-4. all five trunk and four positive private-arc deviations are checked.
+3. the family ID belongs to the verified current 79-cell frontier;
+4. every feasible cheap set is enumerated; and
+5. all five trunk and four positive private-arc deviations are checked.
 
 The strongest current certificate is F060:
 
@@ -39,12 +40,16 @@ exact minimum feasible maximum deviation = 28085483/25000000
 ```
 
 The strict losing margin is `13/5000000`, so the point is genuinely inside
-the F060 threshold cell rather than merely on its boundary.
-
-None of the eleven certificates exceeds the every-pair value
+the F060 threshold cell rather than merely on its boundary. None of the ten
+current certificates exceeds
 
 `L = (299 - 41*sqrt(41))/32 ≈ 1.139747070789`.
 
-The earlier F042 certificate `423/400` has been strengthened to
-`1111291/1000000`. Numerical scouting was used only to locate candidate
-points; every value retained here is re-encoded and verified exactly.
+## Historical F042 certificate
+
+F042 previously had the exact interior lower certificate
+`1111291/1000000`, strengthening an earlier `423/400` point. UC-023 now proves
+the exact F042 cell value `9/8`, so F042 is solved and has been removed from
+the current open-witness JSON, checker input, and count. Its historical
+certificate remains valid evidence about the route objective and is recorded
+here and in Git history; it is no longer presented as an open-cell result.

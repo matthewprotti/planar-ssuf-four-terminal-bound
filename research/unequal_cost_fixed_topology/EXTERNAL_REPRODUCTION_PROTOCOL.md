@@ -47,7 +47,10 @@ The default commands do not alter the source checkout. They verify that the
 committed canonical report matches a fresh replay, that two different temporary
 roots produce identical canonical bytes, and that all branch-local research
 files are present in the repository manifest and deterministic source-archive
-input.
+input. The reconciliation output distinguishes the historical 94-, 89-, and
+83-cell stages from the current 79-cell/11-orbit frontier; the generated
+open-witness atlas contains ten current cells and excludes the solved
+historical F042 certificate.
 
 ## Optional noncanonical host attestation
 

@@ -181,7 +181,7 @@ def main() -> None:
         elif family == every_pair_family:
             search_status = "sharp_every_pair_cell_value_L"
         else:
-            search_status = "open_unequal_cost_candidate_cell"
+            search_status = "initial_candidate_after_UC_006_and_UC_008"
         realizable_rows.append(
             {
                 "id": family_id,
@@ -276,6 +276,10 @@ def main() -> None:
                 key=lambda item: (minimal_members(item), family_bitmask(item)),
             )
         ],
+        "unequal_candidate_stage": (
+            "historical 94-cell remainder after UC-006/UC-008; later analytic "
+            "reductions are reconciled separately"
+        ),
         "unequal_candidate_orbit_representatives": [
             {
                 "family_id": family_to_id[family],
@@ -302,7 +306,8 @@ def main() -> None:
     print("PASS: the remaining family is empty and impossible because the full set is feasible")
     print(
         "PASS: 26 total permutation orbits; "
-        "94 labeled cells in 15 orbits remain after the every-pair theorem"
+        "historical initial remainder is 94 labeled cells in 15 orbits "
+        "after the every-pair theorem"
     )
     print(f"WROTE: {output}")
 

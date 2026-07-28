@@ -161,7 +161,11 @@ def main():
   'exact_chain_supremum':'9/8',
   'exact_nested_supremum':'1',
   'comparison_to_L':'9/8 < (299-41*sqrt(41))/32',
-  'nonclaims':['human inequalities remain the proof','all-positive 83-cell frontier remains open','all-zero cost vector not assigned a separate exact value'],
+  'nonclaims':[
+   'human inequalities remain the proof',
+   'current all-positive 79-cell frontier after UC-023 remains open',
+   'all-zero exact value 4/5 is the separate UC-019 theorem',
+  ],
  }
  target=Path(__file__).with_name('nonpositive_difference_results.json')
  target.write_text(json.dumps(out,indent=2,sort_keys=True)+'\n')

@@ -28,7 +28,8 @@ The empty family is impossible in the SSUF reduction because
   1.
 - The one every-pair/no-singleton family has exact supremum \(L\) under the
   positive-difference assumptions.
-- The 94 remaining labeled families are open optimization cells.
+- The 94 remaining labeled families form the historical initial optimization
+  remainder after UC-006/008. Later theorems reduce this set.
 
 ## Two distinct group actions
 
@@ -56,8 +57,10 @@ roles. Its role-preserving automorphism group is the identity. Therefore an
 arbitrary terminal-label permutation is not automatically an objective
 symmetry.
 
-Every one of the 94 labeled cells remains a formal optimization unit unless a
-separate objective-preserving transformation is proved.
+At the initial stage every one of the 94 labeled cells was a formal
+optimization unit unless a separate objective-preserving transformation was
+proved. The later reductions are labelwise theorems, not an assumption that
+orbit members have equal objective values.
 
 ## Forward reduction after the original census partition
 
@@ -71,9 +74,23 @@ exactly five labeled no-pair cells:
 - the full-set-only family; and
 - the four families with exactly one feasible triple.
 
-Therefore the current positive-difference optimization frontier is
+Those five cells form two complete abstract-label orbits, so the sequential
+orbit count at the 89-cell stage is 13 rather than 15.
 
-`94 - 5 = 89` labeled cells.
+The verified sequence is:
+
+| Stage | Labeled cells | Abstract-label search orbits | Role |
+| --- | ---: | ---: | --- |
+| after UC-006/008 | 94 | 15 | historical initial remainder |
+| after UC-013 | 89 | 13 | historical intermediate remainder |
+| after UC-017 | 83 | 12 | historical intermediate remainder |
+| after UC-023 | **79** | **11** | current open frontier |
+
+UC-017 resolves all 11 single-generator cells, six of them beyond the five
+already covered by UC-013. UC-023 then resolves the four pure three-pair
+clique cells. `census_reconciliation_check.py` reconstructs these four stages
+from the minimal generators, checks each count and orbit count, and emits all
+79 current labeled IDs.
 
 This does not retroactively change the original census JSON field
 `cells_remaining_after_every_pair_theorem`; it records an additional theorem

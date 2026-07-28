@@ -8,6 +8,11 @@ omitted terminal may be C or E.
 
 These are the four labeled cells `F042`, `F068`, `F094`, and `F105`.
 
+The “value” below is the supremum of the physical master objective
+\(\Phi(k,p,d)\) from `MASTER_OBJECTIVE_AND_COST_REALIZATION.md`. All cost
+differences in the proof are realized by nonnegative arc costs through that
+file's private-arc lemma.
+
 ## Theorem UC-023
 
 The exact fixed-topology supremum of the pure three-pair clique cell is
@@ -121,9 +126,10 @@ With `p_A+p_B+p_C=1`, the convex/minimax calculation gives
 
 This proves the upper bound.
 
-For the matching lower family, choose rational `epsilon,delta,eta>0` tending to
-zero. Give the three terminals in `Q` unit positive cost differences and give
-terminal `j` cost difference `delta`. Set
+For the matching lower family, choose rational
+`epsilon,delta,eta>0` tending to zero with
+\(\epsilon+\delta<1\). Give the three terminals in `Q` unit positive cost
+differences and give terminal `j` cost difference `delta`. Set
 
 \[
 p_A=p_C=\frac{1+\epsilon}{4},
@@ -141,9 +147,12 @@ d_B=\frac{3-\epsilon}{4},
 d_j=\eta.
 \]
 
-The threshold is `1+epsilon+delta`. Exactly the three pairs of `Q`, their
-supersets in `Q`, and the versions with terminal `j` added are feasible. Every
-feasible routing has maximum deviation at least
+The threshold is `1+epsilon+delta`. A set with at least two terminals of `Q`
+has weight at least \(2>1+\epsilon+\delta\), while a set with at most one
+terminal of `Q` has weight at most \(1+\delta<1+\epsilon+\delta\). Thus exactly
+the three pairs of `Q`, their supersets in `Q`, and the versions with terminal
+`j` added are feasible, with strict losing margins. Every feasible routing has
+maximum deviation at least
 
 \[
 \frac{(3-\epsilon)^2}{8}-\eta,
@@ -165,7 +174,8 @@ maxima `T_2,T_3` satisfy
 Thus one feasible pair has maximum upper deviation at most one.
 
 For the matching lower sequence, take equal positive differences on terminals
-`2,3,4`, a positive difference `delta` on terminal 1, and
+`2,3,4`, a positive difference `delta` on terminal 1, and rational
+\(\epsilon,\delta,\eta>0\) with \(\epsilon+\delta<1\):
 
 \[
 p_2=\epsilon,
@@ -174,7 +184,8 @@ p_2=\epsilon,
 \qquad p_1=1.
 \]
 
-The threshold is `1+epsilon+delta`, so the cell is exact. With unit demands on
+The threshold is `1+epsilon+delta`. The same two-versus-one weight comparison
+shows that the cell is exact with a strict losing margin. With unit demands on
 terminals `2,3,4` and demand `eta` on terminal 1, every feasible routing has a
 private deviation at least `1-epsilon`. Hence the supremum is one. ∎
 
@@ -187,3 +198,7 @@ leaving
 \[
 \boxed{79\text{ labeled cells in }11\text{ abstract-label orbits}.}
 \]
+
+The earlier exact lower witness recorded for F042 remains valid historical
+evidence, but F042 is solved by this theorem and is no longer part of the
+current open-witness atlas.

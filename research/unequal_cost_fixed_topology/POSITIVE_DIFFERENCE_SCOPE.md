@@ -13,18 +13,26 @@ This workstream assumes
 k_i>0\qquad(i=1,2,3,4).
 \]
 
-The assumption is a genuine restriction, not a without-loss-of-generality
-normalization. No reorientation lemma is claimed for instances with \(k_i=0\)
-or \(k_i<0\).
+The assumption is a genuine restriction for the positive-threshold cell
+program, not a without-loss-of-generality normalization.
 
 - Positive differences make cost-feasible cheap sets upward closed and yield a
   positive weighted-threshold family.
 - Zero differences are boundary/closure cases that may collapse strict
   inequalities or make a terminal cost-neutral.
-- Negative differences destroy the same upward-closed interpretation because
-  choosing the nominally “cheap” route can increase the relative cost term.
+- Negative differences destroy the same upward-closed interpretation in the
+  original C coordinates. `SIGNED_DIFFERENCE_REDUCTION.md` gives a coordinate
+  complement for feasibility, but it is not an objective-preserving reduction
+  to the positive case.
 
 Accordingly, titles, theorem statements, and conclusions use “positive
-differences.” The 94-cell program concerns only the positive-difference domain.
-Any future extension to zero or negative differences requires a new theorem and
-new feasibility classification.
+differences” for this lane. The original 94-cell and intermediate 83-cell
+counts are historical stages; after UC-013, UC-017, and UC-023, the current
+positive-difference program contains 79 labeled cells in 11 abstract-label
+orbits.
+
+Subsequent theorems do address the excluded domains for the same master
+objective \(\Phi\): UC-018 solves every non-all-positive nonzero sign/zero
+stratum, and UC-019 solves the all-zero stratum. Those results do not make
+positivity without loss of generality for UC-001, UC-008, or the positive-cell
+census.

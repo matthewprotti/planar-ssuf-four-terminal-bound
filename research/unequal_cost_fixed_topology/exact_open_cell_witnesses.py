@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
-"""Exact rational interior lower-bound witnesses for selected open SSUF cells.
+"""Exact rational interior lower-bound witnesses for selected current SSUF cells.
 
 These witnesses do not solve a cell.  They prove that several strictly positive
 multiple-generator cells have value greater than one and provide exact targets
-for the remaining 83-cell upper-bound program.
+for the current 79-cell upper-bound program. F042 is deliberately absent:
+UC-023 now solves it, so its earlier lower certificate is historical evidence
+rather than a current open-cell witness.
 """
 
 from __future__ import annotations
@@ -23,16 +25,10 @@ SUPPORTS = (
 
 # k, p, d.  All coordinates are exact rationals and max(d)=1.
 #
-# The first five certificates were produced in the initial forward pass.  The
-# additional six cells and the strengthened F042 certificate were obtained by
-# rationalizing numerical scout points and then rechecking the complete finite
-# routing objective with exact Fraction arithmetic.
+# The certificates were obtained by rationalizing numerical scout points and
+# then rechecking the complete finite routing objective with exact Fraction
+# arithmetic.
 WITNESSES = {
-    "F042": {
-        "k": (Q(27, 80), Q(27, 80), Q(81, 250), Q(1, 1000)),
-        "p": (Q(59, 250), Q(1091, 2000), Q(229, 1000), Q(1987, 2000)),
-        "d": (Q(1993, 2000), Q(77, 100), Q(1), Q(1781, 2000)),
-    },
     "F045": {
         "k": (Q(661, 2000), Q(27, 80), Q(129, 400), Q(19, 2000)),
         "p": (Q(89, 500), Q(1277, 2000), Q(49, 250), Q(1, 2000)),
@@ -124,7 +120,14 @@ def mask_text(mask: int) -> str:
 
 def main() -> None:
     census = json.loads((HERE / "threshold_family_census.json").read_text(encoding="utf-8"))
+    reconciliation = json.loads(
+        (HERE / "census_reconciliation_results.json").read_text(encoding="utf-8")
+    )
     rows = {row["id"]: row for row in census["realizable_families"]}
+    current_frontier = set(reconciliation["current_frontier_family_ids"])
+    assert len(WITNESSES) == 10
+    assert "F042" not in WITNESSES
+    assert set(WITNESSES).issubset(current_frontier)
     output = []
     for family_id, raw in WITNESSES.items():
         row = rows[family_id]

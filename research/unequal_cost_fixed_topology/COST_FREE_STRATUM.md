@@ -5,6 +5,9 @@ cheap/expensive route choices are cost feasible. This degenerate stratum is not
 covered by the sign-oriented threshold theorem because there is no nonzero
 orientation.
 
+Its value is the restriction of the common objective \(\Phi(k,p,d)\) in
+`MASTER_OBJECTIVE_AND_COST_REALIZATION.md` to \(k=0\).
+
 Normalize `d_max=1`, and write
 
 \[
