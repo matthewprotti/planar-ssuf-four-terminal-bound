@@ -1,289 +1,130 @@
 {
-  "artifact_manifest_sha256": "f5d7e95616e105a0e7842a5ac85385fb7ef09f44fef487c3c045dc0b68b5dfe4",
+  "artifact_manifest_sha256": "90866896147be14a054cfa9c0fe0da790fc9d01158e96bd5930374e2439e5ef2",
+  "attestation_policy": {
+    "canonical": false,
+    "external_path_required": true,
+    "purpose": "optional host and command-stream diagnostics only"
+  },
+  "canonicalization": {
+    "command_stream_hashes_included": false,
+    "encoding": "UTF-8",
+    "host_metadata_included": false,
+    "json_keys": "sorted",
+    "line_endings": "LF"
+  },
   "commands": [
     {
-      "command": [
-        "/opt/hostedtoolcache/Python/3.13.14/x64/bin/python",
+      "arguments": [
         "build_artifact_manifest.py",
         "--check"
       ],
       "exit_code": 0,
-      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "stderr_tail": [],
-      "stdout_sha256": "f77e6897301ce84078aa6116224dce957b416f573d77f00dd7699ac0f620f878",
-      "stdout_tail": [
-        "PASS: artifact manifest is current"
-      ]
+      "program": "python"
     },
     {
-      "command": [
-        "/opt/hostedtoolcache/Python/3.13.14/x64/bin/python",
+      "arguments": [
         "threshold_family_census.py"
       ],
       "exit_code": 0,
-      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "stderr_tail": [],
-      "stdout_sha256": "9f27a752f93d0ee09afcab08773a8506bca04bf18302c84b4b71e1a18ccd385f",
-      "stdout_tail": [
-        "PASS: enumerated all 168 labeled monotone families on four terminals",
-        "PASS: constructed positive integer threshold witnesses for exactly 149 families",
-        "PASS: every witness uses weights in {1,2,3,4}",
-        "PASS: certified all 18 nonempty nonthreshold families by exact two-trades",
-        "PASS: the remaining family is empty and impossible because the full set is feasible",
-        "PASS: 26 total permutation orbits; 94 labeled cells in 15 orbits remain after the every-pair theorem",
-        "WROTE: /tmp/ssuf-r2-1rvvyvgz/unequal_cost_fixed_topology/threshold_family_census.json"
-      ]
+      "program": "python"
     },
     {
-      "command": [
-        "/opt/hostedtoolcache/Python/3.13.14/x64/bin/python",
+      "arguments": [
         "independent_census_check.py"
       ],
       "exit_code": 0,
-      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "stderr_tail": [],
-      "stdout_sha256": "d6a40b8b7431301f5d16515fb21d2bb752272ff808c583cbdfe520be4db9a533",
-      "stdout_tail": [
-        "  \"nonempty_nonthreshold_families\": 18,",
-        "  \"positive_threshold_families\": 149,",
-        "  \"realizable_orbits\": 26,",
-        "  \"remaining_arbitrary_label_orbits\": 15,",
-        "  \"remaining_labeled_cells\": 94,",
-        "  \"status\": \"PASS\"",
-        "}",
-        "WROTE: /tmp/ssuf-r2-1rvvyvgz/unequal_cost_fixed_topology/independent_census_results.json"
-      ]
+      "program": "python"
     },
     {
-      "command": [
-        "/opt/hostedtoolcache/Python/3.13.14/x64/bin/python",
+      "arguments": [
         "census_reconciliation_check.py"
       ],
       "exit_code": 0,
-      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "stderr_tail": [],
-      "stdout_sha256": "4aee39f8ab6355c408a02867b493a6bf827757f98af4072bc8cba51e48025bd9",
-      "stdout_tail": [
-        "    \"every_pair_no_singleton\": 1,",
-        "    \"feasible_singleton\": 54,",
-        "    \"remaining_labeled_cells\": 94,",
-        "    \"total_positive_threshold\": 149",
-        "  },",
-        "  \"status\": \"PASS\"",
-        "}",
-        "WROTE: /tmp/ssuf-r2-1rvvyvgz/unequal_cost_fixed_topology/census_reconciliation_results.json"
-      ]
+      "program": "python"
     },
     {
-      "command": [
-        "/opt/hostedtoolcache/Python/3.13.14/x64/bin/python",
+      "arguments": [
         "symbolic_every_pair_check.py"
       ],
       "exit_code": 0,
-      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "stderr_tail": [],
-      "stdout_sha256": "1fa5cae930036e1aed3a6db388aeda8c1fe1a6e01ac40907c75b97c56ccfbf77",
-      "stdout_tail": [
-        "  \"stationary_point\": {",
-        "    \"s\": \"(-3 + sqrt(41))**2/16\",",
-        "    \"t\": \"(-3 + sqrt(41))/4\",",
-        "    \"value\": \"-(-299 + 41*sqrt(41))/32\"",
-        "  },",
-        "  \"status\": \"PASS\"",
-        "}",
-        "WROTE: /tmp/ssuf-r2-1rvvyvgz/unequal_cost_fixed_topology/symbolic_every_pair_results.json"
-      ]
+      "program": "python"
     },
     {
-      "command": [
-        "/opt/hostedtoolcache/Python/3.13.14/x64/bin/python",
+      "arguments": [
         "exact_algebra_audit.py"
       ],
       "exit_code": 0,
-      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "stderr_tail": [],
-      "stdout_sha256": "5f6e4668aa7e4fdfa75d7ea677610725564add704bcf5a256f4e3ef931343ebe",
-      "stdout_tail": [
-        "  \"stationary_point\": {",
-        "    \"s\": \"25/8+(-3/8)*sqrt(41)\",",
-        "    \"t\": \"-3/4+(1/4)*sqrt(41)\",",
-        "    \"value\": \"299/32+(-41/32)*sqrt(41)\"",
-        "  },",
-        "  \"status\": \"PASS\"",
-        "}",
-        "WROTE: /tmp/ssuf-r2-1rvvyvgz/unequal_cost_fixed_topology/exact_algebra_results.json"
-      ]
+      "program": "python"
     },
     {
-      "command": [
-        "/opt/hostedtoolcache/Python/3.13.14/x64/bin/python",
+      "arguments": [
         "release_family_equivalence_check.py"
       ],
       "exit_code": 0,
-      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "stderr_tail": [],
-      "stdout_sha256": "081a86fb285838d95d48be41489415ad3d9664ef4528da765799eb15fec41013",
-      "stdout_tail": [
-        "  \"comparison\": \"local machine-readable definition equals pinned release extraction\",",
-        "  \"release_commit\": \"087204eda4cc490cb59dd1988d7383c406288d2e\",",
-        "  \"release_tex_sha256\": \"3b9c5963ad2da2cbaa99621202e5b50ad3c2525f2bb5f6fdf7f649568c3e1154\",",
-        "  \"residual_limitation\": \"the extraction from the pinned TeX is human-auditable rather than reparsed at runtime\",",
-        "  \"runtime_release_file_access\": false,",
-        "  \"status\": \"PASS\"",
-        "}",
-        "WROTE: /tmp/ssuf-r2-1rvvyvgz/unequal_cost_fixed_topology/release_family_equivalence_results.json"
-      ]
+      "program": "python"
     },
     {
-      "command": [
-        "/opt/hostedtoolcache/Python/3.13.14/x64/bin/python",
+      "arguments": [
         "generate_witness_examples.py"
       ],
       "exit_code": 0,
-      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "stderr_tail": [],
-      "stdout_sha256": "80b789bf0373a053bc202353c0a87e1a3b549f55c2fb0de6fd0bfb1943c90eda",
-      "stdout_tail": [
-        "    \"every_pair_no_singleton\": 1,",
-        "    \"feasible_singleton\": 54,",
-        "    \"remaining_labeled_cells\": 94,",
-        "    \"total_positive_threshold\": 149",
-        "  },",
-        "  \"status\": \"PASS\"",
-        "}",
-        "WROTE: /tmp/ssuf-r2-1rvvyvgz/unequal_cost_fixed_topology/witness_examples.json"
-      ]
+      "program": "python"
     },
     {
-      "command": [
-        "/opt/hostedtoolcache/Python/3.13.14/x64/bin/python",
+      "arguments": [
         "exact_open_cell_witnesses.py"
       ],
       "exit_code": 0,
-      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "stderr_tail": [],
-      "stdout_sha256": "a38b5f52f2e938d3ce44f04fb2da1a0c8fc5711d5143da72568609d3bd297748",
-      "stdout_tail": [
-        "PASS: F055 has exact interior lower witness 5509335803/5000000000 > 1",
-        "PASS: F060 has exact interior lower witness 28085483/25000000 > 1",
-        "PASS: F061 has exact interior lower witness 88144229/80000000 > 1",
-        "PASS: F125 has exact interior lower witness 51/50 > 1",
-        "PASS: F126 has exact interior lower witness 5151/5000 > 1",
-        "PASS: F129 has exact interior lower witness 638/625 > 1",
-        "PASS: F143 has exact interior lower witness 251517/250000 > 1",
-        "WROTE: /tmp/ssuf-r2-1rvvyvgz/unequal_cost_fixed_topology/exact_open_cell_witnesses.json"
-      ]
+      "program": "python"
     },
     {
-      "command": [
-        "/opt/hostedtoolcache/Python/3.13.14/x64/bin/python",
+      "arguments": [
         "signed_difference_census.py"
       ],
       "exit_code": 0,
-      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "stderr_tail": [],
-      "stdout_sha256": "73a4051f57f635612a0ca6ee60dbcdaa8c7f970609c0b6afcfb770ff81cea80a",
-      "stdout_tail": [
-        "PASS: 149 positive threshold families x 16 sign patterns",
-        "PASS: 1881 unique nonzero signed/unate threshold families",
-        "PASS: exactly 149 remain upward closed in the original cheap coordinates",
-        "WROTE: /tmp/ssuf-r2-1rvvyvgz/unequal_cost_fixed_topology/signed_difference_census.json"
-      ]
+      "program": "python"
     },
     {
-      "command": [
-        "/opt/hostedtoolcache/Python/3.13.14/x64/bin/python",
+      "arguments": [
         "signed_single_generator_check.py"
       ],
       "exit_code": 0,
-      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "stderr_tail": [],
-      "stdout_sha256": "cf474e20d88959a79d8aa2df3db43f00e03feb2cb9c722c714b200f8495af9f8",
-      "stdout_tail": [
-        "PASS: 11 generators x 16 nonzero sign patterns = 176 exact value-one regimes",
-        "PASS: exact rational lower witnesses and explicit upper routes check on every regime",
-        "PASS: 10 representative zero-outside-generator boundary strata check",
-        "WROTE: /tmp/ssuf-r2-1rvvyvgz/unequal_cost_fixed_topology/signed_single_generator_results.json"
-      ]
+      "program": "python"
     },
     {
-      "command": [
-        "/opt/hostedtoolcache/Python/3.13.14/x64/bin/python",
+      "arguments": [
         "nonpositive_difference_check.py"
       ],
       "exit_code": 0,
-      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "stderr_tail": [],
-      "stdout_sha256": "9bbde2664fe7f4c284c8ef767ae62c02050c7d21f0fea0060faad883aa34efd3",
-      "stdout_tail": [
-        "PASS: chain all-pairs formula has exact supremum 9/8",
-        "PASS: nested all-pairs convex combination is at most 1",
-        "PASS: two-pair scalar lemma checked on 1022 exact rational instances",
-        "PASS: exact negative and zero missing-terminal lower sequences check",
-        "PASS: exact value-one lower sequences check on all 73 remaining strata",
-        "PASS: every non-all-positive nonzero/zero stratum reduces to these cases",
-        "WROTE: /tmp/ssuf-r2-1rvvyvgz/unequal_cost_fixed_topology/nonpositive_difference_results.json"
-      ]
+      "program": "python"
     },
     {
-      "command": [
-        "/opt/hostedtoolcache/Python/3.13.14/x64/bin/python",
+      "arguments": [
         "nonpositive_difference_grid_check.py"
       ],
       "exit_code": 0,
-      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "stderr_tail": [],
-      "stdout_sha256": "dca7917b2b642c6f1466f186376513f5e63e9b3af4cc0de475b3f47b98128315",
-      "stdout_tail": [
-        "PASS: all 79 non-all-positive nonzero sign/zero patterns classified",
-        "PASS: 31,995 exact rational grid cases respect the claimed 1 or 9/8 bound",
-        "WROTE: /tmp/ssuf-r2-1rvvyvgz/unequal_cost_fixed_topology/nonpositive_difference_grid_results.json"
-      ]
+      "program": "python"
     },
     {
-      "command": [
-        "/opt/hostedtoolcache/Python/3.13.14/x64/bin/python",
+      "arguments": [
         "cost_free_stratum_check.py"
       ],
       "exit_code": 0,
-      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "stderr_tail": [],
-      "stdout_sha256": "58da96b0d0e02d627ac1e8b10ce5b15e112e3c69388b6635f48b2d39a1ee2224",
-      "stdout_tail": [
-        "PASS: all 16 lower-instance routes have maximum deviation at least 4/5",
-        "PASS: the all-C route attains 4/5 on the symmetric lower instance",
-        "PASS: constructive upper routing is <=4/5 on 478224 exact grid cases",
-        "WROTE: /tmp/ssuf-r2-1rvvyvgz/unequal_cost_fixed_topology/cost_free_stratum_results.json"
-      ]
+      "program": "python"
     },
     {
-      "command": [
-        "/opt/hostedtoolcache/Python/3.13.14/x64/bin/python",
+      "arguments": [
         "positive_three_pair_clique_check.py"
       ],
       "exit_code": 0,
-      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "stderr_tail": [],
-      "stdout_sha256": "099f0da79e598f006db43022699b2b5882d4fd9ad54eca6dbd10e01cef51ac53",
-      "stdout_tail": [
-        "PASS: four pure three-pair clique cells identified exactly",
-        "PASS: three chain cells approach 9/8 and nested cell approaches 1",
-        "PASS: positive frontier reduces 83->79 and 12->11 abstract orbits",
-        "WROTE: /tmp/ssuf-r2-1rvvyvgz/unequal_cost_fixed_topology/positive_three_pair_clique_results.json"
-      ]
+      "program": "python"
     },
     {
-      "command": [
-        "/opt/hostedtoolcache/Python/3.13.14/x64/bin/python",
+      "arguments": [
         "validate_artifacts.py"
       ],
       "exit_code": 0,
-      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "stderr_tail": [],
-      "stdout_sha256": "1092c4f81763256e3d933a7859f53ae56e234c58a6b958aa69ee05debd0b0558",
-      "stdout_tail": [
-        "PASS: theorem IDs, census partitions, orbit tables, result artifacts, and provenance pin agree"
-      ]
+      "program": "python"
     }
   ],
   "counts": {
@@ -333,10 +174,18 @@
     "The identically-zero cost-difference theorem is fixed-topology only; finite-grid checks are corroboration.",
     "The 79 remaining strictly positive labeled cells and their boundaries remain open.",
     "The release-family extraction is pinned and compared but was transcribed from TeX by a human.",
-    "No external clean-environment reproduction is claimed."
+    "No external clean-environment reproduction is claimed by the canonical report alone."
   ],
   "network_required": false,
-  "python": "3.13.14 (main, Jun 11 2026, 03:02:07) [GCC 13.3.0]",
-  "status": "PASS",
-  "sympy_version": "1.14.0"
+  "release_membership": {
+    "manifest_and_archive_input_required": true,
+    "research_file_count": 51
+  },
+  "required_runtime": {
+    "mpmath": "==1.3.0",
+    "python": ">=3.11",
+    "sympy": "==1.14.0"
+  },
+  "schema_version": "ssuf-round2-canonical-replay-v0.2",
+  "status": "PASS"
 }

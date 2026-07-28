@@ -1,107 +1,127 @@
 # Reproducibility Record — Positive-Difference Fixed-Topology SSUF
 
 This is a deterministic **internal replay record**, not a claim that an
-external party has reproduced the result.
+external party has independently reproduced or verified the mathematics.
 
 ## Repository identity
 
 - Repository: `matthewprotti/planar-ssuf-four-terminal-bound`
-- Base commit: `087204eda4cc490cb59dd1988d7383c406288d2e`
-- Reviewed implementation commit: `e3becc5e36a20dcf152f17fa350b4110b9e0eb3b`
+- Reviewed commit: the exact commit checked out by the reviewer
 - Research directory: `research/unequal_cost_fixed_topology`
 - Original public release used only as provenance: `v0.1.0`
 - Released TeX pin: `paper/ssuf_four_terminal_note_v5.tex`, SHA-256
   `3b9c5963ad2da2cbaa99621202e5b50ad3c2525f2bb5f6fdf7f649568c3e1154`
 
-## Clean clone
+Record the reviewed commit before running:
+
+```bash
+git rev-parse HEAD
+```
+
+## Clean-clone replay
+
+Replace `<REVIEWED_COMMIT>` with the commit being reviewed.
 
 ```bash
 git clone https://github.com/matthewprotti/planar-ssuf-four-terminal-bound.git
 cd planar-ssuf-four-terminal-bound
-git checkout --detach e3becc5e36a20dcf152f17fa350b4110b9e0eb3b
-test -z "$(git status --porcelain)"
+git checkout --detach <REVIEWED_COMMIT>
+test -z "$(git status --porcelain --untracked-files=all)"
 python -m venv .venv
 . .venv/bin/activate
 python -m pip install -r research/unequal_cost_fixed_topology/requirements-replay.txt
 python research/unequal_cost_fixed_topology/round2_replay.py
+python research/unequal_cost_fixed_topology/replay_determinism_test.py
+test -z "$(git status --porcelain --untracked-files=all)"
 ```
 
-Expected exit code: `0`.
+Both commands have expected exit code `0`. They are check-only by default:
+neither command rewrites the committed canonical report or any generated result
+in the source checkout.
 
-## Environment and dependency boundary
-
-- Replay platform: Ubuntu 24.04 GitHub-hosted runner.
-- CPython: `3.12.3 (main, Jun 19 2026, 12:46:00) [GCC 13.3.0]`.
-- SymPy: `1.14.0`.
-- mpmath: `1.3.0`.
-- Container digest: none supplied; exact Python dependencies and committed
-  source hashes are pinned instead.
-- Network during mathematical replay: **not required**. The replay consumes
-  only committed files; the installation step may require package-index access
-  unless dependencies are already cached.
-- Known platform sensitivity: temporary directory names appear only in captured
-  stdout tails, not in mathematical output hashes.
-
-## One-command replay stages
+## What the replay checks
 
 `round2_replay.py` copies the research directory to a disposable directory and:
 
-1. verifies the committed source manifest;
-2. regenerates the 168-family threshold census;
-3. runs the separately written census checker;
-4. reconciles the 168=149+18+1 and 149=54+1+94 partitions and all orbit sizes;
-5. runs the pinned SymPy identity audit;
-6. runs the CAS-independent rational/Laurent/\(\mathbb Q(\sqrt{41})\) audit;
-7. compares the local lower-family definition with the pinned release
-   extraction without reading the released paper at runtime;
-8. generates human-readable witnesses; and
-9. validates theorem IDs, counts, partitions, group actions, result schemas,
-   and provenance pins.
+1. checks the committed research-source manifest;
+2. runs the complete finite census, independent census, and reconciliation;
+3. runs the symbolic and CAS-independent exact algebra audits;
+4. compares the local lower family with the pinned release extraction;
+5. generates and verifies exact open-cell witnesses;
+6. runs the signed, nonpositive, grid, cost-free, and positive-clique checks;
+7. validates theorem IDs, counts, partitions, group actions, schemas, and pins;
+8. compares the canonical replay bytes with `round2_replay_report.json`;
+9. checks that the root SHA-256 manifest is current and that every research file
+   is in the deterministic source-archive input; and
+10. checks the Git worktree before and after replay.
 
-## Expected identities
+`replay_determinism_test.py` repeats the full replay below two distinct
+temporary roots. It requires byte-identical canonical JSON and rejects
+temporary-directory and interpreter paths in those bytes.
 
-- Artifact manifest SHA-256:
-  `0981594f69a8d8048b44b7c92dc1a456ceb0df95950405ffe0b3ec87b40e8215`.
-- Workflow replay run: `30140273295`.
-- Workflow result: every step completed successfully; the resulting
-  implementation commit is the reviewed commit above.
-- Generated output SHA-256 values:
-  - census reconciliation: `0db74d10fa656e47ace23173d40a1df0f0b68b97d4e7ea291d8199bbc4367264`;
-  - exact no-CAS algebra: `877dd3621b1dee96bb74953643daccd8242dbed9f7d50b0d54b2930aed4ffc30`;
-  - separate census: `6a6e83e2d076933264f8417430493f5ccbdbf5a5aca1238e0f2398c96431ce3b`;
-  - release-family comparison: `d534f47a0c23c3ed35f2ab9531ac257ace23fda001d0946e3226b59d3286c91e`;
-  - SymPy audit: `7c5b7e3c09e72fe266ff778833025c3bf96a7697b8bf667baad39785e5727145`;
-  - threshold census: `8c2ebf27e5aeacf1a29bfa9ea306fda542e73627c4acd812cbf54407c3dfbb9e`;
-  - witness examples: `122595ef2e2a64bfbbed8adb985aa8ba45744d9dfd8d4cc1682ac0357fcbd643`.
+The replay needs no network after dependency installation. It requires Python
+3.11 or later, SymPy 1.14.0, and mpmath 1.3.0.
 
-## Production-boundary check
+## Canonical result and optional attestation
 
-The implementation diff from the base commit is restricted to
-`research/unequal_cost_fixed_topology/`. The temporary workflow that performed
-the replay removed itself before the implementation commit. No released paper,
-released verifier, package dependency, build path, or deployment configuration
-is modified by that implementation commit.
+`round2_replay_report.json` is the committed canonical result. It contains only
+deterministic commands, exact counts, source and generated-output hashes,
+limitations, and fixed runtime requirements. It deliberately excludes
+timestamps, operating-system details, temporary paths, interpreter paths, and
+stdout/stderr hashes.
 
-## Unsuccessful or excluded checks
-
-- Zero and negative route-cost differences are outside the theorem domain and
-  are not normalized away.
-- The 94 remaining labeled cells and their boundaries are not optimized.
-- SymPy does not establish unstated sign or branch conditions; those remain in
-  the human proof and are mirrored by exact gap identities where stated.
-- The pinned lower-family extraction is compared exactly but was transcribed
-  from the released TeX by a human.
-- No external clean-environment reproduction has yet been recorded.
-
-## Forward-pass commands
-
-The one-command replay now additionally runs:
+Host metadata and command-stream hashes can be recorded separately in an
+explicit, noncanonical attestation. Its path must be outside the repository:
 
 ```bash
-python exact_open_cell_witnesses.py
-python signed_difference_census.py
+attestation_file="$(mktemp "${TMPDIR:-/tmp}/ssuf-attestation.XXXXXX.json")"
+python research/unequal_cost_fixed_topology/round2_replay.py \
+  --attestation "$attestation_file"
+printf '%s\n' "$attestation_file"
 ```
 
-Both use exact integer/rational set arithmetic and require no network. The signed
-census classifies feasibility systems only; it does not replay a signed-objective
-optimization theorem.
+The attestation is diagnostic evidence, is marked `must_not_be_committed`, and
+is not part of the canonical hash identity.
+
+## Maintainer regeneration
+
+The normal replay never updates tracked files. After an intentional source
+change, a maintainer can regenerate the two committed deterministic manifests
+and canonical report in this order:
+
+```bash
+cd research/unequal_cost_fixed_topology
+python build_artifact_manifest.py
+python round2_replay.py \
+  --write-canonical \
+  --skip-git-clean-check \
+  --skip-release-membership-check
+cd ../..
+python scripts/manifest.py --write
+```
+
+The skip flags are limited to this preparation step. Commit the intended files,
+then run the clean-clone replay commands without skip flags.
+
+## Current exact replay state
+
+- 168 labeled monotone families;
+- 149 realizable strictly positive threshold families;
+- 94 labeled cells after the original singleton/every-pair reduction;
+- 79 remaining strictly positive labeled cells after the proved reductions;
+- 11 remaining arbitrary-label search orbits;
+- 11 exact strictly-above-one interior witnesses;
+- 1,881 unique signed unate threshold families;
+- all non-all-positive sign/zero strata at most `9/8`; and
+- the identically zero cost-difference stratum exactly `4/5`.
+
+## Evidence boundary and nonclaims
+
+- Human-readable theorems carry the proofs; software is corroboration.
+- The 79 remaining strictly positive labeled cells and their boundaries remain
+  open.
+- The pinned lower-family extraction is compared exactly but was transcribed
+  from the released TeX by a human.
+- The theorem is fixed-topology only.
+- A successful internal replay is not independent human verification, novelty
+  clearance, peer review, or external clean-environment reproduction.

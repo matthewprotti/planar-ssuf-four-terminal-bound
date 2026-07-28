@@ -12,7 +12,6 @@ HERE = Path(__file__).resolve().parent
 OUTPUT = HERE / "artifact_manifest.json"
 EXCLUDED = {
     "artifact_manifest.json",
-    "REPRODUCIBILITY.md",
     "threshold_family_census.json",
     "independent_census_results.json",
     "symbolic_every_pair_results.json",
@@ -42,13 +41,17 @@ def payload() -> dict:
         for path in sorted(HERE.iterdir())
         if path.is_file()
         and path.name not in EXCLUDED
+        and not path.name.startswith("round2_replay_attestation")
         and not path.name.startswith(".")
         and path.suffix in {".py", ".md", ".json", ".txt"}
     }
     dependency = json.loads((HERE / "DEPENDENCY_MANIFEST.json").read_text(encoding="utf-8"))
     return {
-        "schema_version": "ssuf-fixed-topology-artifact-manifest-v0.5",
-        "scope": "committed fixed-topology SSUF research sources; replay metadata excluded",
+        "schema_version": "ssuf-fixed-topology-artifact-manifest-v0.6",
+        "scope": (
+            "committed fixed-topology SSUF research sources; generated canonical "
+            "results and ephemeral attestations excluded"
+        ),
         "files": files,
         "released_provenance": dependency["released_provenance"],
         "dependency_status": dependency["dependency_status"],

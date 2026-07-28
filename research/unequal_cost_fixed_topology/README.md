@@ -113,10 +113,10 @@ Among the 149 positive threshold families:
 
 The 94 cells form 15 orbits under arbitrary relabeling, but the directed fixed
 graph has only the identity role-preserving automorphism. They are formal
-optimization units. UC-013 eliminates five no-pair cells and UC-017 resolves
-all 11 single-generator positive cells; six of those were still in the 89-cell
-remainder. The current strictly positive frontier is therefore **83 labeled
-cells in 12 abstract-label search orbits**.
+optimization units. UC-013 eliminates five no-pair cells, UC-017 resolves all
+11 single-generator positive cells (six beyond UC-013), and UC-023 resolves
+four positive three-pair clique cells. The current strictly positive frontier
+is therefore **79 labeled cells in 11 abstract-label search orbits**.
 
 Strict losing inequalities make these open cells. Future optimization must
 separate the strict cell, its closure, and boundary families, and must separate
@@ -252,15 +252,17 @@ Open target; numerical scouting alone cannot establish it.
 
 ```bash
 cd research/unequal_cost_fixed_topology
-python threshold_family_census.py
-python independent_census_check.py
-python symbolic_every_pair_check.py
-python validate_artifacts.py
-python build_artifact_manifest.py --check
+python round2_replay.py
+python replay_determinism_test.py
 ```
 
-Generated JSON result files are ignored by Git. `artifact_manifest.json` hashes
-the committed research sources and records the exact released provenance pin.
+Both commands are check-only by default. Generated JSON result files are
+created in disposable copies, and the replay byte-compares their deterministic
+summary with the committed `round2_replay_report.json`. The two-root test also
+checks the root SHA-256 manifest and deterministic source-archive membership.
+`artifact_manifest.json` hashes the committed research sources and records the
+exact released provenance pin. See `REPRODUCIBILITY.md` for the canonical versus
+noncanonical attestation boundary.
 
 ## Nonclaims
 
