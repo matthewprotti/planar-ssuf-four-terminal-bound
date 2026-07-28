@@ -1,0 +1,28 @@
+{
+  "interpretation": "Abstract blocker regression only. The 11,175 pattern pairs need not admit a common baseline q. No shared-baseline realization or analytic upper bound is inferred from this census.",
+  "no_common_feasible_pair_pattern_pairs": 3720,
+  "pair_counts_by_proof_case": {
+    "clique_complement_A3": 1040,
+    "clique_complement_A4": 365,
+    "feasible_pair": 7455,
+    "matching_A0": 227,
+    "matching_A1": 784,
+    "matching_A2": 1272,
+    "star_triangle_missing_central": 16,
+    "star_triangle_missing_outer": 16
+  },
+  "scalar_positive_threshold_patterns": 149,
+  "schema": "ssuf-two-scenario-global-abstract-case-census-v2",
+  "unique_no_pair_robust_families": 16,
+  "unique_robust_family_counts_by_proof_case": {
+    "clique_complement_A3": 4,
+    "clique_complement_A4": 1,
+    "feasible_pair": 151,
+    "matching_A0": 1,
+    "matching_A1": 4,
+    "matching_A2": 6,
+    "star_triangle_missing_central": 2,
+    "star_triangle_missing_outer": 2
+  },
+  "unordered_pattern_pairs": 11175
+}

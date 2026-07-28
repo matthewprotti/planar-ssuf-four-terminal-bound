@@ -16,7 +16,7 @@ jobs:
   python-verification:
     name: Python ${{ matrix.python-version }} verification
     runs-on: ubuntu-24.04
-    timeout-minutes: 20
+    timeout-minutes: 30
     strategy:
       fail-fast: false
       matrix:
@@ -66,7 +66,7 @@ jobs:
     name: Deterministic package
     needs: python-verification
     runs-on: ubuntu-24.04
-    timeout-minutes: 30
+    timeout-minutes: 40
 
     steps:
       - name: Check out complete history
@@ -98,10 +98,12 @@ jobs:
           tectonic --version
           pdftotext -v
 
-      - name: Rebuild checked manuscript
+      - name: Rebuild checked manuscripts
         run: |
           python scripts/build_pdf.py
-          git diff --exit-code -- paper/ssuf_four_terminal_note_v5.pdf
+          git diff --exit-code -- \
+            paper/ssuf_four_terminal_note_v5.pdf \
+            paper/rb003_two_scenario_note_v1.pdf
 
       - name: Check manifest
         run: python scripts/manifest.py

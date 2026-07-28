@@ -14,6 +14,7 @@ import tempfile
 
 ROOT = Path(__file__).resolve().parent.parent
 VERIFICATION = ROOT / "verification"
+RB003 = ROOT / "research" / "two_scenario_global_constant"
 PROGRAMS = (
     "verify_concrete_instance.py",
     "verify_symbolic_family.py",
@@ -44,12 +45,17 @@ def main() -> None:
                 raise SystemExit(f"regenerated output differs from committed reference: {name}")
             print(f"PASS: regenerated {name} is byte-identical to the committed reference.")
 
-    print("\n=== preflight_pdf_text.py ===", flush=True)
-    subprocess.run(
-        [sys.executable, os.fspath(VERIFICATION / "preflight_pdf_text.py")],
-        cwd=ROOT,
-        check=True,
-    )
+    print("\n=== RB-003 deterministic replay ===", flush=True)
+    subprocess.run([sys.executable, os.fspath(RB003 / "replay.py")], cwd=RB003, check=True)
+
+    for preflight in ("preflight_pdf_text.py", "preflight_rb003_pdf_text.py"):
+        print(f"\n=== {preflight} ===", flush=True)
+        subprocess.run(
+            [sys.executable, os.fspath(VERIFICATION / preflight)],
+            cwd=ROOT,
+            check=True,
+        )
+
     print("\nFULL VERIFICATION PASS")
 
 

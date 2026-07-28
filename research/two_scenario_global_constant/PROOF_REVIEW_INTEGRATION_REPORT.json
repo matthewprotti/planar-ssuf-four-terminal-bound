@@ -1,0 +1,35 @@
+{
+  "cross_document_scope_checks_passed": [
+    "CLAIM_LEDGER.md",
+    "COMMERCIAL_INTERPRETATION.md",
+    "EXECUTIVE_SUMMARY.md"
+  ],
+  "forbidden_formulations_absent": [
+    "informal_union_sentence",
+    "overbroad_lemma2_application",
+    "overstated_exact_pattern",
+    "reversed_A_heading",
+    "underjustified_nonattainment"
+  ],
+  "manuscript": "TWO_SCENARIO_GLOBAL_CONSTANT.md",
+  "required_exact_checks_passed": [
+    "correct_A_heading",
+    "empty_colour_handled",
+    "equality_throughout",
+    "forced_core_language",
+    "possible_extra_incident_edge",
+    "signoff_candidate_status"
+  ],
+  "required_normalized_checks_passed": [
+    "extra_edge_irrelevance",
+    "formal_two_colour_assignment",
+    "formal_two_colour_restriction",
+    "knapsack_active_constraints",
+    "lemma2_application_hypothesis",
+    "nonattainment_tightness"
+  ],
+  "result": "PASS",
+  "review_disposition_confirmed": "accept subject to minor proof revision",
+  "schema": "ssuf-rb003-proof-review-integration-v2",
+  "status": "deterministic text-integrity guard; confirms second-round local proof edits and cross-document scope; not an independent proof"
+}

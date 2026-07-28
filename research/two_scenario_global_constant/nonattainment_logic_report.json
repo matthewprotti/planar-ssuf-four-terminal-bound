@@ -1,0 +1,10 @@
+{
+  "blocking_contradiction": "u is non-omittable, so some normalized w_u>1; with q_u=1, sum_i q_i w_i >= q_u w_u > 1, contradicting normalization",
+  "conclusion": "the supremum 17/8 is not attained by a legal finite instance",
+  "equality_delta": "3/4",
+  "equality_t": "17/8",
+  "factor_consequence": "d_u=q_u=1 because 0<d_u<=1 and 0<=q_u<=1",
+  "required_H": "23/8",
+  "required_h_u": "1",
+  "schema": "ssuf-two-scenario-nonattainment-logic-v1"
+}

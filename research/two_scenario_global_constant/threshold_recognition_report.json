@@ -1,0 +1,3489 @@
+{
+  "admissible_nonempty_downsets": 167,
+  "all_downsets": 168,
+  "completeness_method": "149 explicit positive integer threshold witnesses plus exact two-trade contradictions for every other nonempty downset",
+  "empty_family_reason": "the empty E-set has weight zero and is always budget-feasible",
+  "empty_inadmissible_downsets": 1,
+  "nonempty_nonthreshold_downsets": 18,
+  "nonthreshold_two_trade_certificates": [
+    {
+      "common_incidence_sum": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "family_truth_hex": "0x111f",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "4",
+        "34"
+      ],
+      "feasible_trade_sets": [
+        "12",
+        "34"
+      ],
+      "infeasible_trade_sets": [
+        "13",
+        "24"
+      ]
+    },
+    {
+      "common_incidence_sum": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "family_truth_hex": "0x0537",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "3",
+        "13",
+        "4",
+        "24"
+      ],
+      "feasible_trade_sets": [
+        "13",
+        "24"
+      ],
+      "infeasible_trade_sets": [
+        "12",
+        "34"
+      ]
+    },
+    {
+      "common_incidence_sum": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "family_truth_hex": "0x0357",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "3",
+        "23",
+        "4",
+        "14"
+      ],
+      "feasible_trade_sets": [
+        "23",
+        "14"
+      ],
+      "infeasible_trade_sets": [
+        "12",
+        "34"
+      ]
+    },
+    {
+      "common_incidence_sum": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "family_truth_hex": "0x053f",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "13",
+        "4",
+        "24"
+      ],
+      "feasible_trade_sets": [
+        "13",
+        "24"
+      ],
+      "infeasible_trade_sets": [
+        "23",
+        "14"
+      ]
+    },
+    {
+      "common_incidence_sum": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "family_truth_hex": "0x113f",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "13",
+        "4",
+        "34"
+      ],
+      "feasible_trade_sets": [
+        "12",
+        "34"
+      ],
+      "infeasible_trade_sets": [
+        "23",
+        "14"
+      ]
+    },
+    {
+      "common_incidence_sum": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "family_truth_hex": "0x035f",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "23",
+        "4",
+        "14"
+      ],
+      "feasible_trade_sets": [
+        "23",
+        "14"
+      ],
+      "infeasible_trade_sets": [
+        "13",
+        "24"
+      ]
+    },
+    {
+      "common_incidence_sum": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "family_truth_hex": "0x115f",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "23",
+        "4",
+        "34"
+      ],
+      "feasible_trade_sets": [
+        "12",
+        "34"
+      ],
+      "infeasible_trade_sets": [
+        "13",
+        "24"
+      ]
+    },
+    {
+      "common_incidence_sum": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "family_truth_hex": "0x131f",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "4",
+        "14",
+        "34"
+      ],
+      "feasible_trade_sets": [
+        "12",
+        "34"
+      ],
+      "infeasible_trade_sets": [
+        "13",
+        "24"
+      ]
+    },
+    {
+      "common_incidence_sum": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "family_truth_hex": "0x151f",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "4",
+        "24",
+        "34"
+      ],
+      "feasible_trade_sets": [
+        "12",
+        "34"
+      ],
+      "infeasible_trade_sets": [
+        "23",
+        "14"
+      ]
+    },
+    {
+      "common_incidence_sum": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "family_truth_hex": "0x0377",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "3",
+        "13",
+        "23",
+        "4",
+        "14"
+      ],
+      "feasible_trade_sets": [
+        "23",
+        "14"
+      ],
+      "infeasible_trade_sets": [
+        "12",
+        "34"
+      ]
+    },
+    {
+      "common_incidence_sum": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "family_truth_hex": "0x0577",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "3",
+        "13",
+        "23",
+        "4",
+        "24"
+      ],
+      "feasible_trade_sets": [
+        "13",
+        "24"
+      ],
+      "infeasible_trade_sets": [
+        "12",
+        "34"
+      ]
+    },
+    {
+      "common_incidence_sum": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "family_truth_hex": "0x0737",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "3",
+        "13",
+        "4",
+        "14",
+        "24"
+      ],
+      "feasible_trade_sets": [
+        "13",
+        "24"
+      ],
+      "infeasible_trade_sets": [
+        "12",
+        "34"
+      ]
+    },
+    {
+      "common_incidence_sum": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "family_truth_hex": "0x1537",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "3",
+        "13",
+        "4",
+        "24",
+        "34"
+      ],
+      "feasible_trade_sets": [
+        "13",
+        "24"
+      ],
+      "infeasible_trade_sets": [
+        "23",
+        "14"
+      ]
+    },
+    {
+      "common_incidence_sum": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "family_truth_hex": "0x0757",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "3",
+        "23",
+        "4",
+        "14",
+        "24"
+      ],
+      "feasible_trade_sets": [
+        "23",
+        "14"
+      ],
+      "infeasible_trade_sets": [
+        "12",
+        "34"
+      ]
+    },
+    {
+      "common_incidence_sum": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "family_truth_hex": "0x1357",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "3",
+        "23",
+        "4",
+        "14",
+        "34"
+      ],
+      "feasible_trade_sets": [
+        "23",
+        "14"
+      ],
+      "infeasible_trade_sets": [
+        "13",
+        "24"
+      ]
+    },
+    {
+      "common_incidence_sum": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "family_truth_hex": "0x153f",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "13",
+        "4",
+        "24",
+        "34"
+      ],
+      "feasible_trade_sets": [
+        "12",
+        "34"
+      ],
+      "infeasible_trade_sets": [
+        "23",
+        "14"
+      ]
+    },
+    {
+      "common_incidence_sum": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "family_truth_hex": "0x135f",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "23",
+        "4",
+        "14",
+        "34"
+      ],
+      "feasible_trade_sets": [
+        "12",
+        "34"
+      ],
+      "infeasible_trade_sets": [
+        "13",
+        "24"
+      ]
+    },
+    {
+      "common_incidence_sum": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "family_truth_hex": "0x0777",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "3",
+        "13",
+        "23",
+        "4",
+        "14",
+        "24"
+      ],
+      "feasible_trade_sets": [
+        "13",
+        "24"
+      ],
+      "infeasible_trade_sets": [
+        "12",
+        "34"
+      ]
+    }
+  ],
+  "orientation": "downward feasible E-set families; positive weights; weak capacity inequality",
+  "positive_scalar_threshold_downsets": 149,
+  "schema": "ssuf-four-label-threshold-recognition-v2",
+  "threshold_witnesses": [
+    {
+      "capacity": 0,
+      "family_truth_hex": "0x0001",
+      "feasible_E_sets": [
+        "empty"
+      ],
+      "weights": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "capacity": 1,
+      "family_truth_hex": "0x0003",
+      "feasible_E_sets": [
+        "empty",
+        "1"
+      ],
+      "weights": [
+        1,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "capacity": 1,
+      "family_truth_hex": "0x0005",
+      "feasible_E_sets": [
+        "empty",
+        "2"
+      ],
+      "weights": [
+        2,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "capacity": 1,
+      "family_truth_hex": "0x0011",
+      "feasible_E_sets": [
+        "empty",
+        "3"
+      ],
+      "weights": [
+        2,
+        2,
+        1,
+        2
+      ]
+    },
+    {
+      "capacity": 1,
+      "family_truth_hex": "0x0101",
+      "feasible_E_sets": [
+        "empty",
+        "4"
+      ],
+      "weights": [
+        2,
+        2,
+        2,
+        1
+      ]
+    },
+    {
+      "capacity": 1,
+      "family_truth_hex": "0x0007",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2"
+      ],
+      "weights": [
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "capacity": 1,
+      "family_truth_hex": "0x0013",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "3"
+      ],
+      "weights": [
+        1,
+        2,
+        1,
+        2
+      ]
+    },
+    {
+      "capacity": 1,
+      "family_truth_hex": "0x0103",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "4"
+      ],
+      "weights": [
+        1,
+        2,
+        2,
+        1
+      ]
+    },
+    {
+      "capacity": 1,
+      "family_truth_hex": "0x0015",
+      "feasible_E_sets": [
+        "empty",
+        "2",
+        "3"
+      ],
+      "weights": [
+        2,
+        1,
+        1,
+        2
+      ]
+    },
+    {
+      "capacity": 1,
+      "family_truth_hex": "0x0105",
+      "feasible_E_sets": [
+        "empty",
+        "2",
+        "4"
+      ],
+      "weights": [
+        2,
+        1,
+        2,
+        1
+      ]
+    },
+    {
+      "capacity": 1,
+      "family_truth_hex": "0x0111",
+      "feasible_E_sets": [
+        "empty",
+        "3",
+        "4"
+      ],
+      "weights": [
+        2,
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "capacity": 2,
+      "family_truth_hex": "0x000f",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12"
+      ],
+      "weights": [
+        1,
+        1,
+        3,
+        3
+      ]
+    },
+    {
+      "capacity": 1,
+      "family_truth_hex": "0x0017",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "3"
+      ],
+      "weights": [
+        1,
+        1,
+        1,
+        2
+      ]
+    },
+    {
+      "capacity": 1,
+      "family_truth_hex": "0x0107",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "4"
+      ],
+      "weights": [
+        1,
+        1,
+        2,
+        1
+      ]
+    },
+    {
+      "capacity": 2,
+      "family_truth_hex": "0x0033",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "3",
+        "13"
+      ],
+      "weights": [
+        1,
+        3,
+        1,
+        3
+      ]
+    },
+    {
+      "capacity": 1,
+      "family_truth_hex": "0x0113",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "3",
+        "4"
+      ],
+      "weights": [
+        1,
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "capacity": 2,
+      "family_truth_hex": "0x0303",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "4",
+        "14"
+      ],
+      "weights": [
+        1,
+        3,
+        3,
+        1
+      ]
+    },
+    {
+      "capacity": 2,
+      "family_truth_hex": "0x0055",
+      "feasible_E_sets": [
+        "empty",
+        "2",
+        "3",
+        "23"
+      ],
+      "weights": [
+        3,
+        1,
+        1,
+        3
+      ]
+    },
+    {
+      "capacity": 1,
+      "family_truth_hex": "0x0115",
+      "feasible_E_sets": [
+        "empty",
+        "2",
+        "3",
+        "4"
+      ],
+      "weights": [
+        2,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "capacity": 2,
+      "family_truth_hex": "0x0505",
+      "feasible_E_sets": [
+        "empty",
+        "2",
+        "4",
+        "24"
+      ],
+      "weights": [
+        3,
+        1,
+        3,
+        1
+      ]
+    },
+    {
+      "capacity": 2,
+      "family_truth_hex": "0x1111",
+      "feasible_E_sets": [
+        "empty",
+        "3",
+        "4",
+        "34"
+      ],
+      "weights": [
+        3,
+        3,
+        1,
+        1
+      ]
+    },
+    {
+      "capacity": 2,
+      "family_truth_hex": "0x001f",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3"
+      ],
+      "weights": [
+        1,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "capacity": 2,
+      "family_truth_hex": "0x010f",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "4"
+      ],
+      "weights": [
+        1,
+        1,
+        3,
+        2
+      ]
+    },
+    {
+      "capacity": 2,
+      "family_truth_hex": "0x0037",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "3",
+        "13"
+      ],
+      "weights": [
+        1,
+        2,
+        1,
+        3
+      ]
+    },
+    {
+      "capacity": 2,
+      "family_truth_hex": "0x0057",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "3",
+        "23"
+      ],
+      "weights": [
+        2,
+        1,
+        1,
+        3
+      ]
+    },
+    {
+      "capacity": 1,
+      "family_truth_hex": "0x0117",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "weights": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "capacity": 2,
+      "family_truth_hex": "0x0307",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "4",
+        "14"
+      ],
+      "weights": [
+        1,
+        2,
+        3,
+        1
+      ]
+    },
+    {
+      "capacity": 2,
+      "family_truth_hex": "0x0507",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "4",
+        "24"
+      ],
+      "weights": [
+        2,
+        1,
+        3,
+        1
+      ]
+    },
+    {
+      "capacity": 2,
+      "family_truth_hex": "0x0133",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "3",
+        "13",
+        "4"
+      ],
+      "weights": [
+        1,
+        3,
+        1,
+        2
+      ]
+    },
+    {
+      "capacity": 2,
+      "family_truth_hex": "0x0313",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "3",
+        "4",
+        "14"
+      ],
+      "weights": [
+        1,
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "capacity": 2,
+      "family_truth_hex": "0x1113",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "3",
+        "4",
+        "34"
+      ],
+      "weights": [
+        2,
+        3,
+        1,
+        1
+      ]
+    },
+    {
+      "capacity": 2,
+      "family_truth_hex": "0x0155",
+      "feasible_E_sets": [
+        "empty",
+        "2",
+        "3",
+        "23",
+        "4"
+      ],
+      "weights": [
+        3,
+        1,
+        1,
+        2
+      ]
+    },
+    {
+      "capacity": 2,
+      "family_truth_hex": "0x0515",
+      "feasible_E_sets": [
+        "empty",
+        "2",
+        "3",
+        "4",
+        "24"
+      ],
+      "weights": [
+        3,
+        1,
+        2,
+        1
+      ]
+    },
+    {
+      "capacity": 2,
+      "family_truth_hex": "0x1115",
+      "feasible_E_sets": [
+        "empty",
+        "2",
+        "3",
+        "4",
+        "34"
+      ],
+      "weights": [
+        3,
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "capacity": 3,
+      "family_truth_hex": "0x003f",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "13"
+      ],
+      "weights": [
+        1,
+        2,
+        2,
+        4
+      ]
+    },
+    {
+      "capacity": 3,
+      "family_truth_hex": "0x005f",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "23"
+      ],
+      "weights": [
+        2,
+        1,
+        2,
+        4
+      ]
+    },
+    {
+      "capacity": 2,
+      "family_truth_hex": "0x011f",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "4"
+      ],
+      "weights": [
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "capacity": 3,
+      "family_truth_hex": "0x030f",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "4",
+        "14"
+      ],
+      "weights": [
+        1,
+        2,
+        4,
+        2
+      ]
+    },
+    {
+      "capacity": 3,
+      "family_truth_hex": "0x050f",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "4",
+        "24"
+      ],
+      "weights": [
+        2,
+        1,
+        4,
+        2
+      ]
+    },
+    {
+      "capacity": 3,
+      "family_truth_hex": "0x0077",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "3",
+        "13",
+        "23"
+      ],
+      "weights": [
+        2,
+        2,
+        1,
+        4
+      ]
+    },
+    {
+      "capacity": 2,
+      "family_truth_hex": "0x0137",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "3",
+        "13",
+        "4"
+      ],
+      "weights": [
+        1,
+        2,
+        1,
+        2
+      ]
+    },
+    {
+      "capacity": 2,
+      "family_truth_hex": "0x0157",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "3",
+        "23",
+        "4"
+      ],
+      "weights": [
+        2,
+        1,
+        1,
+        2
+      ]
+    },
+    {
+      "capacity": 2,
+      "family_truth_hex": "0x0317",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "3",
+        "4",
+        "14"
+      ],
+      "weights": [
+        1,
+        2,
+        2,
+        1
+      ]
+    },
+    {
+      "capacity": 2,
+      "family_truth_hex": "0x0517",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "3",
+        "4",
+        "24"
+      ],
+      "weights": [
+        2,
+        1,
+        2,
+        1
+      ]
+    },
+    {
+      "capacity": 2,
+      "family_truth_hex": "0x1117",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "3",
+        "4",
+        "34"
+      ],
+      "weights": [
+        2,
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "capacity": 3,
+      "family_truth_hex": "0x0707",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "4",
+        "14",
+        "24"
+      ],
+      "weights": [
+        2,
+        2,
+        4,
+        1
+      ]
+    },
+    {
+      "capacity": 3,
+      "family_truth_hex": "0x0333",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "3",
+        "13",
+        "4",
+        "14"
+      ],
+      "weights": [
+        1,
+        4,
+        2,
+        2
+      ]
+    },
+    {
+      "capacity": 3,
+      "family_truth_hex": "0x1133",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "3",
+        "13",
+        "4",
+        "34"
+      ],
+      "weights": [
+        2,
+        4,
+        1,
+        2
+      ]
+    },
+    {
+      "capacity": 3,
+      "family_truth_hex": "0x1313",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "3",
+        "4",
+        "14",
+        "34"
+      ],
+      "weights": [
+        2,
+        4,
+        2,
+        1
+      ]
+    },
+    {
+      "capacity": 3,
+      "family_truth_hex": "0x0555",
+      "feasible_E_sets": [
+        "empty",
+        "2",
+        "3",
+        "23",
+        "4",
+        "24"
+      ],
+      "weights": [
+        4,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "capacity": 3,
+      "family_truth_hex": "0x1155",
+      "feasible_E_sets": [
+        "empty",
+        "2",
+        "3",
+        "23",
+        "4",
+        "34"
+      ],
+      "weights": [
+        4,
+        2,
+        1,
+        2
+      ]
+    },
+    {
+      "capacity": 3,
+      "family_truth_hex": "0x1515",
+      "feasible_E_sets": [
+        "empty",
+        "2",
+        "3",
+        "4",
+        "24",
+        "34"
+      ],
+      "weights": [
+        4,
+        2,
+        2,
+        1
+      ]
+    },
+    {
+      "capacity": 2,
+      "family_truth_hex": "0x007f",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "13",
+        "23"
+      ],
+      "weights": [
+        1,
+        1,
+        1,
+        3
+      ]
+    },
+    {
+      "capacity": 3,
+      "family_truth_hex": "0x013f",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "13",
+        "4"
+      ],
+      "weights": [
+        1,
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "capacity": 3,
+      "family_truth_hex": "0x015f",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "23",
+        "4"
+      ],
+      "weights": [
+        2,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "capacity": 3,
+      "family_truth_hex": "0x031f",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "4",
+        "14"
+      ],
+      "weights": [
+        1,
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "capacity": 3,
+      "family_truth_hex": "0x051f",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "4",
+        "24"
+      ],
+      "weights": [
+        2,
+        1,
+        3,
+        2
+      ]
+    },
+    {
+      "capacity": 2,
+      "family_truth_hex": "0x070f",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "4",
+        "14",
+        "24"
+      ],
+      "weights": [
+        1,
+        1,
+        3,
+        1
+      ]
+    },
+    {
+      "capacity": 3,
+      "family_truth_hex": "0x0177",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "3",
+        "13",
+        "23",
+        "4"
+      ],
+      "weights": [
+        2,
+        2,
+        1,
+        3
+      ]
+    },
+    {
+      "capacity": 3,
+      "family_truth_hex": "0x0337",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "3",
+        "13",
+        "4",
+        "14"
+      ],
+      "weights": [
+        1,
+        3,
+        2,
+        2
+      ]
+    },
+    {
+      "capacity": 3,
+      "family_truth_hex": "0x1137",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "3",
+        "13",
+        "4",
+        "34"
+      ],
+      "weights": [
+        2,
+        3,
+        1,
+        2
+      ]
+    },
+    {
+      "capacity": 3,
+      "family_truth_hex": "0x0557",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "3",
+        "23",
+        "4",
+        "24"
+      ],
+      "weights": [
+        3,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "capacity": 3,
+      "family_truth_hex": "0x1157",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "3",
+        "23",
+        "4",
+        "34"
+      ],
+      "weights": [
+        3,
+        2,
+        1,
+        2
+      ]
+    },
+    {
+      "capacity": 3,
+      "family_truth_hex": "0x0717",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "3",
+        "4",
+        "14",
+        "24"
+      ],
+      "weights": [
+        2,
+        2,
+        3,
+        1
+      ]
+    },
+    {
+      "capacity": 3,
+      "family_truth_hex": "0x1317",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "3",
+        "4",
+        "14",
+        "34"
+      ],
+      "weights": [
+        2,
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "capacity": 3,
+      "family_truth_hex": "0x1517",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "3",
+        "4",
+        "24",
+        "34"
+      ],
+      "weights": [
+        3,
+        2,
+        2,
+        1
+      ]
+    },
+    {
+      "capacity": 2,
+      "family_truth_hex": "0x1333",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "3",
+        "13",
+        "4",
+        "14",
+        "34"
+      ],
+      "weights": [
+        1,
+        3,
+        1,
+        1
+      ]
+    },
+    {
+      "capacity": 2,
+      "family_truth_hex": "0x1555",
+      "feasible_E_sets": [
+        "empty",
+        "2",
+        "3",
+        "23",
+        "4",
+        "24",
+        "34"
+      ],
+      "weights": [
+        3,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "capacity": 3,
+      "family_truth_hex": "0x00ff",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "13",
+        "23",
+        "123"
+      ],
+      "weights": [
+        1,
+        1,
+        1,
+        4
+      ]
+    },
+    {
+      "capacity": 2,
+      "family_truth_hex": "0x017f",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "13",
+        "23",
+        "4"
+      ],
+      "weights": [
+        1,
+        1,
+        1,
+        2
+      ]
+    },
+    {
+      "capacity": 3,
+      "family_truth_hex": "0x033f",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "13",
+        "4",
+        "14"
+      ],
+      "weights": [
+        1,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "capacity": 3,
+      "family_truth_hex": "0x055f",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "23",
+        "4",
+        "24"
+      ],
+      "weights": [
+        2,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "capacity": 2,
+      "family_truth_hex": "0x071f",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "4",
+        "14",
+        "24"
+      ],
+      "weights": [
+        1,
+        1,
+        2,
+        1
+      ]
+    },
+    {
+      "capacity": 3,
+      "family_truth_hex": "0x0f0f",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "4",
+        "14",
+        "24",
+        "124"
+      ],
+      "weights": [
+        1,
+        1,
+        4,
+        1
+      ]
+    },
+    {
+      "capacity": 3,
+      "family_truth_hex": "0x1177",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "3",
+        "13",
+        "23",
+        "4",
+        "34"
+      ],
+      "weights": [
+        2,
+        2,
+        1,
+        2
+      ]
+    },
+    {
+      "capacity": 2,
+      "family_truth_hex": "0x1337",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "3",
+        "13",
+        "4",
+        "14",
+        "34"
+      ],
+      "weights": [
+        1,
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "capacity": 2,
+      "family_truth_hex": "0x1557",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "3",
+        "23",
+        "4",
+        "24",
+        "34"
+      ],
+      "weights": [
+        2,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "capacity": 3,
+      "family_truth_hex": "0x1717",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "3",
+        "4",
+        "14",
+        "24",
+        "34"
+      ],
+      "weights": [
+        2,
+        2,
+        2,
+        1
+      ]
+    },
+    {
+      "capacity": 3,
+      "family_truth_hex": "0x3333",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "3",
+        "13",
+        "4",
+        "14",
+        "34",
+        "134"
+      ],
+      "weights": [
+        1,
+        4,
+        1,
+        1
+      ]
+    },
+    {
+      "capacity": 3,
+      "family_truth_hex": "0x5555",
+      "feasible_E_sets": [
+        "empty",
+        "2",
+        "3",
+        "23",
+        "4",
+        "24",
+        "34",
+        "234"
+      ],
+      "weights": [
+        4,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "capacity": 3,
+      "family_truth_hex": "0x01ff",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "13",
+        "23",
+        "123",
+        "4"
+      ],
+      "weights": [
+        1,
+        1,
+        1,
+        3
+      ]
+    },
+    {
+      "capacity": 4,
+      "family_truth_hex": "0x037f",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "13",
+        "23",
+        "4",
+        "14"
+      ],
+      "weights": [
+        1,
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "capacity": 4,
+      "family_truth_hex": "0x057f",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "13",
+        "23",
+        "4",
+        "24"
+      ],
+      "weights": [
+        2,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "capacity": 4,
+      "family_truth_hex": "0x117f",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "13",
+        "23",
+        "4",
+        "34"
+      ],
+      "weights": [
+        2,
+        2,
+        1,
+        3
+      ]
+    },
+    {
+      "capacity": 4,
+      "family_truth_hex": "0x073f",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "13",
+        "4",
+        "14",
+        "24"
+      ],
+      "weights": [
+        1,
+        2,
+        3,
+        2
+      ]
+    },
+    {
+      "capacity": 4,
+      "family_truth_hex": "0x133f",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "13",
+        "4",
+        "14",
+        "34"
+      ],
+      "weights": [
+        1,
+        3,
+        2,
+        2
+      ]
+    },
+    {
+      "capacity": 4,
+      "family_truth_hex": "0x075f",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "23",
+        "4",
+        "14",
+        "24"
+      ],
+      "weights": [
+        2,
+        1,
+        3,
+        2
+      ]
+    },
+    {
+      "capacity": 4,
+      "family_truth_hex": "0x155f",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "23",
+        "4",
+        "24",
+        "34"
+      ],
+      "weights": [
+        3,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "capacity": 3,
+      "family_truth_hex": "0x0f1f",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "4",
+        "14",
+        "24",
+        "124"
+      ],
+      "weights": [
+        1,
+        1,
+        3,
+        1
+      ]
+    },
+    {
+      "capacity": 4,
+      "family_truth_hex": "0x171f",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "4",
+        "14",
+        "24",
+        "34"
+      ],
+      "weights": [
+        2,
+        2,
+        3,
+        1
+      ]
+    },
+    {
+      "capacity": 4,
+      "family_truth_hex": "0x1377",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "3",
+        "13",
+        "23",
+        "4",
+        "14",
+        "34"
+      ],
+      "weights": [
+        2,
+        3,
+        1,
+        2
+      ]
+    },
+    {
+      "capacity": 4,
+      "family_truth_hex": "0x1577",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "3",
+        "13",
+        "23",
+        "4",
+        "24",
+        "34"
+      ],
+      "weights": [
+        3,
+        2,
+        1,
+        2
+      ]
+    },
+    {
+      "capacity": 4,
+      "family_truth_hex": "0x1737",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "3",
+        "13",
+        "4",
+        "14",
+        "24",
+        "34"
+      ],
+      "weights": [
+        2,
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "capacity": 3,
+      "family_truth_hex": "0x3337",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "3",
+        "13",
+        "4",
+        "14",
+        "34",
+        "134"
+      ],
+      "weights": [
+        1,
+        3,
+        1,
+        1
+      ]
+    },
+    {
+      "capacity": 4,
+      "family_truth_hex": "0x1757",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "3",
+        "23",
+        "4",
+        "14",
+        "24",
+        "34"
+      ],
+      "weights": [
+        3,
+        2,
+        2,
+        1
+      ]
+    },
+    {
+      "capacity": 3,
+      "family_truth_hex": "0x5557",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "3",
+        "23",
+        "4",
+        "24",
+        "34",
+        "234"
+      ],
+      "weights": [
+        3,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "capacity": 5,
+      "family_truth_hex": "0x03ff",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "13",
+        "23",
+        "123",
+        "4",
+        "14"
+      ],
+      "weights": [
+        1,
+        2,
+        2,
+        4
+      ]
+    },
+    {
+      "capacity": 5,
+      "family_truth_hex": "0x05ff",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "13",
+        "23",
+        "123",
+        "4",
+        "24"
+      ],
+      "weights": [
+        2,
+        1,
+        2,
+        4
+      ]
+    },
+    {
+      "capacity": 5,
+      "family_truth_hex": "0x11ff",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "13",
+        "23",
+        "123",
+        "4",
+        "34"
+      ],
+      "weights": [
+        2,
+        2,
+        1,
+        4
+      ]
+    },
+    {
+      "capacity": 3,
+      "family_truth_hex": "0x077f",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "13",
+        "23",
+        "4",
+        "14",
+        "24"
+      ],
+      "weights": [
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "capacity": 3,
+      "family_truth_hex": "0x137f",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "13",
+        "23",
+        "4",
+        "14",
+        "34"
+      ],
+      "weights": [
+        1,
+        2,
+        1,
+        2
+      ]
+    },
+    {
+      "capacity": 3,
+      "family_truth_hex": "0x157f",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "13",
+        "23",
+        "4",
+        "24",
+        "34"
+      ],
+      "weights": [
+        2,
+        1,
+        1,
+        2
+      ]
+    },
+    {
+      "capacity": 5,
+      "family_truth_hex": "0x0f3f",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "13",
+        "4",
+        "14",
+        "24",
+        "124"
+      ],
+      "weights": [
+        1,
+        2,
+        4,
+        2
+      ]
+    },
+    {
+      "capacity": 3,
+      "family_truth_hex": "0x173f",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "13",
+        "4",
+        "14",
+        "24",
+        "34"
+      ],
+      "weights": [
+        1,
+        2,
+        2,
+        1
+      ]
+    },
+    {
+      "capacity": 5,
+      "family_truth_hex": "0x333f",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "13",
+        "4",
+        "14",
+        "34",
+        "134"
+      ],
+      "weights": [
+        1,
+        4,
+        2,
+        2
+      ]
+    },
+    {
+      "capacity": 5,
+      "family_truth_hex": "0x0f5f",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "23",
+        "4",
+        "14",
+        "24",
+        "124"
+      ],
+      "weights": [
+        2,
+        1,
+        4,
+        2
+      ]
+    },
+    {
+      "capacity": 3,
+      "family_truth_hex": "0x175f",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "23",
+        "4",
+        "14",
+        "24",
+        "34"
+      ],
+      "weights": [
+        2,
+        1,
+        2,
+        1
+      ]
+    },
+    {
+      "capacity": 5,
+      "family_truth_hex": "0x555f",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "23",
+        "4",
+        "24",
+        "34",
+        "234"
+      ],
+      "weights": [
+        4,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "capacity": 5,
+      "family_truth_hex": "0x1f1f",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "4",
+        "14",
+        "24",
+        "124",
+        "34"
+      ],
+      "weights": [
+        2,
+        2,
+        4,
+        1
+      ]
+    },
+    {
+      "capacity": 3,
+      "family_truth_hex": "0x1777",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "3",
+        "13",
+        "23",
+        "4",
+        "14",
+        "24",
+        "34"
+      ],
+      "weights": [
+        2,
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "capacity": 5,
+      "family_truth_hex": "0x3377",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "3",
+        "13",
+        "23",
+        "4",
+        "14",
+        "34",
+        "134"
+      ],
+      "weights": [
+        2,
+        4,
+        1,
+        2
+      ]
+    },
+    {
+      "capacity": 5,
+      "family_truth_hex": "0x5577",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "3",
+        "13",
+        "23",
+        "4",
+        "24",
+        "34",
+        "234"
+      ],
+      "weights": [
+        4,
+        2,
+        1,
+        2
+      ]
+    },
+    {
+      "capacity": 5,
+      "family_truth_hex": "0x3737",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "3",
+        "13",
+        "4",
+        "14",
+        "24",
+        "34",
+        "134"
+      ],
+      "weights": [
+        2,
+        4,
+        2,
+        1
+      ]
+    },
+    {
+      "capacity": 5,
+      "family_truth_hex": "0x5757",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "3",
+        "23",
+        "4",
+        "14",
+        "24",
+        "34",
+        "234"
+      ],
+      "weights": [
+        4,
+        2,
+        2,
+        1
+      ]
+    },
+    {
+      "capacity": 4,
+      "family_truth_hex": "0x07ff",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "13",
+        "23",
+        "123",
+        "4",
+        "14",
+        "24"
+      ],
+      "weights": [
+        1,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "capacity": 4,
+      "family_truth_hex": "0x13ff",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "13",
+        "23",
+        "123",
+        "4",
+        "14",
+        "34"
+      ],
+      "weights": [
+        1,
+        2,
+        1,
+        3
+      ]
+    },
+    {
+      "capacity": 4,
+      "family_truth_hex": "0x15ff",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "13",
+        "23",
+        "123",
+        "4",
+        "24",
+        "34"
+      ],
+      "weights": [
+        2,
+        1,
+        1,
+        3
+      ]
+    },
+    {
+      "capacity": 4,
+      "family_truth_hex": "0x0f7f",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "13",
+        "23",
+        "4",
+        "14",
+        "24",
+        "124"
+      ],
+      "weights": [
+        1,
+        1,
+        3,
+        2
+      ]
+    },
+    {
+      "capacity": 2,
+      "family_truth_hex": "0x177f",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "13",
+        "23",
+        "4",
+        "14",
+        "24",
+        "34"
+      ],
+      "weights": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "capacity": 4,
+      "family_truth_hex": "0x337f",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "13",
+        "23",
+        "4",
+        "14",
+        "34",
+        "134"
+      ],
+      "weights": [
+        1,
+        3,
+        1,
+        2
+      ]
+    },
+    {
+      "capacity": 4,
+      "family_truth_hex": "0x557f",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "13",
+        "23",
+        "4",
+        "24",
+        "34",
+        "234"
+      ],
+      "weights": [
+        3,
+        1,
+        1,
+        2
+      ]
+    },
+    {
+      "capacity": 4,
+      "family_truth_hex": "0x1f3f",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "13",
+        "4",
+        "14",
+        "24",
+        "124",
+        "34"
+      ],
+      "weights": [
+        1,
+        2,
+        3,
+        1
+      ]
+    },
+    {
+      "capacity": 4,
+      "family_truth_hex": "0x373f",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "13",
+        "4",
+        "14",
+        "24",
+        "34",
+        "134"
+      ],
+      "weights": [
+        1,
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "capacity": 4,
+      "family_truth_hex": "0x1f5f",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "23",
+        "4",
+        "14",
+        "24",
+        "124",
+        "34"
+      ],
+      "weights": [
+        2,
+        1,
+        3,
+        1
+      ]
+    },
+    {
+      "capacity": 4,
+      "family_truth_hex": "0x575f",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "23",
+        "4",
+        "14",
+        "24",
+        "34",
+        "234"
+      ],
+      "weights": [
+        3,
+        1,
+        2,
+        1
+      ]
+    },
+    {
+      "capacity": 4,
+      "family_truth_hex": "0x3777",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "3",
+        "13",
+        "23",
+        "4",
+        "14",
+        "24",
+        "34",
+        "134"
+      ],
+      "weights": [
+        2,
+        3,
+        1,
+        1
+      ]
+    },
+    {
+      "capacity": 4,
+      "family_truth_hex": "0x5777",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "3",
+        "13",
+        "23",
+        "4",
+        "14",
+        "24",
+        "34",
+        "234"
+      ],
+      "weights": [
+        3,
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "capacity": 5,
+      "family_truth_hex": "0x0fff",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "13",
+        "23",
+        "123",
+        "4",
+        "14",
+        "24",
+        "124"
+      ],
+      "weights": [
+        1,
+        1,
+        3,
+        3
+      ]
+    },
+    {
+      "capacity": 3,
+      "family_truth_hex": "0x17ff",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "13",
+        "23",
+        "123",
+        "4",
+        "14",
+        "24",
+        "34"
+      ],
+      "weights": [
+        1,
+        1,
+        1,
+        2
+      ]
+    },
+    {
+      "capacity": 5,
+      "family_truth_hex": "0x33ff",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "13",
+        "23",
+        "123",
+        "4",
+        "14",
+        "34",
+        "134"
+      ],
+      "weights": [
+        1,
+        3,
+        1,
+        3
+      ]
+    },
+    {
+      "capacity": 5,
+      "family_truth_hex": "0x55ff",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "13",
+        "23",
+        "123",
+        "4",
+        "24",
+        "34",
+        "234"
+      ],
+      "weights": [
+        3,
+        1,
+        1,
+        3
+      ]
+    },
+    {
+      "capacity": 3,
+      "family_truth_hex": "0x1f7f",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "13",
+        "23",
+        "4",
+        "14",
+        "24",
+        "124",
+        "34"
+      ],
+      "weights": [
+        1,
+        1,
+        2,
+        1
+      ]
+    },
+    {
+      "capacity": 3,
+      "family_truth_hex": "0x377f",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "13",
+        "23",
+        "4",
+        "14",
+        "24",
+        "34",
+        "134"
+      ],
+      "weights": [
+        1,
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "capacity": 3,
+      "family_truth_hex": "0x577f",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "13",
+        "23",
+        "4",
+        "14",
+        "24",
+        "34",
+        "234"
+      ],
+      "weights": [
+        2,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "capacity": 5,
+      "family_truth_hex": "0x3f3f",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "13",
+        "4",
+        "14",
+        "24",
+        "124",
+        "34",
+        "134"
+      ],
+      "weights": [
+        1,
+        3,
+        3,
+        1
+      ]
+    },
+    {
+      "capacity": 5,
+      "family_truth_hex": "0x5f5f",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "23",
+        "4",
+        "14",
+        "24",
+        "124",
+        "34",
+        "234"
+      ],
+      "weights": [
+        3,
+        1,
+        3,
+        1
+      ]
+    },
+    {
+      "capacity": 5,
+      "family_truth_hex": "0x7777",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "3",
+        "13",
+        "23",
+        "4",
+        "14",
+        "24",
+        "34",
+        "134",
+        "234"
+      ],
+      "weights": [
+        3,
+        3,
+        1,
+        1
+      ]
+    },
+    {
+      "capacity": 4,
+      "family_truth_hex": "0x1fff",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "13",
+        "23",
+        "123",
+        "4",
+        "14",
+        "24",
+        "124",
+        "34"
+      ],
+      "weights": [
+        1,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "capacity": 4,
+      "family_truth_hex": "0x37ff",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "13",
+        "23",
+        "123",
+        "4",
+        "14",
+        "24",
+        "34",
+        "134"
+      ],
+      "weights": [
+        1,
+        2,
+        1,
+        2
+      ]
+    },
+    {
+      "capacity": 4,
+      "family_truth_hex": "0x57ff",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "13",
+        "23",
+        "123",
+        "4",
+        "14",
+        "24",
+        "34",
+        "234"
+      ],
+      "weights": [
+        2,
+        1,
+        1,
+        2
+      ]
+    },
+    {
+      "capacity": 4,
+      "family_truth_hex": "0x3f7f",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "13",
+        "23",
+        "4",
+        "14",
+        "24",
+        "124",
+        "34",
+        "134"
+      ],
+      "weights": [
+        1,
+        2,
+        2,
+        1
+      ]
+    },
+    {
+      "capacity": 4,
+      "family_truth_hex": "0x5f7f",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "13",
+        "23",
+        "4",
+        "14",
+        "24",
+        "124",
+        "34",
+        "234"
+      ],
+      "weights": [
+        2,
+        1,
+        2,
+        1
+      ]
+    },
+    {
+      "capacity": 4,
+      "family_truth_hex": "0x777f",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "13",
+        "23",
+        "4",
+        "14",
+        "24",
+        "34",
+        "134",
+        "234"
+      ],
+      "weights": [
+        2,
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "capacity": 5,
+      "family_truth_hex": "0x3fff",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "13",
+        "23",
+        "123",
+        "4",
+        "14",
+        "24",
+        "124",
+        "34",
+        "134"
+      ],
+      "weights": [
+        1,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "capacity": 5,
+      "family_truth_hex": "0x5fff",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "13",
+        "23",
+        "123",
+        "4",
+        "14",
+        "24",
+        "124",
+        "34",
+        "234"
+      ],
+      "weights": [
+        2,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "capacity": 5,
+      "family_truth_hex": "0x77ff",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "13",
+        "23",
+        "123",
+        "4",
+        "14",
+        "24",
+        "34",
+        "134",
+        "234"
+      ],
+      "weights": [
+        2,
+        2,
+        1,
+        2
+      ]
+    },
+    {
+      "capacity": 5,
+      "family_truth_hex": "0x7f7f",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "13",
+        "23",
+        "4",
+        "14",
+        "24",
+        "124",
+        "34",
+        "134",
+        "234"
+      ],
+      "weights": [
+        2,
+        2,
+        2,
+        1
+      ]
+    },
+    {
+      "capacity": 3,
+      "family_truth_hex": "0x7fff",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "13",
+        "23",
+        "123",
+        "4",
+        "14",
+        "24",
+        "124",
+        "34",
+        "134",
+        "234"
+      ],
+      "weights": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "capacity": 4,
+      "family_truth_hex": "0xffff",
+      "feasible_E_sets": [
+        "empty",
+        "1",
+        "2",
+        "12",
+        "3",
+        "13",
+        "23",
+        "123",
+        "4",
+        "14",
+        "24",
+        "124",
+        "34",
+        "134",
+        "234",
+        "1234"
+      ],
+      "weights": [
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  ]
+}
