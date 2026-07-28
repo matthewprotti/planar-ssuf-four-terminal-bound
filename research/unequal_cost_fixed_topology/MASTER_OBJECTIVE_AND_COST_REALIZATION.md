@@ -77,8 +77,8 @@ means
 \[
 \sup\left\{
 \Phi(k,p,d):
-k_i>0,\ 
-\{z:k\cdot(z-p)\ge0\}=\mathcal F,\ 
+k_i>0,\quad
+\{z:k\cdot(z-p)\ge0\}=\mathcal F,\quad
 d_i>0
 \right\}. \tag{4}
 \]

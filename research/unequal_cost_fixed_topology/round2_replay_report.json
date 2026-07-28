@@ -1,5 +1,5 @@
 {
-  "artifact_manifest_sha256": "818f12d83aa4a57156b9aa7c8854a7a4188a6b06b53af7a060aa6e69411508e0",
+  "artifact_manifest_sha256": "a439deb0a8833c82cb9b848c2999a7433501a89363190e2c07230e6a9f94c727",
   "attestation_policy": {
     "canonical": false,
     "external_path_required": true,
