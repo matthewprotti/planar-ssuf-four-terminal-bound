@@ -1,0 +1,145 @@
+name: Reproducibility
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  python-verification:
+    name: Python ${{ matrix.python-version }} verification
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version:
+          - "3.11"
+          - "3.12"
+
+    steps:
+      - name: Check out complete history
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+          cache-dependency-path: verification/requirements.txt
+
+      - name: Install Python dependencies
+        run: python -m pip install -r verification/requirements.txt
+
+      - name: Install PDF text tool
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes poppler-utils
+          pdftotext -v
+
+      - name: Run release-gate tests
+        run: python -m unittest discover --start-directory tests --verbose
+
+      - name: Run mathematical verification
+        run: python scripts/verify_all.py
+
+      - name: Check manifest and baseline preflight
+        run: |
+          python scripts/manifest.py
+          python scripts/release_preflight.py
+
+      - name: Require clean checkout
+        run: |
+          git diff --exit-code
+          test -z "$(git status --porcelain)"
+
+  package:
+    name: Deterministic package
+    needs: python-verification
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+
+    steps:
+      - name: Check out complete history
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: verification/requirements.txt
+
+      - name: Install Python dependencies
+        run: python -m pip install -r verification/requirements.txt
+
+      - name: Install pinned document tools
+        env:
+          TECTONIC_SHA256: f3c825128095dc3399ea11c08c18035b33050a216930c295c79e8eb11bd21de4
+          TECTONIC_URL: https://github.com/tectonic-typesetting/tectonic/releases/download/tectonic%400.16.9/tectonic-0.16.9-x86_64-unknown-linux-gnu.tar.gz
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes libgraphite2-3 poppler-utils
+          curl --fail --location --retry 3 "$TECTONIC_URL" --output "$RUNNER_TEMP/tectonic.tar.gz"
+          echo "$TECTONIC_SHA256  $RUNNER_TEMP/tectonic.tar.gz" | sha256sum --check
+          tar --extract --gzip --file "$RUNNER_TEMP/tectonic.tar.gz" --directory "$RUNNER_TEMP"
+          sudo install --mode 0755 "$RUNNER_TEMP/tectonic" /usr/local/bin/tectonic
+          tectonic --version
+          pdftotext -v
+
+      - name: Rebuild checked manuscript
+        run: |
+          python scripts/build_pdf.py
+          git diff --exit-code -- paper/ssuf_four_terminal_note_v5.pdf
+
+      - name: Check manifest
+        run: python scripts/manifest.py
+
+      - name: Check candidate/dev package
+        if: github.ref_type != 'tag'
+        run: |
+          python scripts/release_preflight.py --candidate-version 0.2.0-dev
+          python scripts/build_release.py \
+            --mode candidate \
+            --version 0.2.0-dev \
+            --output-dir "$RUNNER_TEMP/candidate-dist"
+
+      - name: Check public package
+        if: github.ref_type == 'tag'
+        run: |
+          python scripts/release_preflight.py --public
+          python scripts/build_release.py \
+            --mode public \
+            --output-dir "$RUNNER_TEMP/public-dist"
+
+      - name: Rebuild immutable v0.1.0 assets
+        env:
+          V010_ARCHIVE_SHA256: 746fa1a07006ade6ec22ac3fca83370afe359d001b045bccecaefa80cb11a4de
+          V010_ASSET_MANIFEST_SHA256: 0c9ee78ed8a92fc4a3d28f4cfb40be7cee7ac325d8e073acd314b56c90a92be5
+          V010_PDF_SHA256: d9efdadb25eb176a64dbd186f95d78e2a00b83c9a07b752b1a58c0f4d93b690d
+        run: |
+          git worktree add --detach "$RUNNER_TEMP/v0.1.0" v0.1.0
+          python "$RUNNER_TEMP/v0.1.0/scripts/build_pdf.py"
+          python "$RUNNER_TEMP/v0.1.0/scripts/manifest.py"
+          python "$RUNNER_TEMP/v0.1.0/scripts/build_release.py"
+          echo "$V010_PDF_SHA256  $RUNNER_TEMP/v0.1.0/paper/ssuf_four_terminal_note_v5.pdf" | sha256sum --check
+          echo "$V010_ARCHIVE_SHA256  $RUNNER_TEMP/v0.1.0/dist/ssuf-four-terminal-v0.1.0-source.tar.gz" | sha256sum --check
+          echo "$V010_ASSET_MANIFEST_SHA256  $RUNNER_TEMP/v0.1.0/dist/SHA256SUMS.txt" | sha256sum --check
+          test -z "$(git -C "$RUNNER_TEMP/v0.1.0" status --porcelain)"
+          git worktree remove "$RUNNER_TEMP/v0.1.0"
+
+      - name: Require clean checkout
+        run: |
+          git diff --exit-code
+          test -z "$(git status --porcelain)"
