@@ -4,8 +4,15 @@
 from __future__ import annotations
 
 import argparse
+import os
 from pathlib import Path
 import re
+import subprocess
+import sys
+import tempfile
+
+from manifest import check_manifest
+from release_metadata import cff_version, require_public_identity, validate_version
 
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -60,13 +67,21 @@ def files() -> list[Path]:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument(
+    mode = parser.add_mutually_exclusive_group()
+    mode.add_argument(
         "--public",
         action="store_true",
-        help="also require completed rights/licensing and public-ready metadata",
+        help="require public metadata, exact CFF-matching tag, and a valid archive",
+    )
+    mode.add_argument(
+        "--candidate-version",
+        help="check candidate/dev packaging using a visibly non-final version",
     )
     args = parser.parse_args()
     failures: list[str] = []
+
+    # Hygiene cannot pass while new or changed deliverables are omitted.
+    check_manifest()
 
     for path in files():
         relative = path.relative_to(ROOT)
@@ -86,6 +101,7 @@ def main() -> None:
 
     cff = (ROOT / "CITATION.cff").read_text(encoding="utf-8")
     if args.public:
+        version = cff_version(ROOT)
         for path in files():
             if path.resolve() == Path(__file__).resolve():
                 continue
@@ -97,14 +113,24 @@ def main() -> None:
                     failures.append(
                         f"stale pre-publication language in {path.relative_to(ROOT)}: {marker}"
                     )
-        if 'version: "0.1.0"' not in cff or "date-released:" not in cff:
-            failures.append("CITATION.cff is not finalized as dated version 0.1.0")
+        if "date-released:" not in cff:
+            failures.append(f"CITATION.cff is not finalized as dated version {version}")
         if re.search(r"(?m)^license:", cff):
             failures.append("CITATION.cff asserts a license despite the deliberate no-license status")
         licensing = (ROOT / "LICENSING.md").read_text(encoding="utf-8")
         normalized_licensing = " ".join(licensing.split())
         if "grants no open-source or open-content license" not in normalized_licensing:
             failures.append("LICENSING.md does not state the deliberate no-license status")
+
+        try:
+            require_public_identity(ROOT)
+        except SystemExit as error:
+            failures.append(str(error))
+    elif args.candidate_version:
+        try:
+            validate_version(args.candidate_version, candidate=True)
+        except SystemExit as error:
+            failures.append(str(error))
 
     if failures:
         for failure in failures:
@@ -113,7 +139,21 @@ def main() -> None:
 
     print(f"PACKAGE HYGIENE PASS: {len(files())} files scanned")
     print("PASS: no institutional affiliation or operative license is asserted.")
-    if not args.public:
+    if args.public or args.candidate_version:
+        build_mode = "public" if args.public else "candidate"
+        command = [
+            sys.executable,
+            os.fspath(ROOT / "scripts" / "build_release.py"),
+            "--mode",
+            build_mode,
+        ]
+        if args.candidate_version:
+            command.extend(["--version", args.candidate_version])
+        with tempfile.TemporaryDirectory(prefix="ssuf-package-preflight-") as tmp_name:
+            command.extend(["--output-dir", tmp_name])
+            subprocess.run(command, cwd=ROOT, check=True)
+        print(f"{build_mode.upper()} ARCHIVE PREFLIGHT PASS")
+    else:
         print("BASELINE PREFLIGHT PASS")
 
 
