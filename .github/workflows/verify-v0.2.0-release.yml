@@ -34,7 +34,7 @@ jobs:
 
           gh release view v0.2.0 \
             --repo "$REPOSITORY" \
-            --json tagName,name,isLatest,publishedAt,assets \
+            --json tagName,name,isDraft,isPrerelease,isImmutable,publishedAt,assets \
             > "$RUNNER_TEMP/release.json"
           cat "$RUNNER_TEMP/release.json"
 
@@ -47,6 +47,8 @@ jobs:
           assert data["tagName"] == "v0.2.0", data
           assert data["name"] == "v0.2.0 - Exact two-scenario fixed-gadget supremum", data
           assert data["publishedAt"], data
+          assert data["isDraft"] is False, data
+          assert data["isPrerelease"] is False, data
           names = {asset["name"] for asset in data["assets"]}
           expected = {
               "ssuf-four-terminal-v0.2.0-source.tar.gz",
