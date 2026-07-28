@@ -1,0 +1,86 @@
+name: Verify published v0.2.0 release
+
+on:
+  pull_request:
+    branches:
+      - main
+    types:
+      - opened
+      - synchronize
+      - reopened
+
+permissions:
+  contents: read
+
+jobs:
+  verify-release:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+
+    steps:
+      - name: Check out complete history
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Fetch and inspect published release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          git fetch --tags --force
+          test "$(git rev-list -n 1 v0.2.0)" = "216ea6f14de6e67692088b920ddb73ccda539d7d"
+
+          gh release view v0.2.0 \
+            --repo "$REPOSITORY" \
+            --json tagName,name,isLatest,publishedAt,assets \
+            > "$RUNNER_TEMP/release.json"
+          cat "$RUNNER_TEMP/release.json"
+
+          python - "$RUNNER_TEMP/release.json" <<'PY'
+          import json
+          import sys
+          from pathlib import Path
+
+          data = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
+          assert data["tagName"] == "v0.2.0", data
+          assert data["name"] == "v0.2.0 - Exact two-scenario fixed-gadget supremum", data
+          assert data["publishedAt"], data
+          names = {asset["name"] for asset in data["assets"]}
+          expected = {
+              "ssuf-four-terminal-v0.2.0-source.tar.gz",
+              "ssuf_four_terminal_note_v5.pdf",
+              "rb003_two_scenario_note_v1.pdf",
+              "SHA256SUMS.txt",
+              "MANIFEST.sha256",
+          }
+          assert names == expected, (names, expected)
+          for asset in data["assets"]:
+              assert int(asset["size"]) > 0, asset
+          PY
+
+          mkdir "$RUNNER_TEMP/release-assets"
+          gh release download v0.2.0 \
+            --repo "$REPOSITORY" \
+            --dir "$RUNNER_TEMP/release-assets"
+          cd "$RUNNER_TEMP/release-assets"
+          test -s ssuf-four-terminal-v0.2.0-source.tar.gz
+          test -s ssuf_four_terminal_note_v5.pdf
+          test -s rb003_two_scenario_note_v1.pdf
+          test -s SHA256SUMS.txt
+          test -s MANIFEST.sha256
+          sha256sum --check SHA256SUMS.txt
+          cmp MANIFEST.sha256 "$GITHUB_WORKSPACE/research/two_scenario_global_constant/MANIFEST.sha256"
+
+          tar --list --gzip --file ssuf-four-terminal-v0.2.0-source.tar.gz \
+            | tee "$RUNNER_TEMP/archive-members.txt"
+          grep -F 'paper/rb003_two_scenario_note_v1.tex' "$RUNNER_TEMP/archive-members.txt"
+          grep -F 'paper/rb003_two_scenario_note_v1.pdf' "$RUNNER_TEMP/archive-members.txt"
+          grep -F 'research/two_scenario_global_constant/TWO_SCENARIO_GLOBAL_CONSTANT.md' "$RUNNER_TEMP/archive-members.txt"
+          ! grep -E '(^|/)(\.rb003-stage|apply-rb003-v020\.yml)(/|$)' "$RUNNER_TEMP/archive-members.txt"
+
+          pdftotext rb003_two_scenario_note_v1.pdf - \
+            | grep -F '17/8'
+          pdftotext rb003_two_scenario_note_v1.pdf - \
+            | grep -F 'non-attained supremum'
