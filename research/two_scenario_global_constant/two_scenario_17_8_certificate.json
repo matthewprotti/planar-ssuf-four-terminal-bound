@@ -1,0 +1,130 @@
+{
+  "any_feasible_route_equal_to_fractional_budget": false,
+  "demands": [
+    "1",
+    "1",
+    "3/4",
+    "1"
+  ],
+  "established_family_id": "F126 (historical label only)",
+  "feasibility_semantics": "for each scenario, unsplittable graph cost <= fractional graph cost; cost equality is not required",
+  "feasible_unsplittable_scenario_1_costs": [
+    "0",
+    "1"
+  ],
+  "feasible_unsplittable_scenario_2_costs": [
+    "0",
+    "1000"
+  ],
+  "finite_attainment_of_17_over_8": false,
+  "finite_decimal": 2.122,
+  "finite_minimum_max_upper_deviation": "1061/500",
+  "finite_parameter": {
+    "epsilon": "1/1000"
+  },
+  "global_supremum_attained_by_any_finite_legal_instance": false,
+  "integer_scaling": {
+    "demand_scale": 4000,
+    "maximum_scaled_demand": 4000,
+    "scaled_demands": [
+      4000,
+      4000,
+      3000,
+      4000
+    ],
+    "unavoidable_upper_deviation": 8488
+  },
+  "intrinsic_family": "upward closure of {123,124,234}",
+  "legal_private_E_arc_per_unit_costs": {
+    "scenario_1": {
+      "s->t1": "1",
+      "s->t2": "3000",
+      "v1->t3": "4/3",
+      "v2->t4": "1"
+    },
+    "scenario_2": {
+      "s->t1": "1000",
+      "s->t2": "1",
+      "v1->t3": "4000/3",
+      "v2->t4": "1000"
+    }
+  },
+  "limiting_supremum": "17/8",
+  "minimal_feasible_C_sets": [
+    "123",
+    "124",
+    "234"
+  ],
+  "p_C_fractions": [
+    "251/1000",
+    "1/1000",
+    "1/2",
+    "251/1000"
+  ],
+  "q_E_fractions": [
+    "749/1000",
+    "999/1000",
+    "1/2",
+    "749/1000"
+  ],
+  "released_trunk_terminal_sets": [
+    [
+      1,
+      2
+    ],
+    [
+      1,
+      2,
+      3
+    ],
+    [
+      1,
+      2,
+      3,
+      4
+    ],
+    [
+      2,
+      3,
+      4
+    ],
+    [
+      2,
+      3
+    ]
+  ],
+  "routing_csv": "two_scenario_17_8_16_routings.csv",
+  "scenario_1_budget": "1499499/500",
+  "scenario_1_full_demand_differences": [
+    "1",
+    "3000",
+    "1",
+    "1"
+  ],
+  "scenario_2_budget": "1998999/1000",
+  "scenario_2_full_demand_differences": [
+    "1000",
+    "1",
+    "1000",
+    "1000"
+  ],
+  "schema": "ssuf-two-scenario-global-17-8-certificate-v2",
+  "simultaneously_feasible_C_sets": [
+    "123",
+    "124",
+    "234",
+    "1234"
+  ],
+  "simultaneously_feasible_E_sets": [
+    "4",
+    "3",
+    "1",
+    "empty"
+  ],
+  "status": "exact graph-native finite certificate; second-round proof-review edits integrated; not formally peer reviewed",
+  "theorem_target": "beta_G^(2sc)=17/8 as a non-attained supremum",
+  "within_scenario_weight_ratios": {
+    "scenario_1": 3000,
+    "scenario_2": 1000
+  }
+}

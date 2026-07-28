@@ -16,8 +16,11 @@ from release_metadata import release_version
 
 ROOT = Path(__file__).resolve().parent.parent
 MANIFEST = ROOT / "SHA256SUMS.txt"
-PDF = ROOT / "paper" / "ssuf_four_terminal_note_v5.pdf"
-EPOCH = 1_784_846_040
+PDFS = (
+    ROOT / "paper" / "ssuf_four_terminal_note_v5.pdf",
+    ROOT / "paper" / "rb003_two_scenario_note_v1.pdf",
+)
+EPOCH = 1_785_261_600
 
 
 def sha256(path: Path) -> str:
@@ -101,10 +104,7 @@ def main() -> None:
     prefix = f"planar-ssuf-four-terminal-bound-v{version}"
     output_dir = args.output_dir.resolve()
     archive_path = output_dir / f"ssuf-four-terminal-v{version}-source.tar.gz"
-    output_pdf = output_dir / PDF.name
 
-    # This is deliberately stronger than checking only the paths already named
-    # in SHA256SUMS.txt: any omitted or changed deliverable must stop packaging.
     check_manifest()
     paths = manifest_paths()
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -115,8 +115,15 @@ def main() -> None:
                     add_file(archive, path, prefix=prefix)
     validate_archive(archive_path, paths, prefix=prefix)
 
-    shutil.copyfile(PDF, output_pdf)
-    assets = (archive_path, output_pdf)
+    copied_pdfs: list[Path] = []
+    for pdf in PDFS:
+        if not pdf.is_file() or pdf.stat().st_size <= 100_000:
+            raise SystemExit(f"checked PDF is missing or implausibly small: {pdf}")
+        output_pdf = output_dir / pdf.name
+        shutil.copyfile(pdf, output_pdf)
+        copied_pdfs.append(output_pdf)
+
+    assets = (archive_path, *copied_pdfs)
     checksums = "\n".join(f"{sha256(path)}  {path.name}" for path in assets) + "\n"
     (output_dir / "SHA256SUMS.txt").write_text(checksums, encoding="utf-8")
     print(

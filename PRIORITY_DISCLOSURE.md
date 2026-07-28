@@ -1,91 +1,118 @@
-# Priority disclosure
+# Priority disclosures and claim boundaries
 
-- **Release:** v0.1.0
+## Immutable release record
+
+### `v0.1.0`
+
 - **Released:** 23 July 2026
-- **Status:** public, immutable GitHub release
+- **Subject:** original one-scenario planar lower bound, finite `335/294`
+  certificate, and restricted equal-cost sharpness theorem
+- **Status:** public immutable GitHub release
 
-The canonical public timestamp is the `published_at` time recorded by GitHub
-for the immutable `v0.1.0` release. Repository creation and private commit
-times are not presented as public priority.
+### `v0.2.0`
 
-## Claim A — exact finite certificate
+- **Released:** 28 July 2026
+- **Subject:** exact two-scenario fixed-gadget cost-nonincrease supremum RB-003
+- **Status:** public immutable GitHub release
+
+For each version, the canonical public timestamp is GitHub's server-recorded
+release time. Private repository events and local file timestamps are not
+presented as public priority.
+
+## Claim A - exact finite one-scenario certificate
 
 There is a planar acyclic four-terminal single-source instance with maximum
-demand
+demand `294` such that every cost-nonincreasing unsplittable routing has upper
+overload at least `335`.
+
+**Status:** exactly verified for the encoded graph and data by exhaustive
+routing enumeration. This does not prove global sharpness.
+
+## Claim B - limiting planar lower bound
+
+For every `eta > 0`, there is a rational planar acyclic four-terminal instance
+forcing upper overload greater than
 
 $$
-D=294
-$$
-
-such that every cost-nonincreasing unsplittable routing has upper overload at
-least
-
-$$
-335=\frac{335}{294}D.
-$$
-
-The certificate uses demands `(294, 216, 252, 294)`, cheap path amounts
-`(78, 97, 36, 42)`, and expensive path amounts `(216, 119, 216, 252)`.
-The private expensive-arc per-unit costs are `(36, 49, 42, 36)`, so every
-full expensive choice costs `10584`. The fractional cost is
-`31751 = 3(10584)-1`; therefore every cost-nonincreasing unsplittable routing
-uses at least two cheap paths. Exact enumeration of all 16 routings and all
-13 arcs gives optimum maximum overload exactly `335`.
-
-**Status:** exactly verified in the primary verifier and reproduced by a
-separate clean-room implementation. This is computational corroboration, not
-independent human review.
-
-## Claim B — limiting planar lower bound
-
-For every $\eta>0$, there is a rational planar acyclic four-terminal
-instance for which every cost-nonincreasing unsplittable routing overloads
-some arc by more than
-
-$$
-\left(\frac{299-41\sqrt{41}}{32}-\eta\right)D.
+\left(\frac{299-41\sqrt{41}}{32}-\eta\right)d_{\max}.
 $$
 
 Consequently,
 
 $$
-\alpha_{\mathrm{pl}}\ge \frac{299-41\sqrt{41}}{32}
+\alpha_{\mathrm{pl}}\ge
+\frac{299-41\sqrt{41}}{32}
 =1.139747070789\ldots.
 $$
 
-**Status:** proved in the unrefereed manuscript and checked symbolically.
+**Status:** proved in the unrefereed `v0.1.0` manuscript and symbolically
+corroborated.
 
-## Claim C — restricted-model sharpness
+## Claim C - restricted one-scenario sharpness
 
-For the fixed four-terminal topology defined in the manuscript, over the
-explicit real equal-full-cost, two-cheap-choice model, the exact supremum is
+For the fixed four-terminal topology, over the explicit real
+`equal-full-cost, at-least-two-cheap` model, the exact supremum is
 
 $$
-\frac{299-41\sqrt{41}}{32}.
+\frac{299-41\sqrt{41}}{32},
 $$
 
-The same supremum is obtained after restricting the data to rationals.
+and restricting data to rationals does not change the supremum.
 
-**Status:** proved in the unrefereed manuscript, algebraically checked, and
-stress-tested. The stress test is not used as proof.
+**Status:** proved in the unrefereed `v0.1.0` manuscript. This is not arbitrary
+one-scenario fixed-graph sharpness.
 
-## Scope and non-claims
+## Claim D - exact two-scenario fixed-gadget supremum RB-003
 
-This disclosure does **not** claim:
+For the same fixed graph, one unsplittable routing must satisfy
 
-- that the displayed radical is the exact unrestricted planar constant;
-- optimality among all four-terminal planar graphs;
-- optimality on the fixed topology with arbitrary unequal full-route costs;
+$$
+C_j(y)\le C_j(x),\qquad j=1,2,
+$$
+
+for two positive E-minus-C cost-difference scenarios. With normalized additive
+upper arc deviation,
+
+$$
+\boxed{\beta_G^{(2\mathrm{sc})}=\frac{17}{8}.}
+$$
+
+The supremum is not attained by any legal finite instance. Rational instances
+with feasible C-family
+
+$$
+\uparrow\{123,124,234\}
+$$
+
+approach it.
+
+At `epsilon = 1/1000`, an exact finite certificate has value `1061/500`; after
+scaling demands by `4000`, every routing satisfying both scenario budgets has
+upper deviation at least `8488`.
+
+**Status:** self-contained unrefereed proof; exact finite certificate; two
+hostile AI-assisted review rounds; final proof-only disposition accepted the
+claim subject to local edits, which were integrated. This is not formal peer
+review.
+
+## Scope and nonclaims
+
+The releases do not claim:
+
+- that either displayed constant is the exact unrestricted planar constant;
+- global four-terminal or fixed-topology optimality outside the stated models;
+- the arbitrary one-scenario fixed-graph constant;
+- an unrestricted or many-scenario robust constant;
+- a bounded-heterogeneity two-scenario constant;
+- a sequential-algorithm lower bound;
+- customer or operational performance;
 - exhaustive novelty clearance;
-- independent human verification;
-- peer review, journal acceptance, or an algorithmic lower bound stronger
-  than the existential obstruction itself.
+- formal peer review or journal acceptance; or
+- institutional ownership, sponsorship, or affiliation.
 
 ## Attribution and concurrent work
 
-This investigation was initiated after
-[Dmitry Rybin publicly announced](https://x.com/dmitryrybin1/status/2079904005652893709)
-a counterexample to Goemans' cost conjecture on 22 July 2026. Related work is
-developing rapidly. Any eventual public account should distinguish the
-four-terminal construction here from earlier and concurrent constructions
-and should preserve the limited novelty wording above.
+Dmitry Rybin's 22 July 2026 public counterexample was the direct catalyst for
+this investigation and must be credited in any account of the work. Related
+research is developing rapidly. The priority statement is therefore limited to
+the exact public artifacts and claims in the tagged releases.

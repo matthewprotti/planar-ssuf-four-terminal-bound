@@ -1,0 +1,67 @@
+{
+  "abstract_pair_census_limitation": "pattern pairs need not share one baseline q",
+  "abstract_unordered_pattern_pairs": 11175,
+  "analytic_envelope_grid_regression": {
+    "central_first_argmax": [
+      "3/4",
+      "3/4",
+      "3/4",
+      "1/2"
+    ],
+    "central_grid_maximum": "17/8",
+    "denominator": 16,
+    "interpretation": "finite grid regression against the analytic envelopes; not continuous optimization",
+    "outer_first_argmax": [
+      "1",
+      "0",
+      "1",
+      "1"
+    ],
+    "outer_grid_maximum": "2"
+  },
+  "case_counts": {
+    "matching_0": 227,
+    "matching_1": 784,
+    "matching_2": 1272,
+    "pair": 7455,
+    "star_triangle_central": 16,
+    "star_triangle_outer": 16,
+    "triangle_3": 1040,
+    "triangle_4": 365
+  },
+  "positive_scalar_threshold_truth_tables": 149,
+  "schema": "ssuf-two-scenario-global-secondary-regression-v2",
+  "secondary_lower_instance": {
+    "any_budget_equality": false,
+    "epsilon": "1/137",
+    "feasibility_semantics": "scenario cost <= fractional budget; equality not required",
+    "feasible_C_masks": [
+      7,
+      11,
+      14,
+      15
+    ],
+    "feasible_unsplittable_cost_pairs": [
+      [
+        "0",
+        "0"
+      ],
+      [
+        "1",
+        "137"
+      ]
+    ],
+    "finite_decimal": 2.103102189781022,
+    "finite_value": "2305/1096",
+    "mutation_beta_le_2_falsified": true,
+    "scenario_1_budget": "56168/137",
+    "scenario_2_budget": "37400/137"
+  },
+  "status": "secondary exact regression code path; shares the support matrix, blocker framework, and lower ansatz; not an independent derivation",
+  "threshold_recognition": {
+    "all_downsets": 168,
+    "empty_inadmissible": 1,
+    "nonthreshold_with_two_trades": 18,
+    "represented": 149
+  }
+}

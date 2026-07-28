@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="610" viewBox="0 0 900 610" role="img" aria-labelledby="title desc">
+  <title id="title">Four-terminal planar two-route gadget</title>
+  <desc id="desc">A source feeds a five-arc horizontal trunk. Four terminals attach by nested upper and lower branches, giving two designated paths per terminal.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,4 L0,8 z" fill="#111"/>
+    </marker>
+    <style>
+      .edge { fill:none; stroke:#111; stroke-width:2.2; marker-end:url(#arrow); }
+      .node { fill:#fff; stroke:#111; stroke-width:2.2; }
+      .terminal { fill:#fff; stroke:#111; stroke-width:2.2; }
+      .inner { fill:none; stroke:#111; stroke-width:1.4; }
+      .label { font-family:Arial,Helvetica,sans-serif; font-size:17px; fill:#111; text-anchor:middle; dominant-baseline:middle; }
+      .edgeLabel { font-family:Arial,Helvetica,sans-serif; font-size:15px; fill:#111; paint-order:stroke; stroke:#fff; stroke-width:5px; stroke-linejoin:round; }
+    </style>
+  </defs>
+  <rect x="0" y="0" width="900" height="610" fill="#fff"/>
+
+  <!-- Outer upper terminal 2 -->
+  <path class="edge" d="M88 286 C145 55, 270 30, 396 52"/>
+  <text class="edgeLabel" x="202" y="66">e2</text>
+  <path class="edge" d="M724 286 C690 55, 545 28, 422 52"/>
+  <text class="edgeLabel" x="635" y="65">c2</text>
+
+  <!-- Inner upper terminal 1 -->
+  <path class="edge" d="M88 295 C135 205, 220 150, 286 153"/>
+  <text class="edgeLabel" x="181" y="196">e1</text>
+  <path class="edge" d="M464 292 C430 205, 355 151, 314 153"/>
+  <text class="edgeLabel" x="399" y="198">c1</text>
+
+  <!-- Outer lower terminal 3 -->
+  <path class="edge" d="M236 314 C270 515, 405 556, 486 548"/>
+  <text class="edgeLabel" x="330" y="501">e3</text>
+  <path class="edge" d="M724 314 C690 514, 590 557, 514 548"/>
+  <text class="edgeLabel" x="648" y="501">c3</text>
+
+  <!-- Inner lower terminal 4 -->
+  <path class="edge" d="M366 314 C392 411, 450 458, 486 450"/>
+  <text class="edgeLabel" x="418" y="402">e4</text>
+  <path class="edge" d="M594 314 C575 411, 530 458, 514 450"/>
+  <text class="edgeLabel" x="558" y="402">c4</text>
+
+  <!-- Trunk -->
+  <path class="edge" d="M90 300 L204 300"/><text class="edgeLabel" x="146" y="282">a1</text>
+  <path class="edge" d="M236 300 L334 300"/><text class="edgeLabel" x="285" y="282">a2</text>
+  <path class="edge" d="M366 300 L464 300"/><text class="edgeLabel" x="415" y="282">a3</text>
+  <path class="edge" d="M496 300 L594 300"/><text class="edgeLabel" x="545" y="282">a4</text>
+  <path class="edge" d="M626 300 L724 300"/><text class="edgeLabel" x="675" y="282">a5</text>
+
+  <!-- Nodes -->
+  <circle class="terminal" cx="70" cy="300" r="22"/><circle class="inner" cx="70" cy="300" r="17"/><text class="label" x="70" y="300">s</text>
+  <circle class="node" cx="220" cy="300" r="16"/><text class="label" x="220" y="300">v1</text>
+  <circle class="node" cx="350" cy="300" r="16"/><text class="label" x="350" y="300">v2</text>
+  <circle class="node" cx="480" cy="300" r="16"/><text class="label" x="480" y="300">v3</text>
+  <circle class="node" cx="610" cy="300" r="16"/><text class="label" x="610" y="300">v4</text>
+  <circle class="node" cx="740" cy="300" r="16"/><text class="label" x="740" y="300">v5</text>
+
+  <circle class="terminal" cx="300" cy="150" r="22"/><circle class="inner" cx="300" cy="150" r="17"/><text class="label" x="300" y="150">t1</text>
+  <circle class="terminal" cx="410" cy="50" r="22"/><circle class="inner" cx="410" cy="50" r="17"/><text class="label" x="410" y="50">t2</text>
+  <circle class="terminal" cx="500" cy="550" r="22"/><circle class="inner" cx="500" cy="550" r="17"/><text class="label" x="500" y="550">t3</text>
+  <circle class="terminal" cx="500" cy="450" r="22"/><circle class="inner" cx="500" cy="450" r="17"/><text class="label" x="500" y="450">t4</text>
+</svg>

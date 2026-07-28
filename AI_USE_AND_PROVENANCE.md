@@ -1,70 +1,126 @@
-# AI use and provenance
+# AI use, human responsibility, and research provenance
 
-## How the project emerged
+## Origin of the project
 
 This work grew out of a multi-week conversation between Matthew Protti and
-OpenAI GPT-5.6 Pro about recurring structural similarities among
-mathematical breakthroughs and the kinds of hard problems advanced AI
-systems might help with. Dmitry Rybin's public result on 22 July 2026 became
-the catalyst for applying that ongoing conversation to this
-unsplittable-flow problem. The specific four-terminal construction was then
-developed during the intensive 22–23 July investigation described below.
+OpenAI GPT-5.6 Pro about recurring structural patterns in mathematical
+breakthroughs and the kinds of questions that might be tractable in a
+human-directed, model-assisted research loop. Dmitry Rybin's public
+counterexample of 22 July 2026 was the direct catalyst for applying that
+conversation to cost-constrained single-source unsplittable flow.
 
-## AI contribution
+Rybin's contribution is prior and distinct. The present repository does not
+claim ownership of, priority over, or authorship of his result.
 
-GPT-5.6 Pro did most of the active mathematical heavy lifting. Its substantive
-work included construction search, symbolic derivation, proof development,
-exact-verifier development, adversarial critique, and manuscript preparation.
+## Division of labor
 
-Separate model sessions were used to challenge and reconstruct key steps. A
-Codex execution session then performed a further clean-room computational
-cross-check from the stated graph and numerical data, repaired the public
-packaging, and ran release checks. These are separate AI-assisted checks, not
-independent human verification or peer review.
+### Matthew Protti
 
-## Human direction and responsibility
+Matthew:
 
-Matthew Protti selected and framed the research problem, directed the
-investigation, evaluated candidate constructions, identified a
-cost-normalization error, required repeated adversarial review, exact
-verification, mutation testing, and a separate reimplementation, and
-determined the scope and wording of the released claims.
+- selected and framed the research targets;
+- decided which natural variants to pursue;
+- set the requirement for exact arithmetic, exhaustive finite checks, mutation
+  tests, and hostile review;
+- identified and forced correction of material errors and overclaims;
+- repeatedly challenged whether intermediate lower bounds were globally sharp;
+- chose the final theorem scope and public wording;
+- reviewed and authorized the release; and
+- accepts responsibility for the manuscript and repository.
 
-The named human author reviewed the released claims and accepts
-responsibility for the manuscript and repository. AI systems are not listed
-as authors.
+### GPT-5.6 Pro and Codex
 
-Private prompts and conversation transcripts are deliberately excluded from
-the release. The public-facing proof, explicit data, and executable verifiers
-are intended to make the claims auditable without exposing that development
-record.
+GPT-5.6 Pro generated and developed substantial portions of:
 
-## Development chronology
+- construction and parameter searches;
+- symbolic derivations and analytic proofs;
+- exact verifiers and regression checks;
+- adversarial review analyses;
+- manuscript and documentation drafts; and
+- release-engineering plans.
 
-- **Before 22 July 2026:** a multi-week human–AI conversation explored
-  recurring patterns across mathematical breakthroughs and what kinds of
-  difficult mathematical problems sustained AI collaboration might help
-  address.
-- **22 July 2026:** Dmitry Rybin publicly announced a counterexample to
-  Goemans' cost conjecture. The present, specific investigation began later
-  that day.
-- **22–23 July 2026:** the four-terminal construction, exact finite
-  certificates, limiting family, and restricted-model sharpness argument were
-  developed through a human-directed model and verification loop.
-- **23 July 2026:** adversarial passes repaired cost normalization,
-  quantifiers, graph definition, limiting arguments, all-arc verification,
-  and exposition. The `335/294` certificate was reconstructed with exact
-  enumeration in a separate implementation. A further clean-room program
-  separately encoded the released data and reproduced the central
-  computational checks.
-- **Public release:** the repository was released publicly on 23 July 2026 as
-  the immutable `v0.1.0` GitHub release. Its server-recorded `published_at`
-  value is the canonical public timestamp; earlier private repository events
-  are not presented as public priority.
+Codex and other model sessions implemented or reconstructed code paths,
+performed repository-level checks, and attacked proposed claims. These
+model-assisted checks are not independent human verification merely because
+they were run in separate sessions or code paths.
 
-## Limits of the record
+AI systems are not listed as authors. The named human author is responsible for
+what is released.
 
-The mathematical document is unrefereed. The verification programs strongly
-reduce transcription and finite-enumeration risk but do not establish
-novelty, replace human peer review, or prove statements beyond their encoded
-scope.
+## Intervention record
+
+The development record includes several material human interventions:
+
+- rejecting early confidence as evidence;
+- correcting a cost-normalization error;
+- requiring exact all-routing reconstruction;
+- separating finite certificates, limiting families, restricted sharpness, and
+  global claims;
+- refusing to stop at the valid but nonoptimal `17/16` two-scenario lower
+  certificate;
+- directing the search from the 18 new nonthreshold cells to the complete
+  two-scenario parameter frontier;
+- requiring proof-only hostile review after the `17/8` theorem emerged;
+- correcting cost non-increase versus equality language;
+- adding and proving non-attainment; and
+- narrowing computational and commercial claims after review.
+
+A fuller structured account appears in
+`research/two_scenario_global_constant/AI_CONTRIBUTION_AND_INTERVENTION_RECORD.md`.
+
+## Acceptance evidence
+
+The release does not treat model confidence or fluent exposition as evidence.
+Its evidence hierarchy is:
+
+1. self-contained human-readable proof;
+2. exact finite certificates and exhaustive enumeration for finite claims;
+3. exact algebraic or combinatorial corroboration;
+4. deliberately scoped secondary implementations and mutation tests;
+5. hostile review reports and response matrices; and
+6. explicit human sign-off.
+
+Computational artifacts are labelled according to what they actually establish.
+A checker that shares assumptions with the constructor is not described as
+independent proof.
+
+## Relation to the OpenAI agentic-science field report
+
+OpenAI published *Scientific computing in the age of agentic AI: an
+exploratory field report* on 28 July 2026, after the initial SSUF release and on
+the day RB-003 was being prepared for publication. The report describes a
+shift in human work from implementation toward specification, validation,
+orchestration, and stewardship. It also warns that agent self-assessment is
+not reliable completion evidence and emphasizes external acceptance targets,
+staged iteration, and clear maintenance responsibility.
+
+Those observations closely match the workflow independently developed here.
+The report is cited as contemporaneous context only. OpenAI did not review,
+validate, sponsor, or endorse this theorem or release.
+
+Official sources:
+
+- https://openai.com/index/scientific-computing-agentic-ai/
+- https://cdn.openai.com/pdf/scientific-computing-in-the-age-of-agentic-ai-an-exploratory-field-report.pdf
+
+## Stewardship and corrections
+
+Matthew Protti is the release steward and repository maintainer. Reproducible
+counterexamples, proof objections, and verifier discrepancies are welcome
+through the repository issue tracker. Immutable tags are never silently
+rewritten; a confirmed defect will be documented through an issue, erratum,
+and, when required, a new release.
+
+## Private development record
+
+Private prompts and conversation transcripts are deliberately excluded. The
+public proof, explicit data, review record, and executable checks are intended
+to make the released claims auditable without exposing private conversations.
+
+## Legal and institutional boundary
+
+Authorship does not establish legal ownership. No institutional affiliation,
+sponsorship, or institutional ownership is asserted. The public SSUF research
+is separate from private Compliance Health product code, rule libraries,
+customer configurations, data, and operational know-how. Conceptual influence
+does not by itself establish a technical or legal dependency.
