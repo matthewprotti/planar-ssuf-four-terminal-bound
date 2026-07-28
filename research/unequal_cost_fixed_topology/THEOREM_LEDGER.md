@@ -1,0 +1,37 @@
+# Formal Theorem and Evidence Ledger — Fixed-Topology SSUF
+
+SSUF means **single-source unsplittable flow**.
+
+All value statements use the common fixed-topology objective
+`\(\Phi(k,p,d)\)` defined in
+`MASTER_OBJECTIVE_AND_COST_REALIZATION.md`. Its explicit path-private
+construction realizes every signed \(k\) by nonnegative,
+commodity-independent arc costs; that elementary legality lemma is not an
+optimizer or global theorem.
+
+| ID | Full statement | Evidence class | Assumptions | Proof / replay location | Residual limitation |
+| --- | --- | --- | --- | --- | --- |
+| UC-001 | With full-demand route-cost difference `k_i=expensive_i-cheap_i>0`, a C set `S` is cost feasible iff `k(S)>=k·p`. | Human algebraic proof | Fixed two-route topology; positive differences | `EVERY_PAIR_CELL_THEOREM.md` | Zero/negative not normalized away. |
+| UC-002 | Every positive threshold family with threshold in `[0,sum k_i]` is realizable by valid fractions. | Human realization lemma | Feasibility level only | README/census | Not an overload optimizer. |
+| UC-003 | Exactly 149 of 168 labeled monotone four-label families are positive threshold families. | Exact finite proposition; separate implementation | Four labels | census scripts | Classical classification not claimed novel. |
+| UC-004 | Each realizable family has a positive integer representation with maximum weight at most 4. | Exact finite existence proposition | Enumerated witness search | census JSON | Not canonical/minimum. |
+| UC-005 | The other 18 nonempty monotone families have exact two-trade contradictions; the empty family is impossible. | Exact finite certificates | Positive weak threshold | census | Four-label only. |
+| UC-006 | A feasible singleton gives an available routing with maximum upper deviation at most 1. | Human fixed-support lemma | `d_max=1` | topology appendix | Fixed topology only. |
+| UC-007 | Every pair feasible and no singleton feasible imply `1<sum p_i<=2`. | Human scalar lemma | `k_i>0` | every-pair theorem | Sorting is scalar only. |
+| UC-008 | The positive-difference every-pair/no-singleton cell has exact supremum `L=(299-41sqrt(41))/32`. | Human theorem; exact algebra corroboration | Fixed topology and cell conditions | local routing lemma/theorem | Does not solve other positive cells. |
+| UC-009 | `149=54+1+94`: singleton cells, solved every-pair cell, and 94 initial remainder; 15 abstract-label orbits in the remainder. | Exact finite classification | Abstract `S4` action only | reconciliation | Graph automorphism is identity; labels remain formal. |
+| UC-010 | Local lower family equals the pinned release extraction componentwise. | Exact definition comparison | Pinned extraction | equivalence checker | Human-created extraction. |
+| UC-011 | Exact algebra audits reproduce formulas used to corroborate UC-008. | Exact algebraic corroboration | Declared assumptions | algebra audits | Human proof authoritative. |
+| UC-012 | If no pair is feasible, then `sum p_i>2`. | Human scalar proof | Positive differences | `NO_PAIR_SCALAR_LEMMAS.md` | No overload conclusion alone. |
+| UC-013 | The full-set-only cell and four exactly-one-triple cells have value at most 1. | Human fixed-topology proof | Positive differences; no feasible pair | same file | Reduced initial remainder 94→89. |
+| UC-014 | Ten current open strictly positive cells have exact rational interior lower witnesses greater than 1; the strongest current certificate is F060 at `28085483/25000000`. F042's earlier certificate remains historical evidence but is not in the current atlas because UC-023 solves that cell. | Exact finite rational certificates | Named labeled cells; strict threshold margins | `EXACT_OPEN_CELL_WITNESSES.md`; exact checker and JSON | Lower bounds only, not cell optima; all remain below `L`. |
+| UC-015 | Every nonzero signed feasible family is a coordinate complement of a positive threshold family; there are exactly 1,881 unique labeled unate families. | Human reduction plus exact census | All `k_i!=0`; feasibility only | signed reduction/census | Objective theorem supplied separately by UC-017/018. |
+| UC-016 | The nonnegative closure of the solved every-pair/no-singleton cell contains no zero coordinate. | Human scalar proof | `k_i>=0`, not all zero, same cell | zero-boundary file | Other strata handled separately. |
+| UC-017 | If the sign-oriented feasible family has one minimal generator of size at least two, the exact fixed-topology supremum is 1. This covers all 16 nonzero sign patterns and zeros only outside the generator; in the positive lane it resolves 11 cells. Sequentially after UC-013, the historical stage changes 89→83 cells and 13→12 abstract-label orbits. | Human theorem; exact Fraction checks on 176 regimes and zero examples | Fixed topology; unique oriented generator | `SIGNED_SINGLE_GENERATOR_THEOREM.md`; checker | After UC-023, 79 multiple-generator positive cells in 11 abstract-label orbits remain. |
+| UC-018 | For every nonzero cost-difference stratum not strictly positive in all four coordinates, the exact supremum is 9/8 when exactly three coordinates are positive and the nonpositive coordinate is terminal 2, 3, or 4; otherwise it is 1. Hence all such strata are below `L`. | Human theorem; exact identity checks; 31,995-case rational grid corroboration | Fixed sign/zero stratum; fixed topology | `NONPOSITIVE_DIFFERENCE_THEOREM.md`; two checkers | Identically zero excluded; human inequalities authoritative. |
+| UC-019 | The identically zero cost-difference stratum has exact value `beta_0=4/5`. | Human theorem; exact 16-route lower witness and rational-grid corroboration | All routes cost feasible; fixed topology; `d_max=1` | `COST_FREE_STRATUM.md`; checker | No claim beyond the fixed topology. |
+| UC-023 | The strictly positive cell generated by the three pairs of a fixed terminal triple has exact value `9/8` when the omitted terminal is 2, 3, or 4, and exact value 1 when it is terminal 1. This removes F042, F068, F094, and F105 from the current frontier. | Human theorem; exact algebra and rational limiting checks | Pure three-pair clique cell; fixed topology | `POSITIVE_THREE_PAIR_CLIQUE_THEOREM.md`; checker | Larger pair families and other generator patterns remain open. |
+| UC-020 | Every one of the **79** remaining labeled strictly positive cells has value at most `L`. | Open target | After UC-013/017/023 reductions | optimization protocol | Open. |
+| UC-021 | Some remaining strictly positive cell has value exceeding `L`. | Open alternative | Exact interior witness needed | optimization protocol | Current exact witnesses exceed 1 but not L. |
+| UC-022 | Any fixed-topology obstruction exceeding `L` must occur in one of the 79 strictly positive cells; all other nonzero sign/zero strata are at most 9/8 and the all-zero stratum has exact value 4/5. | Human corollary | UC-018/019 | nonpositive/cost-free files | Does not decide the positive frontier. |
+| UC-030 | A structural theorem replaces cellwise optimization. | Open target | To be determined | README | Open. |

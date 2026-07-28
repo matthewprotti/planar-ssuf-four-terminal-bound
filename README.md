@@ -54,6 +54,26 @@ exact unrestricted planar constant, that it is optimal among all
 four-terminal planar instances, or that it remains sharp when full
 expensive-route costs may be unequal.
 
+## Unreleased follow-on research
+
+The repository also contains an unreleased v0.2 research work package under
+[`research/unequal_cost_fixed_topology/`](research/unequal_cost_fixed_topology/).
+It does not change the immutable v0.1.0 paper or release.
+
+That work fixes a single physical objective
+\(\Phi(k,p,d)\) for positive, signed, and zero full-demand route-cost
+differences and gives an explicit realization of every signed \(k\) by
+nonnegative, commodity-independent arc costs on the fixed graph. Its proved
+reductions leave a current open positive frontier of **79 labeled cells in 11
+abstract-label search orbits**. The older 94-cell and 83-cell counts are
+historical stages, not current frontiers.
+
+The generated lower-witness atlas contains ten current open cells. F042's
+earlier exact lower certificate is preserved as historical evidence, but
+UC-023 now gives that cell's exact value, so F042 is not included in the
+current atlas or count. These follow-on claims remain unrefereed and do not
+assert global fixed-topology sharpness, novelty, or a new manuscript release.
+
 ## How this came together
 
 This project grew out of a multi-week conversation between Matthew Protti and
@@ -135,6 +155,9 @@ software. The code is corroborating evidence.
   LaTeX source.
 - [`verification/`](verification/): exact verifiers, exhaustive routing table,
   separate cross-check, mutation tests, and machine-readable output.
+- [`research/unequal_cost_fixed_topology/`](research/unequal_cost_fixed_topology/):
+  unreleased follow-on fixed-topology work, its theorem/claim ledgers, and
+  deterministic replay.
 - [`scripts/`](scripts/): one-command verification, PDF build, manifest, and
   deterministic release-archive tooling.
 - [`PRIORITY_DISCLOSURE.md`](PRIORITY_DISCLOSURE.md): released claims and
@@ -184,7 +207,8 @@ in
 The canonical public version is the immutable
 [`v0.1.0` GitHub release](https://github.com/matthewprotti/planar-ssuf-four-terminal-bound/releases/tag/v0.1.0)
 and its exact commit. GitHub's server-recorded `published_at` time for that
-release is the canonical public timestamp.
+release is the canonical public timestamp. Files in the unreleased follow-on
+research directory are not a new tag, release, or manuscript version.
 
 ## Author and rights
 

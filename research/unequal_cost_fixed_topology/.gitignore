@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+threshold_family_census.json
+independent_census_results.json
+symbolic_every_pair_results.json
+exact_algebra_results.json
+release_family_equivalence_results.json
+census_reconciliation_results.json
+witness_examples.json
+exact_open_cell_witnesses.json
+signed_difference_census.json
+signed_single_generator_results.json
+nonpositive_difference_results.json
+nonpositive_difference_grid_results.json
+cost_free_stratum_results.json
+positive_three_pair_clique_results.json
+numerical_cell_scout.json

@@ -1,0 +1,78 @@
+#!/usr/bin/env python3
+"""Build or check the committed manifest for positive-difference SSUF research."""
+
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+OUTPUT = HERE / "artifact_manifest.json"
+EXCLUDED = {
+    "artifact_manifest.json",
+    "threshold_family_census.json",
+    "independent_census_results.json",
+    "symbolic_every_pair_results.json",
+    "exact_algebra_results.json",
+    "release_family_equivalence_results.json",
+    "census_reconciliation_results.json",
+    "witness_examples.json",
+    "exact_open_cell_witnesses.json",
+    "signed_difference_census.json",
+    "signed_single_generator_results.json",
+    "nonpositive_difference_results.json",
+    "nonpositive_difference_grid_results.json",
+    "cost_free_stratum_results.json",
+    "positive_three_pair_clique_results.json",
+    "numerical_cell_scout.json",
+    "round2_replay_report.json",
+}
+
+
+def file_hash(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def payload() -> dict:
+    files = {
+        path.name: file_hash(path)
+        for path in sorted(HERE.iterdir())
+        if path.is_file()
+        and path.name not in EXCLUDED
+        and not path.name.startswith("round2_replay_attestation")
+        and not path.name.startswith(".")
+        and path.suffix in {".py", ".md", ".json", ".txt"}
+    }
+    dependency = json.loads((HERE / "DEPENDENCY_MANIFEST.json").read_text(encoding="utf-8"))
+    return {
+        "schema_version": "ssuf-fixed-topology-artifact-manifest-v0.7",
+        "scope": (
+            "committed fixed-topology SSUF research sources; generated canonical "
+            "results and ephemeral attestations excluded"
+        ),
+        "files": files,
+        "released_provenance": dependency["released_provenance"],
+        "dependency_status": dependency["dependency_status"],
+        "runtime_dependencies": ["Python >=3.11", "sympy==1.14.0", "mpmath==1.3.0"],
+    }
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--check", action="store_true")
+    args = parser.parse_args()
+    current = payload()
+    if args.check:
+        stored = json.loads(OUTPUT.read_text(encoding="utf-8"))
+        if stored != current:
+            raise SystemExit("artifact manifest is stale")
+        print("PASS: artifact manifest is current")
+        return
+    OUTPUT.write_text(json.dumps(current, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    print(f"WROTE: {OUTPUT}")
+
+
+if __name__ == "__main__":
+    main()
