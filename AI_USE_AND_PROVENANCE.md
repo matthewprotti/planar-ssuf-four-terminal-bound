@@ -44,6 +44,14 @@ performed repository-level checks, and attacked proposed claims. These
 model-assisted checks are not independent human verification merely because
 they were run in separate sessions or code paths.
 
+During the core `v0.1.0` research, Matthew confirms that two role-separated AI
+agent contexts were used: a builder context and an adversarial critic context.
+A later Codex execution session performed a clean-room computational
+reconstruction from the stated graph and numerical data and supported release
+verification. Role separation and reimplementation reduced some
+single-context and shared-code risks; they did not turn AI criticism into
+independent human review.
+
 AI systems are not listed as authors. The named human author is responsible for
 what is released.
 
@@ -77,7 +85,7 @@ Its evidence hierarchy is:
 2. exact finite certificates and exhaustive enumeration for finite claims;
 3. exact algebraic or combinatorial corroboration;
 4. deliberately scoped secondary implementations and mutation tests;
-5. hostile review reports and response matrices; and
+5. AI-assisted hostile-review records and response matrices; and
 6. explicit human sign-off.
 
 Computational artifacts are labelled according to what they actually establish.
@@ -103,11 +111,17 @@ Official sources:
 - https://openai.com/index/scientific-computing-agentic-ai/
 - https://cdn.openai.com/pdf/scientific-computing-in-the-age-of-agentic-ai-an-exploratory-field-report.pdf
 
+The stable `v0.1.0` workflow and evidence boundary are described in the
+[`agentic-mathematics case study`](case_study/agentic_mathematics/CASE_STUDY_STABLE.md).
+That document is a process account, not new theorem evidence and not an
+extension of the stable mathematical claim.
+
 ## Stewardship and corrections
 
 Matthew Protti is the release steward and repository maintainer. Reproducible
 counterexamples, proof objections, and verifier discrepancies are welcome
-through the repository issue tracker. Immutable tags are never silently
+through the repository issue tracker under the reporting protocol in
+[`CONTRIBUTING.md`](CONTRIBUTING.md). Immutable tags are never silently
 rewritten; a confirmed defect will be documented through an issue, erratum,
 and, when required, a new release.
 

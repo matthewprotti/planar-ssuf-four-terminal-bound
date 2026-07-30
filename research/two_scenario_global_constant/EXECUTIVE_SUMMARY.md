@@ -24,11 +24,12 @@ approach it; this family is called `F126` in the earlier census.
 
 ## Review status
 
-A second-round hostile proof-only review of v4 found no counterexample and no
-remaining theorem-level gap in the two-colour matching lemma, the generalized
-one-knapsack lemma, the actual shared-baseline `|A|=3` exhaustion, or the
-non-attainment equality chain. Its recommendation was **accept subject to minor
-proof revision**.
+Two role-separated AI-assisted critique rounds were performed; they are not
+external human mathematical review. The second proof-only critic found no
+counterexample and no remaining theorem-level gap in the two-colour matching
+lemma, the generalized one-knapsack lemma, the actual shared-baseline `|A|=3`
+exhaustion, or the non-attainment equality chain. Its recommendation was
+**accept subject to minor proof revision**.
 
 The v5 theorem integrates every requested and recommended local edit:
 
@@ -41,8 +42,12 @@ The v5 theorem integrates every requested and recommended local edit:
 - the full equations (20)–(22) equality sandwich is displayed in the
   non-attainment proof.
 
-This makes v5 a sign-off candidate. The revised archive itself has not yet been
-re-reviewed and the work has not undergone formal journal peer review.
+The edits were integrated before Matthew Protti's human release decision for
+`v0.2.0`. No external human mathematical review has been requested or
+documented, and the work has not undergone formal journal peer review.
+`v0.2.1` corrects this status and provenance wording only; it changes no
+mathematical claim, constant, certificate, proof conclusion, or verifier
+result.
 
 ## Structural explanation
 

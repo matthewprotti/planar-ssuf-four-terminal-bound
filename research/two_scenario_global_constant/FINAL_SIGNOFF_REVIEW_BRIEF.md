@@ -1,11 +1,17 @@
-# Final Sign-Off Review Brief — RB-003 v5
+# Historical AI-Assisted Verification Brief — RB-003 v5
+
+**Classification note:** This file records a pre-release brief supplied to a
+role-separated AI-assisted proof critic. It is not evidence of external human
+mathematical review. The edits were integrated before Matthew Protti's human
+release decision for `v0.2.0`; `v0.2.1` corrects this provenance and status
+wording without changing the mathematics.
 
 ## Scope
 
-This is a narrow verification of the proof-integrated v5 archive. The v4
-proof-only report found no theorem-level gap and recommended acceptance subject
-to minor proof revision. The purpose here is to confirm that the requested
-local edits were integrated without introducing a new inconsistency.
+This was a narrow verification of the proof-integrated v5 archive. The
+AI-assisted v4 proof-only critique found no theorem-level gap and recommended
+acceptance subject to minor proof revision. The purpose was to confirm that the
+requested local edits were integrated without introducing a new inconsistency.
 
 ## Integrity gate
 
@@ -18,7 +24,7 @@ python replay.py
 ```
 
 4. Confirm authentication succeeds before and after regeneration and that
-   `review_revision_guard.py` passes.
+   `proof_review_integration_check.py` passes.
 
 ## Proof-edit gate
 
@@ -60,12 +66,12 @@ Confirm that the executive, commercial, and claim-ledger documents use
 - a theorem about sequential algorithms; or
 - computational independence beyond what is documented.
 
-## Requested disposition
+## Historical requested disposition
 
 Please return one of:
 
-- **Sign off:** the v4 minor-proof conditions are fully integrated and RB-003
-  is ready for repository integration as a theorem draft;
+- **Accept:** the v4 minor-proof conditions are fully integrated and RB-003 is
+  ready for a human release decision;
 - **Local correction:** identify exact file, section, and replacement text; or
 - **Mathematical objection:** provide the failing implication or a concrete
   counterexample under the stated cost-nonincrease model.

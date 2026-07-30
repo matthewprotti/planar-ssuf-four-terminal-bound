@@ -5,6 +5,9 @@
 - `v0.1.0` is the immutable first public disclosure dated 23 July 2026.
 - `v0.2.0` adds the RB-003 two-scenario theorem and preserves the original
   release artifacts and claims.
+- `v0.2.1` corrects documentation, provenance, and release hygiene. It changes
+  no mathematical claim, theorem statement, constant, certificate, proof
+  conclusion, or verifier result from `v0.2.0`.
 - Both papers are unrefereed research disclosures, not peer-reviewed journal
   publications.
 
@@ -60,6 +63,19 @@ requires unbounded ratios.
 - AI-assisted hostile reviews reduce some error risks but are not independent
   human peer review.
 
+## External human-review status
+
+No external human mathematical review has been requested or documented for
+either release. The documented author review and role-separated AI-assisted
+adversarial reviews are different evidence classes and must not be described as
+independent human review or peer review.
+
+Internal preparation, identifying possible reviewers, or replaying the public
+checks would not by itself change this status. Any future review record should
+identify the exact version, date, scope, materials, objections, dispositions,
+and outcome. Public attribution additionally requires the reviewer's
+permission.
+
 ## Novelty scope
 
 Targeted searches conducted on 23 and 28 July 2026 found no indexed public
@@ -76,6 +92,13 @@ Agent output and agent self-assessment are not acceptance evidence. Claims are
 accepted only through the stated proof, exact certificate, and human release
 decision. The OpenAI July 28, 2026 field report is cited as contemporaneous
 methodological context, not as verification or endorsement.
+
+## Follow-on work
+
+Open branches, pull requests, untagged commits, and draft notes are working
+research, not released claims. They do not modify the mathematics or evidence
+status of either immutable tag. Any follow-on result must be assessed from its
+own exact statement, proof, data, verification scope, and release status.
 
 ## Commercial interpretation
 
@@ -96,4 +119,5 @@ commercial brand is part of this public research release.
 5. Publication follows explicit human authorization.
 
 No mathematical defect is currently known in the stated released claims. This
-means only that the completed proof and review passes found none.
+means only that the completed proof checks and AI-assisted critique rounds
+found none; no external human mathematical review is documented.

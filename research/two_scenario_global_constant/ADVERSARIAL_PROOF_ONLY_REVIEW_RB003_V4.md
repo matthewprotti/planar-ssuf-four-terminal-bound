@@ -1,11 +1,16 @@
-# Second-Round Hostile Proof-Only Referee Report — RB-003 v4
+# Second-Round AI-Assisted Hostile Proof-Only Critique — RB-003 v4
+
+**Classification note:** This report was generated in a role-separated AI
+model context. It is preserved as an adversarial audit record, not represented
+as external human mathematical review or peer review. First-person reviewer
+language below belongs to that historical model-generated record.
 
 **Manuscript:** *The Exact Two-Scenario Cost-Nonincrease Supremum on the Four-Terminal Gadget*  
 **Version reviewed:** `SSUF_July_2026_TrackB_Global_17_8_v4_Major_Revision.zip`  
 **Archive SHA-256:** `34590ce7f66b222672c0ad47ea4f9a0f204f542281a42979aa46ff9953603c2f`  
-**Scope:** hostile proof-only review, with the v3 major-revision findings treated as integrated rather than reopened.
+**Scope:** role-separated AI-assisted hostile proof-only critique, with the v3 major-revision findings treated as integrated rather than reopened.
 
-## Referee disposition
+## Model-critic disposition
 
 **Recommendation: accept subject to minor proof revision.**
 

@@ -2,12 +2,14 @@
 
 ## Record status
 
-- **Release:** `v0.2.0`
+- **Release:** first released in `v0.2.0`; provenance and status corrected in
+  `v0.2.1` without mathematical changes
 - **Claim:** `RB-003`
 - **Human author and release decision-maker:** Matthew Protti
 - **Primary model:** OpenAI GPT-5.6 Pro
 - **Implementation/repository assistance:** Codex and separate model sessions
 - **Formal peer review:** none
+- **External human mathematical review:** none requested or documented
 
 This record describes the research process. It is not evidence for the theorem.
 
@@ -67,8 +69,8 @@ Material interventions included:
   formal corollary;
 - rejecting overstatements of computational independence and causal commercial
   impact;
-- signing off only after the second proof-only review found no theorem-level
-  gap; and
+- adjudicating the role-separated AI-assisted critique record after the second
+  proof-only critic found no theorem-level gap; and
 - authorizing public release after a final personal review.
 
 ## Error and revision record
@@ -105,8 +107,9 @@ A defensible concise description is:
 > claim standards, repeatedly challenged and revised the work, and accepts
 > responsibility for the release. GPT-5.6 Pro generated and developed
 > substantial portions of the mathematics, code, adversarial analysis, and
-> manuscript. Exact artifacts and hostile review were used to test the result;
-> separate model sessions are not represented as independent human peer review.
+> manuscript. Exact artifacts and role-separated AI-assisted hostile critique
+> were used to test the result; separate model sessions are not represented as
+> external or independent human peer review.
 
 Dmitry Rybin's 22 July 2026 counterexample was the direct catalyst for the
 research line and is credited separately.

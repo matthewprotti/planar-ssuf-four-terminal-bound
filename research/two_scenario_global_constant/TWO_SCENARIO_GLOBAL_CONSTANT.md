@@ -1,12 +1,12 @@
 # The Exact Two-Scenario Cost-Nonincrease Supremum on the Four-Terminal Gadget
 
-**Status:** proof-integrated sign-off candidate following a second-round hostile
-proof-only review. The reviewer found no remaining theorem-level gap and
-recommended acceptance subject to minor proof revision; all requested and
-recommended local edits from that report are incorporated here. The claim is
-supported by a self-contained human proof, an exact rational extremizing
-sequence, a graph-native finite certificate, and finite regression checks. It
-has not undergone formal journal peer review.
+**Status:** public unrefereed theorem package, first released in `v0.2.0` and
+carried forward mathematically unchanged in `v0.2.1`. Two role-separated
+AI-assisted hostile critique rounds found no remaining theorem-level gap after
+local repairs; they are not external human mathematical review. The
+human-readable proof is authoritative and is accompanied by an exact rational
+extremizing sequence, a graph-native finite certificate, and finite regression
+checks. `v0.2.1` corrects provenance, status, and release hygiene only.
 
 ## 1. The graph, paths, and flow model
 
@@ -742,7 +742,7 @@ Legal nonnegative arc costs realize each scenario by placing per-unit cost
 
 ## 11. Computational evidence and its limits
 
-The human proof above is authoritative. The package's computations serve four
+The human-readable proof above is authoritative. The package's computations serve four
 narrow roles:
 
 1. **Exact finite certificate:** enumerate the 16 routings and 13 arcs of the

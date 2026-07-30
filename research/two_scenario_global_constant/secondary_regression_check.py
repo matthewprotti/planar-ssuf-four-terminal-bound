@@ -342,7 +342,7 @@ def main() -> None:
     print("PASS: a second exact lower instance (epsilon=1/137) has value 2305/1096 > 2.")
     print("PASS: support-matrix enumeration gives intrinsic feasible C masks 7,11,14,15.")
     print("PASS: denominator-16 grid regression reaches 17/8 only in the supplied central envelope.")
-    print(f"WROTE: {output}")
+    print(f"WROTE: {output.name}")
 
 
 if __name__ == "__main__":

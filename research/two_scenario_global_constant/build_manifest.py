@@ -52,7 +52,10 @@ def main() -> None:
         print(f"PASS: authenticated {len(current)} artifact hashes in MANIFEST.sha256")
     else:
         manifest.write_text("\n".join(current) + "\n", encoding="utf-8")
-        print(f"WROTE: {manifest} ({len(current)} artifacts; replay transcript included)")
+        print(
+            f"WROTE: {manifest.name} "
+            f"({len(current)} artifacts; replay transcript included)"
+        )
 
 
 if __name__ == "__main__":

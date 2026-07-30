@@ -1,7 +1,7 @@
 ---
 title: "The Exact Two-Scenario Cost-Nonincrease Supremum on a Four-Terminal Planar Gadget"
 author: "Matthew Protti"
-date: "28 July 2026 - revision 1"
+date: "30 July 2026 - revision 2"
 abstract: |
   On a fixed four-terminal planar acyclic single-source unsplittable-flow gadget, we require one unsplittable routing to be no more expensive than a prescribed fractional routing under each of two positive cost scenarios. For additive upper arc deviation normalized by the largest demand, we prove that the exact supremum is 17/8. The supremum is not attained by any legal finite instance, but is approached by an explicit rational family whose feasible C-sets are the upward closure of {123,124,234}. A finite graph-native certificate at epsilon = 1/1000 has exact value 1061/500 and scaled unavoidable deviation 8488. The proof is self-contained; exact code verifies the finite certificate and supplies bounded regression evidence. The work is unrefereed and does not determine an unrestricted planar or many-scenario constant.
 geometry: margin=1in
@@ -19,7 +19,7 @@ header-includes:
     \\newcommand{\\betatwo}{\\beta_G^{(2\\mathrm{sc})}}
 ---
 
-> **Research status.** This is an unrefereed research disclosure. The theorem has survived two hostile review rounds; the second proof-only review found no theorem-level gap and recommended acceptance after local revisions, which are integrated. This is not formal peer review or exhaustive novelty clearance.
+> **Research status.** This is a public unrefereed research disclosure, first released in `v0.2.0`. Revision 2 corrects provenance and status wording only; it changes no theorem statement, proof conclusion, constant, certificate, or verifier result. The two hostile-review rounds were role-separated AI-assisted model critiques, not external human mathematical review. The second proof-only critic found no theorem-level gap and recommended acceptance after local revisions, which were integrated before the human release decision. No external human mathematical review is documented.
 
 # Introduction
 
@@ -763,7 +763,7 @@ Legal nonnegative arc costs realize each scenario by placing per-unit cost
 
 # Computational evidence and its limits
 
-The human proof above is authoritative. The package's computations serve four
+The human-readable proof above is authoritative. The package's computations serve four
 narrow roles:
 
 1. **Exact finite certificate:** enumerate the 16 routings and 13 arcs of the
@@ -831,7 +831,7 @@ The four-label threshold-family calculations used in the finite registry overlap
 
 # Research provenance, validation, and stewardship
 
-Matthew Protti selected and directed the research program, set the verification and claim standards, repeatedly challenged intermediate conclusions, approved the final scope, and accepts responsibility for the release. OpenAI GPT-5.6 Pro generated and developed substantial portions of the construction, proof, verification code, adversarial analysis, and manuscript. Separate model sessions and Codex implementations reduce some shared-error risk but are not independent human peer review.
+Matthew Protti selected and directed the research program, set the verification and claim standards, repeatedly challenged intermediate conclusions, approved the final scope, and accepts responsibility for the release. OpenAI GPT-5.6 Pro generated and developed substantial portions of the construction, proof, verification code, adversarial analysis, and manuscript. The documented hostile-review rounds were role-separated AI-assisted model critiques. Separate model sessions and Codex implementations reduce some shared-error risk but are not independent human mathematical review or peer review.
 
 The proof above is authoritative. The finite programs establish or corroborate only their declared finite propositions. Agent self-assessment is not acceptance evidence. The repository includes an intervention record, checker-assurance statement, deterministic replay, and correction policy.
 
@@ -839,7 +839,7 @@ OpenAI's 28 July 2026 exploratory field report on agentic scientific computing d
 
 # Acknowledgements
 
-Dmitry Rybin's 22 July 2026 counterexample was the direct starting point for this research line. The author also thanks the hostile reviewers whose reports exposed scope, proof, and presentation defects before release.
+Dmitry Rybin's 22 July 2026 counterexample was the direct starting point for this research line. Role-separated AI-assisted critique records exposed scope, proof, and presentation defects before the human release decision.
 
 # References
 

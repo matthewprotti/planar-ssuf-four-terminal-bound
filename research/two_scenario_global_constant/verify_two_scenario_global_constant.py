@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Primary exact replay for Theorem RB-003 (proof-review-integrated package).
 
-The human proof in TWO_SCENARIO_GLOBAL_CONSTANT.md is authoritative. This
+The human-readable proof in TWO_SCENARIO_GLOBAL_CONSTANT.md is authoritative. This
 script proves the concrete finite certificate by exact graph enumeration,
 certifies the complete 149/18/1 four-label threshold partition with witnesses
 and two-trades, performs an abstract blocker regression, checks the algebra,
@@ -692,11 +692,11 @@ def main() -> None:
     print("PASS: exact equality logic proves that no legal finite instance attains 17/8.")
     print("PASS: integer scaling gives maximum demand 4000 and unavoidable deviation 8488.")
     print("PASS: exact comparison 41^3 > 231^2 proves 17/8 > L.")
-    print(f"WROTE: {directory / 'threshold_recognition_report.json'}")
-    print(f"WROTE: {directory / 'nonattainment_logic_report.json'}")
-    print(f"WROTE: {census_path}")
-    print(f"WROTE: {directory / 'two_scenario_17_8_certificate.json'}")
-    print(f"WROTE: {directory / 'two_scenario_17_8_16_routings.csv'}")
+    print("WROTE: threshold_recognition_report.json")
+    print("WROTE: nonattainment_logic_report.json")
+    print(f"WROTE: {census_path.name}")
+    print("WROTE: two_scenario_17_8_certificate.json")
+    print("WROTE: two_scenario_17_8_16_routings.csv")
     assert recognition["positive_scalar_threshold_downsets"] == 149
     assert recognition["nonempty_nonthreshold_downsets"] == 18
     assert nonattainment["conclusion"].startswith("the supremum 17/8 is not attained")

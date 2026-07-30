@@ -30,9 +30,9 @@ MANUSCRIPTS = (
         preflight=ROOT / "verification" / "preflight_pdf_text.py",
     ),
     Manuscript(
-        tex=ROOT / "paper" / "rb003_two_scenario_note_v1.tex",
-        pdf=ROOT / "paper" / "rb003_two_scenario_note_v1.pdf",
-        source_date_epoch="1785261600",  # Fixed v0.2.0 build epoch.
+        tex=ROOT / "paper" / "rb003_two_scenario_note_v2.tex",
+        pdf=ROOT / "paper" / "rb003_two_scenario_note_v2.pdf",
+        source_date_epoch="1785434400",  # Fixed v0.2.1 build epoch.
         preflight=ROOT / "verification" / "preflight_rb003_pdf_text.py",
     ),
 )
