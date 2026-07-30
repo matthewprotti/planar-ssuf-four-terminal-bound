@@ -33,12 +33,15 @@ four trunk arcs respectively—so each crosses **at least four** trunk arcs.
 
 ## Review status
 
-A second-round hostile proof-only review found no theorem-level gap and
-recommended acceptance subject to minor proof revision. The proof-integrated
-v5 package incorporates all identified local edits, including the distinction
-between a forced blocker core and an exact classification of both blocker
-graphs. The revised archive has not yet been re-signed by the reviewer and has
-not been peer reviewed.
+Two role-separated AI-assisted critique rounds were performed; they are not
+external human mathematical review. The second proof-only critic found no
+theorem-level gap and recommended acceptance subject to minor proof revision.
+The proof-integrated v5 package incorporates all identified local edits,
+including the distinction between a forced blocker core and an exact
+classification of both blocker graphs. It was released after human
+adjudication in `v0.2.0`. No external human mathematical review is documented,
+and the work has not been peer reviewed. `v0.2.1` changes this description and
+release hygiene only, not the mathematics.
 
 ## What a product could expose
 

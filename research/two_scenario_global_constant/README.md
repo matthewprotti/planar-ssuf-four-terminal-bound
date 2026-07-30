@@ -1,6 +1,8 @@
 # SSUF Track B — Exact Two-Scenario Cost-Nonincrease Supremum
 
-This v5 package is the proof-integrated sign-off candidate for
+This v5 theorem package was first released in `v0.2.0` and is carried forward
+mathematically unchanged in the `v0.2.1` provenance and release-hygiene
+correction. It proves
 
 \[
 \beta_G^{(2\mathrm{sc})}=\frac{17}{8}
@@ -21,15 +23,17 @@ rational instances in the intrinsic family
 
 ## Review status
 
-The second-round hostile proof-only referee found no counterexample and no
-remaining theorem-level gap in the four requested pressure points. The formal
-recommendation was **accept subject to minor proof revision**. This package
-incorporates all five required local edits and both recommended proof-hygiene
-tightenings from that report.
+The two documented hostile-review rounds were role-separated AI-assisted model
+critiques, not external human mathematical review. The second proof-only critic
+found no counterexample and no remaining theorem-level gap in the four
+requested pressure points, and recommended **accept subject to minor proof
+revision**. This package incorporates all five required local edits and both
+recommended proof-hygiene tightenings from that critique. Matthew Protti then
+made the human release decision for `v0.2.0`.
 
-The v5 archive is therefore a sign-off candidate. It has not yet been
-re-authenticated or re-signed by that external referee and has not undergone
-formal journal peer review.
+No external human mathematical review has been requested or documented. The
+package has not undergone formal journal peer review. `v0.2.1` corrects this
+status and provenance description; it does not change the mathematics.
 
 ## Review-integrated edits
 
@@ -70,13 +74,13 @@ Only `MANIFEST.sha256` is excluded from its own hash list.
 
 ## Evidence hierarchy
 
-The self-contained human proof in `TWO_SCENARIO_GLOBAL_CONSTANT.md` is
+The self-contained human-readable proof in `TWO_SCENARIO_GLOBAL_CONSTANT.md` is
 authoritative.
 
-The second-round proof-only report is strong external adversarial evidence and
-is included verbatim, but it is not part of the proof and is not journal peer
-review. The proof-integration checker is a text-regression guard, not
-mathematical evidence.
+The second-round proof-only critique is an AI-assisted adversarial record and
+is included verbatim as generated, but it is not external human evidence, part
+of the proof, or journal peer review. The proof-integration checker is a
+text-regression guard, not mathematical evidence.
 
 The exact graph enumeration proves the concrete finite lower certificate. The
 four-label witness/two-trade registry is an exact finite classification. The
@@ -92,13 +96,13 @@ checks only:
 
 - `TWO_SCENARIO_GLOBAL_CONSTANT.md` — canonical self-contained theorem and
   proof with the second-round edits integrated.
-- `ADVERSARIAL_PROOF_ONLY_REVIEW_RB003_V4.md` — verbatim second-round referee
-  report on v4.
+- `ADVERSARIAL_PROOF_ONLY_REVIEW_RB003_V4.md` — verbatim second-round
+  AI-assisted proof-only critique on v4.
 - `ADVERSARIAL_PROOF_ONLY_REVIEW_RESPONSE_RB003_V5.md` — one-to-one response
   and revision map.
-- `FINAL_SIGNOFF_REVIEW_BRIEF.md` — narrow final verification brief for v5.
-- `FINAL_CIRCULATION_CHECKLIST.md` — broader editorial, novelty, citation, and
-  repository gates.
+- `FINAL_SIGNOFF_REVIEW_BRIEF.md` — historical pre-release AI-assisted
+  verification brief for v5.
+- `FINAL_CIRCULATION_CHECKLIST.md` — completed release and correction record.
 - `proof_review_integration_check.py` — deterministic proof-text regression
   guard.
 - `PROOF_REVIEW_INTEGRATION_REPORT.json` — generated integration report; not

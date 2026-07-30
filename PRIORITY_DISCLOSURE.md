@@ -15,6 +15,13 @@
 - **Subject:** exact two-scenario fixed-gadget cost-nonincrease supremum RB-003
 - **Status:** public immutable GitHub release
 
+### `v0.2.1`
+
+- **Released:** 30 July 2026
+- **Subject:** documentation, provenance, and release-hygiene correction
+- **Status:** public immutable GitHub release; no new mathematical claim or
+  priority claim
+
 For each version, the canonical public timestamp is GitHub's server-recorded
 release time. Private repository events and local file timestamps are not
 presented as public priority.
@@ -91,9 +98,11 @@ scaling demands by `4000`, every routing satisfying both scenario budgets has
 upper deviation at least `8488`.
 
 **Status:** self-contained unrefereed proof; exact finite certificate; two
-hostile AI-assisted review rounds; final proof-only disposition accepted the
-claim subject to local edits, which were integrated. This is not formal peer
-review.
+role-separated AI-assisted critique rounds; the second proof-only critic
+recommended acceptance subject to local edits, which were integrated before
+the human release decision. These rounds are not external human review or
+formal peer review. `v0.2.1` changes this status description and package
+hygiene only, not the mathematics.
 
 ## Scope and nonclaims
 

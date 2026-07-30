@@ -10,8 +10,8 @@ import subprocess
 
 
 ROOT = Path(__file__).resolve().parent.parent
-TEX = ROOT / "paper" / "rb003_two_scenario_note_v1.tex"
-PDF = ROOT / "paper" / "rb003_two_scenario_note_v1.pdf"
+TEX = ROOT / "paper" / "rb003_two_scenario_note_v2.tex"
+PDF = ROOT / "paper" / "rb003_two_scenario_note_v2.pdf"
 
 
 def require(condition: bool, message: str) -> None:
@@ -51,6 +51,9 @@ def main() -> None:
         "8488",
         r"C_j(y^R)\le C_j(x)",
         "non-attained supremum",
+        "revision 2",
+        "role-separated AI-assisted model critiques",
+        "No external human mathematical review is documented",
         "Dmitry Rybin",
         "Scientific computing in the age of agentic AI",
     )
@@ -63,6 +66,10 @@ def main() -> None:
         "formally peer reviewed",
         "OpenAI endorsed",
         "uncleared public product brand",
+        "proof-integrated sign-off candidate",
+        "external referee",
+        "hostile reviewers",
+        "revision 1",
     )
     for token in forbidden_source:
         require(token not in tex, f"forbidden RB-003 source claim remains: {token}")
@@ -76,13 +83,24 @@ def main() -> None:
         "Non-attainment",
         "scenario-wise cost non-increasing",
         "Research provenance, validation, and stewardship",
+        "revision 2",
+        "role-separated AI-assisted model critiques",
+        "No external human mathematical review is documented",
         "Dmitry Rybin",
         "Scientific computing in the age of agentic AI",
     )
     for token in required_pdf_text:
         require(token in text, f"required RB-003 PDF text is missing: {token}")
 
-    for token in ("global extremizer", "OpenAI endorsed", "uncleared public product brand"):
+    for token in (
+        "global extremizer",
+        "OpenAI endorsed",
+        "uncleared public product brand",
+        "proof-integrated sign-off candidate",
+        "external referee",
+        "hostile reviewers",
+        "revision 1",
+    ):
         require(token not in text, f"forbidden RB-003 PDF wording remains: {token}")
 
     print("PASS: RB-003 source contains the exact theorem, certificate, and scope.")

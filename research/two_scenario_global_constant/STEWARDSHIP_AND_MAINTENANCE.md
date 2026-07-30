@@ -3,7 +3,7 @@
 ## Steward
 
 Matthew Protti is the human release steward and repository maintainer for
-`v0.2.0`.
+`v0.2.0` and its `v0.2.1` provenance and release-hygiene correction.
 
 This identifies responsibility for triage and versioning. It is not a service
 level agreement and does not assert legal ownership.

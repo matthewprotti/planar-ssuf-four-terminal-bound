@@ -26,12 +26,12 @@ jobs:
 
     steps:
       - name: Check out complete history
-        uses: actions/checkout@v5
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
         with:
           fetch-depth: 0
 
       - name: Set up Python
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
         with:
           python-version: ${{ matrix.python-version }}
           cache: pip
@@ -70,12 +70,12 @@ jobs:
 
     steps:
       - name: Check out complete history
-        uses: actions/checkout@v5
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
         with:
           fetch-depth: 0
 
       - name: Set up Python
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
         with:
           python-version: "3.12"
           cache: pip
@@ -103,7 +103,7 @@ jobs:
           python scripts/build_pdf.py
           git diff --exit-code -- \
             paper/ssuf_four_terminal_note_v5.pdf \
-            paper/rb003_two_scenario_note_v1.pdf
+            paper/rb003_two_scenario_note_v2.pdf
 
       - name: Check manifest
         run: python scripts/manifest.py
@@ -111,10 +111,10 @@ jobs:
       - name: Check candidate/dev package
         if: github.ref_type != 'tag'
         run: |
-          python scripts/release_preflight.py --candidate-version 0.2.0-dev
+          python scripts/release_preflight.py --candidate-version 0.2.1-dev
           python scripts/build_release.py \
             --mode candidate \
-            --version 0.2.0-dev \
+            --version 0.2.1-dev \
             --output-dir "$RUNNER_TEMP/candidate-dist"
 
       - name: Check public package

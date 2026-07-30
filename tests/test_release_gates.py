@@ -14,7 +14,7 @@ import unittest
 
 
 SOURCE_ROOT = Path(__file__).resolve().parent.parent
-CURRENT_VERSION = "0.2.0"
+CURRENT_VERSION = "0.2.1"
 
 
 class ReleaseGateTests(unittest.TestCase):
@@ -113,7 +113,7 @@ class ReleaseGateTests(unittest.TestCase):
         cff_path = self.repo / "CITATION.cff"
         cff = cff_path.read_text(encoding="utf-8")
         cff_path.write_text(
-            cff.replace('version: "0.2.0"', 'version: "0.3.0-rc1"'),
+            cff.replace('version: "0.2.1"', 'version: "0.3.0-rc1"'),
             encoding="utf-8",
         )
         self.run_repo(sys.executable, "scripts/manifest.py", "--write")
@@ -160,7 +160,7 @@ class ReleaseGateTests(unittest.TestCase):
 
         asset_manifest = (output / "SHA256SUMS.txt").read_text(encoding="utf-8")
         self.assertIn("ssuf_four_terminal_note_v5.pdf", asset_manifest)
-        self.assertIn("rb003_two_scenario_note_v1.pdf", asset_manifest)
+        self.assertIn("rb003_two_scenario_note_v2.pdf", asset_manifest)
         self.assertEqual(self.run_repo("git", "status", "--porcelain").stdout, "")
 
 

@@ -18,9 +18,9 @@ ROOT = Path(__file__).resolve().parent.parent
 MANIFEST = ROOT / "SHA256SUMS.txt"
 PDFS = (
     ROOT / "paper" / "ssuf_four_terminal_note_v5.pdf",
-    ROOT / "paper" / "rb003_two_scenario_note_v1.pdf",
+    ROOT / "paper" / "rb003_two_scenario_note_v2.pdf",
 )
-EPOCH = 1_785_261_600
+EPOCH = 1_785_434_400
 
 
 def sha256(path: Path) -> str:
@@ -87,7 +87,7 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--version",
-        help="visibly non-final version for candidate mode, such as 0.2.0-dev",
+        help="visibly non-final version for candidate mode, such as 0.2.1-dev",
     )
     parser.add_argument(
         "--output-dir",

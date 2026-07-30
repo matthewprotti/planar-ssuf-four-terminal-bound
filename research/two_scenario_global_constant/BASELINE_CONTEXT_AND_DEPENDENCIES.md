@@ -73,11 +73,12 @@ shared-baseline scenario vectors directly through the blocker argument.
 
 ## Review dependency status
 
-The second-round hostile proof-only report on v4 is included verbatim as
-`ADVERSARIAL_PROOF_ONLY_REVIEW_RB003_V4.md`. It is external supporting evidence,
-not a premise of the proof. The v5 theorem integrates every local edit requested
-or recommended in that report. The v5 archive itself has not yet been
-re-signed by the reviewer.
+The second-round hostile proof-only critique on v4 is included verbatim as
+`ADVERSARIAL_PROOF_ONLY_REVIEW_RB003_V4.md`. It was generated in a
+role-separated AI-assisted model context. It is an adversarial audit record,
+not external human evidence or a premise of the proof. The v5 theorem
+integrates every local edit requested or recommended in that critique and was
+released after human adjudication in `v0.2.0`.
 
 ## Dependency summary
 

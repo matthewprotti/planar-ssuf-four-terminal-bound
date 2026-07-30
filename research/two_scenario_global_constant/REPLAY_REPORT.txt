@@ -1,14 +1,15 @@
 
-$ /opt/pyvenv/bin/python /mnt/data/rb003_v5_release_20260728_a91d/build_manifest.py --check
-PASS: authenticated 26 artifact hashes in MANIFEST.sha256
+$ python build_manifest.py --check
+PASS: authenticated 31 artifact hashes in MANIFEST.sha256
 
-$ /opt/pyvenv/bin/python /mnt/data/rb003_v5_release_20260728_a91d/proof_review_integration_check.py
+$ python proof_review_integration_check.py
 PASS: all second-round proof revisions are present in the v5 theorem.
-PASS: every superseded formulation identified by the referee is absent.
+PASS: every superseded formulation identified by the AI-assisted critic is absent.
 PASS: claim, executive, and commercial documents preserve forced-core scope.
-WROTE: /mnt/data/rb003_v5_release_20260728_a91d/PROOF_REVIEW_INTEGRATION_REPORT.json
+PASS: public status documents distinguish AI-assisted critique from external human review.
+WROTE: PROOF_REVIEW_INTEGRATION_REPORT.json
 
-$ /opt/pyvenv/bin/python /mnt/data/rb003_v5_release_20260728_a91d/verify_two_scenario_global_constant.py
+$ python verify_two_scenario_global_constant.py
 PASS: enumerated all 168 downsets and certified the exact 149/18/1 partition.
 PASS: every represented family has a positive threshold witness; all 18 exclusions have two-trades.
 PASS: classified all 11,175 abstract scalar-pattern pairs as a regression check.
@@ -23,22 +24,22 @@ PASS: the intrinsic family upward_closure{123,124,234} tends to 17/8 through rat
 PASS: exact equality logic proves that no legal finite instance attains 17/8.
 PASS: integer scaling gives maximum demand 4000 and unavoidable deviation 8488.
 PASS: exact comparison 41^3 > 231^2 proves 17/8 > L.
-WROTE: /mnt/data/rb003_v5_release_20260728_a91d/threshold_recognition_report.json
-WROTE: /mnt/data/rb003_v5_release_20260728_a91d/nonattainment_logic_report.json
-WROTE: /mnt/data/rb003_v5_release_20260728_a91d/two_scenario_case_census.json
-WROTE: /mnt/data/rb003_v5_release_20260728_a91d/two_scenario_17_8_certificate.json
-WROTE: /mnt/data/rb003_v5_release_20260728_a91d/two_scenario_17_8_16_routings.csv
+WROTE: threshold_recognition_report.json
+WROTE: nonattainment_logic_report.json
+WROTE: two_scenario_case_census.json
+WROTE: two_scenario_17_8_certificate.json
+WROTE: two_scenario_17_8_16_routings.csv
 
-$ /opt/pyvenv/bin/python /mnt/data/rb003_v5_release_20260728_a91d/secondary_regression_check.py
+$ python secondary_regression_check.py
 PASS: scanned all 65,536 Boolean set families and found 168 downsets.
 PASS: reconstructed 149 threshold downsets and certified all 18 exclusions by exact two-trades.
 PASS: classified all 11,175 abstract pattern pairs as a regression check.
 PASS: a second exact lower instance (epsilon=1/137) has value 2305/1096 > 2.
 PASS: support-matrix enumeration gives intrinsic feasible C masks 7,11,14,15.
 PASS: denominator-16 grid regression reaches 17/8 only in the supplied central envelope.
-WROTE: /mnt/data/rb003_v5_release_20260728_a91d/secondary_regression_report.json
+WROTE: secondary_regression_report.json
 
-$ /opt/pyvenv/bin/python /mnt/data/rb003_v5_release_20260728_a91d/build_manifest.py --check
-PASS: authenticated 26 artifact hashes in MANIFEST.sha256
+$ python build_manifest.py --check
+PASS: authenticated 31 artifact hashes in MANIFEST.sha256
 
-COMPLETE PASS: RB-003 v5 authenticated before replay, proof-review edits checked, regenerated deterministically, and authenticated again.
+COMPLETE PASS: RB-003 v5 authenticated before replay, proof and provenance edits checked, regenerated deterministically, and authenticated again.

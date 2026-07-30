@@ -12,13 +12,31 @@
     "underjustified_nonattainment"
   ],
   "manuscript": "TWO_SCENARIO_GLOBAL_CONSTANT.md",
+  "misleading_review_status_phrases_absent": [
+    "await final external signoff",
+    "external referee",
+    "external supporting evidence",
+    "proof-integrated sign-off candidate",
+    "re-authenticated",
+    "re-signed by",
+    "review_revision_guard.py"
+  ],
+  "paper_revision_checked": "rb003_two_scenario_note_v2.md",
+  "provenance_documents_checked": [
+    "AI_CONTRIBUTION_AND_INTERVENTION_RECORD.md",
+    "CLAIM_LEDGER.md",
+    "COMMERCIAL_INTERPRETATION.md",
+    "EXECUTIVE_SUMMARY.md",
+    "README.md",
+    "TWO_SCENARIO_GLOBAL_CONSTANT.md"
+  ],
   "required_exact_checks_passed": [
     "correct_A_heading",
     "empty_colour_handled",
     "equality_throughout",
     "forced_core_language",
     "possible_extra_incident_edge",
-    "signoff_candidate_status"
+    "released_status"
   ],
   "required_normalized_checks_passed": [
     "extra_edge_irrelevance",
@@ -30,6 +48,6 @@
   ],
   "result": "PASS",
   "review_disposition_confirmed": "accept subject to minor proof revision",
-  "schema": "ssuf-rb003-proof-review-integration-v2",
-  "status": "deterministic text-integrity guard; confirms second-round local proof edits and cross-document scope; not an independent proof"
+  "schema": "ssuf-rb003-proof-review-integration-v3",
+  "status": "deterministic text-integrity guard; confirms second-round local proof edits, cross-document scope, and AI-review provenance; not an independent proof"
 }

@@ -1,8 +1,13 @@
-# Response to Second-Round Hostile Proof-Only Review — RB-003 v4 to v5
+# Response to Second-Round AI-Assisted Hostile Proof-Only Critique — RB-003 v4 to v5
+
+**Classification note:** The critic was a role-separated AI model context, not
+an external human mathematical reviewer. This historical response records the
+pre-release proof-repair loop. The v5 package was subsequently released after
+human adjudication in `v0.2.0`.
 
 ## Disposition
 
-The referee reported no counterexample and no remaining theorem-level gap in
+The AI-assisted critic reported no counterexample and no remaining theorem-level gap in
 the four requested proof pressure points. The formal recommendation was:
 
 > accept subject to minor proof revision.
@@ -12,9 +17,10 @@ active-constraint and zero-weight proof-hygiene clarifications. All are
 incorporated in the v5 theorem file. No numerical
 constant, finite certificate, feasible family, or theorem scope changed.
 
-The v5 archive is therefore a **proof-integrated sign-off candidate**. It has
-not yet been authenticated or re-signed by the external referee and has not
-been peer reviewed.
+The v5 archive incorporated the proof repairs and was subsequently released
+after Matthew Protti's human adjudication. No external human mathematical
+review has been requested or documented, and the work has not been peer
+reviewed. `v0.2.1` corrects this status and provenance language only.
 
 ## One-to-one revision matrix
 
@@ -42,7 +48,7 @@ The proof-integrated manuscript retains:
 4. the exact `epsilon=1/1000` finite value `1061/500`; and
 5. the scaled unavoidable upper deviation 8488.
 
-The v4 referee specifically confirmed the strict two-colour matching argument,
+The role-separated v4 AI-assisted critic specifically confirmed the strict two-colour matching argument,
 the generalized unit-profit knapsack lemma, the actual shared-baseline
 `|A|=3` exhaustion, both star-triangle envelopes, and the non-attainment
 equality chain. The v5 revisions alter only how those already-valid steps are
@@ -52,8 +58,8 @@ stated and connected.
 
 The v5 package also:
 
-- includes the referee report verbatim;
-- adds `review_revision_guard.py`, which asserts the required formulations are
+- includes the AI-assisted critic report verbatim;
+- adds `proof_review_integration_check.py`, which asserts the required formulations are
   present and the superseded formulations are absent;
 - runs that guard inside `replay.py` after package authentication;
 - updates the claim ledger to describe a forced blocker core rather than an
@@ -77,7 +83,8 @@ Nothing in the second-round review changes the established limitations:
 
 ## Author-side recommendation
 
-Run the authenticated v5 replay, send the complete archive and this response to
-the proof-only referee for a narrow final sign-off, and then integrate the
-package. No further discovery or numerical search is required for RB-003 unless
-the sign-off reviewer identifies a new mathematical issue.
+This historical recommendation was superseded by the completed authenticated
+replay and Matthew Protti's human release decision for `v0.2.0`. External human
+review remains a separate future evidence class and must be documented as such.
+No further discovery or numerical search is implied by the `v0.2.1`
+provenance correction.

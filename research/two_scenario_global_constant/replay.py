@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Complete deterministic replay for the RB-003 v5 proof-integrated package."""
+"""Complete deterministic replay for the RB-003 v5 theorem package."""
 
 from __future__ import annotations
 
@@ -11,7 +11,8 @@ from pathlib import Path
 
 def run(path: Path, *args: str) -> None:
     command = [sys.executable, str(path), *args]
-    print(f"\n$ {' '.join(command)}", flush=True)
+    display = ["python", path.name, *args]
+    print(f"\n$ {' '.join(display)}", flush=True)
     subprocess.run(command, check=True)
 
 
@@ -43,10 +44,14 @@ def main() -> None:
     )
 
     assert proof_integration["result"] == "PASS"
+    assert proof_integration["schema"] == "ssuf-rb003-proof-review-integration-v3"
     assert len(proof_integration["required_exact_checks_passed"]) == 6
     assert len(proof_integration["required_normalized_checks_passed"]) == 6
     assert len(proof_integration["forbidden_formulations_absent"]) == 5
     assert len(proof_integration["cross_document_scope_checks_passed"]) == 3
+    assert len(proof_integration["provenance_documents_checked"]) == 6
+    assert len(proof_integration["misleading_review_status_phrases_absent"]) == 7
+    assert proof_integration["paper_revision_checked"] == "rb003_two_scenario_note_v2.md"
 
     assert certificate["feasibility_semantics"].startswith("for each scenario")
     assert certificate["finite_minimum_max_upper_deviation"] == "1061/500"
@@ -78,8 +83,9 @@ def main() -> None:
 
     run(root / "build_manifest.py", "--check")
     print(
-        "\nCOMPLETE PASS: RB-003 v5 authenticated before replay, proof-review "
-        "edits checked, regenerated deterministically, and authenticated again."
+        "\nCOMPLETE PASS: RB-003 v5 authenticated before replay, proof and "
+        "provenance edits checked, regenerated deterministically, and "
+        "authenticated again."
     )
 
 

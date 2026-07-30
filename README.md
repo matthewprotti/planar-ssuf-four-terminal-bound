@@ -1,11 +1,18 @@
 # Four-terminal planar unsplittable-flow rounding
 
-> **Latest release line: `v0.2.0` (28 July 2026).**
+> **Latest release line: `v0.2.1` (30 July 2026).**
 >
 > Canonical public versions are the immutable GitHub tags and releases. At an
 > untagged commit, repository files are working copies. This is an unrefereed
 > research package whose claims, proofs, exact data, and executable checks are
 > provided for scrutiny and reproducibility.
+>
+> **External human-review status:** No external human mathematical review has
+> been requested or documented.
+>
+> `v0.2.1` is a documentation, provenance, and release-hygiene correction.
+> It changes no mathematical claim, theorem statement, constant, certificate,
+> proof conclusion, or verifier result from `v0.2.0`.
 
 ## What this repository contains
 
@@ -16,12 +23,15 @@ It now contains two distinct result lines that must not be conflated:
 
 1. the original one-scenario planar lower-bound disclosure (`v0.1.0`); and
 2. the exact fixed-gadget two-scenario cost-nonincrease theorem added in
-   `v0.2.0`.
+   `v0.2.0` and carried forward unchanged in `v0.2.1`.
 
 The second result does not replace or strengthen the unrestricted planar lower
 bound directly. It defines a richer fixed-gadget model with two simultaneous
 cost budgets and determines that model's exact normalized additive upper
 arc-deviation supremum.
+
+Open branches, pull requests, and untagged drafts are follow-on working
+materials. They do not alter either tagged release or extend its proved claims.
 
 ## Results at a glance
 
@@ -97,10 +107,11 @@ roles:
 - release reproducibility.
 
 Agent confidence, a passing text-regression check, and a broad numerical search
-are not treated as proofs. The RB-003 proof survived two hostile review rounds;
-the second proof-only referee found no theorem-level gap and recommended
-acceptance after local edits, which are integrated. This is not formal journal
-peer review.
+are not treated as proofs. The RB-003 proof survived two AI-assisted hostile
+review rounds; the second role-separated proof-only critic found no
+theorem-level gap and recommended acceptance after local edits, which are
+integrated. This is neither independent human review nor formal journal peer
+review.
 
 ## Agentic research method and stewardship
 
@@ -123,6 +134,8 @@ The release protocol follows four rules:
 See:
 
 - [`AI_USE_AND_PROVENANCE.md`](AI_USE_AND_PROVENANCE.md);
+- the stable-only
+  [`agentic-mathematics case study`](case_study/agentic_mathematics/);
 - [`research/two_scenario_global_constant/AGENTIC_RESEARCH_VALIDATION_PROTOCOL.md`](research/two_scenario_global_constant/AGENTIC_RESEARCH_VALIDATION_PROTOCOL.md);
 - [`research/two_scenario_global_constant/AI_CONTRIBUTION_AND_INTERVENTION_RECORD.md`](research/two_scenario_global_constant/AI_CONTRIBUTION_AND_INTERVENTION_RECORD.md);
 - [`research/two_scenario_global_constant/CHECKER_ASSURANCE_AND_EVIDENCE_MODEL.md`](research/two_scenario_global_constant/CHECKER_ASSURANCE_AND_EVIDENCE_MODEL.md); and
@@ -130,14 +143,16 @@ See:
 
 The July 28, 2026 OpenAI field report on agentic scientific computing is cited
 as contemporaneous methodological context, not as verification, endorsement,
-or evidence for the theorem.
+evidence for the theorem, or an influence on the July 22–23 stable work.
 
 ## Where to start
 
 - Read the RB-003 paper:
-  [`paper/rb003_two_scenario_note_v1.pdf`](paper/rb003_two_scenario_note_v1.pdf).
+  [`paper/rb003_two_scenario_note_v2.pdf`](paper/rb003_two_scenario_note_v2.pdf).
 - Read the original one-scenario paper:
   [`paper/ssuf_four_terminal_note_v5.pdf`](paper/ssuf_four_terminal_note_v5.pdf).
+- Read the stable-only account of the human-directed, AI-assisted workflow:
+  [`case_study/agentic_mathematics/CASE_STUDY_STABLE.md`](case_study/agentic_mathematics/CASE_STUDY_STABLE.md).
 - Read the complete RB-003 proof package:
   [`research/two_scenario_global_constant/`](research/two_scenario_global_constant/).
 - See [`PRIORITY_DISCLOSURE.md`](PRIORITY_DISCLOSURE.md) for the released
@@ -167,6 +182,14 @@ The replay authenticates the package before execution, checks that the
 proof-review repairs remain present, regenerates the exact JSON/CSV artifacts,
 and authenticates the package again.
 
+## Report an objection or reproduction failure
+
+Use [`CONTRIBUTING.md`](CONTRIBUTING.md) to report a counterexample, proof or
+code correction, reproduction failure, prior-art lead, or proposed extension.
+Reports should identify the exact version or commit and distinguish theorem
+objections from implementation or documentation issues. Opening an issue or
+running the checks does not constitute independent peer review.
+
 ## Rebuild the manuscripts
 
 The checked PDFs are built with Tectonic 0.16.9. Poppler's `pdftotext` is used
@@ -188,8 +211,12 @@ python verification/preflight_rb003_pdf_text.py
   governance records.
 - [`scripts/`](scripts/): verification, PDF, manifest, and deterministic
   release tooling.
+- [`case_study/agentic_mathematics/`](case_study/agentic_mathematics/):
+  stable-only account of the original agentic research workflow.
 - [`AI_USE_AND_PROVENANCE.md`](AI_USE_AND_PROVENANCE.md): contribution and
   responsibility record.
+- [`CONTRIBUTING.md`](CONTRIBUTING.md): objection, correction, reproduction,
+  prior-art, and extension reporting protocol.
 - [`LICENSING.md`](LICENSING.md): deliberate no-license status.
 
 ## Context and novelty

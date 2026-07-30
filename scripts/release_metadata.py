@@ -42,7 +42,7 @@ def validate_version(
     if candidate and (not suffix or not suffix.startswith("-")):
         raise SystemExit(
             "candidate/dev versions must have a visible prerelease suffix "
-            "(for example, 0.2.0-dev or 0.2.0-rc1)"
+            "(for example, 0.2.1-dev or 0.2.1-rc1)"
         )
     if public and suffix:
         raise SystemExit(
