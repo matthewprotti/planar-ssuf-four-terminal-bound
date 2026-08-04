@@ -38,7 +38,7 @@ def run(program: Path, *arguments: str, cwd: Path) -> None:
     )
 
 
-def verify_fixed_gadget_candidate(tmp: Path) -> None:
+def verify_fixed_gadget_release(tmp: Path) -> None:
     copied = tmp / "fixed_gadget_scenario_cover"
     shutil.copytree(
         FIXED_GADGET,
@@ -101,12 +101,15 @@ def main() -> None:
                 raise SystemExit(f"regenerated output differs from committed reference: {name}")
             print(f"PASS: regenerated {name} is byte-identical to the committed reference.")
 
-        print("\n=== Fixed-gadget scenario-cover candidate ===", flush=True)
+        print("\n=== Fixed-gadget scenario-cover release ===", flush=True)
         run(
             VERIFICATION / "verify_fixed_gadget_proof_map.py",
             cwd=ROOT,
         )
-        verify_fixed_gadget_candidate(tmp)
+        verify_fixed_gadget_release(tmp)
+
+    print("\n=== v0.3.0 public metadata and scope ===", flush=True)
+    run(ROOT / "release" / "v0.3.0" / "verify_public_release.py", cwd=ROOT)
 
     print("\n=== RB-003 deterministic replay ===", flush=True)
     subprocess.run([sys.executable, os.fspath(RB003 / "replay.py")], cwd=RB003, check=True)

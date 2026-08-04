@@ -14,7 +14,7 @@ import unittest
 
 
 SOURCE_ROOT = Path(__file__).resolve().parent.parent
-CURRENT_VERSION = "0.2.1"
+CURRENT_VERSION = "0.3.0"
 
 
 class ReleaseGateTests(unittest.TestCase):
@@ -69,7 +69,7 @@ class ReleaseGateTests(unittest.TestCase):
             "--mode",
             "candidate",
             "--version",
-            "0.3.0-dev",
+            "0.3.1-dev",
             "--output-dir",
             os.fspath(self.base / "candidate-output"),
             check=False,
@@ -113,11 +113,11 @@ class ReleaseGateTests(unittest.TestCase):
         cff_path = self.repo / "CITATION.cff"
         cff = cff_path.read_text(encoding="utf-8")
         cff_path.write_text(
-            cff.replace('version: "0.2.1"', 'version: "0.3.0-rc1"'),
+            cff.replace('version: "0.3.0"', 'version: "0.3.1-rc1"'),
             encoding="utf-8",
         )
         self.run_repo(sys.executable, "scripts/manifest.py", "--write")
-        self.initialize_git("v0.3.0-rc1")
+        self.initialize_git("v0.3.1-rc1")
         result = self.run_repo(
             sys.executable,
             "scripts/build_release.py",
@@ -131,7 +131,7 @@ class ReleaseGateTests(unittest.TestCase):
         self.assertIn("public versions must be final", result.stdout + result.stderr)
 
     def test_candidate_builds_exact_manifest_membership(self) -> None:
-        candidate_version = "0.3.0-rc1"
+        candidate_version = "0.3.1-dev"
         self.run_repo(
             sys.executable,
             "scripts/release_preflight.py",
@@ -180,7 +180,7 @@ class ReleaseGateTests(unittest.TestCase):
             "--mode",
             "candidate",
             "--version",
-            "0.3.0-rc1",
+            "0.3.1-dev",
             "--output-dir",
             os.fspath(output),
             check=False,
@@ -188,6 +188,26 @@ class ReleaseGateTests(unittest.TestCase):
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("output directory must be empty", result.stdout + result.stderr)
         self.assertEqual((output / "preexisting.txt").read_text(encoding="utf-8"), "preserve me\n")
+
+    def test_v030_public_metadata_and_scope_gate(self) -> None:
+        self.run_repo(sys.executable, "release/v0.3.0/verify_public_release.py")
+
+    def test_v030_public_metadata_rejects_author_placeholder(self) -> None:
+        synopsis = self.repo / "paper" / "ssuf_fixed_gadget_scenario_cover_synopsis.tex"
+        synopsis.write_text(
+            synopsis.read_text(encoding="utf-8").replace(
+                r"\author{Matthew Protti}",
+                r"\author{Author line intentionally withheld}",
+            ),
+            encoding="utf-8",
+        )
+        result = self.run_repo(
+            sys.executable,
+            "release/v0.3.0/verify_public_release.py",
+            check=False,
+        )
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("synopsis publication token is missing", result.stdout + result.stderr)
 
 
 if __name__ == "__main__":

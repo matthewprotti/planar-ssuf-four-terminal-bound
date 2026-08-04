@@ -1,29 +1,30 @@
 cff-version: 1.2.0
-message: "Please cite the immutable v0.2.1 GitHub release and its exact tagged commit."
-title: "Four-terminal planar unsplittable-flow rounding: lower bounds and an exact two-scenario fixed-gadget constant"
+message: "Please cite the immutable v0.3.0 GitHub release and its exact tagged commit."
+title: "Scenario-Cover Geometry for a Four-Terminal Planar Unsplittable-Flow Gadget"
 type: software
 authors:
   - family-names: "Protti"
     given-names: "Matthew"
-version: "0.2.1"
-date-released: 2026-07-30
+version: "0.3.0"
+date-released: 2026-08-04
 repository-code: "https://github.com/matthewprotti/planar-ssuf-four-terminal-bound"
 abstract: >-
-  Unrefereed manuscripts and exact verification artifacts for a four-terminal
-  planar lower bound in cost-preserving single-source unsplittable-flow
-  rounding and an exact non-attained 17/8 supremum for the same fixed gadget
-  under two simultaneous scenario-wise cost-nonincrease constraints.
+  Exact fixed-gadget scenario-cover results for a planar four-terminal
+  splittable-to-unsplittable flow construction, including one-, two-, three-,
+  and many-positive-scenario constants, a finite cover atlas, a fixed-family
+  bounded-heterogeneity phase theorem, and exact verification artifacts.
 keywords:
   - unsplittable flow
-  - combinatorial optimization
-  - network flows
   - planar graphs
-  - multicriteria constraints
+  - combinatorial optimization
+  - scenario robustness
+  - convex geometry
+  - exact certificates
   - reproducible research
 preferred-citation:
   type: article
   authors:
     - family-names: "Protti"
       given-names: "Matthew"
-  title: "The Exact Two-Scenario Cost-Nonincrease Supremum on a Four-Terminal Planar Gadget"
+  title: "Scenario-Cover Geometry for a Four-Terminal Planar Unsplittable-Flow Gadget"
   year: 2026

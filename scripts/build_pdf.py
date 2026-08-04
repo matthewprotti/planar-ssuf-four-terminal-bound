@@ -42,7 +42,7 @@ MANUSCRIPTS = (
     Manuscript(
         tex=ROOT / "paper" / "ssuf_fixed_gadget_scenario_cover_synopsis.tex",
         pdf=ROOT / "paper" / "ssuf_fixed_gadget_scenario_cover_synopsis.pdf",
-        source_date_epoch="1785672000",  # Fixed private RC1 build epoch.
+        source_date_epoch="1785672000",  # Fixed v0.3.0 reproducible build epoch.
         preflight=ROOT / "verification" / "preflight_fixed_gadget_pdf_text.py",
     ),
 )

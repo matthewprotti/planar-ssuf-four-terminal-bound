@@ -1,7 +1,8 @@
-# Candidate derivation notes
+# v0.3.0 derivation notes
 
-This subtree is a private release-candidate derivation from authenticated,
-immutable sources. `SOURCE_PROVENANCE.json` records source and candidate hashes.
+This subtree was assembled as a private derived copy from authenticated,
+immutable sources and then released in v0.3.0 after final publication-only
+edits. `SOURCE_PROVENANCE.json` records source and derived-copy hashes.
 The repository does not carry raw reviewer prompts, model transcripts, private
 run logs, or review ZIPs.
 
@@ -39,4 +40,4 @@ already authorized a derived editorial copy:
 These transformations do not widen any theorem. The integrated manuscript is a
 synopsis that points to the complete companion proofs; it is not a replacement
 for them. The first external report is scope-limited and does not constitute a
-full external review of the integrated candidate.
+full external review of the integrated release.

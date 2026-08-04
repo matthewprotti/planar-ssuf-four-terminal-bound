@@ -62,10 +62,10 @@ same primals and objectives. The precise label is
 
 `SEMANTIC_MATHEMATICAL_MATCH / STRICT_CERTIFICATE_PAYLOAD_IDENTITY_FAIL`.
 
-## Hash-bound private evidence
+## Hash-bound review evidence
 
 The compact machine-readable records are `REVIEW_EVIDENCE.json` and
 `SOURCE_PROVENANCE.json`; `DERIVATION_NOTES.md` explains the authorized
 publication-copy transformations. Raw reviewer prompts, command logs, frozen
 run directories, and private orchestration ZIPs are deliberately outside this
-candidate repository.
+release repository.

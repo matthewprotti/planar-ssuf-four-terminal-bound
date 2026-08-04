@@ -1,6 +1,7 @@
 # Claim Ledger
 
-Status: private RC1 candidate after frozen R4 v6 statement-and-scope review.
+Status: public unrefereed v0.3.0 release after frozen R4 v6
+statement-and-scope review and a separate human release decision.
 
 | ID | Narrow claim | Current evidence posture |
 |---|---|---|
@@ -21,5 +22,6 @@ Status: private RC1 candidate after frozen R4 v6 statement-and-scope review.
 | GM-015 | Topology-wide or unrestricted planar sharp constant | Explicit nonclaim |
 
 R4 v6 accepted the conservative cross-package propagation statements S-001
-through S-023 with no finding. It did not re-prove these theorems or open any
-external-review, novelty, authorship, licensing, publication, or release gate.
+through S-023 with no finding. It did not re-prove these theorems, establish
+external peer review or novelty, or make the later authorship, licensing, and
+publication decisions.

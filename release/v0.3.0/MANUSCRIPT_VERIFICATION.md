@@ -9,15 +9,17 @@
 - Cache-only locked-toolchain build return code: `0`
 - Rendered pages: `12`
 - Byte-identical standard and cache-only rebuilds: `True`
-- Byte-identical to the supplied RC1 publication PDF: `True`
+- Byte-identical to the supplied prepublication RC1 PDF: `False` (expected;
+  the final author, date, release-status, and rights text changed)
 - Visual inspection of every rendered page: `PASS`
 - Overfull boxes reported: `0`
-- Synopsis PDF SHA-256: `4adc99467affc7fb37cedace88eba2190f2e442b408ab70bfaea0080bd333d05`
+- Synopsis PDF SHA-256: `d165339ed4fa34cbe0f7e614778f96fd0a5e5f2bfcad54adfee7e785e6ba3165`
 - Tectonic: `0.16.9`
 - Locked bundle content SHA-256: `6ffe055852f8faf66c0acbe1a7fb27f87b869a90bad1204f3bf4d9683f597c7c`
 
-All three checked repository manuscripts rebuilt byte-identically. The
-synopsis passed its source/PDF text preflight and Poppler media-box geometry
-check. Full-resolution inspection found no clipping, overlap, missing glyph,
-or other visible layout defect. Complete build logs, page renders, and the
-contact sheet are retained in the private publication handoff.
+All three checked repository manuscripts rebuilt byte-identically in standard
+and cache-only modes. The synopsis passed its source/PDF text preflight and
+Poppler media-box geometry check. Full-resolution inspection of all 12 final
+pages found no clipping, overlap, missing glyph, or other visible layout
+defect. Build logs are retained in the private publication handoff; temporary
+inspection renders were discarded after review.

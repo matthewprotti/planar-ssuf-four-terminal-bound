@@ -52,7 +52,9 @@ def main() -> None:
     info = run("pdfinfo", str(pdf_path))
 
     required_tex = (
-        r"\author{Author line intentionally withheld pending final approval}",
+        r"\author{Matthew Protti}",
+        r"\date{4 August 2026}",
+        "v0.3.0 -- unrefereed research release",
         r"\beta_G^{(m,+)}=",
         r"\beta_G^{(3,+)}=3",
         r"\beta_G^{(m,+)}=4",
@@ -72,6 +74,9 @@ def main() -> None:
         "formally peer reviewed",
         "OpenAI endorsed",
         "global SSUF conjecture",
+        "Author line intentionally withheld",
+        "Private RC1",
+        "Acknowledgement and rights placeholder",
         "[FULL " "LEGAL NAME]",
         "[GITHUB-" "OWNER]",
     )
@@ -80,7 +85,9 @@ def main() -> None:
 
     required_pdf_text = (
         "Scenario-Cover Geometry for a Four-Terminal",
-        "private RC1 human-review repair",
+        "Matthew Protti",
+        "4 August 2026",
+        "unrefereed research release",
         "The fixed-gadget scenario-count ladder",
         "High-heterogeneity global tail",
         "Scenario-cover duality",
@@ -122,7 +129,7 @@ def main() -> None:
                 f"page {page_number} has {name}={value} outside media bounds",
             )
 
-    print("PASS: fixed-gadget source contains the scoped theorem ladder and review posture.")
+    print("PASS: fixed-gadget source contains the scoped theorem ladder and release posture.")
     print("PASS: extracted PDF text contains every substantive synopsis section.")
     print(f"PASS: Poppler geometry stayed within the media boxes on {len(page_boxes)} pages.")
 

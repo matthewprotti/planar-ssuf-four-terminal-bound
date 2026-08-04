@@ -1,5 +1,5 @@
 {
-  "candidate_state": "PRIVATE_RC1_FIRST_HUMAN_REVIEW_REPAIR_NOT_RELEASED",
+  "candidate_state": "PUBLIC_V0_3_0_UNREFEREED_RELEASE_FROM_REVIEWED_DERIVED_COPY",
   "derived_file_lineage": [
     {
       "candidate_path": "one_scenario/proof/GLOBAL_ARBITRARY_ONE_SCENARIO_THEOREM.md",
@@ -162,7 +162,7 @@
     "Raw review packets, prompts, model transcripts, and frozen run logs are not repository payloads.",
     "Hashes authenticate lineage and do not convert internal AI-assisted review into external human review.",
     "The first supplied external human report is scope-limited and does not identify the reviewer or establish independence/conflicts.",
-    "Authorship, acknowledgements, licensing, citation audit, and publication remain open gates."
+    "Matthew Protti is the named human author and release steward; extensive AI assistance is disclosed; targeted citation checks are nonexhaustive; no license is granted; and GitHub publication was explicitly authorized on 2026-08-04."
   ],
   "schema": "ssuf-fixed-gadget-source-provenance-v1"
 }

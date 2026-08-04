@@ -113,10 +113,10 @@ jobs:
       - name: Check candidate/dev package
         if: github.ref_type != 'tag'
         run: |
-          python scripts/release_preflight.py --candidate-version 0.3.0-rc1
+          python scripts/release_preflight.py --candidate-version 0.3.1-dev
           python scripts/build_release.py \
             --mode candidate \
-            --version 0.3.0-rc1 \
+            --version 0.3.1-dev \
             --output-dir "$RUNNER_TEMP/candidate-dist"
 
       - name: Check public package

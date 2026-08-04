@@ -1,6 +1,6 @@
 # Limitations and Open Problems
 
-- Every candidate theorem is restricted to the released fixed four-terminal
+- Every v0.3.0 theorem is restricted to the released fixed four-terminal
   gadget unless it explicitly says otherwise.
 - Positive multi-scenario results do not extend to signed or zero-coordinate
   scenarios.
@@ -16,16 +16,20 @@
   exhaustion, analytic optimization, dependency correctness, statement scope,
   novelty, authorship, or rights.
 - R3B v2 is not byte-identical certificate reproduction.
-- One external human report on the new candidate is documented. The supplied
+- One external human report on the prepublication v0.3.0 material is
+  documented. The supplied
   text does not identify the reviewer or establish independence/conflicts. It
   reconstructed the duality and short GM-005/006 arguments, found no
   contradiction in the portions it examined, and did not inspect the complete
   SC-006 or GM-008/009 proofs. Complete claim-by-claim external reconstruction
   remains open.
 - The Nikolenko Zenodo records, titles, publication dates, DOI metadata, and
-  stated numerical bounds have been checked against the primary records. A
-  broader neutral literature, citation, and overlap audit remains open.
-- Authorship, acknowledgements, rights, and licensing remain unsettled for the
-  new material. The repository continues to grant no license.
-- No public diff, communication, tag, release, submission, or reviewer
-  attribution is authorized by this candidate.
+  stated numerical bounds have been checked against the primary records.
+  Related-work checks are targeted and nonexhaustive; no complete literature,
+  citation, overlap, novelty, or priority clearance is claimed.
+- Matthew Protti is the named human author and release steward. Extensive AI
+  assistance is disclosed. No institutional affiliation is asserted, and the
+  repository continues to grant no open-source or open-content license.
+- The exact GitHub publication was authorized separately on 4 August 2026.
+  That does not authorize reviewer attribution, submission, email, or a
+  website update.

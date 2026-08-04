@@ -8,14 +8,13 @@
 - `v0.2.1` corrects documentation, provenance, and release hygiene. It changes
   no mathematical claim, theorem statement, constant, certificate, proof
   conclusion, or verifier result from `v0.2.0`.
-- Both papers are unrefereed research disclosures, not peer-reviewed journal
-  publications.
-- The working `v0.3.0-rc1` material is a private candidate, not a public
-  release and not a change to any immutable tag.
+- `v0.3.0` adds the fixed-gadget scenario-cover program described below.
+- All three manuscripts are unrefereed research disclosures, not peer-reviewed
+  journal publications.
 
-## Private fixed-gadget candidate scope
+## v0.3.0 fixed-gadget scope
 
-The follow-on candidate adds internally reviewed fixed-gadget results only.
+The v0.3.0 release adds internally reviewed fixed-gadget results only.
 Its positive-scenario ladder does not extend to signed or zero-coordinate
 multi-scenario vectors. The arbitrary signed-and-zero extension is
 one-scenario only. The one-scenario value is a supremum-only statement and
@@ -26,7 +25,7 @@ fixed-gadget upper bound `beta <= 2` for `1 <= kappa <= 2` and
 `beta <= max(2,F(kappa))` for `kappa > 2`, with equality to `F` only for
 `kappa >= kappa_0`. The exact curve below `kappa_0` remains open; an upper
 bound by two is not an equality classification. No claim of finite attainment
-for `F(kappa)` is made in the candidate.
+for `F(kappa)` is made.
 
 Scenario-cover atlas values are fixed-instance results. SC-006 is a narrow
 fixed-family continuum theorem. Neither substitutes for a global upper proof.
@@ -34,13 +33,14 @@ The R3B v2 independent reconstruction applies only to the fixed finite atlas,
 and its accurate comparison label preserves strict certificate-payload
 divergence despite semantic mathematical agreement.
 
-One scope-limited external human report is documented for the new candidate.
-The supplied text does not identify the reviewer or establish
+One scope-limited external human report is documented for the prepublication
+v0.3.0 material. The supplied text does not identify the reviewer or establish
 independence/conflicts. It found no contradiction in the reconstructed
 portions but did not inspect the complete SC-006 or high-heterogeneity proofs.
-Complete claim-by-claim external reconstruction, broader related-work coverage,
-authorship, acknowledgements, rights, licensing, the exact public diff, and
-every public communication remain separate approval gates.
+Complete claim-by-claim external reconstruction remains open. Matthew Protti
+is the named human author and release steward; AI assistance is disclosed; no
+institutional affiliation is asserted; and the deliberate no-license status
+continues.
 
 ## Original one-scenario scope
 
@@ -96,11 +96,11 @@ requires unbounded ratios.
 
 ## External human-review status
 
-No external human mathematical review is documented for either immutable
-public release. One external human report on the private follow-on candidate
-was supplied on 2 August 2026. It is scope-limited: the reviewer reconstructed
-the duality and short GM-005/006 arguments but did not inspect the unpacked
-SC-006 or GM-008/009 proofs. The report supplies no reviewer identity or
+No external human mathematical review is documented for v0.1.0 or v0.2.1.
+One external human report on the prepublication v0.3.0 material was supplied on
+2 August 2026. It is scope-limited: the reviewer reconstructed the duality and
+short GM-005/006 arguments but did not inspect the unpacked SC-006 or
+GM-008/009 proofs. The report supplies no reviewer identity or
 independence/conflict declaration and is not peer review.
 
 Internal preparation, identifying possible reviewers, or replaying the public
@@ -113,10 +113,11 @@ permission.
 
 Targeted searches conducted on 23 and 28 July 2026 found no indexed public
 match for the released support pattern and original constants, or for the exact
-RB-003 fixed-gadget two-scenario formulation and value `17/8`. These searches
-cannot rule out private, unindexed, differently worded, or simultaneous work.
-No claim of exhaustive novelty clearance or priority over all related work is
-made.
+RB-003 fixed-gadget two-scenario formulation and value `17/8`. Targeted v0.3.0
+checks covered cited primary records and the stated surrounding distinctions.
+These checks cannot rule out private, unindexed, differently worded, or
+simultaneous work. No claim of exhaustive novelty clearance or priority over
+all related work is made.
 
 ## Agentic-workflow scope
 
@@ -130,8 +131,8 @@ methodological context, not as verification or endorsement.
 
 Open branches, pull requests, untagged commits, and draft notes are working
 research, not released claims. They do not modify the mathematics or evidence
-status of either immutable tag. Any follow-on result must be assessed from its
-own exact statement, proof, data, verification scope, and release status.
+status of an immutable tag. Any follow-on result must be assessed from its own
+exact statement, proof, data, verification scope, and release status.
 
 ## Commercial interpretation
 
@@ -153,5 +154,6 @@ commercial brand is part of this public research release.
 
 No mathematical defect is currently known in the stated released claims. This
 means only that the completed proof checks and AI-assisted critique rounds
-found none; the scope-limited external candidate review does not review or
-change the evidence status of either immutable public release.
+found none. Matthew's separate reported no-error review covered v0.2.1 only,
+and the scope-limited external report covered only the stated portions of the
+prepublication v0.3.0 material.

@@ -6,10 +6,10 @@
 
 | Lane | Return | Seconds | Locked Python dependencies |
 |---|---:|---:|---|
-| CPython 3.11.14 | 0 | 223 | SymPy 1.14.0; NetworkX 3.5; NumPy 2.3.5; SciPy 1.17.0 |
-| CPython 3.12.11 | 0 | 170 | SymPy 1.14.0; NetworkX 3.5; NumPy 2.3.5; SciPy 1.17.0 |
+| CPython 3.11.14 | 0 | 183 | SymPy 1.14.0; NetworkX 3.5; NumPy 2.3.5; SciPy 1.17.0 |
+| CPython 3.12.11 | 0 | 143 | SymPy 1.14.0; NetworkX 3.5; NumPy 2.3.5; SciPy 1.17.0 |
 
-Each lane passed the six release-gate unit tests, the complete
+Each lane passed the eight release-gate unit tests, the complete
 `scripts/verify_all.py` orchestration, the v0.3.0 publication-scope verifier,
 and candidate-package preflight. The orchestration includes the one-scenario,
 scenario-ladder, high-heterogeneity, scenario-cover, SC-006, and RB-003 exact
@@ -21,6 +21,6 @@ After this report and the canonical repository manifest were updated, the
 complete lane was repeated under both interpreters against the final staged
 tree.
 
-Complete captured stdout/stderr and the initial failed invocation that used an
-unintended system interpreter are retained in the private publication handoff.
-Only successful, explicitly pinned interpreter runs support this report.
+The successful commands used the explicitly pinned interpreters and dependency
+versions shown above. Command output and exit status were inspected in the
+release session; private orchestration logs are not part of the public payload.

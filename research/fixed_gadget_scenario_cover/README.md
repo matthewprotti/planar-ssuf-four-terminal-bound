@@ -1,6 +1,6 @@
 # Fixed-Gadget Scenario-Cover Program
 
-Status: private `v0.3.0-rc1` candidate, not released.
+Status: public unrefereed `v0.3.0` research release.
 
 This subtree integrates the follow-on theorem program for the same directed
 planar four-terminal gadget released in `v0.2.1`. Every global optimization in
@@ -8,7 +8,7 @@ this subtree is global only over legal normalized instances on that one fixed
 gadget. Nothing here determines a topology-wide or unrestricted planar SSUF
 constant.
 
-## Candidate theorem map
+## Released theorem map
 
 For coordinatewise strictly positive E-minus-C cost-difference scenarios, the
 internally reviewed fixed-gadget ladder is:
@@ -31,7 +31,7 @@ most `kappa`, the repaired theorem proves the global fixed-gadget bounds
 
 with exact equality to `F(kappa)` only for `kappa >= kappa_0`. The exact curve
 below `kappa_0` remains open. No claim of finite attainment for `F(kappa)` is
-made in this candidate.
+made in this release.
 
 The scenario-cover layer supplies:
 
@@ -49,7 +49,7 @@ The one-scenario, three-scenario, four-or-more-scenario, high-heterogeneity,
 scenario-cover, and SC-006 lanes have distinct proof and review histories. R4
 v6 accepted the 23 cross-package statement-and-scope assertions without a
 finding. That is an internal AI-assisted integration review, not a new proof
-review and not publication clearance.
+review. The separate human publication decision did not widen R4's scope.
 
 R3B v2 independently reconstructed the fixed finite atlas under technical
 answer isolation. Every tested mathematical field matched. The preserved raw
@@ -60,10 +60,10 @@ accurate label is:
 
 This is not byte-identical certificate reproduction, a continuum theorem,
 external human review, peer review, formal proof-assistant verification,
-novelty clearance, or release authority.
+novelty clearance, or conventional journal peer review.
 
 Matthew's reported no-error review applies only to the immutable public
-`v0.2.1` corpus, not to the new candidate results in this subtree.
+`v0.2.1` corpus, not to the results first released in this subtree.
 
 ## Reading order
 
@@ -106,6 +106,8 @@ novelty, authorship, or rights.
 
 ## Release boundary
 
-This candidate grants no license and authorizes no push, pull request, tag,
-release, publication, submission, reviewer contact, email, or website update.
-See the repository `LICENSING.md` and this subtree's publication gates.
+This release grants no open-source or open-content license. Matthew Protti is
+the named human author and release steward, and the exact GitHub publication
+was separately authorized on 4 August 2026. That authorization does not imply
+reviewer attribution, email, submission, or website-update authority. See the
+repository `LICENSING.md` and the disclosed release controls.

@@ -1,30 +1,30 @@
 # Release package gates
 
-The immutable `v0.1.0` and `v0.2.0` tags and their published assets remain
-canonical historical releases. Changes on `main` must never create a different
-package carrying either final version. `v0.2.1` is a new immutable correction
-release; it does not rewrite `v0.2.0`.
+The immutable `v0.1.0`, `v0.2.0`, `v0.2.1`, and `v0.3.0` tags and their
+published assets are canonical historical releases. Changes on `main` must
+never create a different package carrying an existing final version.
 
 ## Candidate/dev package
 
 Use a visibly non-final version while preparing later work:
 
 ```bash
-python scripts/release_preflight.py --candidate-version 0.3.0-rc1
+python scripts/release_preflight.py --candidate-version 0.3.1-dev
 python scripts/build_release.py \
   --mode candidate \
-  --version 0.3.0-rc1
+  --version 0.3.1-dev
 ```
 
 Candidate/dev mode requires a suffix such as `-dev` or `-rc1`. It checks the
 complete repository manifest before creating the archive but does not require a
 tag.
 
-For the private fixed-gadget candidate, use `0.3.0-rc1`. Candidate packaging
-does not mean publication readiness. Before any public-mode build, the new
-mathematics still requires scoped external human review, a neutral citation
-audit, authorship/acknowledgement/licensing decisions, and explicit approval
-of the exact repository diff and public language.
+Candidate packaging does not mean publication readiness. The v0.3.0 release
+record documents the scope-limited review, targeted nonexhaustive citation
+checks, Matthew Protti's authorship and stewardship, extensive AI assistance,
+the deliberate no-license posture, and the explicit human publication
+decision. Future releases must resolve those questions for their own exact
+diff and public language.
 
 ## Public package
 

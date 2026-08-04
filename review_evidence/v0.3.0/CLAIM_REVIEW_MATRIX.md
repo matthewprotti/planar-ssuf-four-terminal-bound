@@ -9,4 +9,4 @@
 | Fixed finite atlas | exact certificate population | R3B v2 blind independent reproduction | semantic match, not strict serialized-payload identity |
 
 Second report parsed disposition: **`ACCEPT_AS_STATED`**.  
-Controlling local-release status: **`READY_FOR_PUBLIC_RELEASE_PENDING_AUTHOR_APPROVAL`**.
+Release status: **`PUBLIC_V0_3_0_UNREFEREED_RESEARCH_RELEASE`**.

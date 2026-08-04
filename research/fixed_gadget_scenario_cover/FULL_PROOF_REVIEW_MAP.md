@@ -1,6 +1,9 @@
 # Full-Proof Review Map
 
-**Candidate state:** private first-human-review derived copy, not released.  
+**Release state:** public unrefereed v0.3.0 derived copy. The controlling proof
+bytes and the hashes below are preserved from the reviewed prepublication
+copy.
+
 **Purpose:** give a reviewer a direct path to every controlling analytic proof.
 
 The PDF in `paper/ssuf_fixed_gadget_scenario_cover_synopsis.pdf` is an
@@ -10,14 +13,14 @@ external references. In any circulated reviewer package they must be exposed
 as ordinary unpacked files; a nested source archive alone is not adequate
 reviewer-facing presentation.
 
-## Public/private distinction
+## Version distinction
 
 - The immutable public `v0.2.1` corpus contains the original restricted
   one-scenario lower family and the exact two-positive-scenario theorem.
-- GM-002/GM-003 is a later **private** theorem extending the one-scenario
+- GM-002/GM-003 is a later v0.3.0 theorem extending the one-scenario
   fixed-gadget analysis to arbitrary legally realizable route-cost
   differences. It is not the same claim as the public restricted lower family.
-- GM-005, GM-006, SC-006, and GM-008/GM-009 are also private candidate claims.
+- GM-005, GM-006, SC-006, and GM-008/GM-009 are also v0.3.0 claims.
 - None of these fixed-gadget claims determines the unrestricted planar SSUF
   constant.
 
@@ -77,8 +80,8 @@ claim.
    same model, strict/weak convention, and scope.
 4. Only then run the associated executable corroboration.
 5. Report a claim-level disposition separately for GM-002/003, GM-004,
-   GM-005, GM-006, SC-006, and GM-008/009. Do not infer publication readiness
-   from a subset review.
+   GM-005, GM-006, SC-006, and GM-008/009. Do not infer whole-package review
+   coverage from a subset review.
 
 The first supplied external human report reconstructed the duality and the
 short GM-005/006 arguments and found no mathematical contradiction in those
