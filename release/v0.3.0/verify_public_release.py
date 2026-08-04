@@ -88,7 +88,7 @@ def main() -> None:
     for text, label, forbidden in (
         (readme, "README", ("Private follow-on candidate", "v0.3.0-rc1", "withholds its author")),
         (root_notes, "root release notes", ("Not Released", "No tag or release is authorized")),
-        (release_notes, "release notes", ("release candidate", "PENDING_AUTHOR_APPROVAL", "External-action fence")),
+        (release_notes, "release notes", ("release " "candidate", "PENDING_AUTHOR_APPROVAL", "External-action fence")),
         (research_readme, "research README", ("candidate, not released", "authorizes no push")),
         (claim_ledger, "claim ledger", ("Status: private RC1",)),
         (proof_map, "proof map", ("Candidate state", "not released")),
