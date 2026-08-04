@@ -92,6 +92,15 @@ def main() -> None:
         if path.suffix.lower() not in TEXT_SUFFIXES:
             continue
         text = path.read_text(encoding="utf-8", errors="replace")
+        controls = sorted(
+            {
+                ord(character)
+                for character in text
+                if ord(character) < 32 and character not in "\t\n\r"
+            }
+        )
+        if controls:
+            failures.append(f"C0 control characters in {relative}: {controls}")
         for token in FORBIDDEN_TEXT:
             if token in text:
                 failures.append(f"forbidden placeholder/private path in {relative}: {token}")

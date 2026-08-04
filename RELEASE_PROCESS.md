@@ -1,24 +1,30 @@
 # Release package gates
 
-The immutable `v0.1.0` and `v0.2.0` tags and their published assets remain
-canonical historical releases. Changes on `main` must never create a different
-package carrying either final version. `v0.2.1` is a new immutable correction
-release; it does not rewrite `v0.2.0`.
+The immutable `v0.1.0`, `v0.2.0`, `v0.2.1`, and `v0.3.0` tags and their
+published assets are canonical historical releases. Changes on `main` must
+never create a different package carrying an existing final version.
 
 ## Candidate/dev package
 
 Use a visibly non-final version while preparing later work:
 
 ```bash
-python scripts/release_preflight.py --candidate-version 0.2.1-dev
+python scripts/release_preflight.py --candidate-version 0.3.1-dev
 python scripts/build_release.py \
   --mode candidate \
-  --version 0.2.1-dev
+  --version 0.3.1-dev
 ```
 
 Candidate/dev mode requires a suffix such as `-dev` or `-rc1`. It checks the
 complete repository manifest before creating the archive but does not require a
 tag.
+
+Candidate packaging does not mean publication readiness. The v0.3.0 release
+record documents the scope-limited review, targeted nonexhaustive citation
+checks, Matthew Protti's authorship and stewardship, extensive AI assistance,
+the deliberate no-license posture, and the explicit human publication
+decision. Future releases must resolve those questions for their own exact
+diff and public language.
 
 ## Public package
 
@@ -32,7 +38,8 @@ python scripts/build_release.py --mode public
 ```
 
 The permanent CI workflow runs the complete verification on Python 3.11 and
-3.12, performs the document and package build on Python 3.12, checks
+3.12, performs both a cache-seeding and network-disabled document build on
+Python 3.12, checks
 candidate/dev packaging on branches, checks public packaging on tags, and
 independently rebuilds the immutable `v0.1.0` assets against their published
 SHA-256 values.
@@ -44,3 +51,7 @@ green, the human release steward creates the exact annotated tag, waits for tag
 CI to pass, builds the public package from that clean tag, and publishes only
 those verified assets. The former one-time `v0.2.0` write-enabled publication
 workflow was retired in `v0.2.1`.
+
+The integrated synopsis is a technical synopsis with companion Markdown
+proofs. A clean manuscript build does not convert it into a standalone proof
+or a peer-reviewed article.

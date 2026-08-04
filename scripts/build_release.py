@@ -19,8 +19,9 @@ MANIFEST = ROOT / "SHA256SUMS.txt"
 PDFS = (
     ROOT / "paper" / "ssuf_four_terminal_note_v5.pdf",
     ROOT / "paper" / "rb003_two_scenario_note_v2.pdf",
+    ROOT / "paper" / "ssuf_fixed_gadget_scenario_cover_synopsis.pdf",
 )
-EPOCH = 1_785_434_400
+EPOCH = 1_785_672_000
 
 
 def sha256(path: Path) -> str:
@@ -107,6 +108,8 @@ def main() -> None:
 
     check_manifest()
     paths = manifest_paths()
+    if output_dir.exists() and any(output_dir.iterdir()):
+        raise SystemExit(f"output directory must be empty: {output_dir}")
     output_dir.mkdir(parents=True, exist_ok=True)
     with archive_path.open("wb") as raw:
         with gzip.GzipFile(filename="", mode="wb", fileobj=raw, mtime=0) as compressed:

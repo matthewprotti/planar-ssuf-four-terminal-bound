@@ -1,0 +1,15 @@
+{
+  "schema": "ssuf-document-toolchain-v1",
+  "tectonic": {
+    "bundle_content_sha256": "6ffe055852f8faf66c0acbe1a7fb27f87b869a90bad1204f3bf4d9683f597c7c",
+    "bundle_url": "https://relay.fullyjustified.net/default_bundle_v33.tar",
+    "version": "0.16.9"
+  },
+  "text_and_geometry_preflight": {
+    "provider": "Poppler",
+    "required_commands": [
+      "pdfinfo",
+      "pdftotext"
+    ]
+  }
+}

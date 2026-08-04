@@ -1,0 +1,86 @@
+{
+  "schema": "ssuf-fixed-gadget-review-evidence-v1",
+  "status": "PRIVATE_INTERNAL_EVIDENCE_PLUS_SCOPE_LIMITED_EXTERNAL_REPORT",
+  "external_human_review": true,
+  "external_human_review_complete": false,
+  "peer_review": false,
+  "formal_proof_assistant_verification": false,
+  "publication_clearance": false,
+  "records": [
+    {
+      "lane": "EXTERNAL_HUMAN_REVIEW_1",
+      "date_supplied": "2026-08-02",
+      "raw_text_sha256": "460f975862a95f2eb5f16d50aed10b835bd6f1bcf4014932afd979f158bdf8c9",
+      "reviewer_identity_in_supplied_text": false,
+      "independence_or_conflicts_documented": false,
+      "scope": "synopsis, public release context, duality, short GM-005/GM-006 reconstruction, selected algebra and exact finite claims",
+      "full_companion_proofs_examined": false,
+      "reported_mathematical_contradiction": false,
+      "sc006_disposition": "NOT_EXAMINED_FULL_PROOF",
+      "gm008_gm009_disposition": "NOT_EXAMINED_FULL_PROOF",
+      "overall_label": "SCOPE_LIMITED_EXTERNAL_HUMAN_REPORT",
+      "publication_clearance": false
+    },
+    {
+      "lane": "R1_v2",
+      "packet_sha256": "64d63456319e09b1fadcbdc73a71cc9dd2dee2b50fdf2dd63b020da143d47013",
+      "top_level_disposition": "ACCEPT_WITH_EDITORIAL_REPAIRS",
+      "claim_dispositions": {"GM-002": "ACCEPT_AS_STATED", "GM-003": "ACCEPT_AS_STATED"}
+    },
+    {
+      "lane": "R2_original",
+      "packet_sha256": "8963145c7d962c81529a196494ae24de57d79532754f5082525c00d849669edd",
+      "top_level_disposition": "UNRESOLVED_LEMMA",
+      "claim_dispositions": {"GM-006": "ACCEPT_AS_STATED"},
+      "historical_only_for_GM-008_GM-009": true
+    },
+    {
+      "lane": "R2_v2_GM005",
+      "packet_sha256": "8e78d5e4861a8613f97793a9cf062ac2b603f4bc6b22db4b911a600fb255aa42",
+      "top_level_disposition": "ACCEPT_AS_STATED",
+      "claim_dispositions": {"GM-005": "ACCEPT_AS_STATED"}
+    },
+    {
+      "lane": "R2_v3_GM008_GM009",
+      "packet_sha256": "2961d4ab7b72f99878e144a708270d9e99af503effbe245a66350df4030d3274",
+      "frozen_run_sha256": "8d580b88a20dc5664648527fa456b056bb85c91f150c9da95c9c6e0fbe6960ae",
+      "top_level_disposition": "ACCEPT_AS_STATED",
+      "claim_dispositions": {"GM-008": "ACCEPT_AS_STATED", "GM-009": "ACCEPT_AS_STATED"},
+      "nonblocking_findings": ["NB-RUNTIME-001", "NB-EXPOSITION-001"]
+    },
+    {
+      "lane": "R3A",
+      "packet_sha256": "b398ce43bb828096ee4aabca6755ca9acd0402c9d9af96a45f66cb9b3409e082",
+      "top_level_disposition": "ACCEPT_WITH_EDITORIAL_REPAIRS"
+    },
+    {
+      "lane": "R3B_v2",
+      "frozen_run_sha256": "d1ed981e0159e20af1843ffcc32b95cc441894c981eab0c5ca3411029383a950",
+      "top_level_disposition": "ACCEPT_AS_STATED",
+      "evidence_label": "BLIND_INDEPENDENT_REPRODUCTION",
+      "comparison_label": "SEMANTIC_MATHEMATICAL_MATCH / STRICT_CERTIFICATE_PAYLOAD_IDENTITY_FAIL",
+      "scope": "fixed finite scenario-cover instance only"
+    },
+    {
+      "lane": "R3C",
+      "packet_sha256": "2a96e63034326792db202a12b3eb76b274e7aab588deab3271cc36ebac237fdb",
+      "scope": "SC-006 continuum mathematics"
+    },
+    {
+      "lane": "R3D",
+      "packet_sha256": "e8edaef6edc0f2f1dc97b2735a31de4bf36e6a82e5143ff688eb49c81b0e68c2",
+      "top_level_disposition": "ACCEPT_AS_STATED",
+      "scope": "nonblind exact replay only"
+    },
+    {
+      "lane": "R4_v6",
+      "packet_sha256": "7ae7b877388386c78978d8ac1775afd79be1174a198b25d4c072c8572c1ee03b",
+      "frozen_run_sha256": "d8e3ae8758e8e9a0e9965e480fcb64572fb240830b75a7270ec714a48627b981",
+      "top_level_disposition": "ACCEPT_AS_STATED",
+      "claims_reviewed": ["S-001", "S-002", "S-003", "S-004", "S-005", "S-006", "S-007", "S-008", "S-009", "S-010", "S-011", "S-012", "S-013", "S-014", "S-015", "S-016", "S-017", "S-018", "S-019", "S-020", "S-021", "S-022", "S-023"],
+      "blocking_findings": [],
+      "nonblocking_findings": [],
+      "scope": "statement-and-scope integration only"
+    }
+  ]
+}

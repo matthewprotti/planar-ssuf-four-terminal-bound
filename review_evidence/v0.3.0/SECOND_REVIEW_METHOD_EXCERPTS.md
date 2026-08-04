@@ -1,0 +1,26 @@
+# Method-description lines extracted from the second report
+
+- **Reviewer:** OpenAI GPT-5.6 Pro, private reviewer ID `OAI-SSUF-AR-2026-08-03-01`
+- **Reviewer type:** AI mathematical reviewer; this record is not external human peer review
+- **Packet reviewed:** `SSUF_HUMAN_MATHEMATICAL_REVIEW_PACKET_RC1_HR1_RESEALED_2026-08-03_v2.zip`
+- The qualification is driven by three nonmathematical findings: two flattened-package entry points do not run from the delivered ZIP, a reviewer-facing scope reference is left inside the canonical TAR rather than exposed in the flat layer, and the notation for the two-positive-scenario constant drifts between `beta_G^(2,+)` and `beta_G^(2sc)`. None changes a theorem statement after context is reconstructed, and none undermines the proofs.
+- ## 2. Independence and conflict statement
+- I cannot certify that a general-purpose model had no training-data exposure to public antecedents. Operationally, this review used only the supplied ZIP, its embedded canonical source archive, and computations written or executed during this pass. I had no reviewer identity or prior-report information beyond what the packet itself disclosed.
+- 1. The ZIP SHA-256 independently recomputed to
+- The common model was reconstructed independently from the path table. With E-set `R`, E fractions `q_i`, demands `d_i`, `h_i=d_i q_i`, and `ell_i=d_i(1-q_i)`, the four C-minus-E trunk supports are
+- For the finite objects, I treated the stored certificates and the regeneration program as separate witnesses. I also wrote a fresh independent script that does not import the packet's verifier code. It reconstructs all 13 arc deviations, enumerates the threshold-graph blocker covers, recomputes the downset cover dynamic program, and checks the high-heterogeneity formulas symbolically and at exact rational instances.
+- ### `OAI-SSUF-AR-2026-08-03-01-F02` - reviewer-facing navigation is not completely self-contained
+- I independently enumerated the threshold-graph cases on up to four labels. The isomorphism counts are `1,1,2,4,8`, totaling the 16 rows in the appendix. Exact active-set enumeration reproduced every nonintegral undominated cover listed there. The separated `K4` row contains the expected fractional covers and is correctly sent to the already-solved all-pairs theorem.
+- **Signed and zero strata.** The private-arc realization lemma legally realizes every signed vector using nonnegative commodity-independent arc costs. Routing all nonpositive coordinates E reduces the remaining search to a positive threshold family on at most three labels. The single-generator, two-pair, all-pairs chain/nested, and cost-free arguments give at most `9/8`, with the zero vector exactly `4/5`. These bounds are strictly below `L`.
+- **Independent algebra:** for `f(q)=q^2(4-q^2-2q)`, the admissible stationary point is `q*=(sqrt(41)-3)/4`; exact substitution gives `f(q*)=L` and a negative second derivative. The fresh blocker-cover enumeration and the supplied one-scenario suites both passed.
+- For rational `0<epsilon<1/4`, the stated star-triangle family has common feasible E-sets exactly `empty,{1},{3},{4}` and exact objective `17/8-3 epsilon`. I independently recomputed all four route values at four rational epsilon values, including `1/1000`.
+- For the fixed rational RB witness, I independently enumerated all `2^16` set families and recovered exactly 168 downsets. Reading the 59 stored realizable positive-normal masks, a fresh union-cover dynamic program reproduced the distribution
+- I reconstructed all five trunk and eight private deviations. For every one of the 16 C-sets, the stated affine route value dominates all 13 deviations throughout `0<=epsilon<=1/8` and is attained by at least one arc. This independently confirms the route table and its only interior crossing at `epsilon=1/16`.
+- I independently verified
+- ### Fresh independent program
+- `ssuf_independent_adversarial_checks.py`, written during this review without importing packet verifier code, passed all of the following:
+- - independent 168-downset count, 59-pattern cover DP, cover-number distribution, and fixed-instance ladder;
+- - `00_READ_ME_FIRST.md`, the reseal note, package scope, review prompt, claim ledger, dependency map, limitations, model/notation, and full-proof map;
+- - all listed one-scenario imported-baseline dependencies, the finite blocker-cover classification, routing allocation details, the GM-005 model specification, and the bounded-heterogeneity dependency specification;
+- - novelty, priority, literature completeness, citation overlap, or independence from prior art;
+- - an external human-review status;

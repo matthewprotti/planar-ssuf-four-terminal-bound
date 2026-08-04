@@ -1,0 +1,168 @@
+{
+  "candidate_state": "PUBLIC_V0_3_0_UNREFEREED_RELEASE_FROM_REVIEWED_DERIVED_COPY",
+  "derived_file_lineage": [
+    {
+      "candidate_path": "one_scenario/proof/GLOBAL_ARBITRARY_ONE_SCENARIO_THEOREM.md",
+      "candidate_sha256": "7168d598b2fbcf44ebee8a3c55a4779963e379edc3c62a93ebaed4247acf62c1",
+      "source_sha256": "1e4c725aafa84559363329845dc2126a8c213188684213f58df130914de54b83",
+      "transformation": "authenticated R1 v2 proof with the already-frozen review disposition added to the status banner only; theorem and proof body unchanged"
+    },
+    {
+      "candidate_path": "one_scenario/proof/FINITE_BLOCKER_COVER_CLASSIFICATION.md",
+      "candidate_sha256": "2054d6ef24c192db01b14872d31c4d6c6865403ac38d84339901e08178d2475c",
+      "source_sha256": "2054d6ef24c192db01b14872d31c4d6c6865403ac38d84339901e08178d2475c",
+      "transformation": "byte-identical import from the authenticated R1 v2 proof"
+    },
+    {
+      "candidate_path": "one_scenario/proof/ROUTING_ALLOCATION_DETAILS.md",
+      "candidate_sha256": "04151422ec11991c024b64d77da626d4c1e9a9ece96d5b336893b1e7b7945aaa",
+      "source_sha256": "04151422ec11991c024b64d77da626d4c1e9a9ece96d5b336893b1e7b7945aaa",
+      "transformation": "byte-identical import from the authenticated R1 v2 proof"
+    },
+    {
+      "candidate_path": "one_scenario/proof/imported-baseline/NONPOSITIVE_DIFFERENCE_THEOREM.md",
+      "candidate_sha256": "2b37555a090adab0ee428058dde6696ee15941bf2cd6c226c431f7965d63cd61",
+      "source_sha256": "bb427ac0d0d411a81556e3824786bb5d7ea153481cb08b252b68a0b37fd956fd",
+      "transformation": "R1 nonblocking editorial repairs N001 and N002 only; theorem statement unchanged"
+    },
+    {
+      "candidate_path": "one_scenario/reproduction/symbolic_every_pair_check.py",
+      "candidate_sha256": "ebec37060986cf67b5d53b46374078c96b7e484c75e095f55585e47be285b31f",
+      "source_sha256": "6545c8eb7c68efc949822db6204dd3820878abe1c5efab028a020e768bb75aba",
+      "transformation": "assertions replaced by explicit runtime checks and packet-layout output write removed"
+    },
+    {
+      "candidate_path": "scenario_ladder/GM005_THREE_SCENARIO_THEOREM.md",
+      "candidate_sha256": "dfd4e03cbf285229e863d812a17cf4422054f648abaeb266643bb3b8acebdd18",
+      "source_sha256": "e2ce928f0b39a64ce0e9355cefd02c49ea7f04d1c56efda35f49f466c0474928",
+      "transformation": "mathematical body retained; candidate status and frozen R2 v2 disposition made consistent; standalone thirteen-arc envelope reference added"
+    },
+    {
+      "candidate_path": "scenario_ladder/GM006_FOUR_OR_MORE_SCENARIOS.md",
+      "candidate_sha256": "1ecc793c6621a332cb318dcb0e74ea58ec2b537a9b28b2a48cd7d8d51a239817",
+      "source_sha256": "3593a2dd41f2a3616e6e461f491342a7c0fe8bed60efd00ffdaee168e6fc1066",
+      "transformation": "complete GM-006 theorem extracted into a standalone companion proof; all-thirteen-arc envelope dependency now stated explicitly"
+    },
+    {
+      "candidate_path": "scenario_ladder/MODEL_SPEC_GM005.md",
+      "candidate_sha256": "4c0ea84529acd4e2bd7182427267c60e9f88e932ab9c9a18f20185e625fcaafe",
+      "source_sha256": "dd17af112a6727893eb7ec8b2e8b78d7cc2a0a44298299a68941ebcd6e68b57e",
+      "transformation": "existing signed trunk formula retained; its immediate thirteen-arc envelope and companion proof/checker references added"
+    },
+    {
+      "candidate_path": "scenario_ladder/TRUNK_PRIVATE_ARC_ENVELOPE.md",
+      "candidate_sha256": "c997df468fb697aa02fd04c06382840d0b3caf82d0613fc51297198518557126",
+      "source_sha256": "dd17af112a6727893eb7ec8b2e8b78d7cc2a0a44298299a68941ebcd6e68b57e",
+      "transformation": "new standalone analytic derivation of the immediate envelope implicit in the authenticated GM-005 model specification"
+    },
+    {
+      "candidate_path": "scenario_ladder/reproduction/verify_arc_envelope.py",
+      "candidate_sha256": "7c332218f3c27332ecc71562d2a924a64b5578103428286057dcdc7295b38d83",
+      "source_sha256": "78065cd383a960b38af64d02c7b172e8d64359d08828b626dcc01e18294a1c87",
+      "transformation": "new independent structural checker using the authenticated GM-005 path lists and exact Fraction arithmetic"
+    },
+    {
+      "candidate_path": "bounded_heterogeneity/GM008_GM009_HIGH_KAPPA_THEOREM.md",
+      "candidate_sha256": "2aced64fd851b136f88fe6f09679816b4f2d98b43380a2337104298f0f57632b",
+      "source_sha256": "01d619be75e77b96478bc6f3cbdfc28d58e56c857dd329b7633b7f64d460fb84",
+      "transformation": "R2 v3 disposition and nonblocking exposition repair added; theorem and proof logic retained"
+    },
+    {
+      "candidate_path": "bounded_heterogeneity/MODEL_AND_RB003_DEPENDENCY_SPEC.md",
+      "candidate_sha256": "83646cc788704a55fcde799619cce16554b4c97867bf8b9440f41736831c8930",
+      "source_sha256": "83646cc788704a55fcde799619cce16554b4c97867bf8b9440f41736831c8930",
+      "transformation": "byte-identical authenticated dependency specification"
+    },
+    {
+      "candidate_path": "bounded_heterogeneity/verify_high_kappa.py",
+      "candidate_sha256": "c398dbc35882a407999ab4d703664d1d174025e8204fe559d10360b035431556",
+      "source_sha256": "0aaa30ef9063877c9ca6bd340242af6ffc636420a1fd1dc37c1ed11ebb19d24b",
+      "transformation": "public-candidate path normalization only; exact checks retained"
+    },
+    {
+      "candidate_path": "scenario_cover/SCENARIO_COVER_DUALITY.md",
+      "candidate_sha256": "b23f2b376fa3b6a3081b250727b854d51963a5c2b065eac43b0bbf8fa0330d5a",
+      "source_sha256": "4c9685b373f2578bb38c9fed5ffa0b506a82337fe4e15043741bfddbd30ba629",
+      "transformation": "R3A nonblocking model and convention repairs plus exact R3B v2 scope language"
+    },
+    {
+      "candidate_path": "scenario_cover/SC006_CONTINUUM_THEOREM.md",
+      "candidate_sha256": "b326dbdc663d0164eb0a2adc4d88a79294e91fbcbe98eead478017b00ae94f8d",
+      "source_sha256": "b326dbdc663d0164eb0a2adc4d88a79294e91fbcbe98eead478017b00ae94f8d",
+      "transformation": "byte-identical import from the R3C editorial source carried by frozen R4 v5"
+    },
+    {
+      "candidate_path": "scenario_cover/reproduction/replay_sc006_exact.py",
+      "candidate_sha256": "e9bee63afb46f51ec6e57e2c2f93a628ff6f9cb738ae46682eca29a91e1929db",
+      "source_sha256": "fee0445051bd28c98405ef42ba8862e9fd43caa8833bbacffc0ec709998b9d2a",
+      "transformation": "module-integration flag explicitly selects the accepted R3D noncanonical certificate mode; exact thresholds and robust values are unchanged"
+    },
+    {
+      "candidate_path": "scenario_cover/reproduction/SCENARIO_COVER_ATLAS_RESULTS.json",
+      "candidate_sha256": "d5541a9cce6fe1a752b3b76c45ef6f7cab89a41d6b6969d62672fcede7a34cb4",
+      "source_sha256": "d5541a9cce6fe1a752b3b76c45ef6f7cab89a41d6b6969d62672fcede7a34cb4",
+      "transformation": "byte-identical canonical exact atlas"
+    }
+  ],
+  "immutable_inputs": [
+    {
+      "artifact": "public repository base v0.2.1",
+      "sha256_or_commit": "102988d5f4025b2ae081aea7fbed0e16fcc7de2a"
+    },
+    {
+      "artifact": "first supplied external human review raw text",
+      "sha256_or_commit": "460f975862a95f2eb5f16d50aed10b835bd6f1bcf4014932afd979f158bdf8c9"
+    },
+    {
+      "artifact": "SSUF_Global_One_Scenario_Closing_Package_2026-08-01.zip",
+      "sha256_or_commit": "7e44dd9c6b0b0d02e1189ea63e389c9af699abcf34824d0425a1a88667c7fb5a"
+    },
+    {
+      "artifact": "SSUF_R1_ONE_SCENARIO_BLOCKER_COVER_REVIEW_2026-08-01_v2.zip",
+      "sha256_or_commit": "64d63456319e09b1fadcbdc73a71cc9dd2dee2b50fdf2dd63b020da143d47013"
+    },
+    {
+      "artifact": "SSUF_R2_GM005_PROOF_REPAIR_REVIEW_2026-08-01_v2.zip",
+      "sha256_or_commit": "8e78d5e4861a8613f97793a9cf062ac2b603f4bc6b22db4b911a600fb255aa42"
+    },
+    {
+      "artifact": "SSUF_Next_Gap_Constructive_Review_v2_2026-07-31.zip",
+      "sha256_or_commit": "bd7b4e0604fe512ee83cfad88e1896ddf0d3cef0927b955b8e86bd7130b7c499"
+    },
+    {
+      "artifact": "SSUF_R2_V3_GM008_GM009_DEPENDENCY_COMPLETE_REVIEW_2026-08-02.zip",
+      "sha256_or_commit": "2961d4ab7b72f99878e144a708270d9e99af503effbe245a66350df4030d3274"
+    },
+    {
+      "artifact": "SSUF_R2_V3_GM008_GM009_FROZEN_RUN_2026-08-02.zip",
+      "sha256_or_commit": "8d580b88a20dc5664648527fa456b056bb85c91f150c9da95c9c6e0fbe6960ae"
+    },
+    {
+      "artifact": "SSUF_Scenario_Cover_Duality_Initial_Exact_Package_2026-08-01.zip",
+      "sha256_or_commit": "d5aea2ada78cc39e39f74ae0db7d59ac277ca6e4085c1d46af5abe6761542851"
+    },
+    {
+      "artifact": "SSUF_SC006_Continuum_Theorem_Proof_Package_2026-08-01.zip",
+      "sha256_or_commit": "4e477e4529965f38c3a90e3c2cc8a5382c48a1842eaa54e10f93f0efb71d4886"
+    },
+    {
+      "artifact": "SSUF_R4_CROSS_PACKAGE_STATEMENT_SCOPE_REVIEW_2026-08-02_v5.zip",
+      "sha256_or_commit": "d1183aa2e1529546a9615e8a78b1f6b18f7e1bfac8d6b148a248d2d705116336"
+    },
+    {
+      "artifact": "SSUF_R4_CROSS_PACKAGE_STATEMENT_SCOPE_REVIEW_2026-08-02_v6.zip",
+      "sha256_or_commit": "7ae7b877388386c78978d8ac1775afd79be1174a198b25d4c072c8572c1ee03b"
+    },
+    {
+      "artifact": "SSUF_R4_V6_FROZEN_RUN_2026-08-02.zip",
+      "sha256_or_commit": "d8e3ae8758e8e9a0e9965e480fcb64572fb240830b75a7270ec714a48627b981"
+    }
+  ],
+  "notes": [
+    "Raw review packets, prompts, model transcripts, and frozen run logs are not repository payloads.",
+    "Hashes authenticate lineage and do not convert internal AI-assisted review into external human review.",
+    "The first supplied external human report is scope-limited and does not identify the reviewer or establish independence/conflicts.",
+    "Matthew Protti is the named human author and release steward; extensive AI assistance is disclosed; targeted citation checks are nonexhaustive; no license is granted; and GitHub publication was explicitly authorized on 2026-08-04."
+  ],
+  "schema": "ssuf-fixed-gadget-source-provenance-v1"
+}
