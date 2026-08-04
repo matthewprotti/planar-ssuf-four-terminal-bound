@@ -10,6 +10,37 @@
   conclusion, or verifier result from `v0.2.0`.
 - Both papers are unrefereed research disclosures, not peer-reviewed journal
   publications.
+- The working `v0.3.0-rc1` material is a private candidate, not a public
+  release and not a change to any immutable tag.
+
+## Private fixed-gadget candidate scope
+
+The follow-on candidate adds internally reviewed fixed-gadget results only.
+Its positive-scenario ladder does not extend to signed or zero-coordinate
+multi-scenario vectors. The arbitrary signed-and-zero extension is
+one-scenario only. The one-scenario value is a supremum-only statement and
+does not assert attainment or nonattainment.
+
+The repaired two-scenario bounded-heterogeneity theorem gives the global
+fixed-gadget upper bound `beta <= 2` for `1 <= kappa <= 2` and
+`beta <= max(2,F(kappa))` for `kappa > 2`, with equality to `F` only for
+`kappa >= kappa_0`. The exact curve below `kappa_0` remains open; an upper
+bound by two is not an equality classification. No claim of finite attainment
+for `F(kappa)` is made in the candidate.
+
+Scenario-cover atlas values are fixed-instance results. SC-006 is a narrow
+fixed-family continuum theorem. Neither substitutes for a global upper proof.
+The R3B v2 independent reconstruction applies only to the fixed finite atlas,
+and its accurate comparison label preserves strict certificate-payload
+divergence despite semantic mathematical agreement.
+
+One scope-limited external human report is documented for the new candidate.
+The supplied text does not identify the reviewer or establish
+independence/conflicts. It found no contradiction in the reconstructed
+portions but did not inspect the complete SC-006 or high-heterogeneity proofs.
+Complete claim-by-claim external reconstruction, broader related-work coverage,
+authorship, acknowledgements, rights, licensing, the exact public diff, and
+every public communication remain separate approval gates.
 
 ## Original one-scenario scope
 
@@ -65,10 +96,12 @@ requires unbounded ratios.
 
 ## External human-review status
 
-No external human mathematical review has been requested or documented for
-either release. The documented author review and role-separated AI-assisted
-adversarial reviews are different evidence classes and must not be described as
-independent human review or peer review.
+No external human mathematical review is documented for either immutable
+public release. One external human report on the private follow-on candidate
+was supplied on 2 August 2026. It is scope-limited: the reviewer reconstructed
+the duality and short GM-005/006 arguments but did not inspect the unpacked
+SC-006 or GM-008/009 proofs. The report supplies no reviewer identity or
+independence/conflict declaration and is not peer review.
 
 Internal preparation, identifying possible reviewers, or replaying the public
 checks would not by itself change this status. Any future review record should
@@ -120,4 +153,5 @@ commercial brand is part of this public research release.
 
 No mathematical defect is currently known in the stated released claims. This
 means only that the completed proof checks and AI-assisted critique rounds
-found none; no external human mathematical review is documented.
+found none; the scope-limited external candidate review does not review or
+change the evidence status of either immutable public release.

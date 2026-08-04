@@ -130,16 +130,23 @@ class ReleaseGateTests(unittest.TestCase):
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("public versions must be final", result.stdout + result.stderr)
 
-    def test_public_preflight_builds_exact_manifest_membership(self) -> None:
-        self.initialize_git(f"v{CURRENT_VERSION}")
-        self.run_repo(sys.executable, "scripts/release_preflight.py", "--public")
+    def test_candidate_builds_exact_manifest_membership(self) -> None:
+        candidate_version = "0.3.0-rc1"
+        self.run_repo(
+            sys.executable,
+            "scripts/release_preflight.py",
+            "--candidate-version",
+            candidate_version,
+        )
 
-        output = self.base / "public-output"
+        output = self.base / "candidate-output"
         self.run_repo(
             sys.executable,
             "scripts/build_release.py",
             "--mode",
-            "public",
+            "candidate",
+            "--version",
+            candidate_version,
             "--output-dir",
             os.fspath(output),
         )
@@ -147,21 +154,40 @@ class ReleaseGateTests(unittest.TestCase):
             line.split("  ", 1)[1]
             for line in (self.repo / "SHA256SUMS.txt").read_text(encoding="utf-8").splitlines()
         ]
-        prefix = f"planar-ssuf-four-terminal-bound-v{CURRENT_VERSION}"
+        prefix = f"planar-ssuf-four-terminal-bound-v{candidate_version}"
         expected = sorted(
             [
                 f"{prefix}/SHA256SUMS.txt",
                 *[f"{prefix}/{relative}" for relative in manifest_paths],
             ]
         )
-        archive_path = output / f"ssuf-four-terminal-v{CURRENT_VERSION}-source.tar.gz"
+        archive_path = output / f"ssuf-four-terminal-v{candidate_version}-source.tar.gz"
         with tarfile.open(archive_path, "r:gz") as archive:
             self.assertEqual([member.name for member in archive.getmembers()], expected)
 
         asset_manifest = (output / "SHA256SUMS.txt").read_text(encoding="utf-8")
         self.assertIn("ssuf_four_terminal_note_v5.pdf", asset_manifest)
         self.assertIn("rb003_two_scenario_note_v2.pdf", asset_manifest)
-        self.assertEqual(self.run_repo("git", "status", "--porcelain").stdout, "")
+        self.assertIn("ssuf_fixed_gadget_scenario_cover_synopsis.pdf", asset_manifest)
+
+    def test_candidate_rejects_nonempty_output_directory(self) -> None:
+        output = self.base / "candidate-output"
+        output.mkdir()
+        (output / "preexisting.txt").write_text("preserve me\n", encoding="utf-8")
+        result = self.run_repo(
+            sys.executable,
+            "scripts/build_release.py",
+            "--mode",
+            "candidate",
+            "--version",
+            "0.3.0-rc1",
+            "--output-dir",
+            os.fspath(output),
+            check=False,
+        )
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("output directory must be empty", result.stdout + result.stderr)
+        self.assertEqual((output / "preexisting.txt").read_text(encoding="utf-8"), "preserve me\n")
 
 
 if __name__ == "__main__":

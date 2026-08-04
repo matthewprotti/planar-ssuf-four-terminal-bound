@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "Please cite this repository and the accompanying technical synopsis."
+title: "Scenario-Cover Geometry for a Four-Terminal Planar Unsplittable-Flow Gadget"
+type: software
+authors:
+  - family-names: Protti
+    given-names: Matthew
+repository-code: "https://github.com/matthewprotti/planar-ssuf-four-terminal-bound"
+version: "0.3.0"
+date-released: "2026-08-04"
+abstract: >-
+  Exact fixed-gadget scenario-cover results for a planar four-terminal
+  splittable-to-unsplittable flow construction, including one-, two-, three-,
+  and many-positive-scenario constants, a finite cover atlas, a fixed-family
+  bounded-heterogeneity phase theorem, and exact verification artifacts.
+keywords:
+  - unsplittable flow
+  - planar graph
+  - scenario robustness
+  - convex hull
+  - exact certificate

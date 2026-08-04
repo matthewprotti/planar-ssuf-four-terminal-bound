@@ -7,19 +7,47 @@
 > research package whose claims, proofs, exact data, and executable checks are
 > provided for scrutiny and reproducibility.
 >
-> **External human-review status:** No external human mathematical review has
-> been requested or documented.
+> **External human-review status:** One external human report on the private
+> candidate was supplied on 2 August 2026. The supplied text does not identify
+> the reviewer or document independence/conflicts. It reconstructed the
+> duality and short three-/many-scenario arguments and found no contradiction,
+> but it did not inspect the unpacked SC-006 or high-heterogeneity companion
+> proofs. It is therefore recorded as scope-limited review, not full acceptance
+> or peer review.
 >
 > `v0.2.1` is a documentation, provenance, and release-hygiene correction.
 > It changes no mathematical claim, theorem statement, constant, certificate,
 > proof conclusion, or verifier result from `v0.2.0`.
+
+## Private follow-on candidate
+
+This working branch contains a private `v0.3.0-rc1` candidate under
+[`research/fixed_gadget_scenario_cover/`](research/fixed_gadget_scenario_cover/).
+It integrates the arbitrary legal one-scenario theorem, the positive
+scenario-count ladder, scenario-cover duality and exact atlas, the narrow
+SC-006 fixed-family phase, and the repaired high-heterogeneity tail.
+
+The immutable public `v0.2.1` release remains the public baseline. The new
+material is internally AI-reviewed and has received one scope-limited external
+human report. It has not received a complete independent human reconstruction,
+peer review, formal proof-assistant verification, novelty clearance,
+authorship/licensing clearance, publication approval, or release approval.
+Every new global optimization is restricted to the released fixed gadget; the
+global bounded-heterogeneity middle interval remains open. See the candidate
+[`claim ledger`](research/fixed_gadget_scenario_cover/CLAIM_LEDGER.md) and
+[`limitations`](research/fixed_gadget_scenario_cover/LIMITATIONS_AND_OPEN_PROBLEMS.md).
+Reviewers should begin with the
+[`full-proof map`](research/fixed_gadget_scenario_cover/FULL_PROOF_REVIEW_MAP.md),
+which identifies every controlling analytic proof, dependency, hash, and
+executable-evidence boundary.
 
 ## What this repository contains
 
 The repository studies cost-constrained single-source unsplittable-flow
 rounding on one compact planar acyclic four-terminal graph.
 
-It now contains two distinct result lines that must not be conflated:
+The immutable public release contains two distinct result lines that must not
+be conflated:
 
 1. the original one-scenario planar lower-bound disclosure (`v0.1.0`); and
 2. the exact fixed-gadget two-scenario cost-nonincrease theorem added in
@@ -33,7 +61,7 @@ arc-deviation supremum.
 Open branches, pull requests, and untagged drafts are follow-on working
 materials. They do not alter either tagged release or extend its proved claims.
 
-## Results at a glance
+## Released results at a glance
 
 ### A. Original one-scenario planar disclosure (`v0.1.0`)
 
@@ -115,7 +143,8 @@ review.
 
 ## Agentic research method and stewardship
 
-The development process is documented rather than hidden. Matthew Protti
+For the immutable `v0.2.1` corpus, the development process is documented rather
+than hidden. Matthew Protti
 selected and directed the research program, set the claim and validation
 standards, repeatedly challenged proposed conclusions, required exact and
 adversarial checking, approved the final scope, and accepts responsibility for
@@ -147,6 +176,8 @@ evidence for the theorem, or an influence on the July 22–23 stable work.
 
 ## Where to start
 
+- Read the private candidate synopsis:
+  [`paper/ssuf_fixed_gadget_scenario_cover_synopsis.pdf`](paper/ssuf_fixed_gadget_scenario_cover_synopsis.pdf).
 - Read the RB-003 paper:
   [`paper/rb003_two_scenario_note_v2.pdf`](paper/rb003_two_scenario_note_v2.pdf).
 - Read the original one-scenario paper:
@@ -197,18 +228,24 @@ for text preflight checks.
 
 ```bash
 python scripts/build_pdf.py
+python scripts/build_pdf.py --only-cached
 python verification/preflight_pdf_text.py
 python verification/preflight_rb003_pdf_text.py
+python verification/preflight_fixed_gadget_pdf_text.py
 ```
 
 ## Repository map
 
-- [`paper/`](paper/): both paper sources and checked PDFs.
+- [`paper/`](paper/): the released paper sources and checked PDFs plus the
+  private candidate synopsis.
 - [`verification/`](verification/): original exact and symbolic checks plus
   PDF preflight scripts.
 - [`research/two_scenario_global_constant/`](research/two_scenario_global_constant/):
   RB-003 proof, review history, exact certificate, replay, and research
   governance records.
+- [`research/fixed_gadget_scenario_cover/`](research/fixed_gadget_scenario_cover/):
+  private follow-on theorem program, exact atlas, companion proofs, and review
+  boundary records; its `FULL_PROOF_REVIEW_MAP.md` is the reviewer entry point.
 - [`scripts/`](scripts/): verification, PDF, manifest, and deterministic
   release tooling.
 - [`case_study/agentic_mathematics/`](case_study/agentic_mathematics/):
@@ -222,8 +259,8 @@ python verification/preflight_rb003_pdf_text.py
 ## Context and novelty
 
 Dmitry Rybin's public counterexample of 22 July 2026 was the direct catalyst
-for this investigation and is credited in both papers and the provenance
-record.
+for the released investigation and is credited in both released papers and the
+provenance record.
 
 Targeted literature and public-code searches found no indexed match for the
 exact RB-003 fixed-gadget two-scenario formulation or the value `17/8`. That is
@@ -233,11 +270,31 @@ integrality, multicriteria/QoS unsplittable-flow models, robust and reroutable
 flows, and classical threshold/simple-game representation theory. See the
 RB-003 literature matrix for the precise distinctions.
 
+Those search statements describe the released `v0.2.1` record. Related-work,
+chronology, and overlap language for the new candidate remains provisional
+pending the separate neutral audit.
+
 ## Publication, authorship, and rights
 
-Matthew Protti is the named human author and release maintainer. Authorship is
-not a representation of legal ownership. No institutional affiliation,
-sponsorship, or institutional ownership is asserted.
+Matthew Protti is the named human author and release maintainer for the
+immutable `v0.2.1` corpus. The candidate synopsis deliberately withholds its
+author line until authorship, contribution, acknowledgement, and rights
+language are settled. Authorship is not a representation of legal ownership.
+No institutional affiliation, sponsorship, or institutional ownership is
+asserted.
 
 This repository deliberately grants no open-source or open-content license.
 See [`LICENSING.md`](LICENSING.md).
+
+
+## v0.3.0 fixed-gadget scenario-cover release
+
+The v0.3.0 candidate consolidates the exact fixed-gadget scenario-count
+ladder, the scenario-cover atlas, SC-006, and the high-heterogeneity tail.
+See [`release/v0.3.0/RELEASE_NOTES.md`](release/v0.3.0/RELEASE_NOTES.md),
+[`release/v0.3.0/FINAL_SCOPE_LEDGER.md`](release/v0.3.0/FINAL_SCOPE_LEDGER.md),
+and [`review_evidence/v0.3.0/README.md`](review_evidence/v0.3.0/README.md).
+
+This is an unrefereed research release with exact certificates, deterministic
+replay, disclosed blind-reproduction evidence, and claim-scoped adversarial
+human/AI-assisted review. It is not represented as conventional journal peer review.

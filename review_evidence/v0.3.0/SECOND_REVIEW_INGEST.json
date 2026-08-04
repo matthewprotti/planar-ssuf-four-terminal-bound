@@ -1,0 +1,32 @@
+{
+  "claim_ids_also_found_in_pdf_text": [
+    "GM-002",
+    "GM-003",
+    "GM-004",
+    "GM-005",
+    "GM-006",
+    "GM-008",
+    "GM-009",
+    "RB-003",
+    "SC-000",
+    "SC-001",
+    "SC-006"
+  ],
+  "claim_ids_in_markdown": [
+    "GM-002",
+    "GM-003",
+    "GM-004",
+    "GM-005",
+    "GM-006",
+    "GM-008",
+    "GM-009",
+    "RB-003",
+    "SC-000",
+    "SC-001",
+    "SC-006"
+  ],
+  "detected_disposition": "ACCEPT_AS_STATED",
+  "markdown_sha256": "06ca709933d63d4174acfdc6eb91d3628fafbb7426692e4bb466e34733096c24",
+  "pdf_sha256": "9f60bdbd5a080da49cb450bd17ac21e843fd98b760b63b0b5ca810d110ac7d91",
+  "pdf_text_extraction_available": true
+}
