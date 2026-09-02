@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "Please cite the exact public GitHub commit for this review-pending research disclosure."
+title: "The proper hat-guessing number of K5-e"
+type: article
+authors:
+  - family-names: "Protti"
+    given-names: "Matthew"
+version: "0.1"
+date-released: 2026-09-02
+repository-code: "https://github.com/matthewprotti/planar-ssuf-four-terminal-bound/tree/hgp-k5e-v0.1-review-pending/research/proper_hat_guessing_k5_minus_e"
+abstract: >-
+  We prove that the proper hat-guessing number of the complete graph on five
+  vertices with one edge removed is eight. The lower bound uses an explicit
+  construction over F_2^3 and Hall's theorem; the upper bound follows from the
+  general vertex/chromatic-number bound.
+keywords:
+  - hat guessing
+  - proper coloring
+  - graph theory
+  - Hall's theorem
+  - finite geometry
+  - AI-assisted mathematics

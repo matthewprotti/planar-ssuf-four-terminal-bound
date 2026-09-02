@@ -1,0 +1,236 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,array,enumitem,microtype}
+\usepackage[hidelinks]{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\HGP}{\mathrm{HG}_{P}}
+
+\title{The Proper Hat-Guessing Number of $K_5-e$}
+\author{Matthew Protti\\\small Independent Researcher}
+\date{2 September 2026\\\small Public research disclosure v0.1; independent review pending}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We prove that the proper hat-guessing number of the complete graph on five
+vertices with one edge removed is eight. The upper bound follows from the
+general inequality $\HGP(G)\le |V(G)|+\chi(G)-1$. For the lower bound, we
+identify the eight colors with $\F_2^3$ and give two explicit rules for the
+nonadjacent twin vertices. The residual proper colorings and the attainable
+local views of the three clique vertices form a bipartite graph with left
+degree three and right degree at most three. Hall's theorem therefore
+completes the strategy. The only finite residue in the conceptual proof is a
+seven-row table, comprising 42 direct evaluations. Dependency-free code
+reconstructs the strategy and verifies all 8,400 proper colorings.
+\end{abstract}
+
+\section{Introduction}
+Adriaensen, Bentley, Bishnoi, Cames van Batenburg, Kreiger, van der Kuil,
+Mandal, Ramachandran, and Tuite introduced the proper-coloring variant of the
+hat-guessing game. For a graph $G$, the parameter $\HGP(G)$ is the largest
+number $q$ for which the players can pre-agree on local guessing functions so
+that every proper $q$-coloring of $G$ makes at least one player guess
+correctly. Their general bound
+\[
+   \HGP(G)\le |V(G)|+\chi(G)-1
+\]
+and their finite computations leave $\HGP(K_5-e)$ in the interval $[7,8]$.
+We determine the exact value.
+
+Let the two nonadjacent vertices of $K_5-e$ be called the \emph{twins}, and
+let the other three vertices form the clique. Our proof first assigns the
+twin guesses using a small geometry on $\F_2^3$. A matching argument then
+assigns the clique guesses consistently.
+
+\begin{theorem}\label{thm:main}
+Let $K_5-e$ denote the complete graph on five vertices with one edge removed.
+Then
+\[
+   \HGP(K_5-e)=8.
+\]
+\end{theorem}
+
+\section{A finite geometry on eight colors}
+Identify the color set with $V=\F_2^3$, written additively. For each nonzero
+normal vector $n\in V$, let
+\[
+  U_n=\{x\in V:n\cdot x=0\}.
+\]
+These are the seven two-dimensional linear subspaces of $V$. Choose
+$\delta(U_n)\notin U_n$ as follows.
+
+\begin{center}
+\begin{tabular}{c@{\qquad}c|c@{\qquad}c}
+\toprule
+$n$ & binary $n$ & $\delta(U_n)$ & binary $\delta$\\
+\midrule
+1 & 001 & 5 & 101\\
+2 & 010 & 7 & 111\\
+3 & 011 & 6 & 110\\
+4 & 100 & 4 & 100\\
+5 & 101 & 3 & 011\\
+6 & 110 & 2 & 010\\
+7 & 111 & 1 & 001\\
+\bottomrule
+\end{tabular}
+\end{center}
+The displayed choices satisfy $n\cdot\delta(U_n)=1$.
+
+For nonzero $w\in V$, put $D_w=V\setminus\{0,w\}$ and define
+\[
+  \phi_w(r)=w+r+\delta(\langle w,r\rangle),\qquad r\in D_w.
+\]
+
+\begin{lemma}\label{lem:phi}
+For every nonzero $w\in V$, the map $\phi_w$ is a fixed-point-free
+permutation of $D_w$.
+\end{lemma}
+
+\begin{proof}
+The complete cycle decompositions are
+\begin{center}
+\begin{tabular}{c|l}
+\toprule
+$w$ & cycles of $\phi_w$ on $D_w$\\
+\midrule
+1 & $(2\ 7\ 4)(3\ 6\ 5)$\\
+2 & $(1\ 7\ 6)(3\ 5\ 4)$\\
+3 & $(1\ 6\ 4)(2\ 5\ 7)$\\
+4 & $(1\ 2\ 3)(5\ 6\ 7)$\\
+5 & $(1\ 3\ 7)(2\ 4\ 6)$\\
+6 & $(1\ 5\ 2)(3\ 4\ 7)$\\
+7 & $(1\ 4\ 5)(2\ 6\ 3)$\\
+\bottomrule
+\end{tabular}
+\end{center}
+Thus each map is a permutation and has no fixed point. The table consists of
+42 direct evaluations from the displayed definition of $\phi_w$.
+\end{proof}
+
+\section{The twin rules}
+Label the clique vertices $2,3,4$. For an ordered triple
+$T=(t_2,t_3,t_4)$ of pairwise distinct clique colors, define
+\[
+  \sigma(T)=t_2+t_3+t_4,
+  \qquad
+  U(T)=\langle t_2+t_3,t_2+t_4\rangle.
+\]
+The four points $t_2,t_3,t_4,\sigma(T)$ form the affine plane with direction
+subspace $U(T)$. The twins guess
+\[
+  \alpha(T)=\sigma(T),
+  \qquad
+  \beta(T)=\sigma(T)+\delta(U(T)).
+\]
+The first guess is not one of the clique colors, and the second lies outside
+the affine plane because $\delta(U(T))\notin U(T)$. Hence both guesses are
+legal.
+
+For each fixed clique triple, the twin colors may independently be any of the
+five remaining colors. The rule $\alpha$ covers one row of the resulting
+$5\times5$ array and $\beta$ covers one column. The twins therefore cover
+$5+5-1=9$ pairs and leave 16 residual pairs. Since there are
+$(8)_3=336$ ordered clique triples, the number of residual proper colorings is
+$336\cdot16=5,376$.
+
+\section{Residual incidence and Hall completion}
+Form a bipartite graph $B=(L,R;E)$. The left part $L$ is the set of 5,376
+residual proper colorings. The right part $R$ is the set of attainable local
+views at the three clique vertices. Join a residual coloring to the three
+clique views it induces. Every left vertex has degree three.
+
+\begin{lemma}\label{lem:right}
+Every right vertex of $B$ has degree at most three.
+\end{lemma}
+
+\begin{proof}
+Fix a clique vertex and one of its local views. Let $x,y$ be the colors on the
+other two clique vertices and let $a,b$ be the twin colors. Translate all
+colors by $x$, and write
+\[
+  w=y+x,\qquad A=a+x,\qquad B=b+x.
+\]
+Then $w\ne0$ and $A,B\in D_w$. If the unseen clique vertex has translated
+color $R$, the proper candidate set is $D_w\setminus\{A,B\}$ when $A\ne B$
+and $D_w\setminus\{A\}$ when $A=B$.
+
+For a candidate extension, twin 0 is correct precisely when $R=A+w$, and twin
+1 is correct precisely when $\phi_w(R)=B$.
+
+Suppose first that $A\ne B$. There are four proper candidates. If none were
+twin-covered, then both distinguished candidates
+$A+w$ and $\phi_w^{-1}(B)$ would lie in $\{A,B\}$. Since translation by $w$
+has no fixed point, $A+w=B$. Since $\phi_w$ has no fixed point,
+$\phi_w^{-1}(B)=A$. Hence
+\[
+  \phi_w(A)=B=A+w,
+\]
+contrary to
+$\phi_w(A)=A+w+\delta(\langle w,A\rangle)$ and
+$\delta(\langle w,A\rangle)\ne0$. At least one candidate is therefore
+covered, leaving at most three residual extensions.
+
+Now suppose $A=B$. There are five proper candidates. The candidates
+$A+w$ and $\phi_w^{-1}(A)$ are allowed because translation by $w$ and
+$\phi_w$ have no fixed points. They are distinct: equality would imply
+$\phi_w(A+w)=A$, whereas
+\[
+  \phi_w(A+w)=A+\delta(\langle w,A\rangle)\ne A.
+\]
+Thus at least two candidates are covered, again leaving at most three
+residual extensions.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+For every $S\subseteq L$, exactly $3|S|$ edges leave $S$. By
+Lemma~\ref{lem:right}, every vertex of $N(S)$ is incident with at most three
+of these edges. Thus
+\[
+  3|S|\le 3|N(S)|,
+\]
+so Hall's condition holds. Let $M$ be a matching saturating $L$. For each
+matched residual coloring, assign the matched clique vertex to guess its own
+color on that matched local view. A local view is matched at most once, so
+these assignments are consistent; unmatched attainable views may receive any
+legal guess. Every residual coloring is covered by a matched clique vertex,
+and every nonresidual coloring was already covered by a twin. This is a
+winning strategy with eight colors, so $\HGP(K_5-e)\ge8$.
+
+The graph has five vertices and chromatic number four. The general upper
+bound gives
+\[
+  \HGP(K_5-e)\le5+4-1=8.
+\]
+Therefore $\HGP(K_5-e)=8$.
+\end{proof}
+
+\section{Verification and scope}
+The accompanying dependency-free Python code reconstructs the seven maps,
+the residual incidence graph, a saturating matching, and a complete strategy.
+It checks all 8,400 proper eight-colorings directly. These computations are
+not premises of the conceptual proof.
+
+This note settles only $K_5-e$. It does not solve the full $K_n-e$ family or
+determine $\HGP(C_5)$.
+
+\section*{AI-use disclosure}
+OpenAI GPT-5.6 Pro was used substantially in literature search, construction
+search, proof development, code generation, verification, adversarial
+critique, and manuscript preparation. The human author selected and framed
+the problem, directed the research, evaluated the outputs, required exact
+checks, approved the final scope, and assumes responsibility for the work.
+
+\begin{thebibliography}{9}
+\bibitem{ABBCetal2026}
+S. Adriaensen, P. Bentley, A. Bishnoi, W. Cames van Batenburg, M. Kreiger,
+L. van der Kuil, S. Mandal, A. Ramachandran, and J. Tuite,
+\emph{Hat guessing with proper colorings}, arXiv:2603.04909v4, 2026.
+\end{thebibliography}
+
+\end{document}
