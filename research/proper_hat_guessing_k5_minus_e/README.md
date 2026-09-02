@@ -1,7 +1,7 @@
 # The proper hat-guessing number of `K5-e`
 
 > **Public research disclosure v0.1 (2 September 2026)**  
-> **Status:** theorem proved in the manuscript and executable package; independent review pending.
+> **Status:** theorem proved in the manuscript and executable disclosure; independent review pending.
 
 ## Result
 
@@ -42,8 +42,7 @@ python3 code/verify_k5e_fano_hall.py \
 
 ## Files
 
-- `preprint/proper_hat_guessing_K5_minus_e_v0.1.pdf` - review-pending manuscript.
-- `preprint/proper_hat_guessing_K5_minus_e_v0.1.tex` - LaTeX source.
+- `preprint/proper_hat_guessing_K5_minus_e_v0.1.tex` - review-pending manuscript source.
 - `THEOREM.md` - self-contained theorem proof in Markdown.
 - `GENERAL_KNE_REDUCTION.md` - reusable twin-completion lemma for `K_n-e`.
 - `AI_USE_AND_PROVENANCE.md` - contribution and AI-use disclosure.
@@ -51,7 +50,9 @@ python3 code/verify_k5e_fano_hall.py \
 - `NOVELTY_SEARCH_20260902.md` - same-day targeted landscape search record.
 - `code/verify_k5e_fano_hall.py` - dependency-free constructor/verifier.
 - `certificates/K5_e_q8_fano_delta.json` - seven-entry compact certificate.
-- `release/HGP_K5E_PUBLIC_DISCLOSURE_20260902_v0.1.zip` - complete frozen disclosure.
+- `STATUS.json` and `CITATION.cff` - scope and citation metadata.
+
+A rendered four-page PDF and the fuller sprint archive are prepared for the later standalone archival release. They are not premises of the proof.
 
 ## Scope
 
